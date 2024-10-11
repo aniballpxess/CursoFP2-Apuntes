@@ -9,7 +9,7 @@
 
 El repositorio se basa en el [Grado Superior para Técnico en Desarrollo de Aplicaciones Multiplataforma](https://www.comunidad.madrid/sites/default/files/doc/educacion/fp/FP-Ensenanza-IFCS02-LOE-Ficha.pdf) impartido en la Comunidad Autónoma de Madrid. Por eso las asignaturas en las que se divide el curso son:
 
-- Acceso a Datos (BBDD)
+- Acceso a Datos (AD)
 - Desarrollo de Interfaces (DI)
 - Empresa e Iniciativa Emprendedora (EIE)
 - Inglés Técnico (IT)
