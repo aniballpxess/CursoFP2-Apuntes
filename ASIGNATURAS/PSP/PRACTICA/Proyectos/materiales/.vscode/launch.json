@@ -1,0 +1,98 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "In Terminal",
+            "request": "launch",
+            "mainClass": "${file}",
+            "args": "${command:SpecifyProgramArgs}"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "SumaDosNumeros",
+            "request": "launch",
+            "mainClass": "psp.ejemplos.argumentos.SumaDosNumeros",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "ComunicacionEntreProcesos",
+            "request": "launch",
+            "mainClass": "psp.ejemplos.procesos.ComunicacionEntreProcesos",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "CrearUnProceso_PB",
+            "request": "launch",
+            "mainClass": "psp.ejemplos.procesos.CrearUnProceso_PB",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "CrearUnProceso_R",
+            "request": "launch",
+            "mainClass": "psp.ejemplos.procesos.CrearUnProceso_R",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "CrearVariosProcesos_PB",
+            "request": "launch",
+            "mainClass": "psp.ejemplos.procesos.CrearVariosProcesos_PB",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "CrearVariosProcesos_R",
+            "request": "launch",
+            "mainClass": "psp.ejemplos.procesos.CrearVariosProcesos_R",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "DestruirProcesos",
+            "request": "launch",
+            "mainClass": "psp.ejemplos.procesos.DestruirProcesos",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "LanzadorDeProcesos",
+            "request": "launch",
+            "mainClass": "psp.ejemplos.procesos.LanzadorDeProcesos",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "UsoDeMapas",
+            "request": "launch",
+            "mainClass": "psp.ejemplos.procesos.UsoDeMapas",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "psp.ejercicios.divisores.Main",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "Main(1)",
+            "request": "launch",
+            "mainClass": "psp.ejercicios.sumatorio.Main",
+            "projectName": "materiales"
+        }
+    ]
+}

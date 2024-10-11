@@ -1,0 +1,7 @@
+EMPAQUETAR "doble":
+- mvn clean package -P doble
+EMPAQUETAR "sumatorio":
+- mvn clean package -P sumatorio
+
+EJECUTAR "doble":
+- java -jar .\path\to\materiales-0.1-doble.jar -69

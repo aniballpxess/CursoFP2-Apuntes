@@ -1,0 +1,13 @@
+body {
+  background-color: grey;
+}
+p {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  color: lightblue;
+}
+div {
+  background-color: red;
+  width: 400px;
+  color: yellow;
+}

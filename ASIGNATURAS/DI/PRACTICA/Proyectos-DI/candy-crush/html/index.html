@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Candy Crush Hacendado</title>
+    <link rel="stylesheet" href="../css/estilos.css" />
+    <script src="../js/scripts.js" defer></script>
+  </head>
+  <body onload="generarTablero()">
+    <div class="columna_prinpipal">
+      <h1 class="elemento">Candy<br />Crush</h1>
+      <button id="nuevoJuego" class="elemento normal" onclick="generarTablero()">New Game</button>
+    </div>
+    <div class="columna_prinpipal">
+      <table id="tablero" class="elemento"></table>
+    </div>
+    <div class="columna_prinpipal">
+      <div class="elemento jugada">
+        <label for="casilla">Move:</label>
+        <input type="text" name="mov_input" id="casilla" />
+      </div>
+      <div class="elemento controles">
+        <button type="button" class="arriba">↑</button>
+        <button type="button" class="izquierda">←</button>
+        <button type="button" class="derecha">→</button>
+        <button type="button" class="abajo">↓</button>
+      </div>
+      <button class="elemento normal" type="button">Crush Once</button>
+    </div>
+  </body>
+</html>
