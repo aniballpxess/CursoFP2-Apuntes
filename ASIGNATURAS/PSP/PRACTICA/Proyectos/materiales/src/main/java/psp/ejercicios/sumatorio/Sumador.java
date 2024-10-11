@@ -9,13 +9,17 @@ public class Sumador
      * @param limiteInf - límite inferior del intervalo
      * @param limiteSup - limite superior del intervalo
      * @return - el sumatorio de todos los enteros dentro del intervalo
-     * @throws IllegalArgumentException
      */
     public static int sumatorioDeIntervalo(int limiteInf, int limiteSup)
     {
-        if (!(limiteInf < limiteSup))
+        if (limiteInf == limiteSup) {
+            return limiteInf * 2;
+        }
+        if (limiteInf > limiteSup)
         {
-            throw new IllegalArgumentException();
+            limiteInf = limiteInf ^ limiteSup;
+            limiteSup = limiteSup ^ limiteInf;
+            limiteInf = limiteInf ^ limiteSup;
         }
         int suma = limiteInf;
         while (true)

@@ -7,31 +7,28 @@ public class Main
 {
     public static void main(String[] args)
     {
-        if (args.length == 0)
-        {
-            System.out.println("No has pasado ningún argumento.");
-            System.exit(-20);
-        }
-        if (args.length != 2)
-        {
-            System.out.println("Este programa solo se ejecuta al recibir 2 argumentos.");
-            System.exit(-21);
-        }
         try
         {
+            if (args.length == 0)
+                throw new IllegalArgumentException("No has pasado ningún argumento.");
+
+            if (args.length != 2)
+                throw new IllegalArgumentException("Este programa solo se ejecuta al recibir 2 argumentos.");
+
+            boolean arg1EsDigito = args[0].matches("[+-]?\\d+");
+            boolean arg2EsDigito = args[0].matches("[+-]?\\d+");
+
+            if (!arg1EsDigito || !arg2EsDigito)
+                throw new NumberFormatException("El argumento pasado no es un número entero.");
+
             int limiteInf = Integer.parseInt(args[0]);
             int limiteSup = Integer.parseInt(args[1]);
             System.out.println(Sumador.sumatorioDeIntervalo(limiteInf, limiteSup));
         }
-        catch (NumberFormatException nfe)
+        catch (Exception e)
         {
-            System.out.println("Alguno de los 2 argumentos pasados no es un numero entero.");
-            System.exit(-30);
-        }
-        catch (IllegalArgumentException iae)
-        {
-            System.out.println("El segundo número tiene que ser mayor que el primero.");
-            System.exit(-31);
+            e.printStackTrace();
+            System.exit(-1);
         }
     }
 }

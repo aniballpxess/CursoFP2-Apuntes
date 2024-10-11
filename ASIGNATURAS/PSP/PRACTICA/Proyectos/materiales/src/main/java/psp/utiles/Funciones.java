@@ -20,7 +20,6 @@ public class Funciones
     public static String leerEntrada(Scanner escaner, String mensaje)
     {
         System.out.print(mensaje);
-        System.out.flush();
         return escaner.nextLine();
     }
     public static String[] leerPrograma(Scanner escaner)
