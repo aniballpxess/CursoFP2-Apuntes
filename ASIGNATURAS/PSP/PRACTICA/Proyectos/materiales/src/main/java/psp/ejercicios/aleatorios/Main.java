@@ -1,10 +1,9 @@
 package psp.ejercicios.aleatorios;
 
-import static psp.utiles.Funciones.leerEntrada;
+import static psp.utiles.Funciones.peticionLeerEntrada;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
@@ -19,12 +18,10 @@ public class Main
             while (true)
             {
                 Process proceso = new ProcessBuilder(generadorDeNumeros).start();
-                InputStream is = proceso.getInputStream();
-                InputStreamReader isr = new InputStreamReader(is);
-                BufferedReader br = new BufferedReader(isr);
+                BufferedReader br = new BufferedReader(new InputStreamReader(proceso.getInputStream()));
                 proceso.waitFor();
                 System.out.println("Numero Generado: " + br.readLine());
-                String entrada = leerEntrada(escaner, "Introduce FIN para salir: ");
+                String entrada = peticionLeerEntrada(escaner, "Introduce FIN para salir: ");
                 if (entrada.equalsIgnoreCase("FIN"))
                 {
                     break;

@@ -15,10 +15,10 @@ public class Main
             if (args.length != 2)
                 throw new IllegalArgumentException("Este programa solo se ejecuta al recibir 2 argumentos.");
 
-            boolean arg1EsDigito = args[0].matches("[+-]?\\d+");
-            boolean arg2EsDigito = args[0].matches("[+-]?\\d+");
+            boolean arg1EsNum = args[0].matches("[+-]?\\d+");
+            boolean arg2EsNum = args[0].matches("[+-]?\\d+");
 
-            if (!arg1EsDigito || !arg2EsDigito)
+            if (!arg1EsNum || !arg2EsNum)
                 throw new NumberFormatException("El argumento pasado no es un número entero.");
 
             int limiteInf = Integer.parseInt(args[0]);

@@ -27,7 +27,8 @@ public class LanzadorDeProgramas
             if (entrada.equalsIgnoreCase("E"))
             {
                 System.out.println("Iniciando proceso de ejecución.");
-                Funciones.ejecutarPrograma(Funciones.leerPrograma(escaner));
+                String[] programa = Funciones.leerPrograma(escaner);
+                Funciones.ejecutarPrograma(escaner, programa);
             }
         }
         escaner.close();
