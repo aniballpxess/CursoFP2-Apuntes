@@ -254,7 +254,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>psp.${Id_Paquete}.ChildProgram</mainClass>
+                  <mainClass>psp.${Id_Paquete}.Lanzador</mainClass>
                 </manifest>
               </archive>
             </configuration>

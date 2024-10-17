@@ -6,8 +6,8 @@ public class LanzadorDeProgramas
 {
     public static void main(String[] args)
     {
-        System.out.println("""
-
+        System.out.print("""
+                -----------------------------------------------
                 LANZADOR DE PROGRAMAS - Version 0.2 - Multipro
                 -----------------------------------------------
                 Acciones Disponibles:
@@ -26,8 +26,8 @@ public class LanzadorDeProgramas
             }
             if (entrada.equalsIgnoreCase("E"))
             {
+                String[] programa = Funciones.escogerPrograma(escaner);
                 System.out.println("Iniciando proceso de ejecución.");
-                String[] programa = Funciones.leerPrograma(escaner);
                 Funciones.ejecutarPrograma(escaner, programa);
             }
         }
