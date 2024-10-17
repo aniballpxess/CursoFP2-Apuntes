@@ -13,22 +13,20 @@ public class Funciones
     {
         try
         {
-            Process proceso = new ProcessBuilder(programa).start();
+            Process proceso = new ProcessBuilder(programa).command(programa).start();
             BufferedReader br = new BufferedReader(new InputStreamReader(proceso.getInputStream()));
             PrintWriter pw = new PrintWriter(new OutputStreamWriter(proceso.getOutputStream()));
             while (proceso.isAlive())
             {
-                if (br.ready())
+                String linea = br.readLine();
+                if (linea.equals("-UIR-"))
                 {
-                    String linea = br.readLine();
-                    if (linea.equals("-UserInputRequest-"))
-                    {
-                        leerEntrada(escaner, br, pw);
-                    }
-                    else
-                    {
-                        System.out.println(linea);
-                    }
+                    String input = escaner.nextLine();
+                    pw.println(input);
+                }
+                else if (!linea.equals(null))
+                {
+                    System.out.println(linea);
                 }
             }
         }

@@ -1,7 +1,5 @@
 package psp.ejercicios.aleatorios;
 
-import static psp.utiles.Funciones.peticionLeerEntrada;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,7 +10,9 @@ public class Main
     public static void main(String[] args)
     {
         Scanner escaner = new Scanner(System.in);
-        String[] generadorDeNumeros = { "java", "-jar", "C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_aleatorios-2.jar" };
+        String[] generadorDeNumeros =
+        { "java", "-jar",
+                "C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_aleatorios-2.jar" };
         try
         {
             while (true)
@@ -21,18 +21,25 @@ public class Main
                 BufferedReader br = new BufferedReader(new InputStreamReader(proceso.getInputStream()));
                 proceso.waitFor();
                 System.out.println("Numero Generado: " + br.readLine());
-                String entrada = peticionLeerEntrada(escaner, "Introduce FIN para salir: ");
-                if (entrada.equalsIgnoreCase("FIN"))
+                System.out.println("Introduce FIN para salir.");
+                System.out.println("-UIR-");
+                if (escaner.hasNextLine())
                 {
-                    break;
+                    String entrada = escaner.nextLine();
+                    if (entrada.equalsIgnoreCase("FIN"))
+                    {
+                        break;
+                    }
                 }
             }
         }
         catch (IOException | InterruptedException e)
         {
             e.printStackTrace();
-        } finally {
-            
+        }
+        finally
+        {
+
             escaner.close();
         }
     }
