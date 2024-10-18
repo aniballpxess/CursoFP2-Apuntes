@@ -7,63 +7,63 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class Funciones {
-    public static void ejecutarPrograma(Scanner escaner, String[] programa) {
-        try {
+public class Funciones
+{
+    public static void ejecutarPrograma(Scanner escaner, String[] programa)
+    {
+        try
+        {
             Process proceso = new ProcessBuilder(programa).start();
             BufferedReader br = new BufferedReader(new InputStreamReader(proceso.getInputStream()));
             PrintWriter pw = new PrintWriter(new OutputStreamWriter(proceso.getOutputStream()));
-            while (proceso.isAlive()) {
+            while (proceso.isAlive())
+            {
                 String linea = br.readLine();
-                if (!linea.equals(null)) {
-                    if (linea.equals("-UserInputRequest-")) {
-                        leerEntrada(escaner, br, pw);
-                    } else {
-                        System.out.println(linea);
-                    }
+                if (linea == null)
+                {
+                    continue;
+                }
+                if (linea.equals("_UIR_"))
+                {
+                    leerEntrada(escaner, br, pw);
+                }
+                else 
+                {
+                    System.out.println(linea);
                 }
             }
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             System.out.println(e.getMessage());
         }
     }
 
-    public static String leerEntrada(Scanner escaner, String mensaje) {
+    public static String leerEntrada(Scanner escaner, String mensaje)
+    {
         System.out.print(mensaje);
         return escaner.nextLine();
     }
 
-    public static void leerEntrada(Scanner escaner, BufferedReader br, PrintWriter pw) throws IOException {
+    public static void leerEntrada(Scanner escaner, BufferedReader br, PrintWriter pw) throws IOException
+    {
         System.out.print(br.readLine());
         pw.println(escaner.nextLine());
+        pw.flush();
     }
 
-    public static String peticionLeerEntrada(Scanner escaner, String mensaje) {
-        System.out.println("-UserInputRequest-");
+    public static String peticionLeerEntrada(Scanner escaner, String mensaje)
+    {
+        System.out.println("_UIR_");
         System.out.println(mensaje);
-        return escaner.next();
+        return escaner.nextLine();
     }
 
-    public static String[] escogerPrograma(Scanner escaner) {
-        // IMPLEMENTAR ESCOGER TIPO DE PROGRAMA .jar/.war/.exe/.js/...
-        // ^ parametro tipo String llamado "tipo"
-        String[] listaDeProgramas = {
-            "java -jar ",
-            "java -jar ",
-            "java -jar ",
-            "java -jar ",
-        };
-        System.out.print("""
-                -----------------------------------------------
-                Lista de programas
-                -----------------------------------------------
-                ale - ejecuta "aleatorios"
-                dob - ejecuta "doble"
-                div - ejecuta "divisores"
-                sum - ejecuta "sumatorio"
-                -----------------------------------------------
-                """);
-        String programa = leerEntrada(escaner, "Selecciona un programa de la lista: ");
-        return programa.split(" ");
+    public static void peticionLeerEntrada(Scanner escaner, BufferedReader br, PrintWriter pw) throws IOException
+    {
+        System.out.println("_UIR_");
+        System.out.println(br.readLine());
+        pw.println(escaner.nextLine());
+        pw.flush();
     }
 }
