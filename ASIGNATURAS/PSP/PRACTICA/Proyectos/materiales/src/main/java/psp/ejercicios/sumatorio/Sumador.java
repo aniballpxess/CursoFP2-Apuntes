@@ -3,8 +3,7 @@ package psp.ejercicios.sumatorio;
 public class Sumador
 {
     /**
-     * Simple sumatorio de un intervalo de numeros enteros. Los límites tienen que
-     * ser DIFERENTES y ser pasados en el orden correcto o lanzará una excepción.
+     * <p>Simple sumatorio de un intervalo de numeros enteros. A pesar de la implicación de los nombres @param limiteInf y @param limiteSup , no importa el orden de los parametros.
      * 
      * @param limiteInf - límite inferior del intervalo
      * @param limiteSup - limite superior del intervalo
@@ -12,8 +11,9 @@ public class Sumador
      */
     public static int sumatorioDeIntervalo(int limiteInf, int limiteSup)
     {
-        if (limiteInf == limiteSup) {
-            return limiteInf * 2;
+        if (limiteInf == limiteSup)
+        {
+            return limiteInf;
         }
         if (limiteInf > limiteSup)
         {

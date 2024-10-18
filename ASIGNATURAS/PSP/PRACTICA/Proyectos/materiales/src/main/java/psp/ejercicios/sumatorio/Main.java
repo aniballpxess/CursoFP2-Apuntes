@@ -3,32 +3,36 @@
  */
 package psp.ejercicios.sumatorio;
 
+import static psp.utiles.Funciones.peticionLeerEntrada;
+
+import java.util.Scanner;
+
 public class Main
 {
     public static void main(String[] args)
     {
-        try
+        Scanner escaner = new Scanner(System.in);
+        int limiteInf;
+        int limiteSup;
+        System.out.println("Calculo del sumatorio de enteros entre dos limites.\n");
+        while (true)
         {
-            if (args.length == 0)
-                throw new IllegalArgumentException("No has pasado ningún argumento.");
-
-            if (args.length != 2)
-                throw new IllegalArgumentException("Este programa solo se ejecuta al recibir 2 argumentos.");
-
-            boolean arg1EsNum = args[0].matches("[+-]?\\d+");
-            boolean arg2EsNum = args[0].matches("[+-]?\\d+");
-
-            if (!arg1EsNum || !arg2EsNum)
-                throw new NumberFormatException("El argumento pasado no es un número entero.");
-
-            int limiteInf = Integer.parseInt(args[0]);
-            int limiteSup = Integer.parseInt(args[1]);
-            System.out.println(Sumador.sumatorioDeIntervalo(limiteInf, limiteSup));
+            try
+            {
+                limiteInf = Integer.parseInt(peticionLeerEntrada(escaner, "Primer limite: "));
+                limiteSup = Integer.parseInt(peticionLeerEntrada(escaner, "Segundo limite: "));
+                break;
+            }
+            catch (NumberFormatException nfe)
+            {
+                System.out.println("Alguno de los inputs no era un numero entero.");
+            }
+            catch (Exception e)
+            {
+                System.out.println("Error inesperado.");
+            }
         }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-            System.exit(-1);
-        }
+        System.out.println("Sumatorio: " + Sumador.sumatorioDeIntervalo(limiteInf, limiteSup));
+        System.exit(0);
     }
 }

@@ -1,28 +1,33 @@
 package psp.ejercicios.doble;
 
+import static psp.utiles.Funciones.peticionLeerEntrada;
+
+import java.util.Scanner;
+
 public class Main
 {
     public static void main(String[] args)
     {
-        try
+        Scanner escaner = new Scanner(System.in);
+        int num;
+        System.out.println("Calculo  del doble de un numero.\n");
+        while (true)
         {
-            if (args.length == 0)
-                throw new IllegalArgumentException("No has pasado ningún argumento.");
-
-            if (args.length != 1)
-                throw new IllegalArgumentException("Este programa solo admite 1 argumento.");
-
-            if (!args[0].matches("[+-]?\\d+"))
-                throw new NumberFormatException("El argumento pasado no es un número entero.");
-
-            int num = Integer.parseInt(args[0]);
-            System.out.println(num + " x 2 = " + num * 2);
-            System.exit(0);
+            try
+            {
+                num = Integer.parseInt(peticionLeerEntrada(escaner, "Numero: "));
+                break;
+            }
+            catch (NumberFormatException e)
+            {
+                System.out.println("No has introducido un numero.");
+            }
+            catch (Exception e)
+            {
+                System.out.println("Error inesperado.");
+            }
         }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-            System.exit(-1);
-        }
+        System.out.println(num + " x 2 = " + num * 2);
+        System.exit(0);
     }
 }
