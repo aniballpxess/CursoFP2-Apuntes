@@ -24,6 +24,7 @@ public class Main
                 String entrada = peticionLeerEntrada(escaner, "Introduce FIN para salir: ");
                 if (entrada.equalsIgnoreCase("FIN"))
                 {
+                    br.close();
                     break;
                 }
             }

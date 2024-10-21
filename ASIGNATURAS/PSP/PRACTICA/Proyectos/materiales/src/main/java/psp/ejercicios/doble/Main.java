@@ -38,6 +38,8 @@ public class Main
             pw.flush();
             proceso.waitFor();
             System.out.println("Doble del numero: " + br.readLine());
+            pw.close();
+            br.close();
         }
         catch (IOException | InterruptedException e)
         {
