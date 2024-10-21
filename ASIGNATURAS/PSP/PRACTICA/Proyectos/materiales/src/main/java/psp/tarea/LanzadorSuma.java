@@ -13,7 +13,7 @@ public class LanzadorSuma
         Scanner escaner = new Scanner(System.in);
         String ficheroErrores;
         String ficheroSalida;
-        int contador = 0;
+        int contador = 1;
         try
         {
             while (true) {
@@ -36,8 +36,10 @@ public class LanzadorSuma
                 System.out.println("Fichero con el resultado en: " + ficheroSalida);
                 System.out.print("Primer numero: ");
                 pw.println(escaner.nextLine());
+                pw.flush();
                 System.out.print("Segundo numero: ");
                 pw.println(escaner.nextLine());
+                pw.flush();
                 contador++;
             }
         }

@@ -2,6 +2,11 @@ package psp.ejercicios.doble;
 
 import static psp.utiles.Funciones.peticionLeerEntrada;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Main
@@ -10,7 +15,7 @@ public class Main
     {
         Scanner escaner = new Scanner(System.in);
         int num;
-        System.out.println("Calculo  del doble de un numero.\n");
+        System.out.println("Calculo del doble de un numero.\n");
         while (true)
         {
             try
@@ -22,12 +27,22 @@ public class Main
             {
                 System.out.println("No has introducido un numero.");
             }
-            catch (Exception e)
-            {
-                System.out.println("Error inesperado.");
-            }
         }
-        System.out.println(num + " x 2 = " + num * 2);
+        try
+        {
+            String[] calculadorDoble = { "java", "-jar", "C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_doble-2.jar" };
+            Process proceso = new ProcessBuilder(calculadorDoble).start();
+            PrintWriter pw = new PrintWriter(new OutputStreamWriter(proceso.getOutputStream()));
+            BufferedReader br = new BufferedReader(new InputStreamReader(proceso.getInputStream()));
+            pw.println(num);
+            pw.flush();
+            proceso.waitFor();
+            System.out.println("Doble del numero: " + br.readLine());
+        }
+        catch (IOException | InterruptedException e)
+        {
+            e.printStackTrace();
+        }
         System.exit(0);
     }
 }

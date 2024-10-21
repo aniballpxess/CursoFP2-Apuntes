@@ -22,7 +22,10 @@ public class LanzadorDeProgramas
             String entrada = Funciones.leerEntrada(escaner, "Acción: ");
             if (entrada.equalsIgnoreCase("S"))
             {
-                System.out.println("Cerrando...");
+                System.out.print("""
+                        Cerrando...
+                        ###############################################
+                        """);
                 break;
             }
             if (entrada.equalsIgnoreCase("E"))
@@ -64,11 +67,11 @@ public class LanzadorDeProgramas
     public static String[] escogerPrograma(Scanner escaner)
     {
         String programa;
-        String[] listaDeProgramas = { 
-            "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_sumatorio.jar",
-            "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_divisores.jar",
+        String[] listaDeProgramas = {
             "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_aleatorios-1.jar",
-            "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_doble.jar", 
+            "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_divisores.jar",
+            "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_doble-1.jar",
+            "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_sumatorio.jar",
         };
         while (true)
         {
@@ -76,16 +79,16 @@ public class LanzadorDeProgramas
             boolean seleccionado = true;
             switch (programa)
             {
-            case "sum":
+            case "ale":
                 programa = listaDeProgramas[0];
                 break;
             case "div":
                 programa = listaDeProgramas[1];
                 break;
-            case "ale":
+            case "dob":
                 programa = listaDeProgramas[2];
                 break;
-            case "dob":
+            case "sum":
                 programa = listaDeProgramas[3];
                 break;
             default:

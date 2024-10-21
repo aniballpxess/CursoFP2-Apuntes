@@ -84,12 +84,12 @@
   
   <profiles>
     <profile>
-      <id>doble</id>
+      <id>doble1</id>
       <properties>
         <Id_Ejercicio>doble</Id_Ejercicio>
       </properties>
       <build>
-        <finalName>${project.artifactId}-${project.version}_${Id_Ejercicio}</finalName>
+        <finalName>${project.artifactId}-${project.version}_${Id_Ejercicio}-1</finalName>
         <plugins>
           <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
@@ -105,6 +105,36 @@
                 <archive>
                     <manifest>
                         <mainClass>psp.ejercicios.${Id_Ejercicio}.Main</mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>doble2</id>
+      <properties>
+        <Id_Ejercicio>doble</Id_Ejercicio>
+      </properties>
+      <build>
+        <finalName>${project.artifactId}-${project.version}_${Id_Ejercicio}-2</finalName>
+        <plugins>
+          <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <includes>
+                <include>**/${Id_Ejercicio}/**</include>
+              </includes>
+            </configuration>
+          </plugin>
+          <plugin>
+            <artifactId>maven-jar-plugin</artifactId>
+            <configuration>
+                <archive>
+                    <manifest>
+                        <mainClass>psp.ejercicios.${Id_Ejercicio}.Doblador</mainClass>
                     </manifest>
                 </archive>
             </configuration>
