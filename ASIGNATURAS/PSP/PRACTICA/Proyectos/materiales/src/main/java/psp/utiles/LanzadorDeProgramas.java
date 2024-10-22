@@ -35,10 +35,11 @@ public class LanzadorDeProgramas
                         ###############################################
                         Programas disponibles:
 
-                        sum - ejecuta "sumatorio"
-                        div - ejecuta "divisores"
                         ale - ejecuta "aleatorios"
+                        div - ejecuta "divisores"
                         dob - ejecuta "doble"
+                        may - ejecuta "mayusculas"
+                        sum - ejecuta "sumatorio"
                         -----------------------------------------------
                         """);
                 String[] programa = escogerPrograma(escaner);
@@ -71,6 +72,7 @@ public class LanzadorDeProgramas
             "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_aleatorios-1.jar",
             "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_divisores.jar",
             "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_doble-1.jar",
+            "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_mayusculas-1.jar",
             "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_sumatorio.jar",
         };
         while (true)
@@ -88,8 +90,11 @@ public class LanzadorDeProgramas
             case "dob":
                 programa = listaDeProgramas[2];
                 break;
-            case "sum":
+            case "may":
                 programa = listaDeProgramas[3];
+                break;
+            case "sum":
+                programa = listaDeProgramas[4];
                 break;
             default:
                 seleccionado = false;

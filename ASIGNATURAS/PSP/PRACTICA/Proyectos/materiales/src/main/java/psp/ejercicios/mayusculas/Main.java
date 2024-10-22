@@ -1,6 +1,5 @@
 package psp.ejercicios.mayusculas;
 
-import static psp.utiles.Funciones.leerEntrada;
 import static psp.utiles.Funciones.peticionLeerEntrada;
 
 import java.io.BufferedReader;
@@ -15,19 +14,40 @@ public class Main
     public static void main(String[] args)
     {
         Scanner escaner = new Scanner(System.in);
-        String[] conversorInputs = { "java", "-jar", "C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_mayusculas-2.jar" };
-        System.out.println("Introduce texto para que se convierta a mayusculas.\n");
+        String[] conversorInputs =
+        { "java", "-jar",
+                "C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_mayusculas-2.jar" };
+        System.out.print("""
+                Introduce texto para convertirlo a mayusculas.
+                Cuando lee un "." el programa termina.
+
+                """);
         try
         {
             Process proceso = new ProcessBuilder(conversorInputs).start();
             BufferedReader br = new BufferedReader(new InputStreamReader(proceso.getInputStream()));
             PrintWriter pw = new PrintWriter(new OutputStreamWriter(proceso.getOutputStream()));
-            while (proceso.isAlive())
+            boolean finalizado = false;
+            while (true)
             {
                 String input = peticionLeerEntrada(escaner, "");
+                if (input.contains("."))
+                {
+                    String[] inputFrag = input.split("\\.");
+                    input = inputFrag[0];
+                    finalizado = true;
+                }
                 pw.println(input);
+                pw.flush();
                 System.out.println(br.readLine());
+                if (finalizado)
+                {
+                    break;
+                }
             }
+            br.close();
+            pw.close();
+            proceso.destroy();
         }
         catch (IOException e)
         {

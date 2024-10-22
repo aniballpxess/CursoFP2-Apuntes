@@ -31,7 +31,7 @@ public class Funciones
                 {
                     System.out.println(linea);
                 }
-            }
+            };
         }
         catch (IOException e)
         {

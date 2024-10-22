@@ -6,16 +6,13 @@ public class Conversor
 {
     public static void main(String[] args)
     {
-        Scanner escaner = new Scanner(System.in);
-        while (true)
+        try (Scanner escaner = new Scanner(System.in))
         {
-            String input = escaner.nextLine();
-            if (input.equals("."))
+            while (true)
             {
-                break;
+                String input = escaner.nextLine();
+                System.out.println(input.toUpperCase());
             }
-            System.out.println(input.toUpperCase());
         }
-        escaner.close();
     }
 }
