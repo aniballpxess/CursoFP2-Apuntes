@@ -39,6 +39,7 @@ public class LanzadorDeProgramas
                         div - ejecuta "divisores"
                         dob - ejecuta "doble"
                         may - ejecuta "mayusculas"
+                        med - ejecuta "media"
                         sum - ejecuta "sumatorio"
                         -----------------------------------------------
                         """);
@@ -73,6 +74,7 @@ public class LanzadorDeProgramas
             "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_divisores.jar",
             "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_doble-1.jar",
             "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_mayusculas-1.jar",
+            "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_media-1.jar",
             "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_sumatorio.jar",
         };
         while (true)
@@ -93,8 +95,11 @@ public class LanzadorDeProgramas
             case "may":
                 programa = listaDeProgramas[3];
                 break;
-            case "sum":
+            case "med":
                 programa = listaDeProgramas[4];
+                break;
+            case "sum":
+                programa = listaDeProgramas[5];
                 break;
             default:
                 seleccionado = false;
