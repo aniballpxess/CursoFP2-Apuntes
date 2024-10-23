@@ -1,5 +1,7 @@
 package psp.ejercicios.europa;
 
+import static psp.utiles.Funciones.lanzarPeticionLeerEntrada;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,16 +12,24 @@ public class Main
     public static void main(String[] args)
     {
         Scanner escaner = new Scanner(System.in);
-        String[] relacionPaisCapital =
-        { "java", "-jar", "C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_europa-2.jar" };
+        String[] relacionPaisCapitalEuropa = { "java", "-jar", "C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_europa-2.jar" };
+        System.out.println("Introduce un pais de Europa para saber su capital.\n");
         try
         {
-            Process proceso = new ProcessBuilder(relacionPaisCapital).start();
+            Process proceso = new ProcessBuilder(relacionPaisCapitalEuropa).start();
             BufferedReader br = proceso.inputReader();
             PrintWriter pw = new PrintWriter(proceso.outputWriter());
-            while (true)
+            String pais = lanzarPeticionLeerEntrada(escaner, "Pais: ");
+            pw.println(pais);
+            pw.flush();
+            String capital = br.readLine();
+            if (capital == null) 
             {
-
+                System.out.println("Pais no reconocido.");
+            } 
+            else 
+            {
+                System.out.println("Capital: " + capital);
             }
         }
         catch (IOException e)

@@ -1,9 +1,13 @@
 package psp.utiles;
 
+import java.util.Map;
 import java.util.Scanner;
 
 public class LanzadorDeProgramas
 {
+    private static final Map<String, String> mapaProgramasComandos = Map.ofEntries(
+        
+    );
     public static void main(String[] args)
     {
         Scanner escaner = new Scanner(System.in);
@@ -38,6 +42,7 @@ public class LanzadorDeProgramas
                         ale - ejecuta "aleatorios"
                         div - ejecuta "divisores"
                         dob - ejecuta "doble"
+                        eur - ejecuta "europa"
                         may - ejecuta "mayusculas"
                         med - ejecuta "media"
                         sum - ejecuta "sumatorio"
@@ -66,13 +71,14 @@ public class LanzadorDeProgramas
         System.exit(0);
     }
 
-    public static String[] escogerPrograma(Scanner escaner)
+    private static String[] escogerPrograma(Scanner escaner)
     {
         String programa;
         String[] listaDeProgramas = {
             "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_aleatorios-1.jar",
             "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_divisores.jar",
             "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_doble-1.jar",
+            "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_europa-1.jar",
             "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_mayusculas-1.jar",
             "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_media-1.jar",
             "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_sumatorio.jar",
@@ -92,14 +98,17 @@ public class LanzadorDeProgramas
             case "dob":
                 programa = listaDeProgramas[2];
                 break;
-            case "may":
+            case "eur":
                 programa = listaDeProgramas[3];
                 break;
-            case "med":
+            case "may":
                 programa = listaDeProgramas[4];
                 break;
-            case "sum":
+            case "med":
                 programa = listaDeProgramas[5];
+                break;
+            case "sum":
+                programa = listaDeProgramas[6];
                 break;
             default:
                 seleccionado = false;
