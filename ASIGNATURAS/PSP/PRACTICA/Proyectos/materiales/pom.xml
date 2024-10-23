@@ -95,7 +95,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/${Id_Ejercicio}/**</include>
+                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -125,7 +125,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/${Id_Ejercicio}/**</include>
+                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -155,7 +155,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/${Id_Ejercicio}/**</include>
+                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -185,7 +185,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/${Id_Ejercicio}/**</include>
+                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -215,7 +215,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/${Id_Ejercicio}/**</include>
+                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -245,7 +245,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/${Id_Ejercicio}/**</include>
+                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -275,7 +275,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/${Id_Ejercicio}/**</include>
+                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -305,7 +305,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/${Id_Ejercicio}/**</include>
+                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -335,7 +335,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/${Id_Ejercicio}/**</include>
+                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -365,7 +365,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/${Id_Ejercicio}/**</include>
+                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>

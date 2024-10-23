@@ -9,7 +9,6 @@ public class CalculadorMedia
     {
         Scanner escaner = new Scanner(System.in);
         ArrayList<Integer> listaDeNumeros = new ArrayList<Integer>();
-        int sumatorio = 0;
         while (true)
         {
             int input = escaner.nextInt();
@@ -19,11 +18,16 @@ public class CalculadorMedia
             }
             listaDeNumeros.add(input);
         }
-        for (Integer numero : listaDeNumeros)
+        if (!listaDeNumeros.isEmpty())
         {
-            sumatorio = sumatorio + numero.intValue();
+            int sumatorio = 0;
+            for (Integer numero : listaDeNumeros)
+            {
+                sumatorio = sumatorio + numero.intValue();
+            }
+            double media = (double) sumatorio / listaDeNumeros.size();
+            System.out.println(media);
         }
-        System.out.println(sumatorio / listaDeNumeros.size());
         escaner.close();
     }
 }

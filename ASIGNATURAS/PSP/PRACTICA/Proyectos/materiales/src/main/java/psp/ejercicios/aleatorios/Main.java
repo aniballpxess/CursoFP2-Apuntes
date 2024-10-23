@@ -1,6 +1,6 @@
 package psp.ejercicios.aleatorios;
 
-import static psp.utiles.Funciones.peticionLeerEntrada;
+import static psp.utiles.Funciones.lanzarPeticionLeerEntrada;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -21,7 +21,7 @@ public class Main
                 BufferedReader br = new BufferedReader(new InputStreamReader(proceso.getInputStream()));
                 proceso.waitFor();
                 System.out.println("Numero Generado: " + br.readLine());
-                String entrada = peticionLeerEntrada(escaner, "Introduce FIN para salir: ");
+                String entrada = lanzarPeticionLeerEntrada(escaner, "Introduce FIN para salir: ");
                 if (entrada.equalsIgnoreCase("FIN"))
                 {
                     br.close();

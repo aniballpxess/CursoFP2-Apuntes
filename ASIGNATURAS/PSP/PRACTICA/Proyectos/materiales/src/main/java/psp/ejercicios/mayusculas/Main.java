@@ -1,6 +1,6 @@
 package psp.ejercicios.mayusculas;
 
-import static psp.utiles.Funciones.peticionLeerEntrada;
+import static psp.utiles.Funciones.lanzarPeticionLeerEntrada;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -28,7 +28,7 @@ public class Main
             boolean finalizado = false;
             while (true)
             {
-                String input = peticionLeerEntrada(escaner, "");
+                String input = lanzarPeticionLeerEntrada(escaner, "");
                 if (input.contains("."))
                 {
                     String[] inputFrag = input.split("\\.");

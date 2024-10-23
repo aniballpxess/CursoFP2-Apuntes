@@ -1,6 +1,6 @@
 package psp.ejercicios.doble;
 
-import static psp.utiles.Funciones.peticionLeerEntrada;
+import static psp.utiles.Funciones.lanzarPeticionLeerEntrada;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,7 +20,7 @@ public class Main
         {
             try
             {
-                num = Integer.parseInt(peticionLeerEntrada(escaner, "Numero: "));
+                num = Integer.parseInt(lanzarPeticionLeerEntrada(escaner, "Numero: "));
                 break;
             }
             catch (NumberFormatException e)

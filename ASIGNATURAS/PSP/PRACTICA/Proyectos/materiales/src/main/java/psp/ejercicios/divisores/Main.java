@@ -1,6 +1,6 @@
 package psp.ejercicios.divisores;
 
-import static psp.utiles.Funciones.peticionLeerEntrada;
+import static psp.utiles.Funciones.lanzarPeticionLeerEntrada;
 
 import java.util.Scanner;
 
@@ -15,7 +15,7 @@ public class Main
         {
             try
             {
-                num = Integer.parseInt(peticionLeerEntrada(escaner, "Numero: "));
+                num = Integer.parseInt(lanzarPeticionLeerEntrada(escaner, "Numero: "));
                 break;
             }
             catch (NumberFormatException e)

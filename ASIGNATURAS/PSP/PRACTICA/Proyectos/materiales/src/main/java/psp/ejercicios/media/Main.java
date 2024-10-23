@@ -1,6 +1,6 @@
 package psp.ejercicios.media;
 
-import static psp.utiles.Funciones.peticionLeerEntrada;
+import static psp.utiles.Funciones.lanzarPeticionLeerEntrada;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -25,12 +25,17 @@ public class Main
             Process proceso = new ProcessBuilder(calculadorMedia).start();
             BufferedReader br = new BufferedReader(new InputStreamReader(proceso.getInputStream()));
             PrintWriter pw = new PrintWriter(new OutputStreamWriter(proceso.getOutputStream()));
-            while (proceso.isAlive())
+            while (true)
             {
                 try
                 {
-                    int inputNumber = Integer.parseInt(peticionLeerEntrada(escaner, "Numero: "));
-                    pw.println(inputNumber);
+                    int inputInt = Integer.parseInt(lanzarPeticionLeerEntrada(escaner, "Numero: "));
+                    pw.println(inputInt);
+                    pw.flush();
+                    if (inputInt == 0)
+                    {
+                        break;
+                    }
                 }
                 catch (NumberFormatException e)
                 {
@@ -38,7 +43,15 @@ public class Main
                     e.printStackTrace();
                 }
             }
-            System.out.println("Media: " + br.readLine());
+            String resultadoMedia = br.readLine();
+            if (resultadoMedia == null)
+            {
+                System.out.println("No se ha introducido ningun numero.");
+            }
+            else
+            {
+                System.out.println("Media: " + resultadoMedia);
+            }
         }
         catch (IOException e)
         {

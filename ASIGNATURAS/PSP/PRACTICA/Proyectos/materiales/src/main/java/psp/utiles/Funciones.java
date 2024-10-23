@@ -25,7 +25,7 @@ public class Funciones
                 }
                 if (linea.equals("_UIR_"))
                 {
-                    leerEntrada(escaner, br, pw);
+                    manejarPeticionLeerEntrada(escaner, br, pw);
                 }
                 else 
                 {
@@ -45,21 +45,21 @@ public class Funciones
         return escaner.nextLine();
     }
 
-    public static void leerEntrada(Scanner escaner, BufferedReader br, PrintWriter pw) throws IOException
+    public static void manejarPeticionLeerEntrada(Scanner escaner, BufferedReader br, PrintWriter pw) throws IOException
     {
         System.out.print(br.readLine());
         pw.println(escaner.nextLine());
         pw.flush();
     }
 
-    public static String peticionLeerEntrada(Scanner escaner, String mensaje)
+    public static String lanzarPeticionLeerEntrada(Scanner escaner, String mensaje)
     {
         System.out.println("_UIR_");
         System.out.println(mensaje);
         return escaner.nextLine();
     }
 
-    public static void peticionLeerEntrada(Scanner escaner, BufferedReader br, PrintWriter pw) throws IOException
+    public static void pasarPeticionLeerEntrada(Scanner escaner, BufferedReader br, PrintWriter pw) throws IOException
     {
         System.out.println("_UIR_");
         System.out.println(br.readLine());

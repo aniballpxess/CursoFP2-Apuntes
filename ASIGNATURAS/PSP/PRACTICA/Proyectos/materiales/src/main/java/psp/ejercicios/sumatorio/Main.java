@@ -3,7 +3,7 @@
  */
 package psp.ejercicios.sumatorio;
 
-import static psp.utiles.Funciones.peticionLeerEntrada;
+import static psp.utiles.Funciones.lanzarPeticionLeerEntrada;
 
 import java.util.Scanner;
 
@@ -19,8 +19,8 @@ public class Main
         {
             try
             {
-                limiteInf = Integer.parseInt(peticionLeerEntrada(escaner, "Primer limite: "));
-                limiteSup = Integer.parseInt(peticionLeerEntrada(escaner, "Segundo limite: "));
+                limiteInf = Integer.parseInt(lanzarPeticionLeerEntrada(escaner, "Primer limite: "));
+                limiteSup = Integer.parseInt(lanzarPeticionLeerEntrada(escaner, "Segundo limite: "));
                 break;
             }
             catch (NumberFormatException nfe)
