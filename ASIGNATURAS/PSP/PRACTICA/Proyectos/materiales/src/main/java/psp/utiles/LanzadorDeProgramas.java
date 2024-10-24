@@ -14,63 +14,74 @@ public class LanzadorDeProgramas
         Map.entry("med", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_media-1.jar"),
         Map.entry("sum", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_sumatorio-1.jar")
     );
+
+    private static final String launchMSG = """
+            ###############################################
+            LANZADOR DE PROGRAMAS - Version 0.2 - Multipro
+            ###############################################
+            Acciones Disponibles:
+
+            S (Salir)    - termina el lanzador
+            E (Ejecutar) - inicia la ejecución de programas
+            -----------------------------------------------
+            """;
+
+    private static final String programListMSG = """
+            Cargando lista de programas...
+            ###############################################
+            Programas disponibles:
+
+            ale - ejecuta "aleatorios"
+            div - ejecuta "divisores"
+            dob - ejecuta "doble"
+            eur - ejecuta "europa"
+            may - ejecuta "mayusculas"
+            med - ejecuta "media"
+            sum - ejecuta "sumatorio"
+            -----------------------------------------------
+            """;
+
+    private static final String programLaunchMSG = """
+            Iniciando ejecución de programa...
+            ###############################################
+            """;
+    
+    private static final String menuLoadMSG = """
+            -----------------------------------------------
+            Programa terminado.
+            Volviendo al menú principal...
+            ###############################################
+            Acciones Disponibles:
+
+            S (Salir)    - termina el lanzador
+            E (Ejecutar) - inicia la ejecución de programas
+            -----------------------------------------------
+            """;
+
+    private static final String closeMSG = """
+            Cerrando...
+            ###############################################
+            """;
+
     public static void main(String[] args)
     {
         Scanner escaner = new Scanner(System.in);
-        System.out.print("""
-                ###############################################
-                LANZADOR DE PROGRAMAS - Version 0.2 - Multipro
-                ###############################################
-                Acciones Disponibles:
-
-                S (Salir)    - termina el lanzador
-                E (Ejecutar) - inicia la ejecución de programas
-                -----------------------------------------------
-                """);
+        System.out.print(launchMSG);
         while (true)
         {
             String entrada = Funciones.leerEntrada(escaner, "Acción: ");
             if (entrada.equalsIgnoreCase("S"))
             {
-                System.out.print("""
-                        Cerrando...
-                        ###############################################
-                        """);
+                System.out.print(closeMSG);
                 break;
             }
             if (entrada.equalsIgnoreCase("E"))
             {
-                System.out.print("""
-                        Cargando lista de programas...
-                        ###############################################
-                        Programas disponibles:
-
-                        ale - ejecuta "aleatorios"
-                        div - ejecuta "divisores"
-                        dob - ejecuta "doble"
-                        eur - ejecuta "europa"
-                        may - ejecuta "mayusculas"
-                        med - ejecuta "media"
-                        sum - ejecuta "sumatorio"
-                        -----------------------------------------------
-                        """);
+                System.out.print(programListMSG);
                 String[] programa = escogerPrograma(escaner);
-                System.out.print("""
-                        Iniciando ejecución de programa...
-                        ###############################################
-                        """);
+                System.out.print(programLaunchMSG);
                 Funciones.ejecutarPrograma(escaner, programa);
-                System.out.print("""
-                        -----------------------------------------------
-                        Programa terminado.
-                        Volviendo al menú principal...
-                        ###############################################
-                        Acciones Disponibles:
-
-                        S (Salir)    - termina el lanzador
-                        E (Ejecutar) - inicia la ejecución de programas
-                        -----------------------------------------------
-                        """);
+                System.out.print(menuLoadMSG);
             }
         }
         escaner.close();
@@ -83,7 +94,8 @@ public class LanzadorDeProgramas
         {
             String programa = Funciones.leerEntrada(escaner, "Escoge un programa: ");
             String comando = mapaProgramasComandos.get(programa.toLowerCase());
-            if (comando != null) {
+            if (comando != null) 
+            {
                 return comando.split(" ");
             }
         }

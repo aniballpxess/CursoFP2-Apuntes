@@ -14,7 +14,7 @@ public class Funciones
     {
         try
         {
-            Process proceso = new ProcessBuilder(programa).redirectError(new File(".\\log.txt")).start();
+            Process proceso = new ProcessBuilder(programa).redirectError(new File(".\\logs\\log.txt")).start();
             BufferedReader br = new BufferedReader(new InputStreamReader(proceso.getInputStream()));
             PrintWriter pw = new PrintWriter(new OutputStreamWriter(proceso.getOutputStream()));
             
