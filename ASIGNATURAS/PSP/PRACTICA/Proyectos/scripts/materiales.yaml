@@ -1,7 +1,33 @@
+EMPAQUETAR "aleatorios":
+[
+mvn package -P aleatorios1
+mvn package -P aleatorios2
+]
+EMPAQUETAR "divisores":
+[
+mvn package -P divisores
+]
 EMPAQUETAR "doble":
-- mvn clean package -P doble
-EMPAQUETAR "sumatorio":
-- mvn clean package -P sumatorio
-
-EJECUTAR "doble":
-- java -jar .\path\to\materiales-0.1-doble.jar -69
+[
+mvn package -P doble1
+mvn package -P doble2
+]
+EMPAQUETAR "europa":
+[
+mvn package -P europa1
+mvn package -P europa2
+]
+EMPAQUETAR "mayusculas":
+[
+mvn package -P mayusculas1
+mvn package -P mayusculas2
+]
+EMPAQUETAR "media": 
+[
+mvn package -P media1
+mvn package -P media2
+]
+EMPAQUETAR "sumatorio": 
+[
+mvn package -P sumatorio
+]

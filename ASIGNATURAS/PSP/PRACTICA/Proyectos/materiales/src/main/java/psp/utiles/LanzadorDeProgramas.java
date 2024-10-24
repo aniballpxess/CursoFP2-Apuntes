@@ -6,7 +6,13 @@ import java.util.Scanner;
 public class LanzadorDeProgramas
 {
     private static final Map<String, String> mapaProgramasComandos = Map.ofEntries(
-        
+        Map.entry("ale", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_aleatorios-1.jar"),
+        Map.entry("div", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_divisores-1.jar"),
+        Map.entry("dob", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_doble-1.jar"),
+        Map.entry("eur", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_europa-1.jar"),
+        Map.entry("may", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_mayusculas-1.jar"),
+        Map.entry("med", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_media-1.jar"),
+        Map.entry("sum", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_sumatorio-1.jar")
     );
     public static void main(String[] args)
     {
@@ -73,52 +79,13 @@ public class LanzadorDeProgramas
 
     private static String[] escogerPrograma(Scanner escaner)
     {
-        String programa;
-        String[] listaDeProgramas = {
-            "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_aleatorios-1.jar",
-            "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_divisores.jar",
-            "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_doble-1.jar",
-            "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_europa-1.jar",
-            "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_mayusculas-1.jar",
-            "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_media-1.jar",
-            "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_sumatorio.jar",
-        };
         while (true)
         {
-            programa = Funciones.leerEntrada(escaner, "Escoge un programa: ");
-            boolean seleccionado = true;
-            switch (programa)
-            {
-            case "ale":
-                programa = listaDeProgramas[0];
-                break;
-            case "div":
-                programa = listaDeProgramas[1];
-                break;
-            case "dob":
-                programa = listaDeProgramas[2];
-                break;
-            case "eur":
-                programa = listaDeProgramas[3];
-                break;
-            case "may":
-                programa = listaDeProgramas[4];
-                break;
-            case "med":
-                programa = listaDeProgramas[5];
-                break;
-            case "sum":
-                programa = listaDeProgramas[6];
-                break;
-            default:
-                seleccionado = false;
-                break;
-            }
-            if (seleccionado)
-            {
-                break;
+            String programa = Funciones.leerEntrada(escaner, "Escoge un programa: ");
+            String comando = mapaProgramasComandos.get(programa.toLowerCase());
+            if (comando != null) {
+                return comando.split(" ");
             }
         }
-        return programa.split(" ");
     }
 }

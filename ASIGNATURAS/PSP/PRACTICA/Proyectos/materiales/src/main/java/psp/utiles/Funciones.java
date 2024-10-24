@@ -1,6 +1,7 @@
 package psp.utiles;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -13,9 +14,10 @@ public class Funciones
     {
         try
         {
-            Process proceso = new ProcessBuilder(programa).start();
+            Process proceso = new ProcessBuilder(programa).redirectError(new File(".\\log.txt")).start();
             BufferedReader br = new BufferedReader(new InputStreamReader(proceso.getInputStream()));
             PrintWriter pw = new PrintWriter(new OutputStreamWriter(proceso.getOutputStream()));
+            
             while (proceso.isAlive())
             {
                 String linea = br.readLine();
@@ -35,7 +37,7 @@ public class Funciones
         }
         catch (IOException e)
         {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 

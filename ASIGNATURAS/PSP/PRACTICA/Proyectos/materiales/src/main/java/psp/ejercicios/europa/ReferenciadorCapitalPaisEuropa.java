@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class ReferenciadorCapitalPaisEuropa
 {
-    private static final Map<String, String> mapaCapitalesDePaises = Map.ofEntries
+    private static final Map<String, String> mapaPaisesCapitales = Map.ofEntries
     (
         Map.entry("Alemania", "Berlín"),
         Map.entry("Andorra", "Andorra la Vieja"),
@@ -56,7 +56,7 @@ public class ReferenciadorCapitalPaisEuropa
     {
         Scanner escaner = new Scanner(System.in);
         String pais = escaner.nextLine();
-        String capital = mapaCapitalesDePaises.get(pais);
+        String capital = mapaPaisesCapitales.get(pais);
         if (capital != null) 
         {
             System.out.println(capital);
