@@ -1,18 +1,23 @@
 package psp.utiles;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+import java.nio.file.Path;
 import java.util.Map;
 import java.util.Scanner;
 
 public class LanzadorDeProgramas
 {
     private static final Map<String, String> mapaProgramasComandos = Map.ofEntries(
-        Map.entry("ale", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_aleatorios-1.jar"),
-        Map.entry("div", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_divisores-1.jar"),
-        Map.entry("dob", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_doble-1.jar"),
-        Map.entry("eur", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_europa-1.jar"),
-        Map.entry("may", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_mayusculas-1.jar"),
-        Map.entry("med", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_media-1.jar"),
-        Map.entry("sum", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_sumatorio-1.jar")
+        Map.entry("ale", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\materiales\\bin\\psp\\materiales-0.1_aleatorios-1.jar"),
+        Map.entry("div", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\materiales\\bin\\psp\\materiales-0.1_divisores-1.jar"),
+        Map.entry("dob", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\materiales\\bin\\psp\\materiales-0.1_doble-1.jar"),
+        Map.entry("eur", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\materiales\\bin\\psp\\materiales-0.1_europa-1.jar"),
+        Map.entry("may", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\materiales\\bin\\psp\\materiales-0.1_mayusculas-1.jar"),
+        Map.entry("med", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\materiales\\bin\\psp\\materiales-0.1_media-1.jar"),
+        Map.entry("sum", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\materiales\\bin\\psp\\materiales-0.1_sumatorio-1.jar")
     );
 
     private static final String launchMSG = """
@@ -65,6 +70,7 @@ public class LanzadorDeProgramas
 
     public static void main(String[] args)
     {
+        crearLogErrores();
         Scanner escaner = new Scanner(System.in);
         System.out.print(launchMSG);
         while (true)
@@ -86,6 +92,28 @@ public class LanzadorDeProgramas
         }
         escaner.close();
         System.exit(0);
+    }
+
+    // ARREGLAR
+    private static void crearLogErrores()
+    {
+        String packageName = LanzadorDeProgramas.class.getPackageName();
+        String fileName = LanzadorDeProgramas.class.getSimpleName();
+        String errorLogFile = packageName + "." + fileName + "-error.log";
+        String errorLogDir = ".\\logs\\";
+        File errorLog = new File(errorLogDir + errorLogFile);
+        try
+        {
+            System.setErr(new PrintStream(new FileOutputStream(errorLog , true)));
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+            errorLogDir = System.getenv("TEMP");
+            errorLog = new File(errorLogDir + errorLogFile);
+            // System.setErr(new PrintStream(new FileOutputStream(errorLog , true)));
+        }
+        System.err.println("\n" + Path.of("").toAbsolutePath().toString());
     }
 
     private static String[] escogerPrograma(Scanner escaner)

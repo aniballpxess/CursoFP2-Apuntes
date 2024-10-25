@@ -1,6 +1,6 @@
 $projectRoot = "C:\CursoFP2\ASIGNATURAS\PSP\PRACTICA\Proyectos\materiales"
-$targetDirectory = "..\binarios"
-$oldPackagedFiles = "..\binarios\*.jar"
+$targetDirectory = ".\bin\psp"
+$oldPackagedFiles = ".\bin\psp\*.jar"
 $newPackagedFiles = ".\target\*.jar"
 
 # Get the original directory
