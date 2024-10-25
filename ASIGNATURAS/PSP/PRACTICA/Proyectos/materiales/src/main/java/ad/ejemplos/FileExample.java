@@ -11,8 +11,8 @@ class FileExample {
     public static void main(String[] args) {
         // Ruta del directorio base
         // Ojo, pon tu directorio de trabajo a continuación
-        String path = "C:\\Users\\Macarena\\IdeaProjects\\UsoclaseFile"; // Esta es tu ruta donde se creará el directorio
-        String directoryPath = path + "\\Proyectos_Acceso_Datos"; // Nombre del subdirectorio
+        String basePath = "C:\\CursoFP2\\ASIGNATURAS\\AD\\PRACTICA"; // Esta es tu ruta donde se creará el directorio
+        String directoryPath = basePath + "\\Proyectos_Acceso_Datos"; // Nombre del subdirectorio
         String filePath = directoryPath + "\\miFicheroFile.txt"; // Ruta del archivo, pon el nombre que te guste
 
         // Contenido a escribir en el archivo
@@ -87,7 +87,7 @@ class FileExample {
             byte[] data = new byte[(int) file.length()]; // Crea un array de bytes del tamaño del archivo
             fis.read(data); // Lee el contenido del archivo
             String content = new String(data); // Convierte los bytes leídos a String
-            System.out.println("Contenido del archivo: " + content); // Muestra el contenido
+            System.out.println("Contenido del archivo:\n\n" + content); // Muestra el contenido
         } catch (IOException e) {
             e.printStackTrace(); // Imprime cualquier error
         }

@@ -97,11 +97,20 @@ public class LanzadorDeProgramas
     // ARREGLAR
     private static void crearLogErrores()
     {
+        System.out.println();
+        System.out.println(Path.of("").toAbsolutePath());
+        System.out.println();
+
         String packageName = LanzadorDeProgramas.class.getPackageName();
-        String fileName = LanzadorDeProgramas.class.getSimpleName();
-        String errorLogFile = packageName + "." + fileName + "-error.log";
+        String className = LanzadorDeProgramas.class.getSimpleName();
+        String errorLogFile = packageName + "." + className + "-error.log";
         String errorLogDir = ".\\logs\\";
+        
+        String[] temp = Path.of("").toAbsolutePath().toString().split("\\");
+        temp[temp.length - 1].equals("materiales");
+
         File errorLog = new File(errorLogDir + errorLogFile);
+        
         try
         {
             System.setErr(new PrintStream(new FileOutputStream(errorLog , true)));
