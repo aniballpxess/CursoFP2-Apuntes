@@ -22,10 +22,6 @@ public class Main
             {
                 System.out.println("No has introducido un numero.");
             }
-            catch (Exception e)
-            {
-                System.out.println("Error inesperado.");
-            }
         }
         System.out.println("Numero de divisores: " + Calculador.cuantosDivisores(num));
         System.exit(0);

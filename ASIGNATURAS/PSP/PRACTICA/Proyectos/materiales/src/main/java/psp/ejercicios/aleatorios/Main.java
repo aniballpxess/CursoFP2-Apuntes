@@ -12,7 +12,7 @@ public class Main
     public static void main(String[] args)
     {
         Scanner escaner = new Scanner(System.in);
-        String[] generadorDeNumeros = { "java", "-jar", "C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_aleatorios-2.jar" };
+        String[] generadorDeNumeros = { "java", "-jar", "materiales-0.1_aleatorios-2.jar" };
         try
         {
             while (true)

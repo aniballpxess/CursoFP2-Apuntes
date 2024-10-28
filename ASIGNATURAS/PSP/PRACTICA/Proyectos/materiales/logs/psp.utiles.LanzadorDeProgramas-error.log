@@ -1,0 +1,11 @@
+<2024-10-27 00:28:54> - Error: Unable to access jarfile .\bin\psp\materiales-0.1_divisores-1.jar
+<2024-10-27 00:38:03> - java.lang.NumberFormatException: For input string: "qwe 123123"
+<2024-10-27 00:38:03> - 	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+<2024-10-27 00:38:03> - 	at java.base/java.lang.Integer.parseInt(Integer.java:662)
+<2024-10-27 00:38:03> - 	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+<2024-10-27 00:38:03> - 	at psp.ejercicios.media.Main.main(Main.java:32)
+<2024-10-27 00:38:03> - java.lang.NumberFormatException: For input string: "qwe12312"
+<2024-10-27 00:38:03> - 	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+<2024-10-27 00:38:03> - 	at java.base/java.lang.Integer.parseInt(Integer.java:662)
+<2024-10-27 00:38:03> - 	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+<2024-10-27 00:38:03> - 	at psp.ejercicios.media.Main.main(Main.java:32)

@@ -14,7 +14,7 @@ public class Main
     public static void main(String[] args)
     {
         Scanner escaner = new Scanner(System.in);
-        String[] calculadorMedia = { "java", "-jar", "C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_media-2.jar" };
+        String[] calculadorMedia = { "java", "-jar", "bin\\psp\\materiales-0.1_media-2.jar" };
         System.out.print("""
                 Introduce numeros para calcular la media.
                 La media se calcula tras recibir un 0.

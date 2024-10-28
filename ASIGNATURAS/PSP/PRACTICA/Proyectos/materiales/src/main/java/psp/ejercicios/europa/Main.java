@@ -12,7 +12,7 @@ public class Main
     public static void main(String[] args)
     {
         Scanner escaner = new Scanner(System.in);
-        String[] relacionPaisCapitalEuropa = { "java", "-jar", "C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\binarios\\materiales-0.1_europa-2.jar" };
+        String[] relacionPaisCapitalEuropa = { "java", "-jar", "materiales-0.1_europa-2.jar" };
         System.out.println("Introduce un pais de Europa para saber su capital.\n");
         try
         {

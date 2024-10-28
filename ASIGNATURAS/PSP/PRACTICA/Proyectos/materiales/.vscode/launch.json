@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "LanzadorDeProgramas",
+            "request": "launch",
+            "mainClass": "psp.utiles.LanzadorDeProgramas",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
             "name": "In Terminal",
             "request": "launch",
             "mainClass": "${file}",

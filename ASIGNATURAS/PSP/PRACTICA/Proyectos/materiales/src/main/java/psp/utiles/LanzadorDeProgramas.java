@@ -1,23 +1,24 @@
 package psp.utiles;
 
+import static psp.utiles.Funciones.printErrorLine;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
-import java.nio.file.Path;
 import java.util.Map;
 import java.util.Scanner;
 
 public class LanzadorDeProgramas
 {
     private static final Map<String, String> mapaProgramasComandos = Map.ofEntries(
-        Map.entry("ale", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\materiales\\bin\\psp\\materiales-0.1_aleatorios-1.jar"),
-        Map.entry("div", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\materiales\\bin\\psp\\materiales-0.1_divisores-1.jar"),
-        Map.entry("dob", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\materiales\\bin\\psp\\materiales-0.1_doble-1.jar"),
-        Map.entry("eur", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\materiales\\bin\\psp\\materiales-0.1_europa-1.jar"),
-        Map.entry("may", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\materiales\\bin\\psp\\materiales-0.1_mayusculas-1.jar"),
-        Map.entry("med", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\materiales\\bin\\psp\\materiales-0.1_media-1.jar"),
-        Map.entry("sum", "java -jar C:\\CursoFP2\\ASIGNATURAS\\PSP\\PRACTICA\\Proyectos\\materiales\\bin\\psp\\materiales-0.1_sumatorio-1.jar")
+        Map.entry("ale", "java -jar bin\\psp\\materiales-0.1_aleatorios-1.jar"),
+        Map.entry("div", "java -jar bin\\psp\\materiales-0.1_divisores.jar"),
+        Map.entry("dob", "java -jar bin\\psp\\materiales-0.1_doble-1.jar"),
+        Map.entry("eur", "java -jar bin\\psp\\materiales-0.1_europa-1.jar"),
+        Map.entry("may", "java -jar bin\\psp\\materiales-0.1_mayusculas-1.jar"),
+        Map.entry("med", "java -jar bin\\psp\\materiales-0.1_media-1.jar"),
+        Map.entry("sum", "java -jar bin\\psp\\materiales-0.1_sumatorio.jar")
     );
 
     private static final String launchMSG = """
@@ -70,6 +71,7 @@ public class LanzadorDeProgramas
 
     public static void main(String[] args)
     {
+        System.setProperty("user.dir", Parametros.materialesPath.toString());
         crearLogErrores();
         Scanner escaner = new Scanner(System.in);
         System.out.print(launchMSG);
@@ -97,32 +99,24 @@ public class LanzadorDeProgramas
     // ARREGLAR
     private static void crearLogErrores()
     {
-        System.out.println();
-        System.out.println(Path.of("").toAbsolutePath());
-        System.out.println();
-
         String packageName = LanzadorDeProgramas.class.getPackageName();
         String className = LanzadorDeProgramas.class.getSimpleName();
         String errorLogFile = packageName + "." + className + "-error.log";
-        String errorLogDir = ".\\logs\\";
-        
-        String[] temp = Path.of("").toAbsolutePath().toString().split("\\");
-        temp[temp.length - 1].equals("materiales");
-
-        File errorLog = new File(errorLogDir + errorLogFile);
-        
+        String errorLogDir = "logs";
+        File errorLog = new File(errorLogDir, errorLogFile);
+        //System.out.println(errorLog.getPath());
+        //System.out.println(errorLog.getAbsolutePath());
         try
         {
             System.setErr(new PrintStream(new FileOutputStream(errorLog , true)));
         }
         catch (FileNotFoundException e)
         {
-            e.printStackTrace();
-            errorLogDir = System.getenv("TEMP");
-            errorLog = new File(errorLogDir + errorLogFile);
-            // System.setErr(new PrintStream(new FileOutputStream(errorLog , true)));
+            for (StackTraceElement element : e.getStackTrace()) 
+            {
+                printErrorLine(element.toString());
+            }
         }
-        System.err.println("\n" + Path.of("").toAbsolutePath().toString());
     }
 
     private static String[] escogerPrograma(Scanner escaner)

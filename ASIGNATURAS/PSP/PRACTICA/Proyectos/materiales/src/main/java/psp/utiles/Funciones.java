@@ -1,38 +1,48 @@
 package psp.utiles;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Funciones
 {
-    public static void ejecutarPrograma(Scanner escaner, String[] programa)
+    public static void ejecutarPrograma(Scanner userInput, String[] program)
     {
         try
         {
-            Process proceso = new ProcessBuilder(programa).redirectError(new File(".\\logs\\errores.log")).start();
-            BufferedReader br = new BufferedReader(new InputStreamReader(proceso.getInputStream()));
-            PrintWriter pw = new PrintWriter(new OutputStreamWriter(proceso.getOutputStream()));
-            while (proceso.isAlive())
+            Process process = new ProcessBuilder(program).start();
+            BufferedReader childError = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+            BufferedReader childOutput = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            PrintWriter childInput = new PrintWriter(new OutputStreamWriter(process.getOutputStream()));
+            while (process.isAlive())
             {
-                String linea = br.readLine();
-                if (linea == null)
+                String newLine = childOutput.readLine();
+                if (newLine == null)
                 {
                     continue;
                 }
-                if (linea.equals("_UIR_"))
+                if (newLine.equals("_UIR_"))
                 {
-                    manejarPeticionLeerEntrada(escaner, br, pw);
+                    manejarPeticionLeerEntrada(userInput, childOutput, childInput);
                 }
-                else 
+                else
                 {
-                    System.out.println(linea);
+                    System.out.println(newLine);
                 }
-            };
+            }
+            while (true)
+            {
+                String newLine = childError.readLine();
+                if (newLine == null)
+                {
+                    break;
+                }
+                printErrorLine(newLine);
+            }
         }
         catch (IOException e)
         {
@@ -66,5 +76,11 @@ public class Funciones
         System.out.println(br.readLine());
         pw.println(escaner.nextLine());
         pw.flush();
+    }
+
+    public static void printErrorLine(String line)
+    {
+        String time = LocalDateTime.now().format(Parametros.normalFormat);
+        System.err.println(time + " - " + line);
     }
 }
