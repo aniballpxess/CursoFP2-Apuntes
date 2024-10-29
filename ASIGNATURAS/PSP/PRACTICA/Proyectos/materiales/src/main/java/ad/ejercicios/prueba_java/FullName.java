@@ -13,7 +13,7 @@ public class FullName
         secondSurname = fullName[2];
     }
 
-    protected static boolean validNamePart(String namePart)
+    private static boolean validNamePart(String namePart)
     {
         return namePart.matches("[A-Za-záéíóúÁÉÍÓÚñÑüÜ]+");
     }

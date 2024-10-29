@@ -10,9 +10,9 @@ abstract class Person
     private String major;
     private ArrayList<String> subjects;
 
-    public Person(String[] name, int age, String major)
+    public Person(String name, int age, String major)
     {
-        this.name = FullName.parseFullName(name);
+        this.name = FullName.parseFullName(name.split(" "));
         this.age = new Age(age);
         this.major = major;
         subjects = new ArrayList<>();

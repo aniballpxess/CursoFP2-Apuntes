@@ -4,15 +4,15 @@ class Student extends Person
 {
     private Integer credits;
 
-    public Student(String[] name, Integer age, String major, Integer credits)
+    public Student(String fullName, int age, String major, Integer credits)
     {
-        super(name, age, major); 
+        super(fullName, age, major); 
         this.credits = credits;
     }
 
-    public Student(String[] name, Integer age, String major)
+    public Student(String fullName, int age, String major)
     {
-        super(name, age, major); 
+        super(fullName, age, major); 
         this.credits = 0;
     }
 
@@ -24,10 +24,10 @@ class Student extends Person
     @Override
     public void printDetails()
     {
-        System.out.println("INFO");
+        System.out.println("INFO ESTUDIANTE");
         System.out.println("Nombre: " + getName());
         System.out.println("Edad: " + getAge());
-        System.out.println("Curso: " + getMajor());
+        System.out.println("Carrera: " + getMajor());
         System.out.println("Creditos: " + credits);
     }
 }

@@ -102,7 +102,7 @@ public class FileActivity extends AppCompatActivity {
 
         this.<TextView>findViewById(R.id.file_content_view).setText("");
         file.delete();
-        Toast.makeText(FileActivity.this, "Contenido borrado y aplicación cerrada con éxito.", Toast.LENGTH_LONG).show();
+        Toast.makeText(FileActivity.this, "Contenido borrado.", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(FileActivity.this, MainActivity.class);
         startActivity(intent);
         finish();
