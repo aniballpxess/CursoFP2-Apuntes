@@ -1,7 +1,9 @@
 package com.dam_application;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -9,8 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
@@ -48,7 +48,7 @@ public class FileActivity extends AppCompatActivity {
         findViewById(R.id.btn_clear_close).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(FileActivity.this, "Contenido borrado.", Toast.LENGTH_SHORT).show();
+                cleanClose("file.tmp");
             }
         });
     }
@@ -89,10 +89,23 @@ public class FileActivity extends AppCompatActivity {
                 }
                 content.append(line);
             }
+            this.<TextView>findViewById(R.id.file_content_view).setText(content);
+
             Toast.makeText(FileActivity.this, "Contenido mostrado.", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             Toast.makeText(FileActivity.this, "Error mostrando contenido.", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void cleanClose (String fileName) {
+        File file = new File(getFilesDir(), fileName);
+
+        this.<TextView>findViewById(R.id.file_content_view).setText("");
+        file.delete();
+        Toast.makeText(FileActivity.this, "Contenido borrado y aplicación cerrada con éxito.", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(FileActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private String generateRandomWords(int words) {

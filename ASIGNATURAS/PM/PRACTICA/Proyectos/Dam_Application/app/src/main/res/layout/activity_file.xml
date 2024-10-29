@@ -62,7 +62,6 @@
         android:layout_weight="1"
         android:layout_marginTop="16dp"
         android:padding="8dp"
-        android:text="Contenido del fichero."
         android:textSize="16sp"
         android:gravity="start"
         android:scrollbars="vertical" />
