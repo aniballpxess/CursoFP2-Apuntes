@@ -13,19 +13,19 @@ abstract class Person
     public Person(String name, int age, String major)
     {
         this.name = FullName.parseFullName(name.split(" "));
-        this.age = new Age(age);
+        this.age = Age.parseAge(age);
         this.major = major;
         subjects = new ArrayList<>();
     }
 
-    public String getName()
+    public FullName getName()
     {
-        return name.toString();
+        return name;
     }
 
-    public int getAge()
+    public Age getAge()
     {
-        return age.getAge();
+        return age;
     }
 
     public String getMajor()
@@ -33,13 +33,47 @@ abstract class Person
         return major;
     }
 
+    // Remplazarlo tras implementacion completa de la clase Subject
     public String getSubjects()
     {
         String subjectsStr = "";
-        for (String subject : this.subjects) {
-            subjectsStr += ", " + subject;
+        for (String subject : this.subjects)
+        {
+            subjectsStr += subject + ", ";
         }
+        subjectsStr = subjectsStr.substring(0, subjectsStr.length() - 2);
         return subjectsStr;
+    }
+
+    public void setName(FullName name)
+    {
+        this.name = name;
+    }
+
+    public void setAge(int age)
+    {
+        this.age = Age.parseAge(age);
+    }
+
+    public void setMajor(String major)
+    {
+        this.major = major;
+    }
+
+    // Remplazarlo tras implementacion completa de la clase Subject
+    public boolean addSubject(String subject)
+    {
+        if (hasSubject(subject))
+        {
+            return false;
+        }
+        subjects.add(subject);
+        return true;
+    }
+    
+    public boolean removeSubject(String subject)
+    {
+        return subjects.remove(subject);
     }
 
     public boolean sameName(Person p)
@@ -57,17 +91,18 @@ abstract class Person
         return this.major.equals(p.major);
     }
 
-    public boolean sameSubject(String hisSubject)
+    // Remplazarlo tras implementacion completa de la clase Subject
+    public boolean hasSubject(String comparedSubject)
     {
-        for (String mySubject : subjects)
+        for (String subject : subjects)
         {
-            if (mySubject.equals(hisSubject))
+            if (subject.equals(comparedSubject))
             {
                 return true;
             }
         }
         return false;
     }
-    
+
     public abstract void printDetails();
 }

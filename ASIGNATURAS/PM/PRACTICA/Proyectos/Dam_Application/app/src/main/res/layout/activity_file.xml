@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -20,40 +21,44 @@
         android:id="@+id/btn_create_file"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
         android:text="Crear Fichero"
-        android:layout_marginBottom="24dp" />
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/btn_fill_file"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
         android:text="Rellenar Fichero"
-        android:layout_marginBottom="24dp" />
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/btn_show_file"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
         android:text="Mostrar Contenido"
-        android:layout_marginBottom="24dp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/file_content_view"
         android:layout_width="320dp"
         android:layout_height="240dp"
+        android:layout_marginBottom="24dp"
         android:background="@color/white"
-        android:padding="2dp"
         android:gravity="start"
+        android:padding="2dp"
         android:scrollbars="vertical"
-        android:textSize="16sp"
-        android:layout_marginBottom="24dp" />
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/btn_clear_close"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:text="Vaciar y Cerrar" />
+        android:text="Vaciar y Cerrar"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/activity_name"

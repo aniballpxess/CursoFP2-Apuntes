@@ -21,13 +21,19 @@ class Student extends Person
         return credits;
     }
 
+    public void setCredits(Integer credits)
+    {
+        this.credits = credits;
+    }
+
     @Override
     public void printDetails()
     {
         System.out.println("INFO ESTUDIANTE");
-        System.out.println("Nombre: " + getName());
-        System.out.println("Edad: " + getAge());
-        System.out.println("Carrera: " + getMajor());
+        System.out.println("Nombre: " + super.getName());
+        System.out.println("Edad: " + super.getAge());
+        System.out.println("Carrera: " + super.getMajor());
+        System.out.println("Materias optadas: " + super.getSubjects());
         System.out.println("Creditos: " + credits);
     }
 }

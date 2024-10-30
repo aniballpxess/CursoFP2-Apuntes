@@ -21,13 +21,19 @@ class Teacher extends Person
         return salary;
     }
 
+    public void setSalary(Double salary)
+    {
+        this.salary = salary;
+    }
+
     @Override
     public void printDetails()
     {
         System.out.println("INFO PROFESOR");
-        System.out.println("Nombre: Don " + getName());
-        System.out.println("Edad: " + getAge());
-        System.out.println("Carrera: " + getMajor());
+        System.out.println("Nombre: Don " + super.getName());
+        System.out.println("Edad: " + super.getAge());
+        System.out.println("Carrera: " + super.getMajor());
+        System.out.println("Materias impartidas: " + super.getSubjects());
         System.out.println("Salario: " + salary);
     }
 
