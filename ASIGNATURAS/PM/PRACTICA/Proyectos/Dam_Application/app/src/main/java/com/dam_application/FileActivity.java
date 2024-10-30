@@ -34,7 +34,7 @@ public class FileActivity extends AppCompatActivity {
         findViewById(R.id.btn_fill_file).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fillFile("file.tmp", 500);
+                fillFile("file.tmp", 100);
             }
         });
 

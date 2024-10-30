@@ -6,4 +6,5 @@
     <string name="go_back_txt">Volver</string>
     <string name="Scorch_info_msg">Se llama Scorch. Es un comando clon del Gran Ejercito de la Republica.</string>
     <string name="welcome_msg">Bienvenido!</string>
+    <string name="placeholder_txt">Placeholder</string>
 </resources>

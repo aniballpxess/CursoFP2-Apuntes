@@ -15,16 +15,15 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.btn_actividad_siguiente).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_actividadFichero).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(ActividadMain.this, "Vamos a otra actividad", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(MainActivity.this, FileActivity.class);
                 startActivity(intent);
             }
         });
 
-        findViewById(R.id.btn_actividad_test).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_actividadTest).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, TestActivity.class);
