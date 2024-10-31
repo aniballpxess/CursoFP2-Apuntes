@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ExtendedXmlPullParser",
+            "request": "launch",
+            "mainClass": "ad.ejemplos.ExtendedXmlPullParser",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
             "name": "LanzadorDeProgramas",
             "request": "launch",
             "mainClass": "psp.utiles.LanzadorDeProgramas",
