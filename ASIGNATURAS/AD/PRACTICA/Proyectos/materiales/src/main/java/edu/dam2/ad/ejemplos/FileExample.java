@@ -12,7 +12,7 @@ class FileExample {
         // Ruta del directorio base
         // Ojo, pon tu directorio de trabajo a continuación
         String basePath = "C:\\CursoFP2\\ASIGNATURAS\\AD\\PRACTICA"; // Esta es tu ruta donde se creará el directorio
-        String directoryPath = basePath + "\\Proyectos_Acceso_Datos"; // Nombre del subdirectorio
+        String directoryPath = basePath + "\\temp"; // Nombre del subdirectorio
         String filePath = directoryPath + "\\miFicheroFile.txt"; // Ruta del archivo, pon el nombre que te guste
 
         // Contenido a escribir en el archivo

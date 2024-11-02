@@ -17,7 +17,7 @@ public class ExtendedXmlPullParser
             XmlPullParser parser = factory.newPullParser();
 
             // Carga del archivo XML
-            FileInputStream fileInputStream = new FileInputStream("C:\\CursoFP2\\ASIGNATURAS\\AD\\PRACTICA\\Poliza.xml");
+            FileInputStream fileInputStream = new FileInputStream("C:\\CursoFP2\\ASIGNATURAS\\AD\\PRACTICA\\temp\\Poliza.xml");
             parser.setInput(fileInputStream, "UTF-8");
 
             // Procesamiento del XML

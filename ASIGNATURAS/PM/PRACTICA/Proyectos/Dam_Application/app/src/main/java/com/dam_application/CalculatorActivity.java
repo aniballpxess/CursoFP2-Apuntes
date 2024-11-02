@@ -50,6 +50,7 @@ public class CalculatorActivity extends AppCompatActivity {
         btn_cerrar.setOnClickListener(v -> {
             Intent intent = new Intent(CalculatorActivity.this, MainActivity.class);
             startActivity(intent);
+            finish();
         });
 
     }

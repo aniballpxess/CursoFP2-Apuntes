@@ -17,6 +17,7 @@ public class TestActivity extends AppCompatActivity {
         findViewById(R.id.btn_actividad_anterior).setOnClickListener(v -> {
             Intent intent = new Intent(TestActivity.this, MainActivity.class);
             startActivity(intent);
+            finish();
         });
 
         findViewById(R.id.toggleButton).setOnClickListener(v -> v.setActivated(!v.isActivated()));
