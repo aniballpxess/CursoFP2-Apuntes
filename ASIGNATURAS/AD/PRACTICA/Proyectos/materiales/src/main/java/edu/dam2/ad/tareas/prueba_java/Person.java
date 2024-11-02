@@ -3,31 +3,39 @@ package edu.dam2.ad.tareas.prueba_java;
 import java.util.ArrayList;
 
 /**
- * Clase abstracta Person que representa a una persona con nombre, edad, especialidad (major) y asignaturas.
- * Esta clase debe ser extendida por clases específicas que implementen el método printDetails.
+ * Clase abstracta Person que representa a una persona con nombre, edad,
+ * especialidad (major) y asignaturas. Esta clase debe ser extendida por clases
+ * específicas que implementen el método printDetails.
  */
 abstract class Person
 {
     private FullName name;
     private Age age;
-    
+
     /**
      * Campo que representa la especialidad o carrera de la persona.
-     * <p>PENDIENTE -> implementar clases específicas que utilicen este campo.
+     * <p>
+     * PENDIENTE -> implementar clases específicas que utilicen este campo.
      */
     private String major;
-    
+
     /**
      * Lista de asignaturas de la persona.
-     * <p>PENDIENTE -> reemplazar tras la implementación completa de la clase Subject.
+     * <p>
+     * PENDIENTE -> reemplazar tras la implementación completa de la clase Subject.
      */
     private ArrayList<String> subjects;
 
     /**
-     * Constructor que inicializa el nombre, la edad y la especialidad de la persona.
-     * @param name el nombre completo de la persona en una sola cadena, separado por espacios.
-     * @param age la edad de la persona.
+     * Constructor que inicializa el nombre, la edad y la especialidad de la
+     * persona.
+     * 
+     * @param name  el nombre completo de la persona en una sola cadena, separado
+     *              por espacios.
+     * @param age   la edad de la persona.
      * @param major la especialidad o carrera de la persona.
+     * @throws IllegalArgumentException si algunos de los parametros pasados no es
+     *                                  válido.
      */
     public Person(String name, int age, String major) throws IllegalArgumentException
     {
@@ -39,6 +47,7 @@ abstract class Person
 
     /**
      * Devuelve el nombre completo de la persona.
+     * 
      * @return el nombre de la persona.
      */
     public FullName getName()
@@ -48,6 +57,7 @@ abstract class Person
 
     /**
      * Devuelve la edad de la persona.
+     * 
      * @return la edad.
      */
     public Age getAge()
@@ -57,6 +67,7 @@ abstract class Person
 
     /**
      * Devuelve la especialidad o carrera de la persona.
+     * 
      * @return la especialidad o carrera.
      */
     public String getMajor()
@@ -66,11 +77,18 @@ abstract class Person
 
     /**
      * Devuelve una cadena con todas las asignaturas separadas por coma.
-     * <p>PENDIENTE -> reemplazar tras la implementación de la clase Subject.
-     * @return una cadena con las asignaturas separadas por coma.
+     * <p>
+     * PENDIENTE -> reemplazar tras la implementación de la clase Subject.
+     * 
+     * @return una cadena con las asignaturas separadas por coma o "ninguna" si la
+     *         lista esta vacía
      */
     public String getSubjects()
     {
+        if (subjects.isEmpty())
+        {
+            return "ninguna";
+        }
         String subjectsStr = "";
         for (String subject : this.subjects)
         {
@@ -82,6 +100,7 @@ abstract class Person
 
     /**
      * Establece un nuevo nombre para la persona.
+     * 
      * @param name el nuevo nombre completo.
      */
     public void setName(FullName name)
@@ -91,6 +110,7 @@ abstract class Person
 
     /**
      * Establece una nueva edad para la persona.
+     * 
      * @param age la nueva edad.
      */
     public void setAge(int age)
@@ -100,6 +120,7 @@ abstract class Person
 
     /**
      * Establece una nueva especialidad para la persona.
+     * 
      * @param major la nueva especialidad.
      */
     public void setMajor(String major)
@@ -109,7 +130,9 @@ abstract class Person
 
     /**
      * Agrega una asignatura a la lista de asignaturas si no está ya presente.
+     * <p>
      * PENDIENTE -> reemplazar tras la implementación de la clase Subject.
+     * 
      * @param subject la asignatura a agregar.
      * @return true si se agregó la asignatura; de lo contrario, false.
      */
@@ -122,9 +145,10 @@ abstract class Person
         subjects.add(subject);
         return true;
     }
-    
+
     /**
      * Elimina una asignatura de la lista de asignaturas de la persona.
+     * 
      * @param subject la asignatura a eliminar.
      * @return true si se eliminó la asignatura; de lo contrario, false.
      */
@@ -135,6 +159,7 @@ abstract class Person
 
     /**
      * Compara si otra instancia de Person tiene el mismo nombre que esta instancia.
+     * 
      * @param p la otra persona a comparar.
      * @return true si ambos tienen el mismo nombre; de lo contrario, false.
      */
@@ -145,6 +170,7 @@ abstract class Person
 
     /**
      * Compara si otra instancia de Person tiene la misma edad que esta instancia.
+     * 
      * @param p la otra persona a comparar.
      * @return true si ambos tienen la misma edad; de lo contrario, false.
      */
@@ -154,7 +180,9 @@ abstract class Person
     }
 
     /**
-     * Compara si otra instancia de Person tiene la misma especialidad que esta instancia.
+     * Compara si otra instancia de Person tiene la misma especialidad que esta
+     * instancia.
+     * 
      * @param p la otra persona a comparar.
      * @return true si ambos tienen la misma especialidad; de lo contrario, false.
      */
@@ -164,8 +192,10 @@ abstract class Person
     }
 
     /**
-     * Verifica si la lista de asignaturas de la persona contiene una asignatura específica.
-     * PENDIENTE -> reemplazar tras la implementación de la clase Subject.
+     * Verifica si la lista de asignaturas de la persona contiene una asignatura
+     * específica. PENDIENTE -> reemplazar tras la implementación de la clase
+     * Subject.
+     * 
      * @param comparedSubject la asignatura a buscar.
      * @return true si la asignatura está en la lista; de lo contrario, false.
      */
@@ -182,7 +212,8 @@ abstract class Person
     }
 
     /**
-     * Método abstracto para imprimir los detalles de la persona, que debe ser implementado en clases derivadas.
+     * Método abstracto para imprimir los detalles de la persona, que debe ser
+     * implementado en clases derivadas.
      */
     public abstract void printDetails();
 }

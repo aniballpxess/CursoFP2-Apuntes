@@ -15,20 +15,19 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.btn_actividadFichero).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, FileActivity.class);
-                startActivity(intent);
-            }
+        findViewById(R.id.btn_actividadFichero).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, FileActivity.class);
+            startActivity(intent);
         });
 
-        findViewById(R.id.btn_actividadTest).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, TestActivity.class);
-                startActivity(intent);
-            }
+        findViewById(R.id.btn_actividadTest).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, TestActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.btn_actividadCalculadora).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, CalculatorActivity.class);
+            startActivity(intent);
         });
     }
 }

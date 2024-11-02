@@ -7,6 +7,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.BufferedReader;
@@ -18,25 +19,19 @@ import java.security.SecureRandom;
 
 public class FileActivity extends AppCompatActivity {
 
+    // Se crea la actividad
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_file);
 
-        findViewById(R.id.btn_create_file).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createFile("file.tmp", "Texto de ejemplo.");
-            }
-        });
+        // ------------------------------ ESCUCHADORES DE CADA BOTÓN -------------------------------
 
-        findViewById(R.id.btn_fill_file).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fillFile("file.tmp", 100);
-            }
-        });
+        findViewById(R.id.btn_create_file).setOnClickListener(v -> createFile("file.tmp", "Texto de ejemplo."));
+
+        findViewById(R.id.btn_fill_file).setOnClickListener(v -> fillFile("file.tmp", 100));
 
         findViewById(R.id.btn_show_file).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,13 +42,16 @@ public class FileActivity extends AppCompatActivity {
 
         findViewById(R.id.btn_clear_close).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                cleanClose("file.tmp");
-            }
+            public void onClick(View v) { cleanClose("file.tmp"); }
         });
     }
 
-    private void createFile(String fileName, String fileContent) {
+    // ---------------------------------- FUNCIONES DE CADA BOTÓN ----------------------------------
+    // Muestran mensajes para informar del exito o fracaso de la ejecución.
+    // Como los parametros son fijos no se hace niguna comprobación sobre la validez de los mismos
+
+    // Crea el archivo con el nombre dado en el Directorio de Ficheros y lo rellena con un texto generico que se le dé.
+    private void createFile(String fileName, @NonNull String fileContent) {
         File file = new File(getFilesDir(), fileName);
 
         try (FileOutputStream fos = new FileOutputStream(file)) {
@@ -64,6 +62,7 @@ public class FileActivity extends AppCompatActivity {
         }
     }
 
+    // Rellena el fichero con el nombre dado (lo busca en el Directorio de Ficheros) de tantas palabras como se le estipule.
     private void fillFile(String fileName, int words) {
         File file = new File(getFilesDir(), fileName);
         String content = generateRandomWords(words);
@@ -77,11 +76,13 @@ public class FileActivity extends AppCompatActivity {
         }
     }
 
+    // Copia todas las lineas (parrafos) del fichero con el nombre dado a la vista de texto donde se muestra el contenido.
     private void showFile(String fileName) {
-        StringBuilder content = new StringBuilder();
+        StringBuilder content = new StringBuilder(); // No he usado SB hasta ahora pero sé inglés y queda mejor que una String a la que le vas añadiendo cosas
         File file = new File(getFilesDir(), fileName);
 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            // Bucle para leer todas las lineas (parrafos) del fichero
             while (true) {
                 String line = br.readLine();
                 if (line == null) {
@@ -89,14 +90,21 @@ public class FileActivity extends AppCompatActivity {
                 }
                 content.append(line);
             }
-            this.<TextView>findViewById(R.id.file_content_view).setText(content);
-
+            // Estaria bien que se explicara cual es la diferencia  ("inferencia" vs "cast a pelo")
+            //((TextView) findViewById(R.id.file_content_view)).setText(content); // Version "cast"
+            this.<TextView>findViewById(R.id.file_content_view).setText(content); // Version "inferencia"
             Toast.makeText(FileActivity.this, "Contenido mostrado.", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             Toast.makeText(FileActivity.this, "Error mostrando contenido.", Toast.LENGTH_SHORT).show();
         }
     }
 
+    // Hace lo siguiente:
+    // 1. Limpia el contenido de la vista
+    // 2. Elimina el archivo
+    // 3. Confirma la eliminacion con un mensaje
+    // 4. Inicia la actividad principal (menú con todas las demás actividades)
+    // 5. Termina esta actividad
     private void cleanClose (String fileName) {
         File file = new File(getFilesDir(), fileName);
 
@@ -108,21 +116,29 @@ public class FileActivity extends AppCompatActivity {
         finish();
     }
 
+    // -------------------------------------- FUNCIONES EXTRA --------------------------------------
+
+    // Genera el numero de palabras indicado y las devuelve en una String.
+    // palabra -> (8 caracteres aleatorios)
     private String generateRandomWords(int words) {
+        // Caracteres permitidos por palabra
         final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        // Tamaño de las palabras
         final int WORD_LENGTH = 8;
-        SecureRandom random = new SecureRandom();
+        SecureRandom random = new SecureRandom(); // Mejor que Random
         StringBuilder text = new StringBuilder(WORD_LENGTH);
 
+        // Bucle para generar las palabras
         for (int i = 0; i < words; i++) {
+            // Bucle para generar cada palabra
             for (int j = 0; j < WORD_LENGTH; j++) {
                 int index = random.nextInt(CHARACTERS.length());
                 text.append(CHARACTERS.charAt(index));
             }
             if (i == words - 1) {
-                text.append('.');
+                text.append('.'); // Se incluye al final de la String
             } else {
-                text.append(' ');
+                text.append(' '); // Se incluye entre palabras
             }
         }
         return text.toString();
