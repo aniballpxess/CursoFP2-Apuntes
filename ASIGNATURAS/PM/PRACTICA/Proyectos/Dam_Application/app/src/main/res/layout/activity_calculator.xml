@@ -14,7 +14,7 @@
     android:paddingBottom="48dp">
 
 
-    <!-- EditText para ingresar el primer número -->
+    <!-- Campo para ingresar el primer número -->
     <EditText
         android:id="@+id/et_numero1"
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
         android:textSize="20sp"
         tools:ignore="Autofill" />
 
-
+    <!-- Campo para ingresar el segundo número -->
     <EditText
         android:id="@+id/et_numero2"
         android:layout_width="match_parent"
@@ -40,6 +40,7 @@
         android:textSize="20sp"
         tools:ignore="Autofill" />
 
+    <!-- Botón para calcular -->
     <Button
         android:id="@+id/btn_calcular"
         android:layout_width="match_parent"
@@ -48,12 +49,14 @@
         android:textSize="20sp"
         android:text="Calcular" />
 
+    <!-- Campo para mostrar el resultado -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:orientation="vertical">
 
+        <!-- Donde se muestra el resultado -->
         <TextView
             android:id="@+id/tv_resultado"
             android:layout_width="match_parent"
@@ -62,6 +65,7 @@
             android:hint="Resultado"
             android:textColorHint="#5D4037" />
 
+        <!-- Para simular el diseño de donde se ingresan los numeros -->
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -69,6 +73,7 @@
 
     </LinearLayout>
 
+    <!-- Titulo de la calculadora -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -86,6 +91,7 @@
         android:layout_marginBottom="12dp"
         android:background="#000000"/>
 
+    <!-- Botón con icono para salir de la actividad -->
     <ImageButton
         android:id="@+id/btn_cerrar"
         android:layout_width="wrap_content"
