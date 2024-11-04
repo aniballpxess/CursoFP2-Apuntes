@@ -30,7 +30,7 @@ public class Main
         }
         try
         {
-            String[] calculadorDoble = { "java", "-jar", "materiales-0.1_doble-2.jar" };
+            String[] calculadorDoble = { "java", "-jar", "bin\\psp\\materiales-0.1_doble-2.jar" };
             Process proceso = new ProcessBuilder(calculadorDoble).start();
             PrintWriter pw = new PrintWriter(new OutputStreamWriter(proceso.getOutputStream()));
             BufferedReader br = new BufferedReader(new InputStreamReader(proceso.getInputStream()));

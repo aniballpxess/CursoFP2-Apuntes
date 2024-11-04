@@ -49,7 +49,7 @@
                 <androidx.constraintlayout.helper.widget.Flow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:constraint_referenced_ids="btn_actividadFichero,btn_actividadCalculadora,btn_placeholder3,btn_placeholder2,btn_placeholder1,btn_placeholder0"
+                    app:constraint_referenced_ids="btn_actividadFichero,btn_actividadCalculadora,btn_actividadPaleta,btn_placeholder2,btn_placeholder1,btn_placeholder0"
                     app:flow_wrapMode="aligned" />
 
                 <Button
@@ -65,10 +65,10 @@
                     android:text="Actividad con calculadora" />
 
                 <Button
-                    android:id="@+id/btn_placeholder3"
+                    android:id="@+id/btn_actividadPaleta"
                     android:layout_width="108sp"
                     android:layout_height="wrap_content"
-                    android:text="@string/placeholder_txt" />
+                    android:text="Actividad con paleta" />
 
                 <Button
                     android:id="@+id/btn_placeholder2"

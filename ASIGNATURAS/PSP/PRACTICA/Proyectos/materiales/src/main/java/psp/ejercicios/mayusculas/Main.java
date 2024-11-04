@@ -14,7 +14,7 @@ public class Main
     public static void main(String[] args)
     {
         Scanner escaner = new Scanner(System.in);
-        String[] conversorInputs = { "java", "-jar", "materiales-0.1_mayusculas-2.jar" };
+        String[] conversorInputs = { "java", "-jar", "bin\\psp\\materiales-0.1_mayusculas-2.jar" };
         System.out.print("""
                 Introduce texto para convertirlo a mayusculas.
                 Cuando lee un "." el programa termina.

@@ -12,8 +12,8 @@ public class Main
     public static void main(String[] args)
     {
         Scanner escaner = new Scanner(System.in);
-        String[] relacionPaisCapitalEuropa = { "java", "-jar", "materiales-0.1_europa-2.jar" };
-        System.out.println("Introduce un pais de Europa para saber su capital.\n");
+        String[] relacionPaisCapitalEuropa = { "java", "-jar", "bin\\psp\\materiales-0.1_europa-2.jar" };
+        System.out.println("Introduce un pais de Europa (en inglés) para saber su capital.\n");
         try
         {
             Process proceso = new ProcessBuilder(relacionPaisCapitalEuropa).start();

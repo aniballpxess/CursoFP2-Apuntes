@@ -54,7 +54,7 @@ public class ReferenciadorCapitalPaisEuropa
 
     public static void main(String[] args)
     {
-        Scanner escaner = new Scanner(System.in);
+        Scanner escaner = new Scanner(System.in, "UTF-8");
         String pais = escaner.nextLine();
         String capital = mapaPaisesCapitales.get(pais);
         if (capital != null) 
