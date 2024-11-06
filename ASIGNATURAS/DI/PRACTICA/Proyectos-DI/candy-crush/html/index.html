@@ -21,10 +21,10 @@
         <input type="text" name="mov_input" id="casilla" oninput="evaluarCasilla()"/>
       </div>
       <div class="elemento controles">
-        <button type="button" class="arriba">↑</button>
-        <button type="button" class="izquierda">←</button>
-        <button type="button" class="derecha">→</button>
-        <button type="button" class="abajo">↓</button>
+        <button disabled id="arriba" onclick="moverArriba()">↑</button>
+        <button disabled id="abajo" onclick="moverAbajo()">↓</button>
+        <button disabled id="izquierda" onclick="moverIzquierda()">←</button>
+        <button disabled id="derecha" onclick="moverDerecha()">→</button>
       </div>
       <button class="elemento normal" type="button">Crush Once</button>
     </div>
