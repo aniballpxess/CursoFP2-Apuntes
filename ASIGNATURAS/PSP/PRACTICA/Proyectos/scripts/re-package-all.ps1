@@ -14,6 +14,8 @@ mvn package -P doble1
 mvn package -P doble2
 mvn package -P europa1
 mvn package -P europa2
+mvn package -P extremos1
+mvn package -P extremos2
 mvn package -P mayusculas1
 mvn package -P mayusculas2
 mvn package -P media1 

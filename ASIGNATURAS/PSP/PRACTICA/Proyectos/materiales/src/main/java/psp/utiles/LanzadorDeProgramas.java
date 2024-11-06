@@ -16,6 +16,7 @@ public class LanzadorDeProgramas
         Map.entry("div", "java -jar bin\\psp\\materiales-0.1_divisores.jar"),
         Map.entry("dob", "java -jar bin\\psp\\materiales-0.1_doble-1.jar"),
         Map.entry("eur", "java -jar bin\\psp\\materiales-0.1_europa-1.jar"),
+        Map.entry("ext", "java -jar bin\\psp\\materiales-0.1_extremos-1.jar"),
         Map.entry("may", "java -jar bin\\psp\\materiales-0.1_mayusculas-1.jar"),
         Map.entry("med", "java -jar bin\\psp\\materiales-0.1_media-1.jar"),
         Map.entry("sum", "java -jar bin\\psp\\materiales-0.1_sumatorio.jar")
@@ -41,6 +42,7 @@ public class LanzadorDeProgramas
             div - ejecuta "divisores"
             dob - ejecuta "doble"
             eur - ejecuta "europa"
+            ext - ejecuta "extremos"
             may - ejecuta "mayusculas"
             med - ejecuta "media"
             sum - ejecuta "sumatorio"

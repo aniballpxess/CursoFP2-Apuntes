@@ -445,6 +445,66 @@
     </profile>
 
     <profile>
+      <id>extremos1</id>
+      <properties>
+        <Id_Ejercicio>extremos</Id_Ejercicio>
+      </properties>
+      <build>
+        <finalName>${project.artifactId}-${project.version}_${Id_Ejercicio}-1</finalName>
+        <plugins>
+          <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <includes>
+                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
+              </includes>
+            </configuration>
+          </plugin>
+          <plugin>
+            <artifactId>maven-jar-plugin</artifactId>
+            <configuration>
+              <archive>
+                <manifest>
+                  <mainClass>psp.ejercicios.${Id_Ejercicio}.Main</mainClass>
+                </manifest>
+              </archive>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>extremos2</id>
+      <properties>
+        <Id_Ejercicio>extremos</Id_Ejercicio>
+      </properties>
+      <build>
+        <finalName>${project.artifactId}-${project.version}_${Id_Ejercicio}-2</finalName>
+        <plugins>
+          <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <includes>
+                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
+              </includes>
+            </configuration>
+          </plugin>
+          <plugin>
+            <artifactId>maven-jar-plugin</artifactId>
+            <configuration>
+              <archive>
+                <manifest>
+                  <mainClass>psp.ejercicios.${Id_Ejercicio}.CalculadorMayorMenor</mainClass>
+                </manifest>
+              </archive>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
       <id>prueba1</id>
       <properties>
         <Id_Paquete>pruebas</Id_Paquete>

@@ -18,3 +18,16 @@ function generarTablero()
         tabla.appendChild(fila);
     }
 }
+
+function evaluarCasilla() 
+{
+    var casilla = document.getElementById('casilla').value;
+    if (casilla.length == 2) 
+    {
+        const fila = casilla[0];
+        const columna = casilla[1];
+    }
+    if (casilla-length > 2) {
+        
+    }
+}
