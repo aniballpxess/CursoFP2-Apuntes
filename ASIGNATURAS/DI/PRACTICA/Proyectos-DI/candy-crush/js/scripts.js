@@ -3,6 +3,7 @@ function generarTablero()
     const coloresPosibles = ['#ffff00', '#00ffff', '#ee82ee', '#90ee90', '#ff7777', '#829be7'];
     const tabla = document.getElementById('tablero');
     tabla.innerHTML = '';
+    const cuerpo = document.createElement('tbody');
     for (let i = 0; i < 8; i++) 
     {
         const fila = document.createElement('tr');
@@ -15,8 +16,9 @@ function generarTablero()
             celda.id = `${letraFila}${j + 1}`;
             fila.appendChild(celda);
         }
-        tabla.appendChild(fila);
+        cuerpo.appendChild(fila);
     }
+    tabla.appendChild(cuerpo);
 }
 
 function evaluarCasilla() 
@@ -40,10 +42,10 @@ function evaluarCasilla()
         const btn_derecha = document.getElementById('derecha');
         if (filaValida.test(fila) && columnaValida.test(columna))
         {
-            btn_arriba.disabled = (fila === 'a') ? true : false;
-            btn_abajo.disabled = (fila === 'h') ? true : false;
-            btn_izquierda.disabled = (columna === '1') ? true : false;
-            btn_derecha.disabled = (columna === '8') ? true : false;
+            btn_arriba.disabled = (fila === 'a');
+            btn_abajo.disabled = (fila === 'h');
+            btn_izquierda.disabled = (columna === '1');
+            btn_derecha.disabled = (columna === '8');
         }
         else 
         {
@@ -58,58 +60,62 @@ function evaluarCasilla()
 function mover(direccion) 
 {
     const input = document.getElementById('casilla');
-    const casilla1 = document.getElementById(input.value);
-    let casilla2;
+    const casilla_movida = document.getElementById(input.value);
+    let casilla_intercambiada;
     switch (direccion) 
     {
         case 'arriba':
-            casilla2 = seleccionarArriba(casilla1);
+            casilla_intercambiada = seleccionarArriba(casilla_movida);
             break;
         case 'abajo':
-            casilla2 = seleccionarAbajo(casilla1);
+            casilla_intercambiada = seleccionarAbajo(casilla_movida);
             break;
         case 'izquierda':
-            casilla2 = seleccionarIzquierda(casilla1);
+            casilla_intercambiada = seleccionarIzquierda(casilla_movida);
             break;
         case 'derecha':
-            casilla2 = seleccionarDerecha(casilla1);
+            casilla_intercambiada = seleccionarDerecha(casilla_movida);
             break;
         default:
-            break;
+            throw new Error("Algo ha salido mal al realizar el movimiento.");
     }
-    const colorAuxiliar = casilla1.style.backgroundColor;
-    casilla1.style.backgroundColor = casilla2.style.backgroundColor;
-    casilla2.style.backgroundColor = colorAuxiliar;
+    realizarMovimiento(casilla_movida, casilla_intercambiada);
 }
 
 function seleccionarArriba(casilla) 
 {
-    const filaDeArriba = String.fromCharCode(casilla.id.charCodeAt(0) - 1);
+    const fila_de_arriba = String.fromCharCode(casilla.id.charCodeAt(0) - 1);
     const columna = casilla.id.charAt(1);
-    const casillaDeArriba = document.getElementById(`${filaDeArriba}${columna}`);
-    return casillaDeArriba;
+    const casilla_de_arriba = document.getElementById(`${fila_de_arriba}${columna}`);
+    return casilla_de_arriba;
 }
 
 function seleccionarAbajo(casilla) 
 {
-    const filaDeAbajo = String.fromCharCode(casilla.id.charCodeAt(0) + 1);
+    const fila_de_abajo = String.fromCharCode(casilla.id.charCodeAt(0) + 1);
     const columna = casilla.id.charAt(1);
-    const casillaDeAbajo = document.getElementById(`${filaDeAbajo}${columna}`);
-    return casillaDeAbajo;
+    const casilla_de_abajo = document.getElementById(`${fila_de_abajo}${columna}`);
+    return casilla_de_abajo;
 }
 
 function seleccionarIzquierda(casilla) 
 {
     const fila = casilla.id.charAt(0);
-    const columnaIzquierda = String.fromCharCode(casilla.id.charCodeAt(1) - 1);
-    const casillaIzquierda = document.getElementById(`${fila}${columnaIzquierda}`);
-    return casillaIzquierda;
+    const columna_izquierda = String.fromCharCode(casilla.id.charCodeAt(1) - 1);
+    const casilla_izquierda = document.getElementById(`${fila}${columna_izquierda}`);
+    return casilla_izquierda;
 }
 
 function seleccionarDerecha(casilla) 
 {
     const fila = casilla.id.charAt(0);
-    const columnaDerecha = String.fromCharCode(casilla.id.charCodeAt(1) + 1);
-    const casillaDerecha = document.getElementById(`${fila}${columnaDerecha}`);
-    return casillaDerecha;
+    const columna_derecha = String.fromCharCode(casilla.id.charCodeAt(1) + 1);
+    const casilla_derecha = document.getElementById(`${fila}${columna_derecha}`);
+    return casilla_derecha;
+}
+
+function realizarMovimiento(casilla_A, casilla_B) {
+    const color_auxiliar = casilla_A.style.backgroundColor;
+    casilla_A.style.backgroundColor = casilla_B.style.backgroundColor;
+    casilla_B.style.backgroundColor = color_auxiliar;
 }

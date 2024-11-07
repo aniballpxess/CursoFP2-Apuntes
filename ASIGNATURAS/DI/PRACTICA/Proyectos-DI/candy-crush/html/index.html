@@ -8,14 +8,14 @@
     <script src="../js/scripts.js" defer></script>
   </head>
   <body onload="generarTablero()">
-    <div class="columna_prinpipal">
+    <div id="col_izquierda" class="columna_prinpipal">
       <h1 class="elemento">Candy<br />Crush</h1>
       <button id="nuevoJuego" class="elemento normal" onclick="generarTablero()">New Game</button>
     </div>
-    <div class="columna_prinpipal">
+    <div id="col_central" class="columna_prinpipal">
       <table id="tablero" class="elemento"></table>
     </div>
-    <div class="columna_prinpipal">
+    <div id="col_derecha" class="columna_prinpipal">
       <div class="elemento jugada">
         <label for="casilla">Move:</label>
         <input type="text" name="mov_input" id="casilla" oninput="evaluarCasilla()"/>
