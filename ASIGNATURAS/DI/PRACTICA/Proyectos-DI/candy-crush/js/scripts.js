@@ -55,23 +55,61 @@ function evaluarCasilla()
     }
 }
 
-function moverArriba() 
+function mover(direccion) 
 {
     const input = document.getElementById('casilla');
-    const casilla = document.getElementById(input);
-    const nuevaCasilla = String.fromCharCode(casilla.id.charCodeAt(0) + 1) + casilla.id.charAt(1);
-    casilla.id
-
+    const casilla1 = document.getElementById(input.value);
+    let casilla2;
+    switch (direccion) 
+    {
+        case 'arriba':
+            casilla2 = seleccionarArriba(casilla1);
+            break;
+        case 'abajo':
+            casilla2 = seleccionarAbajo(casilla1);
+            break;
+        case 'izquierda':
+            casilla2 = seleccionarIzquierda(casilla1);
+            break;
+        case 'derecha':
+            casilla2 = seleccionarDerecha(casilla1);
+            break;
+        default:
+            break;
+    }
+    const colorAuxiliar = casilla1.style.backgroundColor;
+    casilla1.style.backgroundColor = casilla2.style.backgroundColor;
+    casilla2.style.backgroundColor = colorAuxiliar;
 }
 
-function moverAbajo() {
-    
+function seleccionarArriba(casilla) 
+{
+    const filaDeArriba = String.fromCharCode(casilla.id.charCodeAt(0) - 1);
+    const columna = casilla.id.charAt(1);
+    const casillaDeArriba = document.getElementById(`${filaDeArriba}${columna}`);
+    return casillaDeArriba;
 }
 
-function moverIzquierda() {
-    
+function seleccionarAbajo(casilla) 
+{
+    const filaDeAbajo = String.fromCharCode(casilla.id.charCodeAt(0) + 1);
+    const columna = casilla.id.charAt(1);
+    const casillaDeAbajo = document.getElementById(`${filaDeAbajo}${columna}`);
+    return casillaDeAbajo;
 }
 
-function moverDerecha() {
-    
+function seleccionarIzquierda(casilla) 
+{
+    const fila = casilla.id.charAt(0);
+    const columnaIzquierda = String.fromCharCode(casilla.id.charCodeAt(1) - 1);
+    const casillaIzquierda = document.getElementById(`${fila}${columnaIzquierda}`);
+    return casillaIzquierda;
+}
+
+function seleccionarDerecha(casilla) 
+{
+    const fila = casilla.id.charAt(0);
+    const columnaDerecha = String.fromCharCode(casilla.id.charCodeAt(1) + 1);
+    const casillaDerecha = document.getElementById(`${fila}${columnaDerecha}`);
+    return casillaDerecha;
 }
