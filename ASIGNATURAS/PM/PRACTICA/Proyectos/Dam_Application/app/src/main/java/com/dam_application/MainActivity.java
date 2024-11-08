@@ -34,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, PaletteActivity.class);
             startActivity(intent);
         });
+
+        findViewById(R.id.btn_actividadJson).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, JsonParserActivity.class);
+            startActivity(intent);
+        });
     }
 }
 

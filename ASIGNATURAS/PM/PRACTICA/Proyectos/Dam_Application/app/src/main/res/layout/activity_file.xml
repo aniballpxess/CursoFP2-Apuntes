@@ -5,7 +5,6 @@
     android:id="@+id/file"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
     android:background="#EF54BD"
     android:gravity="center"
     android:orientation="vertical"
@@ -13,7 +12,6 @@
     android:paddingTop="48dp"
     android:paddingEnd="24dp"
     android:paddingBottom="48dp"
-    android:scrollbars="vertical"
     tools:context=".FileActivity">
 
     <Button
@@ -46,6 +44,9 @@
         android:layout_height="240dp"
         android:layout_marginBottom="24dp"
         android:background="@color/white"
+        android:scrollbars="vertical"
+        android:overScrollMode="always"
+        android:ellipsize="end"
         android:gravity="start"
         android:padding="2dp"
         android:textSize="16sp" />

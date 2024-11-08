@@ -1,0 +1,6 @@
+a. HTML - 2 puntos
+b. CSS - 2 puntos
+c.1. JavaScript - Base origen - 1,5 puntos
+c.2. JavaScript - Número origen - 1,5 puntos
+c.3. JavaScript - Base destino - 1,5 puntos
+c.4. JavaScript - Número destino - 1,5 puntos

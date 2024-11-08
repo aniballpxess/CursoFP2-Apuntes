@@ -2,6 +2,7 @@ package com.dam_application;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,13 +20,17 @@ import java.security.SecureRandom;
 
 public class FileActivity extends AppCompatActivity {
 
+    TextView vistaContenido;
     // Se crea la actividad
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_file);
+
+        // PRUEBA
+        vistaContenido = findViewById(R.id.file_content_view);
+        vistaContenido.setMovementMethod(new ScrollingMovementMethod());
 
         // ------------------------------ ESCUCHADORES DE CADA BOTÓN -------------------------------
 
