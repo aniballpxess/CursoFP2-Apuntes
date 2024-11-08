@@ -25,6 +25,9 @@ h1 {
   color: red;
 }
 
+table {
+  background-color: black;
+}
 td::before {
   content: attr(id);
 }
@@ -34,24 +37,6 @@ td {
   width: 40px;
   height: 40px;
   padding: 0;
-}
-.amarillo {
-  background-color: #ffff00;
-}
-.cian {
-  background-color: #00ffff;
-}
-.rosa {
-  background-color: #ee82ee;
-}
-.verde {
-  background-color: #90ee90;
-}
-.rojo {
-  background-color: #ff7777;
-}
-.azul {
-  background-color: #829be7;
 }
 
 .controles {

@@ -1,6 +1,13 @@
+var naranja = '#ffc444';
+var cian = '#00ffff';
+var rosa = '#ee82ee';
+var verde = '#90ee90';
+var rojo = '#ad2525';
+var azul = '#829be7';
+
 function generarTablero() 
 {
-    const coloresPosibles = ['#ffff00', '#00ffff', '#ee82ee', '#90ee90', '#ff7777', '#829be7'];
+    const coloresPosibles = [naranja, cian, rosa, verde, rojo, azul];
     const tabla = document.getElementById('tablero');
     tabla.innerHTML = '';
     const cuerpo = document.createElement('tbody');

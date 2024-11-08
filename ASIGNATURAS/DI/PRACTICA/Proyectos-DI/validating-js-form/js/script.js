@@ -1,7 +1,7 @@
 function checkdata() 
 {
     const username = document.getElementById("name");
-    const emailid = document.getElementById("email");
+    const email_address = document.getElementById("email");
     if (username.value === "")
     {
         alert("Please enter the name");
