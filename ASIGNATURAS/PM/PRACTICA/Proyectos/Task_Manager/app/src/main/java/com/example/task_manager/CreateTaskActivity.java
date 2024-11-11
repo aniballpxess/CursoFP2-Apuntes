@@ -20,7 +20,6 @@ public class CreateTaskActivity extends AppCompatActivity {
     private String taskType_value;
     private EditText taskName_input;
     private RadioGroup taskType_input;
-
     private Button btn_createTask;
 
     @Override
@@ -38,23 +37,15 @@ public class CreateTaskActivity extends AppCompatActivity {
         taskType_input = findViewById(R.id.rg_taskType);
         btn_createTask = findViewById(R.id.btn_createTask);
 
-        taskName_input.setOnFocusChangeListener((v, hasFocus) -> {
-            if (!hasFocus) {
-                taskName_value = taskName_input.getText().toString();
-            }
-        });
-
         taskType_input.setOnCheckedChangeListener((group, checkedId) -> {
             RadioButton selectedType = findViewById(checkedId);
             taskType_value = selectedType.getText().toString();
         });
 
-        btn_createTask.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (taskName_value == null || taskType_value == null) {
-                    Toast.makeText(CreateTaskActivity.this, "Error creando archivo.", Toast.LENGTH_SHORT).show();
-                }
+        btn_createTask.setOnClickListener(v -> {
+            taskName_value = taskName_input.getText().toString();
+            if (taskName_value.isEmpty() || taskType_value.isEmpty()) {
+                Toast.makeText(CreateTaskActivity.this, "Error creando archivo.", Toast.LENGTH_SHORT).show();
             }
         });
     }

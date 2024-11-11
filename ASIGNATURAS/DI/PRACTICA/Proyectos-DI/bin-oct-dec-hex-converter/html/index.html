@@ -21,19 +21,19 @@
       <legend><h2>2. Número origen</h2></legend>
       <label>
         Introduce el número origen mediante el teclado y pulse el boton Aceptar
-        <input id="num_input" class="display" type="text" disabled />
+        <input id="num_input" class="display" type="text" readonly disabled />
       </label>
       <div class="numpad">
         <button class="numpad_btn" name="numpad_btn" disabled onclick="addDigit(this)">0</button>
         <button class="numpad_btn" name="numpad_btn" disabled onclick="addDigit(this)">1</button>
-        <button class="numpad_btn" name="numpad_btn" disabled>2</button>
-        <button class="numpad_btn" name="numpad_btn" disabled>3</button>
-        <button class="numpad_btn" name="numpad_btn" disabled>4</button>
-        <button class="numpad_btn" name="numpad_btn" disabled>5</button>
-        <button class="numpad_btn" name="numpad_btn" disabled>6</button>
-        <button class="numpad_btn" name="numpad_btn" disabled>7</button>
-        <button class="numpad_btn" name="numpad_btn" disabled>8</button>
-        <button class="numpad_btn" name="numpad_btn" disabled>9</button>
+        <button class="numpad_btn" name="numpad_btn" disabled onclick="addDigit(this)">2</button>
+        <button class="numpad_btn" name="numpad_btn" disabled onclick="addDigit(this)">3</button>
+        <button class="numpad_btn" name="numpad_btn" disabled onclick="addDigit(this)">4</button>
+        <button class="numpad_btn" name="numpad_btn" disabled onclick="addDigit(this)">5</button>
+        <button class="numpad_btn" name="numpad_btn" disabled onclick="addDigit(this)">6</button>
+        <button class="numpad_btn" name="numpad_btn" disabled onclick="addDigit(this)">7</button>
+        <button class="numpad_btn" name="numpad_btn" disabled onclick="addDigit(this)">8</button>
+        <button class="numpad_btn" name="numpad_btn" disabled onclick="addDigit(this)">9</button>
         <button class="numpad_btn" name="numpad_btn" disabled>A</button>
         <button class="numpad_btn" name="numpad_btn" disabled>B</button>
         <button class="numpad_btn" name="numpad_btn" disabled>C</button>
@@ -41,7 +41,7 @@
         <button class="numpad_btn" name="numpad_btn" disabled>E</button>
         <button class="numpad_btn" name="numpad_btn" disabled>F</button>
       </div>
-      <button id="enter_btn" class="numpad_btn L" disabled>Aceptar</button>
+      <button id="enter_btn" class="numpad_btn L" disabled onclick="getNumber(this)">Aceptar</button>
     </fieldset>
     <fieldset id="Base destino">
       <legend><h2>3. Base destino</h2></legend>

@@ -1,8 +1,10 @@
-var selected_base;
+var selected_input_base;
 var unselected_bases;
+var input_number;
+var selected_output_base;
 
 function getBase(selected_option) {
-    selected_base = selected_option.value;
+    selected_input_base = selected_option.value;
     unselected_bases = {
         bin: "Binario",
         oct: "Octal",
@@ -15,7 +17,7 @@ function getBase(selected_option) {
 
     const numpad_buttons = document.getElementsByName("numpad_btn");
     let active_numpad;
-    switch (selected_base) {
+    switch (selected_input_base) {
         case "bin":
             active_numpad = 2;
             break;
@@ -33,9 +35,20 @@ function getBase(selected_option) {
         numpad_buttons[i].disabled = false;
     }
     document.getElementById("enter_btn").disabled = false;
+    document.getElementById("num_input").disabled = false;
 }
 
 function addDigit(digit_btn) {
-    const input_num_display = document.getElementById('num_input');
-    input_num_display.value = input_num_display.value + digit_btn.value;
+    const input_num_display = document.getElementById("num_input");
+    input_num_display.value = input_num_display.value + digit_btn.textContent;
+}
+
+function getNumber(enter_btn) {
+    input_number = parseInt(document.getElementById("num_input").value);
+    numpad_buttons = document.getElementsByName("numpad_btn");
+    numpad_buttons.forEach((btn) => { btn.disabled = true; });
+    document.getElementById("num_input").disabled = true;
+    enter_btn.disabled = true;
+
+    
 }
