@@ -27,13 +27,11 @@ public class FileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_file);
-
         // PRUEBA
         vistaContenido = findViewById(R.id.file_content_view);
         vistaContenido.setMovementMethod(new ScrollingMovementMethod());
 
         // ------------------------------ ESCUCHADORES DE CADA BOTÓN -------------------------------
-
         findViewById(R.id.btn_create_file).setOnClickListener(v -> createFile("file.tmp", "Texto de ejemplo."));
 
         findViewById(R.id.btn_fill_file).setOnClickListener(v -> fillFile("file.tmp", 100));
@@ -63,7 +61,7 @@ public class FileActivity extends AppCompatActivity {
             fos.write(fileContent.getBytes());
             Toast.makeText(FileActivity.this, "Archivo creado.", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
-            Toast.makeText(this, "Error creando archivo.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(FileActivity.this, "Error creando archivo.", Toast.LENGTH_SHORT).show();
         }
     }
 

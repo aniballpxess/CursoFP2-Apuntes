@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Task-Manager</string>
+    <string name="create_task">Create Task</string>
+    <string name="priority_tasks">Priority Tasks</string>
+    <string name="long_term_tasks">Long-term Tasks</string>
+    <string name="task_manager">Task Manager</string>
+    <string name="none">None</string>
+</resources>
