@@ -9,7 +9,7 @@ function generarTablero()
 {
     const coloresPosibles = [naranja, cian, rosa, verde, rojo, azul];
     const tabla = document.getElementById('tablero');
-    tabla.innerHTML = '';
+    tabla.innerHTML = null;
     const cuerpo = document.createElement('tbody');
     for (let i = 0; i < 8; i++) 
     {

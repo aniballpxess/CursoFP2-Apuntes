@@ -50,5 +50,14 @@ function getNumber(enter_btn) {
     document.getElementById("num_input").disabled = true;
     enter_btn.disabled = true;
 
-    
+    const output_base = document.getElementById("output_base");
+    output_base.disabled = false;
+    output_base.innerHTML = null
+    Object.entries(unselected_bases).forEach(([key, value]) => {
+        const option = document.createElement("option");
+        option.setAttribute("id", "base_out_" + key);
+        option.setAttribute("value", key);
+        option.textContent = value;
+        output_base.appendChild(option);
+    });
 }
