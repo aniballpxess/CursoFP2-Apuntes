@@ -47,7 +47,7 @@
       <legend><h2>3. Base destino</h2></legend>
       <label>
         Selecciona la base destino de la lista desplegable
-        <select id="output_base" class="display" disabled>
+        <select id="output_base" class="display" disabled onchange="calculateNumber(this)">
         </select>
       </label>
     </fieldset>
@@ -55,7 +55,7 @@
       <legend><h2>4. Número destino</h2></legend>
       <label>
         El numero destino es
-        <input id="num_output" class="display" type="text" readonly disabled />
+        <input id="num_output" class="display" type="text" readonly disabled/>
       </label>
     </fieldset>
   </body>
