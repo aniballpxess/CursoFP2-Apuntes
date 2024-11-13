@@ -19,12 +19,12 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class CreateTaskActivity extends AppCompatActivity {
 
+    private Intent intent;
     private String taskName_value;
     private String taskType_value;
     private EditText taskName_input;
     private RadioGroup taskType_input;
     private Button btn_createTask;
-    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,21 +41,19 @@ public class CreateTaskActivity extends AppCompatActivity {
         taskType_input = findViewById(R.id.rg_taskType);
         btn_createTask = findViewById(R.id.btn_createTask);
 
-        taskType_input.setOnCheckedChangeListener((group, checkedId) -> {
-            RadioButton selectedType = findViewById(checkedId);
-            taskType_value = selectedType.getText().toString();
-        });
-
         btn_createTask.setOnClickListener(v -> {
             taskName_value = taskName_input.getText().toString();
             if (taskName_value.isBlank()) {
-                Toast.makeText(CreateTaskActivity.this, "Error creando archivo.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CreateTaskActivity.this, "Introduce un nombre para la tarea.", Toast.LENGTH_SHORT).show();
                 return;
             }
-            if (taskType_value == null) {
-                Toast.makeText(CreateTaskActivity.this, "Error creando archivo.", Toast.LENGTH_SHORT).show();
+            int selectedId = taskType_input.getCheckedRadioButtonId();
+            if (selectedId == -1) {
+                Toast.makeText(CreateTaskActivity.this, "Introduce el tipo de tarea.", Toast.LENGTH_SHORT).show();
                 return;
             }
+            RadioButton selectedType = findViewById(selectedId);
+            taskType_value = selectedType.getText().toString();
             switch (taskType_value) {
                 case "Prioritaria":
                     intent = new Intent(CreateTaskActivity.this, PriorityTasksActivity.class);
@@ -64,8 +62,7 @@ public class CreateTaskActivity extends AppCompatActivity {
                     intent = new Intent(CreateTaskActivity.this, LongTermTasksActivity.class);
                     break;
             }
-            intent.putExtra("TASK_NAME", taskName_value);
-            intent.putExtra("TASK_TYPE", taskType_value);
+            intent.putExtra("com.example.task_manager.TASK_NAME", taskName_value);
             startActivity(intent);
             taskName_input.setText("");
             taskType_input.clearCheck();

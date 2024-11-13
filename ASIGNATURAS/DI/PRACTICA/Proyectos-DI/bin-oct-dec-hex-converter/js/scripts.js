@@ -51,7 +51,7 @@ function getNumber(enter_btn) {
 
     const output_base = document.getElementById("output_base");
     output_base.disabled = false;
-    output_base.innerHTML = null
+    output_base.innerHTML = null;
     Object.entries(unselected_bases).forEach(([key, value]) => {
         const option = document.createElement("option");
         option.setAttribute("id", "base_out_" + key);
