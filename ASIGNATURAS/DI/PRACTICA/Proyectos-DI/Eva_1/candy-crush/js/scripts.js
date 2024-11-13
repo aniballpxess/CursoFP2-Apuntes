@@ -28,14 +28,13 @@ function generarTablero()
     tabla.appendChild(cuerpo);
 }
 
-function evaluarCasilla() 
+function evaluarCasilla(input_casilla) 
 {
-    const inputCasilla = document.getElementById('casilla');
-    let casilla = inputCasilla.value;
+    let casilla = input_casilla.value;
     if (casilla.length > 2)
     {
         casilla = casilla.slice(0, 2);
-        inputCasilla.value = casilla;
+        input_casilla.value = casilla;
     }
     if (casilla.length === 2) 
     {
@@ -64,12 +63,13 @@ function evaluarCasilla()
     }
 }
 
-function mover(direccion) 
+function mover(btn_pulsado) 
 {
+    const dirreccion = btn_pulsado.id;
     const input = document.getElementById('casilla');
     const casilla_movida = document.getElementById(input.value);
     let casilla_intercambiada;
-    switch (direccion) 
+    switch (dirreccion) 
     {
         case 'arriba':
             casilla_intercambiada = seleccionarArriba(casilla_movida);

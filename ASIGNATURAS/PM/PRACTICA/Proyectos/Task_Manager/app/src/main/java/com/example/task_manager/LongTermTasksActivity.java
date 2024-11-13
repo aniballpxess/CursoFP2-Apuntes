@@ -34,7 +34,7 @@ public class LongTermTasksActivity extends AppCompatActivity {
         if (taskName == null) {
             return;
         }
-        TextView task1 = findViewById(R.id.LT_Task1);
-        task1.setText(taskName);
+        TextView task = findViewById(R.id.LT_Task1);
+        task.setText(taskName);
     }
 }

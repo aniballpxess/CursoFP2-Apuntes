@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Candy Crush Hacendado</title>
     <link rel="stylesheet" href="../css/styles.css" />
-    <script src="../js/scripts.js" defer></script>
+    <script src="../js/scripts.js"></script>
   </head>
   <body onload="generarTablero()">
     <div id="col_izquierda" class="columna_prinpipal">
@@ -18,13 +18,13 @@
     <div id="col_derecha" class="columna_prinpipal">
       <div class="elemento jugada">
         <label for="casilla">Move:</label>
-        <input type="text" name="mov_input" id="casilla" oninput="evaluarCasilla()"/>
+        <input type="text" name="mov_input" id="casilla" oninput="evaluarCasilla(this)"/>
       </div>
       <div class="elemento controles">
-        <button disabled id="arriba" onclick="mover('arriba')">↑</button>
-        <button disabled id="abajo" onclick="mover('abajo')">↓</button>
-        <button disabled id="izquierda" onclick="mover('izquierda')">←</button>
-        <button disabled id="derecha" onclick="mover('derecha')">→</button>
+        <button disabled id="arriba" onclick="mover(this)">&uarr;</button>
+        <button disabled id="abajo" onclick="mover(this)">&darr;</button>
+        <button disabled id="izquierda" onclick="mover(this)">&larr;</button>
+        <button disabled id="derecha" onclick="mover(this)">&rarr;</button>
       </div>
       <button class="elemento normal" type="button">Crush Once</button>
     </div>
