@@ -35,7 +35,8 @@ public class JsonParserActivity extends AppCompatActivity {
     File archivoJson;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_json_parser);
@@ -58,73 +59,99 @@ public class JsonParserActivity extends AppCompatActivity {
         btn_mostrarJson.setOnClickListener(v -> showFile(JsonParserActivity.this, archivoJson));
     }
 
-    private void storeJson(Context context, String fileName) {
-        // JSONObject persona = createJson();
+    private void storeJson(Context context, String fileName)
+    {
+        // JSONObject persona = createJson(context);
         // saveJson(context, fileName, persona);
         File file = new File(context.getFilesDir(), fileName);
         InputStream is;
         FileOutputStream fos;
         byte[] buffer = new byte[1024];
         int length;
-        try {
+        try
+        {
             is = context.getAssets().open(fileName);
             fos = new FileOutputStream(file, true);
-            while (true) {
+            while (true)
+            {
                 length = is.read(buffer);
-                if (length < 0) {
+                if (length < 0)
+                {
                     break;
                 }
-                fos.write(buffer, 0 ,length);
+                fos.write(buffer, 0, length);
             }
             fos.flush();
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             Toast.makeText(context, "Error creando el JSON.", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private File getFile(Context context, String fileName) {
+    private File getFile(Context context, String fileName)
+    {
         return new File(context.getFilesDir(), fileName);
     }
 
-    private void showFile(Context context, File file) {
+    private void showFile(Context context, File file)
+    {
         StringBuilder content = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-            while (true) {
+        try (BufferedReader br = new BufferedReader(new FileReader(file)))
+        {
+            while (true)
+            {
                 String line = br.readLine();
-                if (line == null) {
+                if (line == null)
+                {
                     break;
                 }
                 content.append(line);
                 content.append(System.lineSeparator());
             }
             tv_contenidoJson.setText(content);
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             Toast.makeText(context, "Error leyendo el JSON.", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void saveJson(Context context, String fileName, JSONObject persona) throws IOException, JSONException {
+    private void saveJson(Context context, String fileName, JSONObject persona) throws IOException, JSONException
+    {
         File file = new File(context.getFilesDir(), fileName);
         FileWriter fileWriter = new FileWriter(file);
         fileWriter.write(persona.toString(2));
         fileWriter.close();
     }
 
+    /**
+     * @return - Objeto JSON 
+     */
     @NonNull
-    private JSONObject createJson() throws JSONException {
-        JSONObject direccion = new JSONObject();
-        direccion.put("calle", "c/ Méjico 27");
-        direccion.put("puerta", "5ºD");
-        direccion.put("cod. postal", "28640");
-        direccion.put("localidad", "San Fernando");
-        direccion.put("provincia", "Madrid");
+    private JSONObject createJson(Context context)
+    {
+        try
+        {
+            JSONObject direccion = new JSONObject();
+            direccion.put("calle", "c/ Méjico 27");
+            direccion.put("puerta", "5ºD");
+            direccion.put("cod. postal", "28640");
+            direccion.put("localidad", "San Fernando");
+            direccion.put("provincia", "Madrid");
 
-        JSONObject persona = new JSONObject();
-        persona.put("nombre", "Anibal");
-        persona.put("edad", 30);
-        persona.put("nacionalidad", "español");
-        persona.put("direccion", direccion);
+            JSONObject persona = new JSONObject();
+            persona.put("nombre", "Anibal");
+            persona.put("edad", 30);
+            persona.put("nacionalidad", "español");
+            persona.put("direccion", direccion);
 
-        return persona;
+            return persona;
+        }
+        catch (JSONException e)
+        {
+            Toast.makeText(context, "Error creando el JSON.", Toast.LENGTH_SHORT).show();
+            throw new RuntimeException(e);
+        }
     }
 }
