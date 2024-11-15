@@ -61,8 +61,9 @@ public class JsonParserActivity extends AppCompatActivity {
 
     private void storeJson(Context context, String fileName)
     {
-        // JSONObject persona = createJson(context);
-        // saveJson(context, fileName, persona);
+        //JSONObject persona = createJson(context);
+        //saveJson(context, fileName, persona);
+
         File file = new File(context.getFilesDir(), fileName);
         InputStream is;
         FileOutputStream fos;
@@ -117,16 +118,25 @@ public class JsonParserActivity extends AppCompatActivity {
         }
     }
 
-    private void saveJson(Context context, String fileName, JSONObject persona) throws IOException, JSONException
+    private void saveJson(Context context, String fileName, JSONObject persona)
     {
-        File file = new File(context.getFilesDir(), fileName);
-        FileWriter fileWriter = new FileWriter(file);
-        fileWriter.write(persona.toString(2));
-        fileWriter.close();
+        try
+        {
+            File file = new File(context.getFilesDir(), fileName);
+            FileWriter fileWriter = new FileWriter(file);
+            fileWriter.write(persona.toString(2));
+            fileWriter.close();
+        }
+        catch (IOException | JSONException e)
+        {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
-     * @return - una instancia de JSONObject con
+     * <p>Esta función se utilizaría junto con el código</p>
+     *
+     * @return - una instancia de JSONObject con toda la información que conformará el contenido del fichero JSON
      */
     @NonNull
     private JSONObject createJson(Context context)
