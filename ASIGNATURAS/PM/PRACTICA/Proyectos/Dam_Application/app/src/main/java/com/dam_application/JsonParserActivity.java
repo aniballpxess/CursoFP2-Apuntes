@@ -126,7 +126,7 @@ public class JsonParserActivity extends AppCompatActivity {
     }
 
     /**
-     * @return - Objeto JSON 
+     * @return - una instancia de JSONObject con
      */
     @NonNull
     private JSONObject createJson(Context context)
