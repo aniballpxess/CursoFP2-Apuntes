@@ -80,7 +80,7 @@ public class Funciones
 
     public static void printErrorLine(String line)
     {
-        String time = LocalDateTime.now().format(Parametros.normalFormat);
+        String time = LocalDateTime.now().format(Parametros.NORMAL_FORMAT);
         System.err.println(time + " - " + line);
     }
 }

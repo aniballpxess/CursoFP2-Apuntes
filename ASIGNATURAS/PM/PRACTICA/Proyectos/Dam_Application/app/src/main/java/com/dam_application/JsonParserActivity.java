@@ -1,8 +1,10 @@
 package com.dam_application;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.view.MotionEvent;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,14 +21,11 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 
 public class JsonParserActivity extends AppCompatActivity {
     Button btn_leerJson;
@@ -34,6 +33,7 @@ public class JsonParserActivity extends AppCompatActivity {
     TextView tv_contenidoJson;
     File ficheroJson;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +51,16 @@ public class JsonParserActivity extends AppCompatActivity {
 
         // Establece un metodo para moverse por el contenido (en este caso un scroll lateral)
         tv_contenidoJson.setMovementMethod(new ScrollingMovementMethod());
+
+        // Se asegura de que no habrán conflicto entre la pantalla de la actividad y la caja donde se
+        // muestra el JSON al detectar un movimiento de scroll
+        tv_contenidoJson.setOnTouchListener((v, event) -> {
+            v.getParent().requestDisallowInterceptTouchEvent(true);
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                v.getParent().requestDisallowInterceptTouchEvent(false);
+            }
+            return false;
+        });
 
         storeJson(JsonParserActivity.this, "poliza.json");
 
@@ -74,7 +84,6 @@ public class JsonParserActivity extends AppCompatActivity {
                 }
                 fos.write(buffer, 0, length);
             }
-            fos.flush();
             fos.close();
             is.close();
         } catch (IOException e) {

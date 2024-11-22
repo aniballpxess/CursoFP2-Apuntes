@@ -73,7 +73,7 @@ public class LanzadorDeProgramas
 
     public static void main(String[] args)
     {
-        System.setProperty("user.dir", Parametros.materialesPath.toString());
+        System.setProperty("user.dir", Parametros.MATERIALES_PATH.toString());
         crearLogErrores();
         Scanner escaner = new Scanner(System.in);
         System.out.print(launchMSG);
