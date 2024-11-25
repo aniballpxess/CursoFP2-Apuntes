@@ -11,28 +11,20 @@ import androidx.appcompat.widget.Toolbar;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-    // FrameLayout to allow derived activities to add their content
     private FrameLayout contentFrame;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        super.setContentView(R.layout.activity_base);
 
-        // Inflate the base layout
-        setContentView(R.layout.activity_base);
-
-        // Setup the toolbar
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        // Find the content frame
         contentFrame = findViewById(R.id.contentFrame);
+        toolbar = findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
     }
 
-    /**
-     * Adds the content view of the derived activity into the content frame.
-     * @param layoutResID Layout resource ID of the derived activity.
-     */
     @Override
     public void setContentView(int layoutResID) {
         if (contentFrame != null) {
@@ -44,23 +36,21 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate a common menu (if any)
         getMenuInflater().inflate(R.menu.common_menu, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle common menu item clicks
-        switch (item.getItemId()) {
-            case R.id.action_settings:
-                // Handle settings action
-                return true;
-            case R.id.action_help:
-                // Handle help action
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        // TODO - funcionalidad extra de cada opción
+        if (item.getItemId() == R.id.action_settings) {
+            // Funcionalidad extra aquí
+            return true;
         }
+        if (item.getItemId() == R.id.action_help) {
+            // Funcionalidad extra aquí
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

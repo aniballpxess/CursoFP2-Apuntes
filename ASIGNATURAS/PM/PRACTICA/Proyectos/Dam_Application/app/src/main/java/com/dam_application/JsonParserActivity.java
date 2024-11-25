@@ -27,7 +27,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class JsonParserActivity extends AppCompatActivity {
+public class JsonParserActivity extends BaseActivity {
 
     // Elementos visuales
     Button btn_leerJson;

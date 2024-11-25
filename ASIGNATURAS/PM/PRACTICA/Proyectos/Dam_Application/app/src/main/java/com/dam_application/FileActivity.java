@@ -18,7 +18,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.security.SecureRandom;
 
-public class FileActivity extends AppCompatActivity {
+public class FileActivity extends BaseActivity {
 
     TextView vistaContenido;
     // Se crea la actividad

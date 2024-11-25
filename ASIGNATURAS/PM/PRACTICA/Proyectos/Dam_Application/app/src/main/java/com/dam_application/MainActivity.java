@@ -15,7 +15,9 @@ import java.util.Date;
 import java.util.Locale;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends BaseActivity {
 
@@ -31,10 +33,12 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        LayoutInflater inflater = LayoutInflater.from(this);
-        View contentView = inflater.inflate(R.layout.activity_main, null);
-        FrameLayout contentFrame = findViewById(R.id.base);
-        contentFrame.addView(contentView);
+        setContentView(R.layout.activity_main);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, 0, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
         btn_actividadFichero = findViewById(R.id.btn_actividadFichero);
         btn_actividadCalculadora = findViewById(R.id.btn_actividadCalculadora);

@@ -13,7 +13,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class CalculatorActivity extends AppCompatActivity {
+public class CalculatorActivity extends BaseActivity {
 
     EditText et_num1, et_num2;
     TextView tv_resultado;
