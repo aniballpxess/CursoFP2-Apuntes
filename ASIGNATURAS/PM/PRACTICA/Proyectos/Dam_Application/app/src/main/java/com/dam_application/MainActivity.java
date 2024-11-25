@@ -3,7 +3,10 @@ package com.dam_application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import java.text.ParsePosition;
@@ -14,7 +17,7 @@ import java.util.Locale;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private Button btn_actividadFichero;
     private Button btn_actividadCalculadora;
@@ -28,7 +31,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View contentView = inflater.inflate(R.layout.activity_main, null);
+        FrameLayout contentFrame = findViewById(R.id.base);
+        contentFrame.addView(contentView);
 
         btn_actividadFichero = findViewById(R.id.btn_actividadFichero);
         btn_actividadCalculadora = findViewById(R.id.btn_actividadCalculadora);

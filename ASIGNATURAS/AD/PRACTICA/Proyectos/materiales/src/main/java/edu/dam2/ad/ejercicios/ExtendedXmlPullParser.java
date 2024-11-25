@@ -1,4 +1,4 @@
-package edu.dam2.ad.ejemplos;
+package edu.dam2.ad.ejercicios;
 
 import java.io.FileInputStream;
 import org.xmlpull.v1.XmlPullParser;

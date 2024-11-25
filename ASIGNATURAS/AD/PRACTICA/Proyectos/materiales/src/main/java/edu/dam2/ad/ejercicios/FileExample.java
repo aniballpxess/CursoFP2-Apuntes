@@ -1,4 +1,4 @@
-package edu.dam2.ad.ejemplos;
+package edu.dam2.ad.ejercicios;
 
 // Importa las clases necesarias para trabajar con archivos y manejar excepciones
 import java.io.File; // Para crear y manejar archivos y directorios

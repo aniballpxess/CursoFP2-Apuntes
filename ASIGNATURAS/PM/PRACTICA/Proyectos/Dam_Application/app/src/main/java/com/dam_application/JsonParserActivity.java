@@ -28,9 +28,13 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class JsonParserActivity extends AppCompatActivity {
+
+    // Elementos visuales
     Button btn_leerJson;
     Button btn_mostrarJson;
     TextView tv_contenidoJson;
+
+    // Ficheros
     File ficheroJson;
 
     @SuppressLint("ClickableViewAccessibility")
