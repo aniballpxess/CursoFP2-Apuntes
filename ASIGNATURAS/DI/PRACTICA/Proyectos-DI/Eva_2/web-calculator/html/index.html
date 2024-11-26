@@ -5,9 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <script src="../js/scripts.js"></script>
+    <script src="../js/scripts.js" defer></script>
   </head>
   <body>
-    
+    <h2>Calculadora Simple</h2>
+    <fieldset id="calculadora" class="gris_o">
+      <input type="text" id="pantalla" disabled />
+      <div class="teclado">
+        <button id="btn_1" class="tecla gris_c" value="1" onclick="addDigit(this)">1</button>
+        <button id="btn_2" class="tecla gris_c" value="2" onclick="addDigit(this)">2</button>
+        <button id="btn_3" class="tecla gris_c" value="3" onclick="addDigit(this)">3</button>
+        <button id="btn_4" class="tecla gris_c" value="4" onclick="addDigit(this)">4</button>
+        <button id="btn_5" class="tecla gris_c" value="5" onclick="addDigit(this)">5</button>
+        <button id="btn_6" class="tecla gris_c" value="6" onclick="addDigit(this)">6</button>
+        <button id="btn_7" class="tecla gris_c" value="7" onclick="addDigit(this)">7</button>
+        <button id="btn_8" class="tecla gris_c" value="8" onclick="addDigit(this)">8</button>
+        <button id="btn_9" class="tecla gris_c" value="9" onclick="addDigit(this)">9</button>
+        <button id="btn_0" class="tecla gris_c" value="0" onclick="addDigit(this)">0</button>
+        <button id="btn_S" class="tecla gris_c" onclick="addNumber()">&plus;</button>
+        <button id="btn_C" class="tecla gris_c" onclick="calculate()">&equals;</button>
+        <button id="btn_R" class="tecla gris_c" onclick="resetCalc()">RESET</button>
+      </div>
+    </fieldset>
   </body>
 </html>
