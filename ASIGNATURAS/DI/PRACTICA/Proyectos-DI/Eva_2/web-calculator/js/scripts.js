@@ -50,7 +50,7 @@ function addDigit(digit) {
 function addNumber() {
   if (pantalla.value) {
     primerNumero = Number(pantalla.value);
-    pantalla.value = '';
+    pantalla.value = null;
     estadoActual = ESTADOS.SIN_SEGUNDO_INPUT;
     updateButtonStates();
   }
@@ -69,7 +69,7 @@ function calculate() {
 }
 
 function resetCalc() {
-  pantalla.value = '';
+  pantalla.value = null;
   primerNumero = null;
   segundoNumero = null;
   estadoActual = ESTADOS.SIN_PRIMER_INPUT;
