@@ -38,11 +38,6 @@ public class PaletteActivity extends BaseActivity {
         }
         // -------------------------------------------------------------------------------------- //
         setContentView(R.layout.activity_palette);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.pallete), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, 0, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
         tb_modoNocturnoDiurno = findViewById(R.id.tb_modoNocturnoDiurno);
 

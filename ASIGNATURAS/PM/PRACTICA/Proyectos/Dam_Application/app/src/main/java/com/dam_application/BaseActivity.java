@@ -8,19 +8,27 @@ import android.view.View;
 import android.widget.FrameLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-    private FrameLayout contentFrame;
     private Toolbar toolbar;
+    private FrameLayout contentFrame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_base);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.base), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
-        contentFrame = findViewById(R.id.contentFrame);
         toolbar = findViewById(R.id.toolbar);
+        contentFrame = findViewById(R.id.contentFrame);
 
         setSupportActionBar(toolbar);
     }
