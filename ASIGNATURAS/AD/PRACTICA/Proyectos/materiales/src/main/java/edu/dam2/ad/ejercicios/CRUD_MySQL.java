@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class CRUD_MySQL {
 
-    private static final String URL = "jdbc:mysql://localhost:3306"; // Update with your database name
+    private static final String URL = "jdbc:mysql://localhost:3306/videogames_db"; // Update with your database name
     private static final String USER = "root"; // Update with your username
     private static final String PASSWORD = "root_pswd"; // Update with your password
 
@@ -93,13 +93,13 @@ public class CRUD_MySQL {
     public static void main(String[] args) {
         connect();
         // CREATE
-        // createVideoGame("Halo 3", "First-person shooter", "2007-09-25", "Xbox 360", "Bungie", "Microsoft Game Studios", 9.5);
+        createVideoGame("Halo 3", "First-person shooter", "2007-09-25", "Xbox 360", "Bungie", "Microsoft Game Studios", 9.5);
         // READ
-        // readVideoGames();
+        readVideoGames();
         // UPDATE
-        // updateVideoGame(1, "Halo 3: Anniversary", 4.8);
+        updateVideoGame(1, "Halo 3: Anniversary", 4.8);
         // DELETE
-        // deleteVideoGame(1);
+        deleteVideoGame(1);
         disconnect();
     }
 }
