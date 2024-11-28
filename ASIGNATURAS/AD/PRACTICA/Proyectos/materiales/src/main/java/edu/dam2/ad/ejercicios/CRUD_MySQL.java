@@ -92,14 +92,20 @@ public class CRUD_MySQL {
     // Main method to test the CRUD operations
     public static void main(String[] args) {
         connect();
+
         // CREATE
         createVideoGame("Halo 3", "First-person shooter", "2007-09-25", "Xbox 360", "Bungie", "Microsoft Game Studios", 9.5);
         // READ
         readVideoGames();
         // UPDATE
         updateVideoGame(1, "Halo 3: Anniversary", 4.8);
+        // READ
+        readVideoGames();
         // DELETE
         deleteVideoGame(1);
+        // READ
+        readVideoGames();
+
         disconnect();
     }
 }

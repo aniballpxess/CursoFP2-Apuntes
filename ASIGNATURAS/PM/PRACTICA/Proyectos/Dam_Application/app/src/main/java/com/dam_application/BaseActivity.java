@@ -1,11 +1,14 @@
 package com.dam_application;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
@@ -60,5 +63,11 @@ public abstract class BaseActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    protected void mostrarPopup(String mensaje) {
+        Toast toast = Toast.makeText(BaseActivity.this, mensaje, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+        toast.show();
     }
 }
