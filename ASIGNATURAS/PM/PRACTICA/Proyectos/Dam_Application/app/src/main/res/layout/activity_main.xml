@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/popup"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -47,7 +47,7 @@
                 <androidx.constraintlayout.helper.widget.Flow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:constraint_referenced_ids="btn_actividadFichero,btn_actividadCalculadora,btn_actividadPaleta,btn_actividadJson,btn_placeholder4,btn_placeholder3,btn_placeholder2,btn_placeholder1,btn_placeholder0"
+                    app:constraint_referenced_ids="btn_actividadFichero,btn_actividadCalculadora,btn_actividadPaleta,btn_actividadJson,btn_actividadPopup,btn_placeholder3,btn_placeholder2,btn_placeholder1,btn_placeholder0"
                     app:flow_wrapMode="aligned" />
 
                 <Button
@@ -75,10 +75,10 @@
                     android:text="Actividad con JSON" />
 
                 <Button
-                    android:id="@+id/btn_placeholder4"
+                    android:id="@+id/btn_actividadPopup"
                     android:layout_width="108sp"
                     android:layout_height="wrap_content"
-                    android:text="@string/placeholder_txt" />
+                    android:text="Actividad con pop-up" />
 
                 <Button
                     android:id="@+id/btn_placeholder3"

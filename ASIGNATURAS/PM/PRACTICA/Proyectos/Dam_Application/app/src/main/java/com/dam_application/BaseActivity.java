@@ -1,5 +1,7 @@
 package com.dam_application;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
@@ -23,6 +26,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         super.setContentView(R.layout.activity_base);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.base), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -69,5 +73,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(BaseActivity.this, mensaje, Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
         toast.show();
+    }
+
+    protected void abrirPaginaWeb(String url) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(intent);
     }
 }

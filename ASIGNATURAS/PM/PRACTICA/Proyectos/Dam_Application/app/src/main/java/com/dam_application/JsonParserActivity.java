@@ -41,13 +41,7 @@ public class JsonParserActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_json_parser);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.json), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
         btn_leerJson = findViewById(R.id.btn_jsonRead);
         btn_mostrarJson = findViewById(R.id.btn_jsonShow);

@@ -22,15 +22,8 @@ public class CalculatorActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_calculator);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.calc), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
         et_num1 = findViewById(R.id.et_numero1);
         et_num2 = findViewById(R.id.et_numero2);

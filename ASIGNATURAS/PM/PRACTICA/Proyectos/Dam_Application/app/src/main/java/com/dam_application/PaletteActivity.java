@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.widget.RatingBar;
 import android.widget.ToggleButton;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatDelegate;
 
 public class PaletteActivity extends BaseActivity {
@@ -21,7 +20,6 @@ public class PaletteActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         // -------------------------------------------------------------------------------------- //
         // TODO - MODO NOCTURNO
         //  introducir esto en la ToolBar/Menu de la actividad base porque esto es muy feo

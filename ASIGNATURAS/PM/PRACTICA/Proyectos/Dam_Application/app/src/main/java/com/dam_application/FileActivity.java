@@ -25,7 +25,6 @@ public class FileActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_file);
         // PRUEBA
         vistaContenido = findViewById(R.id.file_content_view);

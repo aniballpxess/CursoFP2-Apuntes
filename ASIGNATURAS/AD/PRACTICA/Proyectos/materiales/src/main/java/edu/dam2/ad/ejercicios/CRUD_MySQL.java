@@ -12,10 +12,15 @@ public class CRUD_MySQL {
 
     public static void connect() {
         try {
+            // Load the MySQL driver explicitly
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
-            System.out.println("Conexión con la base de datos establecida.");
+            System.out.println("Database connection established.");
         } catch (SQLException e) {
-            System.err.println("Error conectando con la base de datos:\n" + e.getMessage());
+            System.err.println("Failed to connect to the database: " + e.getMessage());
+        } catch (ClassNotFoundException e) {
+            System.err.println("MySQL JDBC Driver not found: " + e.getMessage());
         }
     }
 

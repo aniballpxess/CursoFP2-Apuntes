@@ -11,7 +11,6 @@ public class TestActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_test);
 
         findViewById(R.id.btn_actividad_anterior).setOnClickListener(v -> {

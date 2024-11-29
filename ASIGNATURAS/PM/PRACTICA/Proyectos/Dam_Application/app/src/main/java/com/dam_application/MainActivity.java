@@ -3,10 +3,7 @@ package com.dam_application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import java.text.ParsePosition;
@@ -15,9 +12,6 @@ import java.util.Date;
 import java.util.Locale;
 
 import androidx.activity.EdgeToEdge;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends BaseActivity {
 
@@ -25,20 +19,21 @@ public class MainActivity extends BaseActivity {
     private Button btn_actividadCalculadora;
     private Button btn_actividadPaleta;
     private Button btn_actividadJson;
-    private TextView tv_finClases;
+    private Button btn_actividadPopup;
     private Button btn_actividadTest;
-    private final String FECHA_FIN_CLASES = "2024-12-20 21:20:00";
+    private TextView tv_finClases;
+    private final String FECHA_FIN_CLASES = "2025-2-14 21:20:00";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
         btn_actividadFichero = findViewById(R.id.btn_actividadFichero);
         btn_actividadCalculadora = findViewById(R.id.btn_actividadCalculadora);
         btn_actividadPaleta = findViewById(R.id.btn_actividadPaleta);
         btn_actividadJson = findViewById(R.id.btn_actividadJson);
+        btn_actividadPopup = findViewById(R.id.btn_actividadPopup);
         btn_actividadTest = findViewById(R.id.btn_actividadTest);
         tv_finClases = findViewById(R.id.clk_finClases);
 
@@ -59,6 +54,11 @@ public class MainActivity extends BaseActivity {
 
         btn_actividadJson.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, JsonParserActivity.class);
+            startActivity(intent);
+        });
+
+        btn_actividadPopup.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, PopupActivity.class);
             startActivity(intent);
         });
 
