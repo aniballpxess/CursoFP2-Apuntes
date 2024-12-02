@@ -11,8 +11,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import androidx.activity.EdgeToEdge;
-
 public class MainActivity extends BaseActivity {
 
     private Button btn_actividadFichero;
@@ -67,10 +65,15 @@ public class MainActivity extends BaseActivity {
             startActivity(intent);
         });
 
-        getCountdownGoing();
+        comenzarCuentaAtras();
     }
 
-    private void getCountdownGoing() {
+    @Override
+    protected boolean deberiaPoderIrParaAtras() {
+        return false;
+    }
+
+    private void comenzarCuentaAtras() {
         long t_restante = tiempoRestante();
         if (t_restante > 0) {
             comenzarCuentaAtras(t_restante);

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Dam_Application</string>
+    <string name="app_name">App Incremental</string>
     <string name="backgroud_image">Descripción de la imagen de fondo</string>
     <string name="go_test_txt">Ir a Test</string>
     <string name="go_next_txt">Siguiente</string>

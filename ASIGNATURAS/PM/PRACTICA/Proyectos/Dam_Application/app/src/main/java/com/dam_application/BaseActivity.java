@@ -3,7 +3,6 @@ package com.dam_application;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.LayoutInflater;
@@ -38,8 +37,16 @@ public abstract class BaseActivity extends AppCompatActivity {
         contentFrame = findViewById(R.id.contentFrame);
 
         setSupportActionBar(toolbar);
+
+        // Para mostrar el botón Home (flecha para volver atrás) solo cuando haga falta (no en Main)
+        if (deberiaPoderIrParaAtras()) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
     }
 
+    // - Para no tener que cambiar la carga del Layout the cada actividad.
+    // - Se podría añadir la funcionalidad del padre para casos excepcionales, pero por ahora todas
+    // las actividades van a ser hijas de esta.
     @Override
     public void setContentView(int layoutResID) {
         if (contentFrame != null) {
@@ -58,6 +65,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // TODO - funcionalidad extra de cada opción
+        if (item.getItemId() == android.R.id.home) {
+            getOnBackPressedDispatcher().onBackPressed(); // Te devuelve a la actividad anterior
+            return true;
+        }
         if (item.getItemId() == R.id.action_settings) {
             // Funcionalidad extra aquí
             return true;
@@ -69,12 +80,17 @@ public abstract class BaseActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    protected void mostrarPopup(String mensaje) {
-        Toast toast = Toast.makeText(BaseActivity.this, mensaje, Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-        toast.show();
+    // para poder hacer @Override en Main y que no se muestre el botón Home
+    protected boolean deberiaPoderIrParaAtras() {
+        return true;
     }
 
+    // Para mostrar mensajes básicos al usuario
+    protected void mostrarPopup(String mensaje) {
+        Toast.makeText(BaseActivity.this, mensaje, Toast.LENGTH_LONG).show();
+    }
+
+    // Para cargar un enlace a una página web
     protected void abrirPaginaWeb(String url) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(intent);
