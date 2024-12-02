@@ -44,9 +44,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
-    // - Para no tener que cambiar la carga del Layout the cada actividad.
-    // - Se podría añadir la funcionalidad del padre para casos excepcionales, pero por ahora todas
-    // las actividades van a ser hijas de esta.
     @Override
     public void setContentView(int layoutResID) {
         if (contentFrame != null) {
@@ -80,17 +77,14 @@ public abstract class BaseActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // para poder hacer @Override en Main y que no se muestre el botón Home
     protected boolean deberiaPoderIrParaAtras() {
         return true;
     }
 
-    // Para mostrar mensajes básicos al usuario
     protected void mostrarPopup(String mensaje) {
         Toast.makeText(BaseActivity.this, mensaje, Toast.LENGTH_LONG).show();
     }
 
-    // Para cargar un enlace a una página web
     protected void abrirPaginaWeb(String url) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(intent);

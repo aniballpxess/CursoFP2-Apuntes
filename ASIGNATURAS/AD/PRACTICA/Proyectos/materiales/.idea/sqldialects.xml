@@ -3,5 +3,6 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/src/main/java/edu/dam2/ad/ejercicios/DDL_MySQL.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/edu/dam2/ad/ejercicios/DML_MySQL.java" dialect="GenericSQL" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/fe91991c-893a-444b-9d92-b8c01ba9e2b3/console.sql" dialect="SQLite" />
   </component>
 </project>

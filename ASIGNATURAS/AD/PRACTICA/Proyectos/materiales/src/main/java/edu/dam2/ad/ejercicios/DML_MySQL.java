@@ -11,7 +11,7 @@ public class DML_MySQL {
 
     private static Connection conexion = null;
 
-    public static void conectar() {
+    public static void conectarse() {
         try {
             conexion = DriverManager.getConnection(URL, USUARIO, CONTRASENA);
             System.out.println("Conexion a la base de datos establecida.");
@@ -20,7 +20,7 @@ public class DML_MySQL {
         }
     }
 
-    public static void desconectar() {
+    public static void desconectarse() {
         try {
             if (conexion != null && !conexion.isClosed()) {
                 conexion.close();
@@ -109,7 +109,7 @@ public class DML_MySQL {
 
     public static void insertarVideojuego(String titulo, String genero, String fechaLanzamiento, String plataforma, String desarrollador, String editor, double calificacion) {
         String consulta = """
-            INSERT INTO videogames (title, genre, release_date, platform, developer, publisher, rating)
+            INSERT INTO videogames (titulo, genero, fecha_lanzamiento, plataforma, desarrollador, editor, calificacion)
             VALUES (?, ?, ?, ?, ?, ?, ?)
         """;
         try (PreparedStatement pstmt = conexion.prepareStatement(consulta)) {
@@ -139,7 +139,7 @@ public class DML_MySQL {
             System.out.println("6. Salir");
             System.out.print("Elige una opcion: ");
             int opcion = scanner.nextInt();
-            scanner.nextLine(); // Consumir el salto de linea
+            scanner.nextLine();
 
             switch (opcion) {
                 case 1 -> obtenerTodosLosVideojuegos();
@@ -187,7 +187,7 @@ public class DML_MySQL {
                 }
                 case 6 -> {
                     System.out.println("Saliendo del programa...");
-                    desconectar();
+                    desconectarse();
                     return;
                 }
                 default -> System.out.println("Opcion invalida! Intenta de nuevo.");
@@ -196,8 +196,8 @@ public class DML_MySQL {
     }
 
     public static void main(String[] args) {
-        conectar();
+        conectarse();
         menu();
-        desconectar();
+        desconectarse();
     }
 }
