@@ -41,7 +41,7 @@ public class DDL_MySQL {
 
     public static void crearTabla() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese el nombre de la tabla que desea crear: ");
+        System.out.print(" - nombre de la tabla: ");
         String nombreTabla = scanner.nextLine().trim();
         if (nombreTabla.isEmpty()) {
             System.out.println("El nombre de la tabla no puede estar vacio.");
@@ -72,7 +72,7 @@ public class DDL_MySQL {
 
     public static void eliminarTabla() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese el nombre de la tabla que desea eliminar: ");
+        System.out.print(" - nombre de la tabla: ");
         String nombreTabla = scanner.nextLine().trim();
         if (nombreTabla.isEmpty()) {
             System.out.println("El nombre de la tabla no puede estar vacio.");
@@ -88,7 +88,6 @@ public class DDL_MySQL {
             System.err.println("Error al eliminar la tabla: " + e.getMessage());
         }
     }
-
 
     public static void crearCampo() {
         if (tablaActual == null) {
@@ -249,7 +248,6 @@ public class DDL_MySQL {
         System.out.println("Tabla actual establecida en: " + tablaActual);
     }
 
-
     public static void mostrarMenu() {
         Scanner scanner = new Scanner(System.in);
         boolean salir = false;
@@ -285,7 +283,6 @@ public class DDL_MySQL {
         }
         scanner.close();
     }
-
 
     public static void main(String[] args) {
         conectarse();
