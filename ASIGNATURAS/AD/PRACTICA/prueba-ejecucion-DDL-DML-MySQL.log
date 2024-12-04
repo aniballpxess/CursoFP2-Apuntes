@@ -1,0 +1,655 @@
+"C:\Program Files\Java\jdk-21\bin\java.exe" "-javaagent:C:\Users\aniba\AppData\Local\Programs\IntelliJ IDEA Ultimate\lib\idea_rt.jar=60407:C:\Users\aniba\AppData\Local\Programs\IntelliJ IDEA Ultimate\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\CursoFP2\ASIGNATURAS\AD\PRACTICA\Proyectos\materiales\target\classes;C:\Users\aniba\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar;C:\Users\aniba\.m2\repository\xmlpull\xmlpull\1.1.3.1\xmlpull-1.1.3.1.jar;C:\Users\aniba\.m2\repository\net\sf\kxml\kxml2\2.3.0\kxml2-2.3.0.jar;C:\CursoFP2\ASIGNATURAS\AD\PRACTICA\Proyectos\materiales\lib\mysql-connector-j-8.4.0.jar;C:\CursoFP2\ASIGNATURAS\AD\PRACTICA\Proyectos\materiales\lib\protobuf-java-3.25.1.jar;C:\Users\aniba\.m2\repository\org\xerial\sqlite-jdbc\3.41.2.2\sqlite-jdbc-3.41.2.2.jar edu.dam2.ad.ejercicios.DDL_DML_MySQL
+Conexion a la base de datos establecida.
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 1
+Tablas en la base de datos:
+ - vj
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 6
+ - Nombre de la tabla: vj
+Tabla 'vj' eliminada exitosamente.
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 5
+ - Nombre de la tabla: VG
+Tabla 'VG' creada exitosamente.
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 1
+Tablas en la base de datos:
+ - vg
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 2
+Ingrese el nombre de la tabla para operar: VG
+Tabla actual establecida en: VG
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 9
+Datos iniciales insertados exitosamente.
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 3
+Campos de la tabla 'VG':
+Campo: id                   Tipo: int             Nulo: NO     Clave: PRI    Default: null                 Extra: auto_increment      
+Campo: title                Tipo: varchar(255)    Nulo: NO     Clave:        Default: null                 Extra:                     
+Campo: genre                Tipo: varchar(100)    Nulo: YES    Clave:        Default: null                 Extra:                     
+Campo: launch_date          Tipo: date            Nulo: YES    Clave:        Default: null                 Extra:                     
+Campo: platform             Tipo: varchar(100)    Nulo: YES    Clave:        Default: null                 Extra:                     
+Campo: developer            Tipo: varchar(150)    Nulo: YES    Clave:        Default: null                 Extra:                     
+Campo: publisher            Tipo: varchar(150)    Nulo: YES    Clave:        Default: null                 Extra:                     
+Campo: rating               Tipo: decimal(3,1)    Nulo: YES    Clave:        Default: null                 Extra:                     
+Campo: created_at           Tipo: timestamp       Nulo: YES    Clave:        Default: CURRENT_TIMESTAMP    Extra: DEFAULT_GENERATED   
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 4
+Datos de la tabla 'VG':
+id title                                   genre            launch_date platform        developer              publisher                      rating created_at          
+-- --------------------------------------- ---------------- ----------- --------------- ---------------------- ------------------------------ ------ ------------------- 
+1  The Legend of Zelda: Breath of the Wild Action-adventure 2017-03-03  Nintendo Switch Nintendo               Nintendo                       9.7    2024-12-04 16:31:06 
+2  Elden Ring                              Action RPG       2022-02-25  PC              FromSoftware           Bandai Namco                   9.4    2024-12-04 16:31:06 
+3  Cyberpunk 2077                          Action RPG       2020-12-10  PC              CD Projekt Red         CD Projekt                     7.8    2024-12-04 16:31:06 
+4  Super Mario Odyssey                     Platform         2017-10-27  Nintendo Switch Nintendo               Nintendo                       9.8    2024-12-04 16:31:06 
+5  Grand Theft Auto V                      Action-adventure 2013-09-17  PC              Rockstar North         Rockstar Games                 9.6    2024-12-04 16:31:06 
+6  Red Dead Redemption 2                   Action-adventure 2018-10-26  PC              Rockstar Studios       Rockstar Games                 9.8    2024-12-04 16:31:06 
+7  The Witcher 3: Wild Hunt                Action RPG       2015-05-19  PC              CD Projekt Red         CD Projekt                     9.9    2024-12-04 16:31:06 
+8  Hollow Knight                           Metroidvania     2017-02-24  PC              Team Cherry            Team Cherry                    9.0    2024-12-04 16:31:06 
+9  Portal 2                                Puzzle-platform  2011-04-19  PC              Valve                  Valve                          9.6    2024-12-04 16:31:06 
+10 Overwatch                               FPS              2016-05-24  PC              Blizzard Entertainment Blizzard Entertainment         9.0    2024-12-04 16:31:06 
+11 Fortnite                                Battle Royale    2017-09-26  PC              Epic Games             Epic Games                     8.5    2024-12-04 16:31:06 
+12 Stardew Valley                          Simulation RPG   2016-02-26  PC              ConcernedApe           ConcernedApe                   9.4    2024-12-04 16:31:06 
+13 Animal Crossing: New Horizons           Simulation       2020-03-20  Nintendo Switch Nintendo               Nintendo                       9.6    2024-12-04 16:31:06 
+14 Among Us                                Party            2018-06-15  PC              Innersloth             Innersloth                     8.8    2024-12-04 16:31:06 
+15 Dark Souls III                          Action RPG       2016-04-12  PC              FromSoftware           Bandai Namco Entertainment     9.0    2024-12-04 16:31:06 
+16 Sekiro: Shadows Die Twice               Action RPG       2019-03-22  PC              FromSoftware           Activision                     9.3    2024-12-04 16:31:06 
+17 Celeste                                 Platform         2018-01-25  PC              Maddy Makes Games      Maddy Makes Games              9.4    2024-12-04 16:31:06 
+18 Fire Emblem: Three Houses               Tactical RPG     2019-07-26  Nintendo Switch Intelligent Systems    Nintendo                       9.5    2024-12-04 16:31:06 
+19 Bloodborne                              Action RPG       2015-03-24  PlayStation     FromSoftware           Sony Computer Entertainment    9.1    2024-12-04 16:31:06 
+20 Doom Eternal                            FPS              2020-03-20  PC              id Software            Bethesda Softworks             9.0    2024-12-04 16:31:06 
+21 God of War                              Action-adventure 2018-04-20  PlayStation     Santa Monica Studio    Sony Interactive Entertainment 9.6    2024-12-04 16:31:06 
+22 Monster Hunter: World                   Action RPG       2018-01-26  PC              Capcom                 Capcom                         9.2    2024-12-04 16:31:06 
+23 Assassins Creed Odyssey                 Action RPG       2018-10-05  PC              Ubisoft Quebec         Ubisoft                        8.9    2024-12-04 16:31:06 
+24 Fallout 4                               Action RPG       2015-11-10  PC              Bethesda Game Studios  Bethesda Softworks             8.7    2024-12-04 16:31:06 
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 7
+ - Nombre del campo: in_possesion
+
+ - Tipo de dato: Tipo de dato no valido. Operacion cancelada.
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 7
+ - Nombre del campo: in_possesion
+ - Tipo de dato: BOOLEAN
+Campo agregado exitosamente: in_possesion
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 3
+Campos de la tabla 'VG':
+Campo: id                   Tipo: int             Nulo: NO     Clave: PRI    Default: null                 Extra: auto_increment      
+Campo: title                Tipo: varchar(255)    Nulo: NO     Clave:        Default: null                 Extra:                     
+Campo: genre                Tipo: varchar(100)    Nulo: YES    Clave:        Default: null                 Extra:                     
+Campo: launch_date          Tipo: date            Nulo: YES    Clave:        Default: null                 Extra:                     
+Campo: platform             Tipo: varchar(100)    Nulo: YES    Clave:        Default: null                 Extra:                     
+Campo: developer            Tipo: varchar(150)    Nulo: YES    Clave:        Default: null                 Extra:                     
+Campo: publisher            Tipo: varchar(150)    Nulo: YES    Clave:        Default: null                 Extra:                     
+Campo: rating               Tipo: decimal(3,1)    Nulo: YES    Clave:        Default: null                 Extra:                     
+Campo: created_at           Tipo: timestamp       Nulo: YES    Clave:        Default: CURRENT_TIMESTAMP    Extra: DEFAULT_GENERATED   
+Campo: in_possesion         Tipo: tinyint(1)      Nulo: YES    Clave:        Default: null                 Extra:                     
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 4
+Datos de la tabla 'VG':
+id title                                   genre            launch_date platform        developer              publisher                      rating created_at          in_possesion 
+-- --------------------------------------- ---------------- ----------- --------------- ---------------------- ------------------------------ ------ ------------------- ------------ 
+1  The Legend of Zelda: Breath of the Wild Action-adventure 2017-03-03  Nintendo Switch Nintendo               Nintendo                       9.7    2024-12-04 16:31:06 NULL         
+2  Elden Ring                              Action RPG       2022-02-25  PC              FromSoftware           Bandai Namco                   9.4    2024-12-04 16:31:06 NULL         
+3  Cyberpunk 2077                          Action RPG       2020-12-10  PC              CD Projekt Red         CD Projekt                     7.8    2024-12-04 16:31:06 NULL         
+4  Super Mario Odyssey                     Platform         2017-10-27  Nintendo Switch Nintendo               Nintendo                       9.8    2024-12-04 16:31:06 NULL         
+5  Grand Theft Auto V                      Action-adventure 2013-09-17  PC              Rockstar North         Rockstar Games                 9.6    2024-12-04 16:31:06 NULL         
+6  Red Dead Redemption 2                   Action-adventure 2018-10-26  PC              Rockstar Studios       Rockstar Games                 9.8    2024-12-04 16:31:06 NULL         
+7  The Witcher 3: Wild Hunt                Action RPG       2015-05-19  PC              CD Projekt Red         CD Projekt                     9.9    2024-12-04 16:31:06 NULL         
+8  Hollow Knight                           Metroidvania     2017-02-24  PC              Team Cherry            Team Cherry                    9.0    2024-12-04 16:31:06 NULL         
+9  Portal 2                                Puzzle-platform  2011-04-19  PC              Valve                  Valve                          9.6    2024-12-04 16:31:06 NULL         
+10 Overwatch                               FPS              2016-05-24  PC              Blizzard Entertainment Blizzard Entertainment         9.0    2024-12-04 16:31:06 NULL         
+11 Fortnite                                Battle Royale    2017-09-26  PC              Epic Games             Epic Games                     8.5    2024-12-04 16:31:06 NULL         
+12 Stardew Valley                          Simulation RPG   2016-02-26  PC              ConcernedApe           ConcernedApe                   9.4    2024-12-04 16:31:06 NULL         
+13 Animal Crossing: New Horizons           Simulation       2020-03-20  Nintendo Switch Nintendo               Nintendo                       9.6    2024-12-04 16:31:06 NULL         
+14 Among Us                                Party            2018-06-15  PC              Innersloth             Innersloth                     8.8    2024-12-04 16:31:06 NULL         
+15 Dark Souls III                          Action RPG       2016-04-12  PC              FromSoftware           Bandai Namco Entertainment     9.0    2024-12-04 16:31:06 NULL         
+16 Sekiro: Shadows Die Twice               Action RPG       2019-03-22  PC              FromSoftware           Activision                     9.3    2024-12-04 16:31:06 NULL         
+17 Celeste                                 Platform         2018-01-25  PC              Maddy Makes Games      Maddy Makes Games              9.4    2024-12-04 16:31:06 NULL         
+18 Fire Emblem: Three Houses               Tactical RPG     2019-07-26  Nintendo Switch Intelligent Systems    Nintendo                       9.5    2024-12-04 16:31:06 NULL         
+19 Bloodborne                              Action RPG       2015-03-24  PlayStation     FromSoftware           Sony Computer Entertainment    9.1    2024-12-04 16:31:06 NULL         
+20 Doom Eternal                            FPS              2020-03-20  PC              id Software            Bethesda Softworks             9.0    2024-12-04 16:31:06 NULL         
+21 God of War                              Action-adventure 2018-04-20  PlayStation     Santa Monica Studio    Sony Interactive Entertainment 9.6    2024-12-04 16:31:06 NULL         
+22 Monster Hunter: World                   Action RPG       2018-01-26  PC              Capcom                 Capcom                         9.2    2024-12-04 16:31:06 NULL         
+23 Assassins Creed Odyssey                 Action RPG       2018-10-05  PC              Ubisoft Quebec         Ubisoft                        8.9    2024-12-04 16:31:06 NULL         
+24 Fallout 4                               Action RPG       2015-11-10  PC              Bethesda Game Studios  Bethesda Softworks             8.7    2024-12-04 16:31:06 NULL         
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 10
+Campo para filtrar: genre
+Valor del filtro: Action RPG
+title                     genre      platform    developer             rating 
+------------------------- ---------- ----------- --------------------- ------ 
+Elden Ring                Action RPG PC          FromSoftware          9.4    
+Cyberpunk 2077            Action RPG PC          CD Projekt Red        7.8    
+The Witcher 3: Wild Hunt  Action RPG PC          CD Projekt Red        9.9    
+Dark Souls III            Action RPG PC          FromSoftware          9.0    
+Sekiro: Shadows Die Twice Action RPG PC          FromSoftware          9.3    
+Bloodborne                Action RPG PlayStation FromSoftware          9.1    
+Monster Hunter: World     Action RPG PC          Capcom                9.2    
+Assassins Creed Odyssey   Action RPG PC          Ubisoft Quebec        8.9    
+Fallout 4                 Action RPG PC          Bethesda Game Studios 8.7    
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 13
+Campo a actualizar: rating
+Nuevo valor: 10.0
+Campo para filtrar: dev
+Valor del filtro: FromSoftware
+************* MENÚ  PRINCIPAL *************
+Error al actualizar videojuegos: Unknown column 'dev' in 'where clause'
+java.sql.SQLSyntaxErrorException: Unknown column 'dev' in 'where clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:113)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at edu.dam2.ad.ejercicios.DDL_DML_MySQL.actualizarRegistro(DDL_DML_MySQL.java:551)
+	at edu.dam2.ad.ejercicios.DDL_DML_MySQL.mostrarMenu(DDL_DML_MySQL.java:99)
+	at edu.dam2.ad.ejercicios.DDL_DML_MySQL.main(DDL_DML_MySQL.java:604)
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 13
+Campo a actualizar: rating
+Nuevo valor: 10.0
+Campo para filtrar: developer
+Valor del filtro: FromSoft
+Se actualizaron 4 registros: 'rating' cambiado a '10.0' donde 'developer' contiene 'FromSoft'.
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 10
+Campo para filtrar: genre
+Valor del filtro: RPG
+title                     genre          platform        developer             rating 
+------------------------- -------------- --------------- --------------------- ------ 
+Elden Ring                Action RPG     PC              FromSoftware          10.0   
+Cyberpunk 2077            Action RPG     PC              CD Projekt Red        7.8    
+The Witcher 3: Wild Hunt  Action RPG     PC              CD Projekt Red        9.9    
+Stardew Valley            Simulation RPG PC              ConcernedApe          9.4    
+Dark Souls III            Action RPG     PC              FromSoftware          10.0   
+Sekiro: Shadows Die Twice Action RPG     PC              FromSoftware          10.0   
+Fire Emblem: Three Houses Tactical RPG   Nintendo Switch Intelligent Systems   9.5    
+Bloodborne                Action RPG     PlayStation     FromSoftware          10.0   
+Monster Hunter: World     Action RPG     PC              Capcom                9.2    
+Assassins Creed Odyssey   Action RPG     PC              Ubisoft Quebec        8.9    
+Fallout 4                 Action RPG     PC              Bethesda Game Studios 8.7    
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 12
+Campo para filtrar: developer
+Valor del filtro: Ubisoft
+Se borraron 1 registros donde developer contiene 'Ubisoft'.
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 11
+Título: The Elder Scrolls V: Skyrim
+Género: Action RPG
+Fecha de lanzamiento (YYYY-MM-DD): 2011-11-11
+Plataforma: PC
+Desarrollador: Bethesda Game Studios
+Productora: Bethesda Softworks
+Calificación: 9.4
+Videojuego agregado exitosamente.
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 4
+Datos de la tabla 'VG':
+id title                                   genre            launch_date platform        developer              publisher                      rating created_at          in_possesion 
+-- --------------------------------------- ---------------- ----------- --------------- ---------------------- ------------------------------ ------ ------------------- ------------ 
+1  The Legend of Zelda: Breath of the Wild Action-adventure 2017-03-03  Nintendo Switch Nintendo               Nintendo                       9.7    2024-12-04 16:31:06 NULL         
+2  Elden Ring                              Action RPG       2022-02-25  PC              FromSoftware           Bandai Namco                   10.0   2024-12-04 16:31:06 NULL         
+3  Cyberpunk 2077                          Action RPG       2020-12-10  PC              CD Projekt Red         CD Projekt                     7.8    2024-12-04 16:31:06 NULL         
+4  Super Mario Odyssey                     Platform         2017-10-27  Nintendo Switch Nintendo               Nintendo                       9.8    2024-12-04 16:31:06 NULL         
+5  Grand Theft Auto V                      Action-adventure 2013-09-17  PC              Rockstar North         Rockstar Games                 9.6    2024-12-04 16:31:06 NULL         
+6  Red Dead Redemption 2                   Action-adventure 2018-10-26  PC              Rockstar Studios       Rockstar Games                 9.8    2024-12-04 16:31:06 NULL         
+7  The Witcher 3: Wild Hunt                Action RPG       2015-05-19  PC              CD Projekt Red         CD Projekt                     9.9    2024-12-04 16:31:06 NULL         
+8  Hollow Knight                           Metroidvania     2017-02-24  PC              Team Cherry            Team Cherry                    9.0    2024-12-04 16:31:06 NULL         
+9  Portal 2                                Puzzle-platform  2011-04-19  PC              Valve                  Valve                          9.6    2024-12-04 16:31:06 NULL         
+10 Overwatch                               FPS              2016-05-24  PC              Blizzard Entertainment Blizzard Entertainment         9.0    2024-12-04 16:31:06 NULL         
+11 Fortnite                                Battle Royale    2017-09-26  PC              Epic Games             Epic Games                     8.5    2024-12-04 16:31:06 NULL         
+12 Stardew Valley                          Simulation RPG   2016-02-26  PC              ConcernedApe           ConcernedApe                   9.4    2024-12-04 16:31:06 NULL         
+13 Animal Crossing: New Horizons           Simulation       2020-03-20  Nintendo Switch Nintendo               Nintendo                       9.6    2024-12-04 16:31:06 NULL         
+14 Among Us                                Party            2018-06-15  PC              Innersloth             Innersloth                     8.8    2024-12-04 16:31:06 NULL         
+15 Dark Souls III                          Action RPG       2016-04-12  PC              FromSoftware           Bandai Namco Entertainment     10.0   2024-12-04 16:31:06 NULL         
+16 Sekiro: Shadows Die Twice               Action RPG       2019-03-22  PC              FromSoftware           Activision                     10.0   2024-12-04 16:31:06 NULL         
+17 Celeste                                 Platform         2018-01-25  PC              Maddy Makes Games      Maddy Makes Games              9.4    2024-12-04 16:31:06 NULL         
+18 Fire Emblem: Three Houses               Tactical RPG     2019-07-26  Nintendo Switch Intelligent Systems    Nintendo                       9.5    2024-12-04 16:31:06 NULL         
+19 Bloodborne                              Action RPG       2015-03-24  PlayStation     FromSoftware           Sony Computer Entertainment    10.0   2024-12-04 16:31:06 NULL         
+20 Doom Eternal                            FPS              2020-03-20  PC              id Software            Bethesda Softworks             9.0    2024-12-04 16:31:06 NULL         
+21 God of War                              Action-adventure 2018-04-20  PlayStation     Santa Monica Studio    Sony Interactive Entertainment 9.6    2024-12-04 16:31:06 NULL         
+22 Monster Hunter: World                   Action RPG       2018-01-26  PC              Capcom                 Capcom                         9.2    2024-12-04 16:31:06 NULL         
+24 Fallout 4                               Action RPG       2015-11-10  PC              Bethesda Game Studios  Bethesda Softworks             8.7    2024-12-04 16:31:06 NULL         
+25 The Elder Scrolls V: Skyrim             Action RPG       2011-11-11  PC              Bethesda Game Studios  Bethesda Softworks             9.4    2024-12-04 16:58:36 NULL         
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 13
+Campo a actualizar: rating
+Nuevo valor: 4.9
+Campo para filtrar: developer
+Valor del filtro: Bethesda
+Se actualizaron 2 registros: 'rating' cambiado a '4.9' donde 'developer' contiene 'Bethesda'.
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 4
+Datos de la tabla 'VG':
+id title                                   genre            launch_date platform        developer              publisher                      rating created_at          in_possesion 
+-- --------------------------------------- ---------------- ----------- --------------- ---------------------- ------------------------------ ------ ------------------- ------------ 
+1  The Legend of Zelda: Breath of the Wild Action-adventure 2017-03-03  Nintendo Switch Nintendo               Nintendo                       9.7    2024-12-04 16:31:06 NULL         
+2  Elden Ring                              Action RPG       2022-02-25  PC              FromSoftware           Bandai Namco                   10.0   2024-12-04 16:31:06 NULL         
+3  Cyberpunk 2077                          Action RPG       2020-12-10  PC              CD Projekt Red         CD Projekt                     7.8    2024-12-04 16:31:06 NULL         
+4  Super Mario Odyssey                     Platform         2017-10-27  Nintendo Switch Nintendo               Nintendo                       9.8    2024-12-04 16:31:06 NULL         
+5  Grand Theft Auto V                      Action-adventure 2013-09-17  PC              Rockstar North         Rockstar Games                 9.6    2024-12-04 16:31:06 NULL         
+6  Red Dead Redemption 2                   Action-adventure 2018-10-26  PC              Rockstar Studios       Rockstar Games                 9.8    2024-12-04 16:31:06 NULL         
+7  The Witcher 3: Wild Hunt                Action RPG       2015-05-19  PC              CD Projekt Red         CD Projekt                     9.9    2024-12-04 16:31:06 NULL         
+8  Hollow Knight                           Metroidvania     2017-02-24  PC              Team Cherry            Team Cherry                    9.0    2024-12-04 16:31:06 NULL         
+9  Portal 2                                Puzzle-platform  2011-04-19  PC              Valve                  Valve                          9.6    2024-12-04 16:31:06 NULL         
+10 Overwatch                               FPS              2016-05-24  PC              Blizzard Entertainment Blizzard Entertainment         9.0    2024-12-04 16:31:06 NULL         
+11 Fortnite                                Battle Royale    2017-09-26  PC              Epic Games             Epic Games                     8.5    2024-12-04 16:31:06 NULL         
+12 Stardew Valley                          Simulation RPG   2016-02-26  PC              ConcernedApe           ConcernedApe                   9.4    2024-12-04 16:31:06 NULL         
+13 Animal Crossing: New Horizons           Simulation       2020-03-20  Nintendo Switch Nintendo               Nintendo                       9.6    2024-12-04 16:31:06 NULL         
+14 Among Us                                Party            2018-06-15  PC              Innersloth             Innersloth                     8.8    2024-12-04 16:31:06 NULL         
+15 Dark Souls III                          Action RPG       2016-04-12  PC              FromSoftware           Bandai Namco Entertainment     10.0   2024-12-04 16:31:06 NULL         
+16 Sekiro: Shadows Die Twice               Action RPG       2019-03-22  PC              FromSoftware           Activision                     10.0   2024-12-04 16:31:06 NULL         
+17 Celeste                                 Platform         2018-01-25  PC              Maddy Makes Games      Maddy Makes Games              9.4    2024-12-04 16:31:06 NULL         
+18 Fire Emblem: Three Houses               Tactical RPG     2019-07-26  Nintendo Switch Intelligent Systems    Nintendo                       9.5    2024-12-04 16:31:06 NULL         
+19 Bloodborne                              Action RPG       2015-03-24  PlayStation     FromSoftware           Sony Computer Entertainment    10.0   2024-12-04 16:31:06 NULL         
+20 Doom Eternal                            FPS              2020-03-20  PC              id Software            Bethesda Softworks             9.0    2024-12-04 16:31:06 NULL         
+21 God of War                              Action-adventure 2018-04-20  PlayStation     Santa Monica Studio    Sony Interactive Entertainment 9.6    2024-12-04 16:31:06 NULL         
+22 Monster Hunter: World                   Action RPG       2018-01-26  PC              Capcom                 Capcom                         9.2    2024-12-04 16:31:06 NULL         
+24 Fallout 4                               Action RPG       2015-11-10  PC              Bethesda Game Studios  Bethesda Softworks             4.9    2024-12-04 16:31:06 NULL         
+25 The Elder Scrolls V: Skyrim             Action RPG       2011-11-11  PC              Bethesda Game Studios  Bethesda Softworks             4.9    2024-12-04 16:58:36 NULL         
+************* MENÚ  PRINCIPAL *************
+------------ Operaciones Extra ------------
+0. Salir
+1. Mostrar Tablas
+2. Establecer Tabla Activa
+3. Mostrar Campos de Tabla Activa
+4. Mostrar Datos de Tabla Activa
+------------- Operaciones DDL -------------
+5. Crear Tabla
+6. Eliminar Tabla
+7. Crear Campo en Tabla Activa
+8. Eliminar Campo en Tabla Activa
+------------- Operaciones DML -------------
+9. Rellenar Tabla Activa
+10. Consultar Tabla Activa
+11. Insertar Registro en Tabla Activa
+12. Borrar Registro de Tabla Activa
+13. Actualizar Registro de Tabla Activa
+*******************************************
+Seleccione una opción: 0
+
+Conexion a la base de datos cerrada.

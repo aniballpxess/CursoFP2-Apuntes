@@ -174,6 +174,7 @@ public class DDL_DML_MySQL {
      * <p>Muestra todos los registros de la tabla activa. Se realiza una
      * consulta para obtener los datos de todos los campos de todos los
      * registros de la tabla activa y los imprime en consola.</p>
+     *
      * <p>Requiere de que se haya establecido una tabla activa para funcionar.</p>
      */
     private static void mostrarDatos() {
@@ -189,7 +190,7 @@ public class DDL_DML_MySQL {
             System.out.printf("Datos de la tabla '%s':%n", tablaActual);
             imprimirDatos(rs);
         } catch (SQLException e) {
-            System.err.println("Error al consultar datos: " + e.getMessage());
+            System.err.println("Error al mostrar los registros de la tabla: " + e.getMessage());
         }
     }
 
@@ -261,6 +262,7 @@ public class DDL_DML_MySQL {
      * nombre y tipo de dato del campo. Los tipos de datos permitidos son
      * <code>INT</code>, <code>VARCHAR</code>, <code>DECIMAL</code>,
      * <code>DATE</code>, <code>TIMESTAMP</code> y <code>BOOLEAN</code>.</p>
+     *
      * <p>Requiere de que se haya establecido una tabla activa para funcionar.</p>
      * <br />
      * TODO - Incluir parámetros opcionales para el campo (PK, NN, etc)
@@ -294,7 +296,7 @@ public class DDL_DML_MySQL {
             stmt.execute(modificarTablaSQL);
             System.out.println("Campo agregado exitosamente: " + nombreCampo);
         } catch (SQLException e) {
-            System.err.println("Error al modificar la tabla: " + e.getMessage());
+            System.err.println("Error al crear el campo: " + e.getMessage());
         }
     }
 
@@ -302,6 +304,7 @@ public class DDL_DML_MySQL {
      * <p>Elimina un campo de la tabla activa. El usuario debe proporcionar el
      * nombre del campo a eliminar. El campo <code>id</code> no se puede
      * eliminar. Se requiere confirmación antes de ejecutar la operación.</p>
+     *
      * <p>Requiere de que se haya establecido una tabla activa para funcionar.</p>
      * <br />
      * TODO - Hacer comprobación de la validez del campo antes de ejecutar el comando
@@ -383,7 +386,7 @@ public class DDL_DML_MySQL {
             stmt.executeUpdate(insertarSQL);
             System.out.println("Datos iniciales insertados exitosamente.");
         } catch (SQLException e) {
-            System.err.println("Error al insertar datos: " + e.getMessage());
+            System.err.println("Error al rellenar la tabla: " + e.getMessage());
         }
     }
 
@@ -391,6 +394,7 @@ public class DDL_DML_MySQL {
      * <p>Consulta los registros de la tabla activa según un campo y valor de
      * filtro especificado. Muestra los registros obtenidos por consola en
      * formato de tabla.</p>
+     *
      * <p>Requiere de que se haya establecido una tabla activa para funcionar.</p>
      * <br />
      * TODO - Incluir la opción de múltiples filtros
@@ -405,7 +409,7 @@ public class DDL_DML_MySQL {
         String campoFiltro = scanner.nextLine();
         System.out.print("Valor del filtro: ");
         String valorFiltro = scanner.nextLine();
-        String consulta = "SELECT (title, genre, platform, developer, rating) FROM %s WHERE %s LIKE ?";
+        String consulta = "SELECT title, genre, platform, developer, rating FROM %s WHERE %s LIKE ?";
         consulta = consulta.formatted(tablaActual, campoFiltro);
 
         try (PreparedStatement pstmt = conexion.prepareStatement(consulta)) {
@@ -414,7 +418,7 @@ public class DDL_DML_MySQL {
                 imprimirDatos(rs);
             }
         } catch (SQLException e) {
-            System.err.println("Error al obtener videojuegos por filtro: " + e.getMessage());
+            System.err.println("Error al consultar la tabla: " + e.getMessage());
         }
     }
 
@@ -423,6 +427,7 @@ public class DDL_DML_MySQL {
      * <p>Elimina los registros de la tabla activa que coincidan con el filtro
      * especificado por el usuario. Este introduce un campo y valor para el
      * filtro. Muestra un mensaje con el número de registros eliminados.</p>
+     *
      * <p>Requiere de que se haya establecido una tabla activa para funcionar.</p>
      * <br />
      * TODO - Incluir la opción de múltiples filtros
@@ -445,7 +450,7 @@ public class DDL_DML_MySQL {
             int registrosAfectados = pstmt.executeUpdate();
             System.out.printf("Se borraron %d registros donde %s contiene '%s'.%n", registrosAfectados, campo, valor);
         } catch (SQLException e) {
-            System.err.println("Error al borrar videojuegos: " + e.getMessage());
+            System.err.println("Error al borrar los registros: " + e.getMessage());
         }
     }
 
@@ -503,7 +508,7 @@ public class DDL_DML_MySQL {
             pstmt.executeUpdate();
             System.out.println("Videojuego agregado exitosamente.");
         } catch (SQLException e) {
-            System.err.println("Error al insertar videojuego: " + e.getMessage());
+            System.err.println("Error al insertar los registros: " + e.getMessage());
         }
 
     }
@@ -513,6 +518,7 @@ public class DDL_DML_MySQL {
      * con el filtro especificado por el usuario. Este introduce los campos y
      * valores tanto para la modificación como para el filtro. El filtro es
      * parcial, no exacto.</p>
+     *
      * <p>Requiere de que se haya establecido una tabla activa para funcionar.</p>
      * <br />
      * TODO - Añadir elección de tipo de filtro (parcial/exacto)
@@ -541,10 +547,25 @@ public class DDL_DML_MySQL {
             System.out.printf("Se actualizaron %d registros: '%s' cambiado a '%s' donde '%s' contiene '%s'.%n",
                     registrosAfectados, campoObjetivo, nuevoValor, campoFiltro, valorFiltro);
         } catch (SQLException e) {
-            System.err.println("Error al actualizar videojuegos: " + e.getMessage());
+            System.err.println("Error al actualizar los registros: " + e.getMessage());
         }
     }
 
+    /**
+     * <p>Imprime los datos obtenidos de una consulta a la base de datos. El
+     * formato de impresión garantiza que cada columna se alinea uniformemente,
+     * ajustándose al ancho del contenido más largo de cada columna, incluyendo
+     * los nombres de las columnas.</p>
+     *
+     * <p>Los nombres de las columnas se imprimen como cabecera, seguidos de una
+     * separación horizontal y, a continuación, las filas de datos obtenidas de
+     * la consulta.</p>
+     *
+     * @param rs el resultado de la consulta del que se obtendrán los datos a
+     *           imprimir. Debe contener tanto los metadatos como los registros.
+     * @throws SQLException si se produce algún error al extraer los datos
+     * (ej.: pérdida de conexión con la base de datos durante la extracción)
+     */
     private static void imprimirDatos(ResultSet rs) throws SQLException {
         // Recibir datos
         ResultSetMetaData metaDatos = rs.getMetaData();
@@ -586,8 +607,6 @@ public class DDL_DML_MySQL {
             System.out.println();
         }
     }
-
-
 
     public static void main(String[] args) {
         conectarse();
