@@ -20,7 +20,7 @@ public class DDL_DML_MySQL {
      * configuradas. Si la conexión es exitosa, se imprime un mensaje en consola.
      * En caso de error, se lanza una excepción con el mensaje detallado.</p>
      */
-    public static void conectarse() {
+    private static void conectarse() {
         try {
             conexion = DriverManager.getConnection(URL, USUARIO, CONTRASENA);
             System.out.println("Conexion a la base de datos establecida.");
@@ -34,7 +34,7 @@ public class DDL_DML_MySQL {
      * conexión está abierta, se cierra y se imprime un mensaje en consola. Si
      * ya está cerrada o no se ha establecido, no se realiza ninguna acción.</p>
      */
-    public static void desconectarse() {
+    private static void desconectarse() {
         try {
             if (conexion != null && !conexion.isClosed()) {
                 conexion.close();
@@ -52,7 +52,7 @@ public class DDL_DML_MySQL {
      * <br />
      * TODO - Hacer mejor gestión de la entrada de usuario
      */
-    public static void mostrarMenu() {
+    private static void mostrarMenu() {
         Scanner scanner = new Scanner(System.in);
         boolean salir = false;
 
@@ -92,8 +92,8 @@ public class DDL_DML_MySQL {
                 case 6 -> eliminarTabla();
                 case 7 -> crearCampo();
                 case 8 -> eliminarCampo();
-                case 9 -> RellenarTabla();
-                case 10 -> ConsultarTabla();
+                case 9 -> rellenarTabla();
+                case 10 -> consultarTabla();
                 case 11 -> insertarRegistro();
                 case 12 -> borrarRegistro();
                 case 13 -> actualizarRegistro();
@@ -107,7 +107,7 @@ public class DDL_DML_MySQL {
      * una consulta SQL <code>SHOW TABLES</code>. Muestra los resultados de
      * manera ordenada en la consola.</p>
      */
-    public static void mostrarTablas() {
+    private static void mostrarTablas() {
         String mostrarTablasSQL = "SHOW TABLES;";
 
         try (Statement stmt = conexion.createStatement(); ResultSet rs = stmt.executeQuery(mostrarTablasSQL)) {
@@ -127,7 +127,7 @@ public class DDL_DML_MySQL {
      * <br />
      * TODO - Añadir comprobación de la existencia de la tabla
      */
-    public static void establecerTablaActiva() {
+    private static void establecerTablaActiva() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Ingrese el nombre de la tabla para operar: ");
         String nombreTabla = scanner.nextLine().trim();
@@ -146,7 +146,7 @@ public class DDL_DML_MySQL {
      * <br />
      * <p>Requiere de que se haya establecido una tabla activa para funcionar.</p>
      */
-    public static void mostrarCampos() {
+    private static void mostrarCampos() {
         if (tablaActual == null) {
             System.out.println("No se ha establecido ninguna tabla para operar.");
             return;
@@ -176,7 +176,7 @@ public class DDL_DML_MySQL {
      * registros de la tabla activa y los imprime en consola.</p>
      * <p>Requiere de que se haya establecido una tabla activa para funcionar.</p>
      */
-    public static void mostrarDatos() {
+    private static void mostrarDatos() {
         if (tablaActual == null) {
             System.out.println("No se ha establecido ninguna tabla para operar.");
             return;
@@ -187,41 +187,7 @@ public class DDL_DML_MySQL {
         try (Statement stmt = conexion.createStatement();
              ResultSet rs = stmt.executeQuery(seleccionarSQL)) {
             System.out.printf("Datos de la tabla '%s':%n", tablaActual);
-            ResultSetMetaData metaData = rs.getMetaData();
-            int columnCount = metaData.getColumnCount();
-
-            int[] columnWidths = new int[columnCount];
-            for (int i = 1; i <= columnCount; i++) {
-                columnWidths[i - 1] = metaData.getColumnName(i).length();
-            }
-
-            List<String[]> rows = new ArrayList<>();
-            while (rs.next()) {
-                String[] row = new String[columnCount];
-                for (int i = 1; i <= columnCount; i++) {
-                    String value = rs.getString(i);
-                    row[i - 1] = value != null ? value : "NULL";
-                    columnWidths[i - 1] = Math.max(columnWidths[i - 1], row[i - 1].length());
-                }
-                rows.add(row);
-            }
-
-            for (int i = 1; i <= columnCount; i++) {
-                System.out.printf("%-" + columnWidths[i - 1] + "s ", metaData.getColumnName(i));
-            }
-            System.out.println();
-
-            for (int width : columnWidths) {
-                System.out.print("-".repeat(width) + " ");
-            }
-            System.out.println();
-
-            for (String[] row : rows) {
-                for (int i = 0; i < columnCount; i++) {
-                    System.out.printf("%-" + columnWidths[i] + "s ", row[i]);
-                }
-                System.out.println();
-            }
+            imprimirDatos(rs);
         } catch (SQLException e) {
             System.err.println("Error al consultar datos: " + e.getMessage());
         }
@@ -233,7 +199,7 @@ public class DDL_DML_MySQL {
      * <br />
      * TODO - Hacer una version más general
      */
-    public static void crearTabla() {
+    private static void crearTabla() {
         Scanner scanner = new Scanner(System.in);
         System.out.print(" - Nombre de la tabla: ");
         String nombreTabla = scanner.nextLine().trim();
@@ -271,7 +237,7 @@ public class DDL_DML_MySQL {
      * <br />
      * TODO - Añadir confirmación de la eliminación (como en <code>eliminarCampo()</code>)
      */
-    public static void eliminarTabla() {
+    private static void eliminarTabla() {
         Scanner scanner = new Scanner(System.in);
         System.out.print(" - Nombre de la tabla: ");
         String nombreTabla = scanner.nextLine().trim();
@@ -299,7 +265,7 @@ public class DDL_DML_MySQL {
      * <br />
      * TODO - Incluir parámetros opcionales para el campo (PK, NN, etc)
      */
-    public static void crearCampo() {
+    private static void crearCampo() {
         if (tablaActual == null) {
             System.out.println("No se ha establecido ninguna tabla para operar.");
             return;
@@ -340,7 +306,7 @@ public class DDL_DML_MySQL {
      * <br />
      * TODO - Hacer comprobación de la validez del campo antes de ejecutar el comando
      */
-    public static void eliminarCampo() {
+    private static void eliminarCampo() {
         if (tablaActual == null) {
             System.out.println("No se ha establecido ninguna tabla para operar.");
             return;
@@ -378,7 +344,7 @@ public class DDL_DML_MySQL {
      * <br />
      * TODO - Añadir control para solo rellenar una vez una misma tabla
      */
-    public static void RellenarTabla() {
+    private static void rellenarTabla() {
         if (tablaActual == null) {
             System.out.println("No se ha establecido ninguna tabla para operar.");
             return;
@@ -423,46 +389,35 @@ public class DDL_DML_MySQL {
 
     /**
      * <p>Consulta los registros de la tabla activa según un campo y valor de
-     * filtro especificado. Muestra los resultados en la consola, incluyendo los
-     * nombres de los campos y sus valores.</p>
+     * filtro especificado. Muestra los registros obtenidos por consola en
+     * formato de tabla.</p>
      * <p>Requiere de que se haya establecido una tabla activa para funcionar.</p>
      * <br />
      * TODO - Incluir la opción de múltiples filtros
      */
-    public static void ConsultarTabla() {
+    private static void consultarTabla() {
         if (tablaActual == null) {
             System.out.println("No se ha establecido ninguna tabla para operar.");
             return;
         }
         Scanner scanner = new Scanner(System.in);
         System.out.print("Campo para filtrar: ");
-        String campo = scanner.nextLine();
+        String campoFiltro = scanner.nextLine();
         System.out.print("Valor del filtro: ");
-        String valor = scanner.nextLine();
-        String consulta = "SELECT * FROM %s WHERE %s LIKE %s";
-        consulta = consulta.formatted(tablaActual, campo, valor);
+        String valorFiltro = scanner.nextLine();
+        String consulta = "SELECT (title, genre, platform, developer, rating) FROM %s WHERE %s LIKE ?";
+        consulta = consulta.formatted(tablaActual, campoFiltro);
 
-        try (Statement stmt = conexion.createStatement();
-             ResultSet rs = stmt.executeQuery(consulta))
-        {
-                ResultSetMetaData metaDatos = rs.getMetaData();
-                int numeroCampos = metaDatos.getColumnCount();
-
-                for (int i = 1; i <= numeroCampos; i++) {
-                    System.out.print(metaDatos.getColumnName(i) + "\t");
-                }
-                System.out.println();
-
-                while (rs.next()) {
-                    for (int i = 1; i <= numeroCampos; i++) {
-                        System.out.print(rs.getString(i) + "\t");
-                    }
-                    System.out.println();
-                }
+        try (PreparedStatement pstmt = conexion.prepareStatement(consulta)) {
+            pstmt.setString(1, "%" + valorFiltro + "%");
+            try (ResultSet rs = pstmt.executeQuery()) {
+                imprimirDatos(rs);
+            }
         } catch (SQLException e) {
             System.err.println("Error al obtener videojuegos por filtro: " + e.getMessage());
         }
     }
+
 
     /**
      * <p>Elimina los registros de la tabla activa que coincidan con el filtro
@@ -472,7 +427,7 @@ public class DDL_DML_MySQL {
      * <br />
      * TODO - Incluir la opción de múltiples filtros
      */
-    public static void borrarRegistro() {
+    private static void borrarRegistro() {
         if (tablaActual == null) {
             System.out.println("No se ha establecido ninguna tabla para operar.");
             return;
@@ -482,11 +437,12 @@ public class DDL_DML_MySQL {
         String campo = scanner.nextLine();
         System.out.print("Valor del filtro: ");
         String valor = scanner.nextLine();
-        String consulta = "DELETE FROM %s WHERE %s LIKE %s";
-        consulta = consulta.formatted(tablaActual, campo, valor);
+        String consulta = "DELETE FROM %s WHERE %s LIKE ?";
+        consulta = consulta.formatted(tablaActual, campo);
 
-        try (Statement stmt = conexion.createStatement()) {
-            int registrosAfectados = stmt.executeUpdate(consulta);
+        try (PreparedStatement pstmt = conexion.prepareStatement(consulta)) {
+            pstmt.setString(1, "%" + valor + "%");
+            int registrosAfectados = pstmt.executeUpdate();
             System.out.printf("Se borraron %d registros donde %s contiene '%s'.%n", registrosAfectados, campo, valor);
         } catch (SQLException e) {
             System.err.println("Error al borrar videojuegos: " + e.getMessage());
@@ -510,7 +466,7 @@ public class DDL_DML_MySQL {
      * <br />
      * TODO - Hacer mejor gestión de la entrada de usuario
      */
-    public static void insertarRegistro() {
+    private static void insertarRegistro() {
         if (tablaActual == null) {
             System.out.println("No se ha establecido ninguna tabla para operar.");
             return;
@@ -531,25 +487,37 @@ public class DDL_DML_MySQL {
         System.out.print("Calificación: ");
         double calificacion = scanner.nextDouble();
         String consulta = """
-                INSERT INTO %s (title, genre, launch_date, platform, developer, publisher, rating)
-                    VALUES (%s, %s, %s, %s, %s, %s, %f);""";
-        consulta = consulta.formatted(tablaActual, titulo, genero, fechaLanzamiento, plataforma, desarrollador, productora, calificacion);
-        
-        try (Statement stmt = conexion.createStatement()) {
-            stmt.executeUpdate(consulta);
+            INSERT INTO %s (title, genre, launch_date, platform, developer, publisher, rating)
+                VALUES (?, ?, ?, ?, ?, ?, ?);
+        """;
+        consulta = consulta.formatted(tablaActual);
+
+        try (PreparedStatement pstmt = conexion.prepareStatement(consulta)) {
+            pstmt.setString(1, titulo);
+            pstmt.setString(2, genero);
+            pstmt.setDate(3, Date.valueOf(fechaLanzamiento));
+            pstmt.setString(4, plataforma);
+            pstmt.setString(5, desarrollador);
+            pstmt.setString(6, productora);
+            pstmt.setDouble(7, calificacion);
+            pstmt.executeUpdate();
             System.out.println("Videojuego agregado exitosamente.");
         } catch (SQLException e) {
             System.err.println("Error al insertar videojuego: " + e.getMessage());
         }
+
     }
 
     /**
      * <p>Actualiza un campo en los registros de la tabla activa que coincidan
      * con el filtro especificado por el usuario. Este introduce los campos y
-     * valores tanto para la modificación como para el filtro.</p>
+     * valores tanto para la modificación como para el filtro. El filtro es
+     * parcial, no exacto.</p>
      * <p>Requiere de que se haya establecido una tabla activa para funcionar.</p>
+     * <br />
+     * TODO - Añadir elección de tipo de filtro (parcial/exacto)
      */
-    public static void actualizarRegistro() {
+    private static void actualizarRegistro() {
         if (tablaActual == null) {
             System.out.println("No se ha establecido ninguna tabla para operar.");
             return;
@@ -563,11 +531,13 @@ public class DDL_DML_MySQL {
         String campoFiltro = scanner.nextLine();
         System.out.print("Valor del filtro: ");
         String valorFiltro = scanner.nextLine();
-        String consulta = "UPDATE %s SET %s = %s WHERE %s LIKE %s";
-        consulta = consulta.formatted(tablaActual, campoObjetivo, nuevoValor, campoFiltro, valorFiltro);
-        
-        try (Statement stmt = conexion.createStatement()) {
-            int registrosAfectados = stmt.executeUpdate(consulta);
+        String consulta = "UPDATE %s SET %s = ? WHERE %s LIKE ?";
+        consulta = consulta.formatted(tablaActual, campoObjetivo, campoFiltro);
+
+        try (PreparedStatement pstmt = conexion.prepareStatement(consulta)) {
+            pstmt.setObject(1, nuevoValor);
+            pstmt.setString(2, "%" + valorFiltro + "%");
+            int registrosAfectados = pstmt.executeUpdate();
             System.out.printf("Se actualizaron %d registros: '%s' cambiado a '%s' donde '%s' contiene '%s'.%n",
                     registrosAfectados, campoObjetivo, nuevoValor, campoFiltro, valorFiltro);
         } catch (SQLException e) {
@@ -575,9 +545,54 @@ public class DDL_DML_MySQL {
         }
     }
 
+    private static void imprimirDatos(ResultSet rs) throws SQLException {
+        // Recibir datos
+        ResultSetMetaData metaDatos = rs.getMetaData();
+        int numeroColumnas = metaDatos.getColumnCount();
+        List<String[]> registros = new ArrayList<>();
+        while (rs.next()) {
+            String[] registro = new String[numeroColumnas];
+            for (int i = 0; i < numeroColumnas; i++) {
+                String valorCampo = rs.getString(i + 1);
+                registro[i] = valorCampo != null ? valorCampo : "NULL";
+            }
+            registros.add(registro);
+        }
+        // Calcular ancho de cada columna
+        int[] anchosColumnas = new int[numeroColumnas];
+        for (int i = 0; i < numeroColumnas; i++) {
+            anchosColumnas[i] = metaDatos.getColumnName(i + 1).length();
+        }
+        for (String[] registro : registros) {
+            for (int i = 0; i < numeroColumnas; i++) {
+                anchosColumnas[i] = Math.max(anchosColumnas[i], registro[i].length());
+            }
+        }
+        // Imprimir nombres de campos
+        for (int i = 0; i < numeroColumnas; i++) {
+            System.out.printf("%-" + anchosColumnas[i] + "s ", metaDatos.getColumnName(i + 1));
+        }
+        System.out.println();
+        // Imprimir separación de cabecera
+        for (int ancho : anchosColumnas) {
+            System.out.print("-".repeat(ancho) + " ");
+        }
+        System.out.println();
+        // Imprimir filas
+        for (String[] registro : registros) {
+            for (int i = 0; i < numeroColumnas; i++) {
+                System.out.printf("%-" + anchosColumnas[i] + "s ", registro[i]);
+            }
+            System.out.println();
+        }
+    }
+
+
+
     public static void main(String[] args) {
         conectarse();
         mostrarMenu();
         desconectarse();
     }
+
 }
