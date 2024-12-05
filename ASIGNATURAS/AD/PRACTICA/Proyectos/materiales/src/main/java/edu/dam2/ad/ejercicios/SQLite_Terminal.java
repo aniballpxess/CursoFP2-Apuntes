@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class SQLite_Terminal {
-    private static final String URL = "jdbc:sqlite:database.db";
+    private static final String URL = "jdbc:sqlite:C:\\CursoFP2\\ASIGNATURAS\\AD\\PRACTICA\\Recursos\\sqlite-db\\db-prueba.db";
 
     private static Connection conexion = null;
 
@@ -54,7 +54,7 @@ public class SQLite_Terminal {
         boolean salir = false;
 
         while (!salir) {
-            System.out.print("""
+            System.out.printf("""
                     ************* OPERACIONES *************
                     --------------- Básicas ---------------
                     0. Salir
@@ -65,8 +65,10 @@ public class SQLite_Terminal {
                     5. Ejecutar instrucción SQL
                     --------------- Control ---------------
                     6. Info de Alumnos de Tutor
+                    ---------------------------------------
+                    Tabla activa: %s
                     ***************************************
-                    """);
+                    """, tablaActual);
             System.out.print("Seleccione una opción: ");
             int opcion = scanner.nextInt();
             scanner.nextLine();
@@ -113,14 +115,13 @@ public class SQLite_Terminal {
      */
     private static void establecerTablaActiva() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese el nombre de la tabla para operar: ");
+        System.out.print("Nombre de la tabla: ");
         String nombreTabla = scanner.nextLine().trim();
         if (nombreTabla.isEmpty()) {
             System.out.println("El nombre de la tabla no puede estar vacio.");
             return;
         }
         tablaActual = nombreTabla;
-        System.out.println("Tabla actual establecida en: " + tablaActual);
     }
 
     /**
@@ -174,52 +175,90 @@ public class SQLite_Terminal {
     }
 
     private static void ejecutarInstruccion() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Instrucción: ");
+        String instruccion = sc.nextLine().trim();
+        if (instruccion.isEmpty()) {
+            System.out.println("No has introducido una instrucción.");
+            return;
+        }
+
+        try (Statement stmt = conexion.createStatement();
+            ResultSet rs = stmt.executeQuery(instruccion)) {
+            imprimirDatos(rs);
+        } catch (SQLException e) {
+            System.err.println("Error al mostrar los registros de la tabla: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
     
     private static void mostrarAlumnosTutor() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nombre del tutor: ");
+        String nombreTutor = sc.nextLine().trim();
+        if (nombreTutor.isEmpty()) {
+            System.out.println("No has introducido ningún nombre.");
+            return;
+        }
+        String instruccion = "SELECT id, nombre, apellidos FROM estudiantes WHERE id_tutor = (SELECT id FROM profesores WHERE nombre = '%s');";
+        instruccion = instruccion.formatted(nombreTutor);
+
+        try (Statement stmt = conexion.createStatement();
+             ResultSet rs = stmt.executeQuery(instruccion)) {
+            imprimirDatos(rs);
+        } catch (SQLException e) {
+            System.err.printf("Error al mostrar los estudiantes que tienen de tutor a '%s': %s%n", nombreTutor, e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     /**
-     * <p>Imprime los datos obtenidos de una consulta a la base de datos. El
-     * formato de impresión garantiza que cada columna se alinea uniformemente,
-     * ajustándose al ancho del contenido más largo de cada columna, incluyendo
-     * los nombres de las columnas.</p>
+     * <p>Imprime los resultados obtenidos de una consulta a la base de datos.
+     * El formato de impresión garantiza que cada columna se alinea
+     * uniformemente, ajustándose al ancho del contenido más largo de cada una,
+     * incluyendo los nombres estas.</p>
      *
      * <p>Los nombres de las columnas se imprimen como cabecera, seguidos de una
      * separación horizontal y, a continuación, las filas de datos obtenidas de
      * la consulta.</p>
-     *
+     * <br />
+     * TODO - Dividir la función internamente en dos para mejorar el significado
+     *  de las variables (leer -> campo, registro) (imprimir -> columna, fila)
      * @param rs el resultado de la consulta del que se obtendrán los datos a
-     *           imprimir. Debe contener tanto los metadatos como los registros.
-     * @throws SQLException si se produce algún error al extraer los datos
-     * (ej.: pérdida de conexión con la base de datos durante la extracción)
+     *           imprimir.
+     * @throws SQLException si se produce algún error durante la extracción de
+     * datos del <code>rs</code>
      */
     private static void imprimirDatos(ResultSet rs) throws SQLException {
-        // Recibir datos
         ResultSetMetaData metaDatos = rs.getMetaData();
-        int numeroColumnas = metaDatos.getColumnCount();
+        int numeroCampos = metaDatos.getColumnCount();
+        String[] nombresCampos = new String[numeroCampos];
         List<String[]> registros = new ArrayList<>();
+        // Recibir datos
+        for (int i = 0; i < numeroCampos; i++) {
+            nombresCampos[i] = metaDatos.getColumnName(i + 1);
+        }
         while (rs.next()) {
-            String[] registro = new String[numeroColumnas];
-            for (int i = 0; i < numeroColumnas; i++) {
+            String[] registro = new String[numeroCampos];
+            for (int i = 0; i < numeroCampos; i++) {
                 String valorCampo = rs.getString(i + 1);
-                registro[i] = valorCampo != null ? valorCampo : "--";
+                registro[i] = valorCampo != null ? valorCampo : "NULL";
             }
             registros.add(registro);
         }
         // Calcular ancho de cada columna
-        int[] anchosColumnas = new int[numeroColumnas];
-        for (int i = 0; i < numeroColumnas; i++) {
-            anchosColumnas[i] = metaDatos.getColumnName(i + 1).length();
+        int[] anchosColumnas = new int[numeroCampos];
+        for (int i = 0; i < numeroCampos; i++) {
+            anchosColumnas[i] = nombresCampos[i].length();
         }
         for (String[] registro : registros) {
-            for (int i = 0; i < numeroColumnas; i++) {
+            for (int i = 0; i < numeroCampos; i++) {
                 anchosColumnas[i] = Math.max(anchosColumnas[i], registro[i].length());
             }
         }
         // Imprimir nombres de campos
-        for (int i = 0; i < numeroColumnas; i++) {
-            System.out.printf("%-" + anchosColumnas[i] + "s ", metaDatos.getColumnName(i + 1));
+        for (int i = 0; i < numeroCampos; i++) {
+            System.out.printf("%-" + anchosColumnas[i] + "s ", nombresCampos[i]);
         }
         System.out.println();
         // Imprimir separación de cabecera
@@ -229,7 +268,7 @@ public class SQLite_Terminal {
         System.out.println();
         // Imprimir filas
         for (String[] registro : registros) {
-            for (int i = 0; i < numeroColumnas; i++) {
+            for (int i = 0; i < numeroCampos; i++) {
                 System.out.printf("%-" + anchosColumnas[i] + "s ", registro[i]);
             }
             System.out.println();
@@ -238,7 +277,7 @@ public class SQLite_Terminal {
 
     public static void main(String[] args) {
         conectarse();
-
+        mostrarMenu();
         desconectarse();
     }
 
