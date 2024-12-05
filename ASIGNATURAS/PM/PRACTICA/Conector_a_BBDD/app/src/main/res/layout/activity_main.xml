@@ -23,10 +23,12 @@
 
     <ImageButton
         android:id="@+id/btn_accederApp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="256dp"
+        android:layout_height="256dp"
         android:contentDescription="@string/descripcion_btn_accederApp"
-        android:src=""
+        android:src="@drawable/ic_open_dbms"
+        android:background="@drawable/rounded_button"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
