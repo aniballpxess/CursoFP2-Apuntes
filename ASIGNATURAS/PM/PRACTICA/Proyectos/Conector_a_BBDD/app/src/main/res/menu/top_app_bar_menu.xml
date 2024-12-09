@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_addRecord"
+        android:icon="@drawable/ic_add"
+        android:title="Añadir Registro"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_removeRecords"
+        android:icon="@drawable/ic_delete"
+        android:title="Eliminar Registro"
+        app:showAsAction="ifRoom" />
 
 </menu>

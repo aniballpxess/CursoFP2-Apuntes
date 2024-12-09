@@ -11,7 +11,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.AppTheme"
+        android:theme="@style/ThemeOverlay.AppTheme.AppBar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -26,9 +26,10 @@
             android:background="?attr/colorPrimary"
             android:elevation="4dp"
             app:menu="@menu/top_app_bar_menu"
-            app:navigationIcon="@drawable/ic_open_dbms"
+            app:navigationIcon="@drawable/ic_go_back"
+            app:navigationIconTint="?attr/colorOnPrimary"
             app:title="Gestión"
-            app:titleTextColor="?attr/colorOnPrimary" />
+            app:titleTextColor="?attr/colorOnPrimary"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 

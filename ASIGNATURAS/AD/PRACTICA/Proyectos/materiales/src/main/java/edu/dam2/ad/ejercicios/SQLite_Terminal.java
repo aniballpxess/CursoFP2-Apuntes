@@ -65,6 +65,7 @@ public class SQLite_Terminal {
                     5. Ejecutar instrucción SQL
                     --------------- Control ---------------
                     6. Info de Alumnos de Tutor
+                    7. Prueba Inyecciónm SQL
                     ---------------------------------------
                     Tabla activa: %s
                     ***************************************
@@ -81,6 +82,7 @@ public class SQLite_Terminal {
                 case 4 -> mostrarDatosTablaActiva();
                 case 5 -> ejecutarInstruccion();
                 case 6 -> mostrarAlumnosTutor();
+                case 7 -> logIn_Inseguro_WTF();
                 default -> System.out.println("Opción inválida. Intente de nuevo.");
             }
         }
@@ -208,6 +210,32 @@ public class SQLite_Terminal {
             imprimirDatos(rs);
         } catch (SQLException e) {
             System.err.printf("Error al mostrar los estudiantes que tienen de tutor a '%s': %s%n", nombreTutor, e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    private static void logIn_Inseguro_WTF() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Apodo: ");
+        String nickUser = sc.nextLine().trim();
+        if (nickUser.isEmpty()) {
+            System.out.println("No has introducido ningún apodo.");
+            return;
+        }
+        System.out.print("Contraseña: ");
+        String pswdUser = sc.nextLine().trim();
+        if (pswdUser.isEmpty()) {
+            System.out.println("No has introducido ninguna contraseña.");
+            return;
+        }
+        String instruccion = "SELECT * FROM usuarios WHERE apodo = '%s' AND contraseña = '%s';";
+        instruccion = instruccion.formatted(nickUser, pswdUser);
+
+        try (Statement stmt = conexion.createStatement();
+             ResultSet rs = stmt.executeQuery(instruccion)) {
+            imprimirDatos(rs);
+        } catch (SQLException e) {
+            System.err.printf("Error al intentar loguearse: %s%n", e.getMessage());
             e.printStackTrace();
         }
     }

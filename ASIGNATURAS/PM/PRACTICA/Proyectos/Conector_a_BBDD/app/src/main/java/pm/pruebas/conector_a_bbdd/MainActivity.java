@@ -17,7 +17,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        intent_loadMgmtAct = new Intent(MainActivity.this, ManagementActivity.class);
+        intent_loadMgmtAct = new Intent(this, ManagementActivity.class);
 
         btn_accederApp = findViewById(R.id.btn_accederApp);
         pb_progresoCarga = findViewById(R.id.pb_progresoCarga);

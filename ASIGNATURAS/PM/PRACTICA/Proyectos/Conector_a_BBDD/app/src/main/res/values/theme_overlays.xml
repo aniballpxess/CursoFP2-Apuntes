@@ -96,6 +96,7 @@
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest_highContrast</item>
     </style>
     <style name="ThemeOverlay.AppTheme.AppBar" parent="Theme.AppTheme">
-        <!-- Pendiente de implementar -->
+        <item name="colorPrimary">@color/md_theme_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
     </style>
 </resources>
