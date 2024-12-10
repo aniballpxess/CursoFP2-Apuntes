@@ -9,7 +9,7 @@
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_removeRecords"
-        android:icon="@drawable/ic_delete"
+        android:icon="@drawable/ic_view_records"
         android:title="Eliminar Registro"
         app:showAsAction="ifRoom" />
 
