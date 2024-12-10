@@ -51,6 +51,10 @@ function actualizarEstado(nuevoEstado) {
       btn_multiplicar.disabled = true;
       btn_dividir.disabled = true;
       btn_calcular.disabled = true;
+      // Valores
+      primerNumero = null;
+      segundoNumero = null;
+      resultado = null;
       break;
 
     case ESTADOS.CON_PRIMER_INPUT:
@@ -99,6 +103,38 @@ function actualizarEstado(nuevoEstado) {
       btn_multiplicar.disabled = false;
       btn_dividir.disabled = false;
       btn_calcular.disabled = false;
+      break;
+  }
+}
+
+function gestionarClick(teclaActivada) {
+  switch (teclaActivada.id) {
+    case btn_reiniciar.id:
+      break;
+    case btn_limpiar.id:
+      break;
+    case btn_borrar.id:
+      break;
+    case btn_sumar.id:
+    case btn_restar.id:
+    case btn_multiplicar.id:
+    case btn_dividir.id:
+      break;
+    case btn_calcular.id:
+      break;
+    case btn_zero.id:
+    case btn_uno.id:
+    case btn_dos.id:
+    case btn_tres.id:
+    case btn_cuatro.id:
+    case btn_cinco.id:
+    case btn_seis.id:
+    case btn_siete.id:
+    case btn_ocho.id:
+    case btn_nueve.id:
+    case btn_punto.id:
+      break;
+    default:
       break;
   }
 }
@@ -160,16 +196,16 @@ function cargarBotones() {
   btn_calcular.innerHTML = btn_calcular.value;
 }
 
-
-
 // ------------------ VIEJO CÓDIGO ------------------ \\
 // ------------------ VIEJO CÓDIGO ------------------ \\
 // ------------------ VIEJO CÓDIGO ------------------ \\
 // ------------------ VIEJO CÓDIGO ------------------ \\
 // ------------------ VIEJO CÓDIGO ------------------ \\
 // ------------------ VIEJO CÓDIGO ------------------ \\
-
-
+// ------------------ VIEJO CÓDIGO ------------------ \\
+// ------------------ VIEJO CÓDIGO ------------------ \\
+// ------------------ VIEJO CÓDIGO ------------------ \\
+// ------------------ VIEJO CÓDIGO ------------------ \\
 
 function addDigit(digit) {
   pantalla.value = pantalla.value + digit.value;
