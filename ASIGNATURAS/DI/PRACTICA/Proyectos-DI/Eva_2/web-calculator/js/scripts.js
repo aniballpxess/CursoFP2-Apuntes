@@ -1,4 +1,7 @@
-const pantalla = document.getElementById('pantalla');
+const historial = document.getElementById('historial');
+
+const pantalla_operacion = document.getElementById('operacion');
+const pantalla_numero = document.getElementById('numero');
 
 const btn_reiniciar = document.getElementById('btn_E'); // 'E' de 'Empezar de cero'
 const btn_limpiar = document.getElementById('btn_L');
@@ -33,16 +36,23 @@ const ESTADOS = {
 let estadoActual = null;
 
 let primerNumero = null;
-let id_operacion = null;
+let operando = null;
 let segundoNumero = null;
 let resultado = null;
+let historialOperaciones = [];
 
-// AC
 function actualizarEstado(nuevoEstado) {
   estadoActual = nuevoEstado;
 
   switch (estadoActual) {
     case ESTADOS.SIN_PRIMER_INPUT:
+      // VALORES INTERNOS
+      primerNumero = null;
+      operando = null;
+      segundoNumero = null;
+      resultado = null;
+      historialOperaciones = [];
+      historial.replaceChildren();
       // INTERFÁZ USUARIO
       // Teclas
       btn_punto.disabled = false;
@@ -68,13 +78,8 @@ function actualizarEstado(nuevoEstado) {
 
       btn_reiniciar.disabled = true;
       // Pantalla
-      pantalla.disabled = true;
-      pantalla.value = null;
-      // VALORES INTERNOS
-      primerNumero = null;
-      id_operacion = null;
-      segundoNumero = null;
-      resultado = null;
+      pantalla_operacion.textContent = null;
+      pantalla_numero.textContent = null;
       break;
 
     case ESTADOS.CON_PRIMER_INPUT:
@@ -103,7 +108,6 @@ function actualizarEstado(nuevoEstado) {
 
       btn_reiniciar.disabled = false;
       // Pantalla
-      pantalla.disabled = true;
       break;
 
     case ESTADOS.SIN_SEGUNDO_INPUT:
@@ -132,8 +136,7 @@ function actualizarEstado(nuevoEstado) {
 
       btn_reiniciar.disabled = false;
       // Pantalla
-      pantalla.disabled = true;
-      pantalla.value = null;
+      pantalla_numero.textContent = null;
       break;
 
     case ESTADOS.CON_SEGUNDO_INPUT:
@@ -162,7 +165,6 @@ function actualizarEstado(nuevoEstado) {
 
       btn_reiniciar.disabled = false;
       // Pantalla
-      pantalla.disabled = true;
       break;
 
     case ESTADOS.CON_RESULTADO:
@@ -191,7 +193,6 @@ function actualizarEstado(nuevoEstado) {
 
       btn_reiniciar.disabled = false;
       // Pantalla
-      pantalla.disabled = true;
       break;
   }
 }
@@ -218,7 +219,7 @@ function gestionarClick(btn_activado) {
       gestionarOperando(btn_activado);
       break;
     case btn_borrar.id:
-      gestionarBorrar();
+      gestionarBorrado();
       break;
     case btn_calcular.id:
       gestionarCalculo();
@@ -233,73 +234,100 @@ function gestionarClick(btn_activado) {
 
 function gestionarDigito(btn_digito) {
   if (estadoActual === ESTADOS.SIN_PRIMER_INPUT) {
-    pantalla.value = pantalla.value + btn_digito.value;
+    pantalla_numero.textContent = pantalla_numero.textContent + btn_digito.value;
     actualizarEstado(ESTADOS.CON_PRIMER_INPUT);
     return;
   }
   if (estadoActual === ESTADOS.CON_PRIMER_INPUT) {
-    pantalla.value = pantalla.value + btn_digito.value;
+    pantalla_numero.textContent = pantalla_numero.textContent + btn_digito.value;
     return;
   }
   if (estadoActual === ESTADOS.SIN_SEGUNDO_INPUT) {
-    pantalla.value = pantalla.value + btn_digito.value;
+    pantalla_numero.textContent = pantalla_numero.textContent + btn_digito.value;
     actualizarEstado(ESTADOS.CON_SEGUNDO_INPUT);
     return;
   }
   if (estadoActual === ESTADOS.CON_SEGUNDO_INPUT) {
-    pantalla.value = pantalla.value + btn_digito.value;
+    pantalla_numero.textContent = pantalla_numero.textContent + btn_digito.value;
     return;
   }
 }
 
 function gestionarOperando(btn_operando) {
   if (estadoActual === ESTADOS.CON_PRIMER_INPUT) {
-    primerNumero = parseFloat(pantalla.value);
+    primerNumero = parseFloat(pantalla_numero.textContent);
   }
   if (estadoActual === ESTADOS.CON_SEGUNDO_INPUT) {
-    segundoNumero = parseFloat(pantalla.value);
+    segundoNumero = parseFloat(pantalla_numero.textContent);
     resultado = realizarCalculo();
+    guardarOperacion();
     primerNumero = resultado;
+    segundoNumero = null
     resultado = null;
   }
-  id_operacion = btn_operando.id;
+  operando = btn_operando.value;
   actualizarEstado(ESTADOS.SIN_SEGUNDO_INPUT);
+  mostrarOperacion();
 }
 
-function gestionarBorrar() {
-  pantalla.value = pantalla.value.substring(0, pantalla.value.length - 1);
-  if (pantalla.value.length === 0 && estadoActual === ESTADOS.CON_PRIMER_INPUT) {
-    actualizarEstado(ESTADOS.SIN_PRIMER_INPUT)
+function gestionarBorrado() {
+  pantalla_numero.textContent = pantalla_numero.textContent.substring(0, pantalla_numero.textContent.length - 1);
+  if (pantalla_numero.textContent.length === 0 && estadoActual === ESTADOS.CON_PRIMER_INPUT) {
+    actualizarEstado(ESTADOS.SIN_PRIMER_INPUT);
   }
-  if (pantalla.value.length === 0 && estadoActual === ESTADOS.CON_SEGUNDO_INPUT) {
-    actualizarEstado(ESTADOS.SIN_SEGUNDO_INPUT)
+  if (pantalla_numero.textContent.length === 0 && estadoActual === ESTADOS.CON_SEGUNDO_INPUT) {
+    actualizarEstado(ESTADOS.SIN_SEGUNDO_INPUT);
   }
 }
 
 function gestionarCalculo() {
-  segundoNumero = parseFloat(pantalla.value);
+  segundoNumero = parseFloat(pantalla_numero.textContent);
   resultado = realizarCalculo();
-  pantalla.value = resultado;
+  guardarOperacion();
+  pantalla_numero.textContent = resultado;
   actualizarEstado(ESTADOS.CON_RESULTADO);
+  mostrarOperacion();
+  segundoNumero = null
+  resultado = null;
 }
 
 function gestionarReinicio() {
   actualizarEstado(ESTADOS.SIN_PRIMER_INPUT);
 }
 
+function guardarOperacion() {
+  let operacion = `${primerNumero} ${operando} ${segundoNumero} = ${resultado}`;
+  historialOperaciones.push(operacion);
+
+  let registroOperacion = document.createElement('div');
+  registroOperacion.setAttribute('class', 'operacion gris_c');
+  registroOperacion.textContent = operacion;
+  historial.appendChild(registroOperacion);
+}
+function mostrarOperacion() {
+  let operacion;
+  if (estadoActual === ESTADOS.SIN_SEGUNDO_INPUT) {
+    operacion = `${primerNumero} ${operando}`;
+  }
+  if (estadoActual === ESTADOS.CON_RESULTADO) {
+    operacion = `${primerNumero} ${operando} ${segundoNumero} =`
+  }
+  pantalla_operacion.textContent = operacion;
+}
+
 function realizarCalculo() {
   let calculo;
-  switch (id_operacion) {
-    case btn_sumar.id:
+  switch (operando) {
+    case btn_sumar.value:
       calculo = primerNumero + segundoNumero;
       break;
-    case btn_restar.id:
+    case btn_restar.value:
       calculo = primerNumero - segundoNumero;
       break;
-    case btn_multiplicar.id:
+    case btn_multiplicar.value:
       calculo = primerNumero * segundoNumero;
       break;
-    case btn_dividir.id:
+    case btn_dividir.value:
       calculo = primerNumero / segundoNumero;
       break;
     default:
