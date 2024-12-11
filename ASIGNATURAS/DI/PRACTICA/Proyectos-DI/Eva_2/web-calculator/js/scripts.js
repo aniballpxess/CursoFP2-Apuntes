@@ -33,95 +33,172 @@ const ESTADOS = {
 let estadoActual = null;
 
 let primerNumero = null;
+let id_operacion = null;
 let segundoNumero = null;
 let resultado = null;
 
-// TODO - Plantearse una estructura y funcionamiento diferentes (como la de Fran)
+// AC
 function actualizarEstado(nuevoEstado) {
   estadoActual = nuevoEstado;
 
   switch (estadoActual) {
     case ESTADOS.SIN_PRIMER_INPUT:
-      // Control
-      btn_limpiar.disabled = true;
-      btn_borrar.disabled = true;
-      // Operandos
+      // INTERFÁZ USUARIO
+      // Teclas
+      btn_punto.disabled = false;
+      btn_zero.disabled = false;
+      btn_uno.disabled = false;
+      btn_dos.disabled = false;
+      btn_tres.disabled = false;
+      btn_cuatro.disabled = false;
+      btn_cinco.disabled = false;
+      btn_seis.disabled = false;
+      btn_siete.disabled = false;
+      btn_ocho.disabled = false;
+      btn_nueve.disabled = false;
+
       btn_sumar.disabled = true;
       btn_restar.disabled = true;
       btn_multiplicar.disabled = true;
       btn_dividir.disabled = true;
+
+      btn_borrar.disabled = true;
+
       btn_calcular.disabled = true;
-      // Valores
+
+      btn_reiniciar.disabled = true;
+      // Pantalla
+      pantalla.disabled = true;
+      pantalla.value = null;
+      // VALORES INTERNOS
       primerNumero = null;
+      id_operacion = null;
       segundoNumero = null;
       resultado = null;
       break;
 
     case ESTADOS.CON_PRIMER_INPUT:
-      // Control
-      btn_limpiar.disabled = false;
-      btn_borrar.disabled = false;
-      // Operandos
+      //INTERFÁZ USUARIO
+      // Teclas
+      btn_punto.disabled = false;
+      btn_zero.disabled = false;
+      btn_uno.disabled = false;
+      btn_dos.disabled = false;
+      btn_tres.disabled = false;
+      btn_cuatro.disabled = false;
+      btn_cinco.disabled = false;
+      btn_seis.disabled = false;
+      btn_siete.disabled = false;
+      btn_ocho.disabled = false;
+      btn_nueve.disabled = false;
+
       btn_sumar.disabled = false;
       btn_restar.disabled = false;
       btn_multiplicar.disabled = false;
       btn_dividir.disabled = false;
+
+      btn_borrar.disabled = false;
+
       btn_calcular.disabled = true;
+
+      btn_reiniciar.disabled = false;
+      // Pantalla
+      pantalla.disabled = true;
       break;
 
     case ESTADOS.SIN_SEGUNDO_INPUT:
-      // Control
-      btn_limpiar.disabled = true;
+      //INTERFÁZ USUARIO
+      // Teclas
+      btn_punto.disabled = false;
+      btn_zero.disabled = false;
+      btn_uno.disabled = false;
+      btn_dos.disabled = false;
+      btn_tres.disabled = false;
+      btn_cuatro.disabled = false;
+      btn_cinco.disabled = false;
+      btn_seis.disabled = false;
+      btn_siete.disabled = false;
+      btn_ocho.disabled = false;
+      btn_nueve.disabled = false;
+
+      btn_sumar.disabled = true;
+      btn_restar.disabled = true;
+      btn_multiplicar.disabled = true;
+      btn_dividir.disabled = true;
+
       btn_borrar.disabled = true;
-      // Operandos
-      btn_sumar.disabled = false;
-      btn_restar.disabled = false;
-      btn_multiplicar.disabled = false;
-      btn_dividir.disabled = false;
+
       btn_calcular.disabled = true;
+
+      btn_reiniciar.disabled = false;
+      // Pantalla
+      pantalla.disabled = true;
+      pantalla.value = null;
       break;
 
     case ESTADOS.CON_SEGUNDO_INPUT:
-      // Control
-      btn_limpiar.disabled = false;
-      btn_borrar.disabled = false;
-      // Operandos
+      //INTERFÁZ USUARIO
+      // Teclas
+      btn_punto.disabled = false;
+      btn_zero.disabled = false;
+      btn_uno.disabled = false;
+      btn_dos.disabled = false;
+      btn_tres.disabled = false;
+      btn_cuatro.disabled = false;
+      btn_cinco.disabled = false;
+      btn_seis.disabled = false;
+      btn_siete.disabled = false;
+      btn_ocho.disabled = false;
+      btn_nueve.disabled = false;
+
       btn_sumar.disabled = false;
       btn_restar.disabled = false;
       btn_multiplicar.disabled = false;
       btn_dividir.disabled = false;
+
+      btn_borrar.disabled = false;
+
       btn_calcular.disabled = false;
+
+      btn_reiniciar.disabled = false;
+      // Pantalla
+      pantalla.disabled = true;
       break;
 
     case ESTADOS.CON_RESULTADO:
-      // Control
-      btn_limpiar.disabled = true;
+      //INTERFÁZ USUARIO
+      // Teclas
+      btn_punto.disabled = true;
+      btn_zero.disabled = true;
+      btn_uno.disabled = true;
+      btn_dos.disabled = true;
+      btn_tres.disabled = true;
+      btn_cuatro.disabled = true;
+      btn_cinco.disabled = true;
+      btn_seis.disabled = true;
+      btn_siete.disabled = true;
+      btn_ocho.disabled = true;
+      btn_nueve.disabled = true;
+
+      btn_sumar.disabled = true;
+      btn_restar.disabled = true;
+      btn_multiplicar.disabled = true;
+      btn_dividir.disabled = true;
+
       btn_borrar.disabled = true;
-      // Operandos
-      btn_sumar.disabled = false;
-      btn_restar.disabled = false;
-      btn_multiplicar.disabled = false;
-      btn_dividir.disabled = false;
-      btn_calcular.disabled = false;
+
+      btn_calcular.disabled = true;
+
+      btn_reiniciar.disabled = false;
+      // Pantalla
+      pantalla.disabled = true;
       break;
   }
 }
 
-function gestionarClick(teclaActivada) {
-  switch (teclaActivada.id) {
-    case btn_reiniciar.id:
-      break;
-    case btn_limpiar.id:
-      break;
-    case btn_borrar.id:
-      break;
-    case btn_sumar.id:
-    case btn_restar.id:
-    case btn_multiplicar.id:
-    case btn_dividir.id:
-      break;
-    case btn_calcular.id:
-      break;
+function gestionarClick(btn_activado) {
+  switch (btn_activado.id) {
+    case btn_punto.id:
     case btn_zero.id:
     case btn_uno.id:
     case btn_dos.id:
@@ -132,108 +209,161 @@ function gestionarClick(teclaActivada) {
     case btn_siete.id:
     case btn_ocho.id:
     case btn_nueve.id:
-    case btn_punto.id:
+      gestionarDigito(btn_activado);
+      break;
+    case btn_sumar.id:
+    case btn_restar.id:
+    case btn_multiplicar.id:
+    case btn_dividir.id:
+      gestionarOperando(btn_activado);
+      break;
+    case btn_borrar.id:
+      gestionarBorrar();
+      break;
+    case btn_calcular.id:
+      gestionarCalculo();
+      break;
+    case btn_reiniciar.id:
+      gestionarReinicio();
       break;
     default:
       break;
   }
 }
 
-function cargarCalcualdora() {
-  cargarBotones();
-  actualizarEstado(ESTADOS.SIN_PRIMER_INPUT);
-}
-
-function cargarBotones() {
-  // Inicializar valores
-  btn_reiniciar.value = "C";
-  btn_limpiar.value = "CE";
-  btn_borrar.value = "&#x232B;";
-  btn_dividir.value = "/";
-
-  btn_siete.value = "7";
-  btn_ocho.value = "8";
-  btn_nueve.value = "9";
-  btn_multiplicar.value = "x";
-
-  btn_cuatro.value = "4";
-  btn_cinco.value = "5";
-  btn_seis.value = "6";
-  btn_restar.value = "&minus;";
-
-  btn_uno.value = "1";
-  btn_dos.value = "2";
-  btn_tres.value = "3";
-  btn_sumar.value = "&plus;";
-
-  btn_zero.value = "0";
-  btn_punto.value = ".";
-  btn_calcular.value = "&equals;";
-
-  // Inicializar iconos
-  btn_reiniciar.innerHTML = btn_reiniciar.value;
-  btn_limpiar.innerHTML = btn_limpiar.value;
-  btn_borrar.innerHTML = btn_borrar.value;
-  btn_dividir.innerHTML = btn_dividir.value;
-
-  btn_siete.innerHTML = btn_siete.value;
-  btn_ocho.innerHTML = btn_ocho.value;
-  btn_nueve.innerHTML = btn_nueve.value;
-  btn_multiplicar.innerHTML = btn_multiplicar.value;
-
-  btn_cuatro.innerHTML = btn_cuatro.value;
-  btn_cinco.innerHTML = btn_cinco.value;
-  btn_seis.innerHTML = btn_seis.value;
-  btn_restar.innerHTML = btn_restar.value;
-
-  btn_uno.innerHTML = btn_uno.value;
-  btn_dos.innerHTML = btn_dos.value;
-  btn_tres.innerHTML = btn_tres.value;
-  btn_sumar.innerHTML = btn_sumar.value;
-
-  btn_zero.innerHTML = btn_zero.value;
-  btn_punto.innerHTML = btn_punto.value;
-  btn_calcular.innerHTML = btn_calcular.value;
-}
-
-// ------------------ VIEJO CÓDIGO ------------------ \\
-// ------------------ VIEJO CÓDIGO ------------------ \\
-// ------------------ VIEJO CÓDIGO ------------------ \\
-// ------------------ VIEJO CÓDIGO ------------------ \\
-// ------------------ VIEJO CÓDIGO ------------------ \\
-// ------------------ VIEJO CÓDIGO ------------------ \\
-// ------------------ VIEJO CÓDIGO ------------------ \\
-// ------------------ VIEJO CÓDIGO ------------------ \\
-// ------------------ VIEJO CÓDIGO ------------------ \\
-// ------------------ VIEJO CÓDIGO ------------------ \\
-
-function addDigit(digit) {
-  pantalla.value = pantalla.value + digit.value;
+function gestionarDigito(btn_digito) {
   if (estadoActual === ESTADOS.SIN_PRIMER_INPUT) {
+    pantalla.value = pantalla.value + btn_digito.value;
     actualizarEstado(ESTADOS.CON_PRIMER_INPUT);
+    return;
+  }
+  if (estadoActual === ESTADOS.CON_PRIMER_INPUT) {
+    pantalla.value = pantalla.value + btn_digito.value;
+    return;
   }
   if (estadoActual === ESTADOS.SIN_SEGUNDO_INPUT) {
+    pantalla.value = pantalla.value + btn_digito.value;
     actualizarEstado(ESTADOS.CON_SEGUNDO_INPUT);
+    return;
+  }
+  if (estadoActual === ESTADOS.CON_SEGUNDO_INPUT) {
+    pantalla.value = pantalla.value + btn_digito.value;
+    return;
   }
 }
 
-function addNumber() {
-  primerNumero = Number(pantalla.value);
-  pantalla.value = null;
+function gestionarOperando(btn_operando) {
+  if (estadoActual === ESTADOS.CON_PRIMER_INPUT) {
+    primerNumero = parseFloat(pantalla.value);
+  }
+  if (estadoActual === ESTADOS.CON_SEGUNDO_INPUT) {
+    segundoNumero = parseFloat(pantalla.value);
+    resultado = realizarCalculo();
+    primerNumero = resultado;
+    resultado = null;
+  }
+  id_operacion = btn_operando.id;
   actualizarEstado(ESTADOS.SIN_SEGUNDO_INPUT);
 }
 
-// TODO - Arreglar los botones estando activos
-function calculate() {
-  segundoNumero = Number(pantalla.value);
-  const result = primerNumero + segundoNumero;
-  pantalla.value = result;
+function gestionarBorrar() {
+  pantalla.value = pantalla.value.substring(0, pantalla.value.length - 1);
+  if (pantalla.value.length === 0 && estadoActual === ESTADOS.CON_PRIMER_INPUT) {
+    actualizarEstado(ESTADOS.SIN_PRIMER_INPUT)
+  }
+  if (pantalla.value.length === 0 && estadoActual === ESTADOS.CON_SEGUNDO_INPUT) {
+    actualizarEstado(ESTADOS.SIN_SEGUNDO_INPUT)
+  }
+}
+
+function gestionarCalculo() {
+  segundoNumero = parseFloat(pantalla.value);
+  resultado = realizarCalculo();
+  pantalla.value = resultado;
   actualizarEstado(ESTADOS.CON_RESULTADO);
 }
 
-function resetCalc() {
-  pantalla.value = null;
-  primerNumero = null;
-  segundoNumero = null;
+function gestionarReinicio() {
   actualizarEstado(ESTADOS.SIN_PRIMER_INPUT);
+}
+
+function realizarCalculo() {
+  let calculo;
+  switch (id_operacion) {
+    case btn_sumar.id:
+      calculo = primerNumero + segundoNumero;
+      break;
+    case btn_restar.id:
+      calculo = primerNumero - segundoNumero;
+      break;
+    case btn_multiplicar.id:
+      calculo = primerNumero * segundoNumero;
+      break;
+    case btn_dividir.id:
+      calculo = primerNumero / segundoNumero;
+      break;
+    default:
+      break;
+  }
+  return calculo;
+}
+
+// -------------- CARGA CALCULADORA -------------- \\
+
+function cargarCalcualdora() {
+  cargarTeclado();
+  actualizarEstado(ESTADOS.SIN_PRIMER_INPUT);
+}
+
+function cargarTeclado() {
+  // INICILIZAR ICONOS
+  // Fila 1
+  btn_reiniciar.textContent = "C";
+  btn_limpiar.textContent = "CE";
+  btn_borrar.innerHTML = "&#x232B;";
+  btn_dividir.textContent = "/";
+  // Fila 2
+  btn_siete.textContent = "7";
+  btn_ocho.textContent = "8";
+  btn_nueve.textContent = "9";
+  btn_multiplicar.textContent = "x";
+  // Fila 3
+  btn_cuatro.textContent = "4";
+  btn_cinco.textContent = "5";
+  btn_seis.textContent = "6";
+  btn_restar.textContent = "-";
+  // Fila 4
+  btn_uno.textContent = "1";
+  btn_dos.textContent = "2";
+  btn_tres.textContent = "3";
+  btn_sumar.textContent = "+";
+  // Fila 5
+  btn_zero.textContent = "0";
+  btn_punto.textContent = ".";
+  btn_calcular.textContent = "=";
+  // INICIALIZAR VALORES
+  // Fila 1
+  btn_reiniciar.value == null;
+  btn_limpiar.value == null;
+  btn_borrar.value == null;
+  btn_dividir.value = btn_dividir.textContent;
+  // Fila 2
+  btn_siete.value = btn_siete.textContent;
+  btn_ocho.value = btn_ocho.textContent;
+  btn_nueve.value = btn_nueve.textContent;
+  btn_multiplicar.value = btn_multiplicar.textContent;
+  // Fila 3
+  btn_cuatro.value = btn_cuatro.textContent;
+  btn_cinco.value = btn_cinco.textContent;
+  btn_seis.value = btn_seis.textContent;
+  btn_restar.value = btn_restar.textContent;
+  // Fila 4
+  btn_uno.value = btn_uno.textContent;
+  btn_dos.value = btn_dos.textContent;
+  btn_tres.value = btn_tres.textContent;
+  btn_sumar.value = btn_sumar.textContent;
+  // Fila 5
+  btn_zero.value = btn_zero.textContent;
+  btn_punto.value = btn_punto.textContent;
+  btn_calcular.value == null;
 }
