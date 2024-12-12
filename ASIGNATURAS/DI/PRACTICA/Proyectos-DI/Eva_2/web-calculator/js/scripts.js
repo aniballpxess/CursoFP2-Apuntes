@@ -300,17 +300,18 @@ function guardarOperacion() {
   historialOperaciones.push(operacion);
 
   let registroOperacion = document.createElement('div');
-  registroOperacion.setAttribute('class', 'operacion gris_c');
+  registroOperacion.setAttribute('class', 'operacion bg_gris_c');
   registroOperacion.textContent = operacion;
   historial.appendChild(registroOperacion);
 }
+
 function mostrarOperacion() {
   let operacion;
   if (estadoActual === ESTADOS.SIN_SEGUNDO_INPUT) {
     operacion = `${primerNumero} ${operando}`;
   }
   if (estadoActual === ESTADOS.CON_RESULTADO) {
-    operacion = `${primerNumero} ${operando} ${segundoNumero} =`
+    operacion = `${primerNumero} ${operando} ${segundoNumero} =`;
   }
   pantalla_operacion.textContent = operacion;
 }
