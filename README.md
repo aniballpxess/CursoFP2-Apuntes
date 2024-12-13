@@ -50,3 +50,4 @@ Viendo este esquema, los contenidos esperables tanto en **PRACTICA** como en **T
 <h3>Notas sobre el repositorio</h3>
 
 - Más allá de la básica estructura descrita arriba la estructura y nombre de los ficheros y directorios astá abierto a cambios, aunque siempre trato de hacer que tengan sentido. Por ejemplo, si tengo varios entornos de VS Code creados para las prácticas de PSP, el directorio que contendrá los entornos tendrá "proyectos", "entornos" o algo similar en el nombre
+- Debido a la falta de contenido teórico relevante este año, que no esté claramente conectado con la parte práctica de muchas asignaturas, la carpeta de **TEORIA** en varias de las asignaturas no existe.

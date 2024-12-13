@@ -349,7 +349,7 @@ function guardarOperacion() {
   historialOperaciones.push(operacion);
 
   let registroOperacion = document.createElement('div');
-  registroOperacion.setAttribute('class', 'operacion gris_c');
+  registroOperacion.setAttribute('class', 'operacion bg_gris_c');
   registroOperacion.textContent = operacion;
   historial.appendChild(registroOperacion);
 }
@@ -360,7 +360,7 @@ function mostrarOperacion() {
     operacion = `${primerNumero} ${operando}`;
   }
   if (estadoActual === ESTADOS.CON_RESULTADO) {
-    operacion = `${primerNumero} ${operando} ${segundoNumero} =`
+    operacion = `${primerNumero} ${operando} ${segundoNumero} =`;
   }
   operacionEnPantalla = operacion;
 }

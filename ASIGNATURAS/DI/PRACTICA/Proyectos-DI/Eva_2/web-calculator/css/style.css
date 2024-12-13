@@ -18,16 +18,24 @@ h3 {
 .contenedor_principal {
   width: fit-content;
   min-height: 200px;
-  border: solid 2px;
+  border: solid 2px black;
   padding: 10px;
 }
 
-.gris_c {
-  background-color: lightgray;
+.bg_gris_c {
+  background-color: #d3d3d3;
 }
 
-.gris_o {
-  background-color: darkgray;
+.bg_gris_o {
+  background-color: #a9a9a9;
+}
+
+.txt_gris_c {
+  color: lightgray;
+}
+
+.txt_gris_o {
+  color: #838383;
 }
 
 /* ------ CALCULADORA ------ */
@@ -39,27 +47,23 @@ h3 {
   height: 70px;
   margin: 5px 0 0 0;
   border: solid 2px black;
-  background-color: white;
   padding: 5px;
   box-sizing: border-box;
 }
 
 #operacion {
   font-size: small;
-  font-family: "Courier New", Courier, monospace;
-  color: gray;
-  text-align: end;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   margin-bottom: 5px;
   min-height: 20px;
 }
 
 #numero {
   font-size: x-large;
-  font-family: "Courier New", Courier, monospace;
   font-weight: 800;
+}
+
+.en_pantalla {
+  font-family: "Courier New", Courier, monospace;
   text-align: end;
   white-space: nowrap;
   overflow: hidden;
