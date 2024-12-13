@@ -35,25 +35,32 @@ const ESTADOS = {
 
 let estadoActual = null;
 
+let operacionEnPantalla = null;
+let numeroEnPantalla = null;
 let primerNumero = null;
 let operando = null;
 let segundoNumero = null;
 let resultado = null;
+
 let historialOperaciones = [];
+
+// ----------------- FUNCION DE CAMBIO DE ESTADOS ----------------- \\
 
 function actualizarEstado(nuevoEstado) {
   estadoActual = nuevoEstado;
 
   switch (estadoActual) {
     case ESTADOS.SIN_PRIMER_INPUT:
+      // HISTORIAL OPERACIONES
+      historialOperaciones = [];
+      historial.replaceChildren();
       // VALORES INTERNOS
+      numeroEnPantalla = null;
       primerNumero = null;
       operando = null;
       segundoNumero = null;
       resultado = null;
-      historialOperaciones = [];
-      historial.replaceChildren();
-      // INTERFÁZ USUARIO
+      // INTERFÁZ CALCULADORA
       // Teclas
       btn_punto.disabled = false;
       btn_zero.disabled = false;
@@ -77,12 +84,19 @@ function actualizarEstado(nuevoEstado) {
       btn_calcular.disabled = true;
 
       btn_reiniciar.disabled = true;
+
+      btn_limpiar.disabled = true;
       // Pantalla
       pantalla_operacion.textContent = null;
       pantalla_numero.textContent = null;
       break;
 
     case ESTADOS.CON_PRIMER_INPUT:
+      // VALORES INTERNOS
+      primerNumero = null;
+      operando = null;
+      segundoNumero = null;
+      resultado = null;
       //INTERFÁZ USUARIO
       // Teclas
       btn_punto.disabled = false;
@@ -107,10 +121,18 @@ function actualizarEstado(nuevoEstado) {
       btn_calcular.disabled = true;
 
       btn_reiniciar.disabled = false;
+
+      btn_limpiar.disabled = false;
       // Pantalla
+      pantalla_operacion.textContent = null;
+      pantalla_numero.textContent = numeroEnPantalla;
       break;
 
     case ESTADOS.SIN_SEGUNDO_INPUT:
+      // VALORES INTERNOS
+      numeroEnPantalla = null;
+      segundoNumero = null;
+      resultado = null;
       //INTERFÁZ USUARIO
       // Teclas
       btn_punto.disabled = false;
@@ -135,11 +157,17 @@ function actualizarEstado(nuevoEstado) {
       btn_calcular.disabled = true;
 
       btn_reiniciar.disabled = false;
+
+      btn_limpiar.disabled = true;
       // Pantalla
+      pantalla_operacion.textContent = operacionEnPantalla;
       pantalla_numero.textContent = null;
       break;
 
     case ESTADOS.CON_SEGUNDO_INPUT:
+      // VALORES INTERNOS
+      segundoNumero = null;
+      resultado = null;
       //INTERFÁZ USUARIO
       // Teclas
       btn_punto.disabled = false;
@@ -164,7 +192,11 @@ function actualizarEstado(nuevoEstado) {
       btn_calcular.disabled = false;
 
       btn_reiniciar.disabled = false;
+
+      btn_limpiar.disabled = false;
       // Pantalla
+      pantalla_operacion.textContent = operacionEnPantalla;
+      pantalla_numero.textContent = numeroEnPantalla;
       break;
 
     case ESTADOS.CON_RESULTADO:
@@ -192,10 +224,16 @@ function actualizarEstado(nuevoEstado) {
       btn_calcular.disabled = true;
 
       btn_reiniciar.disabled = false;
+
+      btn_limpiar.disabled = true;
       // Pantalla
+      pantalla_operacion.textContent = operacionEnPantalla;
+      pantalla_numero.textContent = numeroEnPantalla;
       break;
   }
 }
+
+// ----------------- FUNCION DE GESTIÓN PRINCIPAL ----------------- \\
 
 function gestionarClick(btn_activado) {
   switch (btn_activado.id) {
@@ -227,43 +265,45 @@ function gestionarClick(btn_activado) {
     case btn_reiniciar.id:
       gestionarReinicio();
       break;
+    case btn_limpiar.id:
+      gestionarLimpieza();
     default:
       break;
   }
 }
 
+// --------------- FUNCIONES DE GESTION SECUNDARIAS --------------- \\
+
 function gestionarDigito(btn_digito) {
   if (estadoActual === ESTADOS.SIN_PRIMER_INPUT) {
-    pantalla_numero.textContent = pantalla_numero.textContent + btn_digito.value;
+    numeroEnPantalla = numeroEnPantalla + btn_digito.value;
     actualizarEstado(ESTADOS.CON_PRIMER_INPUT);
     return;
   }
   if (estadoActual === ESTADOS.CON_PRIMER_INPUT) {
-    pantalla_numero.textContent = pantalla_numero.textContent + btn_digito.value;
+    numeroEnPantalla = numeroEnPantalla + btn_digito.value;
     return;
   }
   if (estadoActual === ESTADOS.SIN_SEGUNDO_INPUT) {
-    pantalla_numero.textContent = pantalla_numero.textContent + btn_digito.value;
+    numeroEnPantalla = numeroEnPantalla + btn_digito.value;
     actualizarEstado(ESTADOS.CON_SEGUNDO_INPUT);
     return;
   }
   if (estadoActual === ESTADOS.CON_SEGUNDO_INPUT) {
-    pantalla_numero.textContent = pantalla_numero.textContent + btn_digito.value;
+    numeroEnPantalla = numeroEnPantalla + btn_digito.value;
     return;
   }
 }
 
 function gestionarOperando(btn_operando) {
   if (estadoActual === ESTADOS.CON_PRIMER_INPUT) {
-    primerNumero = parseFloat(pantalla_numero.textContent);
+    primerNumero = parseFloat(numeroEnPantalla);
   }
   if (estadoActual === ESTADOS.CON_SEGUNDO_INPUT) {
-    segundoNumero = parseFloat(pantalla_numero.textContent);
+    segundoNumero = parseFloat(numeroEnPantalla);
     resultado = realizarCalculo();
     guardarOperacion();
     primerNumero = resultado;
-    segundoNumero = null
-    resultado = null;
   }
   operando = btn_operando.value;
   actualizarEstado(ESTADOS.SIN_SEGUNDO_INPUT);
@@ -271,29 +311,38 @@ function gestionarOperando(btn_operando) {
 }
 
 function gestionarBorrado() {
-  pantalla_numero.textContent = pantalla_numero.textContent.substring(0, pantalla_numero.textContent.length - 1);
-  if (pantalla_numero.textContent.length === 0 && estadoActual === ESTADOS.CON_PRIMER_INPUT) {
+  numeroEnPantalla = numeroEnPantalla.substring(0, numeroEnPantalla.length - 1);
+  if (numeroEnPantalla.length === 0 && estadoActual === ESTADOS.CON_PRIMER_INPUT) {
     actualizarEstado(ESTADOS.SIN_PRIMER_INPUT);
   }
-  if (pantalla_numero.textContent.length === 0 && estadoActual === ESTADOS.CON_SEGUNDO_INPUT) {
+  if (numeroEnPantalla.length === 0 && estadoActual === ESTADOS.CON_SEGUNDO_INPUT) {
     actualizarEstado(ESTADOS.SIN_SEGUNDO_INPUT);
   }
 }
 
 function gestionarCalculo() {
-  segundoNumero = parseFloat(pantalla_numero.textContent);
+  segundoNumero = parseFloat(numeroEnPantalla);
   resultado = realizarCalculo();
   guardarOperacion();
-  pantalla_numero.textContent = resultado;
+  numeroEnPantalla = resultado;
   actualizarEstado(ESTADOS.CON_RESULTADO);
   mostrarOperacion();
-  segundoNumero = null
-  resultado = null;
 }
 
 function gestionarReinicio() {
   actualizarEstado(ESTADOS.SIN_PRIMER_INPUT);
 }
+
+function gestionarLimpieza() {
+  if (estadoActual === ESTADOS.CON_PRIMER_INPUT) {
+    actualizarEstado(ESTADOS.SIN_PRIMER_INPUT);
+  }
+  if (estadoActual === ESTADOS.CON_SEGUNDO_INPUT) {
+    actualizarEstado(ESTADOS.SIN_SEGUNDO_INPUT);
+  }
+}
+
+// --------------------- FUNCIONES AUXILIARES --------------------- \\
 
 function guardarOperacion() {
   let operacion = `${primerNumero} ${operando} ${segundoNumero} = ${resultado}`;
@@ -304,6 +353,7 @@ function guardarOperacion() {
   registroOperacion.textContent = operacion;
   historial.appendChild(registroOperacion);
 }
+
 function mostrarOperacion() {
   let operacion;
   if (estadoActual === ESTADOS.SIN_SEGUNDO_INPUT) {
@@ -312,7 +362,7 @@ function mostrarOperacion() {
   if (estadoActual === ESTADOS.CON_RESULTADO) {
     operacion = `${primerNumero} ${operando} ${segundoNumero} =`
   }
-  pantalla_operacion.textContent = operacion;
+  operacionEnPantalla = operacion;
 }
 
 function realizarCalculo() {
@@ -336,7 +386,7 @@ function realizarCalculo() {
   return calculo;
 }
 
-// -------------- CARGA CALCULADORA -------------- \\
+// --------------------- CARGA DE CALCULADORA --------------------- \\
 
 function cargarCalcualdora() {
   cargarTeclado();
