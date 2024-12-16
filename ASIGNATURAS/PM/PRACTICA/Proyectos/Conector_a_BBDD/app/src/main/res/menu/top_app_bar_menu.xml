@@ -8,7 +8,7 @@
         android:title="Añadir Registro"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_removeRecords"
+        android:id="@+id/action_showRecords"
         android:icon="@drawable/ic_view_records"
         android:title="Eliminar Registro"
         app:showAsAction="ifRoom" />
