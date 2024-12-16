@@ -2,14 +2,18 @@ package pm.pruebas.conector_a_bbdd;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+
+import androidx.annotation.ColorRes;
 
 import com.google.android.material.appbar.MaterialToolbar;
 
@@ -95,7 +99,7 @@ public class ManagementActivity extends BaseActivity {
         dialogo.show();
 
         btn_DeleteRecords.setOnClickListener(v -> {
-            // deleteAllRecords(); // Logic to delete all records
+            // deleteAllRecords();
             dialogo.dismiss();
         });
     }
@@ -115,10 +119,10 @@ public class ManagementActivity extends BaseActivity {
     }
 
     private TextView crearCampo(String text) {
-        TextView textView = new TextView(this);
-        textView.setText(text);
-        textView.setPadding(5, 5, 5, 5); // Add some padding for better readability
-        textView.setTextSize(20);
-        return textView;
+        TextView tv = new TextView(this);
+        tv.setText(text);
+        tv.setTextSize(20);
+        tv.setPadding(8, 8, 8, 8);
+        return tv;
     }
 }
