@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "HiloReloj",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.hiloreloj.HiloReloj",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "VariosHilos",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.varioshilos.VariosHilos",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "DentroFuera",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.dentrofuera.DentroFuera",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
             "name": "ExtendedXmlPullParser",
             "request": "launch",
             "mainClass": "ad.ejemplos.ExtendedXmlPullParser",

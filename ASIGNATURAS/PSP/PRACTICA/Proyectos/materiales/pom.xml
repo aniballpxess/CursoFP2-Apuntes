@@ -6,10 +6,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>psp</groupId>
-  <artifactId>materiales</artifactId>
-  <version>0.1</version>
-  <name>materiales</name>
+  <groupId>edu.dam2.psp</groupId>
+  <artifactId>materiales-curso</artifactId>
+  <version>0.2</version>
+  <name>Materiales del Curso</name>
   <packaging>jar</packaging>
 
   <properties>
@@ -22,7 +22,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.13.1</version>
+      <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -32,22 +32,26 @@
     <pluginManagement>
       <plugins>
         <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.4.0</version>
         </plugin>
         <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.3.1</version>
         </plugin>
         <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.9.0</version>
+          <version>3.13.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.5.0</version>
+          <version>3.5.1</version>
         </plugin>
         <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.4.2</version>
           <configuration>
@@ -60,24 +64,34 @@
           </configuration>
         </plugin>
         <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-install-plugin</artifactId>
           <version>3.1.3</version>
         </plugin>
         <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
           <version>3.1.3</version>
         </plugin>
         <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>4.0.0-M16</version>
+          <version>3.21.0</version>
         </plugin>
         <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.7.0</version>
+          <version>3.8.0</version>
         </plugin>
         <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-help-plugin</artifactId>
-          <version>3.5.0</version>
+          <version>3.5.1</version>
+        </plugin>
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>3.8.1</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -96,7 +110,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
+                <include>**/eva1/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -105,7 +119,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>psp.ejercicios.${Id_Ejercicio}.Main</mainClass>
+                  <mainClass>${project.groupId}.eva1.ejercicios.${Id_Ejercicio}.Main</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -126,7 +140,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
+                <include>**/eva1/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -135,7 +149,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>psp.ejercicios.${Id_Ejercicio}.Doblador</mainClass>
+                  <mainClass>${project.groupId}.eva1.ejercicios.${Id_Ejercicio}.Doblador</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -156,7 +170,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
+                <include>**/eva1/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -165,7 +179,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>psp.ejercicios.${Id_Ejercicio}.Main</mainClass>
+                  <mainClass>${project.groupId}.eva1.ejercicios.${Id_Ejercicio}.Main</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -186,7 +200,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
+                <include>**/eva1/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -195,7 +209,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>psp.ejercicios.${Id_Ejercicio}.Main</mainClass>
+                  <mainClass>${project.groupId}.eva1.ejercicios.${Id_Ejercicio}.Main</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -216,7 +230,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
+                <include>**/eva1/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -225,7 +239,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>psp.ejercicios.${Id_Ejercicio}.Main</mainClass>
+                  <mainClass>${project.groupId}.eva1.ejercicios.${Id_Ejercicio}.Main</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -246,7 +260,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
+                <include>**/eva1/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -255,7 +269,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>psp.ejercicios.${Id_Ejercicio}.GeneradorDeNumeros</mainClass>
+                  <mainClass>${project.groupId}.eva1.ejercicios.${Id_Ejercicio}.GeneradorDeNumeros</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -276,7 +290,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
+                <include>**/eva1/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -285,7 +299,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>psp.ejercicios.${Id_Ejercicio}.Main</mainClass>
+                  <mainClass>${project.groupId}.eva1.ejercicios.${Id_Ejercicio}.Main</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -306,7 +320,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
+                <include>**/eva1/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -315,7 +329,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>psp.ejercicios.${Id_Ejercicio}.Conversor</mainClass>
+                  <mainClass>${project.groupId}.eva1.ejercicios.${Id_Ejercicio}.Conversor</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -336,7 +350,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
+                <include>**/eva1/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -345,7 +359,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>psp.ejercicios.${Id_Ejercicio}.Main</mainClass>
+                  <mainClass>${project.groupId}.eva1.ejercicios.${Id_Ejercicio}.Main</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -366,7 +380,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
+                <include>**/eva1/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -375,7 +389,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>psp.ejercicios.${Id_Ejercicio}.CalculadorMedia</mainClass>
+                  <mainClass>${project.groupId}.eva1.ejercicios.${Id_Ejercicio}.CalculadorMedia</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -396,7 +410,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
+                <include>**/eva1/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -405,7 +419,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>psp.ejercicios.${Id_Ejercicio}.Main</mainClass>
+                  <mainClass>${project.groupId}.eva1.ejercicios.${Id_Ejercicio}.Main</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -426,7 +440,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
+                <include>**/eva1/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -435,7 +449,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>psp.ejercicios.${Id_Ejercicio}.ReferenciadorCapitalPaisEuropa</mainClass>
+                  <mainClass>${project.groupId}.eva1.ejercicios.${Id_Ejercicio}.ReferenciadorCapitalPaisEuropa</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -456,7 +470,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
+                <include>**/eva1/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -465,7 +479,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>psp.ejercicios.${Id_Ejercicio}.Main</mainClass>
+                  <mainClass>${project.groupId}.eva1.ejercicios.${Id_Ejercicio}.Main</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -486,7 +500,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <includes>
-                <include>**/psp/ejercicios/${Id_Ejercicio}/**</include>
+                <include>**/eva1/ejercicios/${Id_Ejercicio}/**</include>
               </includes>
             </configuration>
           </plugin>
@@ -495,7 +509,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>psp.ejercicios.${Id_Ejercicio}.CalculadorMayorMenor</mainClass>
+                  <mainClass>${project.groupId}.eva1.ejercicios.${Id_Ejercicio}.CalculadorMayorMenor</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -525,7 +539,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>psp.${Id_Paquete}.Lanzador</mainClass>
+                  <mainClass>${project.groupId}.eva1.${Id_Paquete}.Lanzador</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -555,7 +569,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>psp.${Id_Paquete}.Lector</mainClass>
+                  <mainClass>${project.groupId}.eva1.${Id_Paquete}.Lector</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -585,7 +599,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>psp.${Id_Paquete}.Calculador</mainClass>
+                  <mainClass>${project.groupId}.eva1.${Id_Paquete}.Calculador</mainClass>
                 </manifest>
               </archive>
             </configuration>
