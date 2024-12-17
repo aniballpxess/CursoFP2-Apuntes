@@ -298,7 +298,7 @@ function gestionarOperando(btn_operando) {
   }
   operando = btn_operando.value;
   actualizarEstado(ESTADOS.SIN_SEGUNDO_INPUT);
-  mostrarOperacion();
+  actualizarOperacion();
 }
 
 function gestionarBorrado() {
@@ -317,7 +317,7 @@ function gestionarCalculo() {
   guardarOperacion();
   numeroEnPantalla = resultado;
   actualizarEstado(ESTADOS.CON_RESULTADO);
-  mostrarOperacion();
+  actualizarOperacion();
 }
 
 function gestionarReinicio() {
@@ -337,6 +337,7 @@ function gestionarLimpieza() {
 
 function guardarOperacion() {
   let operacion = `${primerNumero} ${operando} ${segundoNumero} = ${resultado}`;
+  
   historialOperaciones.push(operacion);
 
   let registroOperacion = document.createElement('div');
@@ -345,7 +346,7 @@ function guardarOperacion() {
   historial.appendChild(registroOperacion);
 }
 
-function mostrarOperacion() {
+function actualizarOperacion() {
   let operacion;
   if (estadoActual === ESTADOS.SIN_SEGUNDO_INPUT) {
     operacion = `${primerNumero} ${operando}`;
