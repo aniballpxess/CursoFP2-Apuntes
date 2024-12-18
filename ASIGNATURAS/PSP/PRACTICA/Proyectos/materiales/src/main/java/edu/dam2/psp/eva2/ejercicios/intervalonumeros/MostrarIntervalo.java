@@ -17,7 +17,15 @@ public class MostrarIntervalo implements Runnable {
     {
         try
         {
-            Thread.sleep(1500);
+            int contador = 0;
+            System.out.print("{\n\t");
+            for (int i = limiteInf; i <= limiteSup; i++) {
+                if (contador == 10) {
+                    System.out.print("\n\t");
+                }
+                System.out.print("");
+                Thread.sleep(1500);
+            }
         }
         catch (InterruptedException e)
         {
