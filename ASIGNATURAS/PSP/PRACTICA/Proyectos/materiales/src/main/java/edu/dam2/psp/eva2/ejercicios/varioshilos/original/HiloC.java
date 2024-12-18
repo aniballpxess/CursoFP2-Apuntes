@@ -1,6 +1,6 @@
-package edu.dam2.psp.eva2.ejercicios.varioshilos;
+package edu.dam2.psp.eva2.ejercicios.varioshilos.original;
 
-public class HiloCR implements Runnable
+public class HiloC extends Thread
 {
     private int c;
 

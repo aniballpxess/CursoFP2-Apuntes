@@ -1,14 +1,14 @@
-package edu.dam2.psp.eva2.ejercicios.varioshilos;
+package edu.dam2.psp.eva2.ejercicios.varioshilos.pruebajoin;
 
-public class HiloC extends Thread
+public class HiloJoin extends Thread
 {
     private int c;
 
-    public HiloC(int c)
+    public HiloJoin(int c)
     {
         this.c = c;
     }
-
+    
     @Override
     public void run()
     {

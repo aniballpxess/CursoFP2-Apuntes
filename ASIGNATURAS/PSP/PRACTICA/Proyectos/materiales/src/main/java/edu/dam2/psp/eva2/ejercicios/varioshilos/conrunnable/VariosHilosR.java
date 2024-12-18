@@ -1,4 +1,4 @@
-package edu.dam2.psp.eva2.ejercicios.varioshilos;
+package edu.dam2.psp.eva2.ejercicios.varioshilos.conrunnable;
 
 public class VariosHilosR implements Runnable
 {
@@ -7,8 +7,8 @@ public class VariosHilosR implements Runnable
     {
         for (int i = 0; i < 5; i++)
         {
-            HiloC hiloC = new HiloC(i);
-            hiloC.run();
+            HiloCR hcr = new HiloCR(i);
+            hcr.run();
         }
     }
     public static void main(String[] args)

@@ -1,4 +1,4 @@
-package edu.dam2.psp.eva2.ejercicios.varioshilos;
+package edu.dam2.psp.eva2.ejercicios.varioshilos.original;
 
 public class VariosHilos
 {

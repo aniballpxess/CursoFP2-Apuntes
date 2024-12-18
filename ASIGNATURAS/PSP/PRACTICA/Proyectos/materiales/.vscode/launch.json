@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "FichajeEmpleados",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.fichajeempleados.FichajeEmpleados",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "AreaTriangulos",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.areatriangulos.AreaTriangulos",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "ParesImparesR",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.paresimpares.runnable.ParesImparesR",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "ParesImparesT",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.paresimpares.thread.ParesImparesT",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "PruebaJoin",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.pruebajoin.PruebaJoin",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "VariosHilosR",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.varioshilos.VariosHilosR",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
             "name": "HiloReloj",
             "request": "launch",
             "mainClass": "edu.dam2.psp.eva2.ejercicios.hiloreloj.HiloReloj",
