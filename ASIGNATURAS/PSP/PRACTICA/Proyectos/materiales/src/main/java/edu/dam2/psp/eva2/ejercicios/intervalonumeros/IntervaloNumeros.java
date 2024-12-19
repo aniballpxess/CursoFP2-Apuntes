@@ -15,7 +15,7 @@ public class IntervaloNumeros {
         limiteSup = Integer.parseInt(leerEntrada(sc, "Limite Superior: "));
 
         Runnable tareaMostrarIntervalo = new MostrarIntervalo(limiteInf, limiteSup);
-        Thread hiloEjecucion = new Thread(tareaMostrarIntervalo);
-        hiloEjecucion.start();
+        Thread hiloMostrarIntervalo = new Thread(tareaMostrarIntervalo);
+        hiloMostrarIntervalo.start();
     }
 }

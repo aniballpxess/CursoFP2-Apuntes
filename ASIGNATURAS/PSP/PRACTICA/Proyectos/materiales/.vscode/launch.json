@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MesesEstaciones",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.mesesestaciones.MesesEstaciones",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "IntervaloNumeros",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.intervalonumeros.IntervaloNumeros",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
             "name": "FichajeEmpleados",
             "request": "launch",
             "mainClass": "edu.dam2.psp.eva2.ejercicios.fichajeempleados.FichajeEmpleados",
