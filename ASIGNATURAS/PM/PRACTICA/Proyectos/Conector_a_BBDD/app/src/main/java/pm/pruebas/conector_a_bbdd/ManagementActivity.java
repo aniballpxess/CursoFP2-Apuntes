@@ -2,28 +2,22 @@ package pm.pruebas.conector_a_bbdd;
 
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-
-import androidx.annotation.ColorRes;
 
 import com.google.android.material.appbar.MaterialToolbar;
 
 import java.util.ArrayList;
 
 public class ManagementActivity extends BaseActivity {
-
-    MaterialToolbar mgmt_appBar_top;
-
-    ArrayList<Registro> registros_temp = new ArrayList<>();
+    private MaterialToolbar mgmt_appBar_top;
+    private ArrayList<Registro> registros_temp = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -36,6 +30,8 @@ public class ManagementActivity extends BaseActivity {
         mgmt_appBar_top = findViewById(R.id.mgmt_appBar_top);
 
         mgmt_appBar_top.setNavigationOnClickListener(v -> startActivity(intent_loadMainAct));
+
+        mgmt_appBar_top.inflateMenu(R.menu.top_app_bar_menu);
 
         mgmt_appBar_top.setOnMenuItemClickListener(item -> {
             int itemId = item.getItemId();

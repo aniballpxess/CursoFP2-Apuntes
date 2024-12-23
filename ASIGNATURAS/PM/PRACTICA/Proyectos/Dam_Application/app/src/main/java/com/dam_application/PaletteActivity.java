@@ -38,14 +38,11 @@ public class PaletteActivity extends BaseActivity {
         tb_modoNocturnoDiurno = findViewById(R.id.tb_modoNocturnoDiurno);
         rtb_valoracionUsuario = findViewById(R.id.rtb_opinionUsuario);
 
-        rtb_valoracionUsuario.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                if (fromUser) {
-                    guardarValoracion(rating);
-                    String message = getCustomMessage(rating);
-                    mostrarPopup(message);
-                }
+        rtb_valoracionUsuario.setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> {
+            if (fromUser) {
+                guardarValoracion(rating);
+                String message = getCustomMessage(rating);
+                mostrarPopup(message);
             }
         });
 

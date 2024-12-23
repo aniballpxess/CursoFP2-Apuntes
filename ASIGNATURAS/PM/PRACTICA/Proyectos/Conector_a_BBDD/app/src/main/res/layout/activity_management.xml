@@ -25,10 +25,8 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             android:elevation="4dp"
-            app:menu="@menu/top_app_bar_menu"
             app:navigationIcon="@drawable/ic_go_back"
             app:navigationIconTint="?attr/colorOnPrimary"
-            app:title="Gestión"
             app:titleTextColor="?attr/colorOnPrimary"/>
 
     </com.google.android.material.appbar.AppBarLayout>
