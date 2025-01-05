@@ -30,7 +30,6 @@ public class MainActivity extends BaseActivity {
             btn_accederApp.postDelayed(() -> {
                 pb_progresoCarga.setVisibility(View.GONE);
                 startActivity(intent_loadMgmtAct);
-                finish(); // Quizás quitarlo ???
             }, 2000);
         });
     }

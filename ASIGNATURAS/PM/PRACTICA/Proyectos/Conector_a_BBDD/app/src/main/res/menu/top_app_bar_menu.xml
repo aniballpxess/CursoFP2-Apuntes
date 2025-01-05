@@ -7,7 +7,7 @@
         android:id="@+id/action_toggleDarkMode"
         android:icon="@drawable/ic_contrast"
         android:title="Activar/Desactivar Modo Nocturno"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_addRecord"

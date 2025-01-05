@@ -33,16 +33,16 @@ public class BaseActivity extends AppCompatActivity {
             return insets;
         });
 
-        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        boolean isNightMode = preferences.getBoolean(THEME_KEY, false);
-        if (isNightMode)
-        {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        }
-        else
-        {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }
+//        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+//        boolean isNightMode = preferences.getBoolean(THEME_KEY, false);
+//        if (isNightMode)
+//        {
+//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//        }
+//        else
+//        {
+//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//        }
 
         contentFrame = findViewById(R.id.contentFrame);
     }

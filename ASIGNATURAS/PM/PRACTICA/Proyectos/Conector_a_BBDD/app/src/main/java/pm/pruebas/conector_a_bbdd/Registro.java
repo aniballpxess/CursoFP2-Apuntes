@@ -1,5 +1,7 @@
 package pm.pruebas.conector_a_bbdd;
 
+import java.util.Objects;
+
 public class Registro {
     private String id;
     private String nombre;
@@ -33,5 +35,20 @@ public class Registro {
 
     public void setNumRegistro(String numRegistro) {
         this.numRegistro = numRegistro;
+    }
+
+    @Override
+    public boolean equals(Object o)
+    {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Registro registro = (Registro) o;
+        return Objects.equals(id, registro.id);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(id, nombre, numRegistro);
     }
 }
