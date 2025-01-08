@@ -39,7 +39,6 @@ public class FicharEmpleado implements Runnable
             LocalTime dif_LT = LocalTime.ofNanoOfDay(dif_nanos);
             int dif_hora = dif_LT.getHour();
             int dif_min = dif_LT.getMinute();
-            System.out.println(dif_LT);
             infoFichaje = """
 
                     |---- FICHAJE ----------------------------|

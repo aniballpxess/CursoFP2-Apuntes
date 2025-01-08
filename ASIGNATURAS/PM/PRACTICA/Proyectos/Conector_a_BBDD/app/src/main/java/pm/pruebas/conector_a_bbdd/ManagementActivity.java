@@ -13,6 +13,8 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatDelegate;
+
 import com.google.android.material.appbar.MaterialToolbar;
 
 import org.json.JSONArray;
@@ -49,7 +51,7 @@ public class ManagementActivity extends BaseActivity {
             int itemId = item.getItemId();
             if (itemId == R.id.action_toggleDarkMode)
             {
-                // Activar/desactivar modo nocturno
+                cambiarModoNocturno();
                 return true;
             }
             if (itemId == R.id.action_addRecord)
@@ -80,6 +82,28 @@ public class ManagementActivity extends BaseActivity {
         cargarRegistros();
     }
 
+
+    /**
+     * Cambia el modo nocturno de la aplicación.
+     * Si el modo actual es claro, lo cambia a oscuro, y viceversa.
+     */
+    private void cambiarModoNocturno()
+    {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO)
+        {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
+        else
+        {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+    }
+
+    /**
+     * Muestra un diálogo para crear un nuevo registro.
+     * Incluye campos para ingresar el ID, nombre y número de registro.
+     * Guarda el registro al hacer click en el botón correspondiente.
+     */
     private void cargarCrearRegistro()
     {
         LayoutInflater inflater = LayoutInflater.from(this);
@@ -107,12 +131,23 @@ public class ManagementActivity extends BaseActivity {
         });
     }
 
+    /**
+     * Crea un nuevo registro y lo añade a la lista temporal de registros.
+     *
+     * @param id         Identificador único del registro.
+     * @param nombre     Nombre asociado al registro.
+     * @param numRegistro Número de registro.
+     */
     private void crearRegistro(String id, String nombre, String numRegistro)
     {
         Registro temp = new Registro(id, nombre, numRegistro);
         registros_temp.add(temp);
     }
 
+    /**
+     * Carga y muestra los registros existentes en un cuadro de diálogo.
+     * Permite seleccionar registros para eliminarlos.
+     */
     private void cargarMostrarRegistros()
     {
         checkBoxes_creadas.clear();
@@ -140,6 +175,12 @@ public class ManagementActivity extends BaseActivity {
         });
     }
 
+    /**
+     * Crea una fila en la tabla para un registro específico.
+     *
+     * @param tl       Tabla en la que se añadirá la fila.
+     * @param registro Registro cuyos datos se mostrarán en la fila.
+     */
     private void crearFila(TableLayout tl, Registro registro)
     {
         TableRow tr = new TableRow(this);
@@ -157,6 +198,12 @@ public class ManagementActivity extends BaseActivity {
         tl.addView(tr);
     }
 
+    /**
+     * Crea un CheckBox asociado a un registro.
+     *
+     * @param infoAsociada Información asociada al CheckBox.
+     * @return El CheckBox creado.
+     */
     private CheckBox crearCheckbox(Object infoAsociada)
     {
         CheckBox cb = new CheckBox(this);
@@ -165,6 +212,12 @@ public class ManagementActivity extends BaseActivity {
         return cb;
     }
 
+    /**
+     * Crea un TextView con texto específico.
+     *
+     * @param text Texto a mostrar en el TextView.
+     * @return El TextView creado.
+     */
     private TextView crearCampo(String text)
     {
         TextView tv = new TextView(this);
@@ -174,6 +227,9 @@ public class ManagementActivity extends BaseActivity {
         return tv;
     }
 
+    /**
+     * Elimina los registros seleccionados utilizando los CheckBox marcados.
+     */
     private void borrarRegistrosSeleccionados()
     {
         for (CheckBox cb : checkBoxes_creadas)
@@ -193,6 +249,9 @@ public class ManagementActivity extends BaseActivity {
         }
     }
 
+    /**
+     * Guarda los registros temporales en un archivo JSON en el almacenamiento local.
+     */
     private void guardarRegistros()
     {
         try
@@ -218,6 +277,10 @@ public class ManagementActivity extends BaseActivity {
         }
     }
 
+    /**
+     * Carga los registros desde un archivo JSON en el almacenamiento local.
+     * Los datos se añaden a la lista temporal de registros.
+     */
     private void cargarRegistros()
     {
         try
