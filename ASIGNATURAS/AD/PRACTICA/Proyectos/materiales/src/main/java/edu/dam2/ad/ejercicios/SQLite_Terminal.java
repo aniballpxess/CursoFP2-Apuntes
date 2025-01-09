@@ -65,7 +65,7 @@ public class SQLite_Terminal {
                     5. Ejecutar instrucción SQL
                     --------------- Control ---------------
                     6. Info de Alumnos de Tutor
-                    7. Prueba Inyecciónm SQL
+                    7. Prueba Inyección SQL
                     ---------------------------------------
                     Tabla activa: %s
                     ***************************************
