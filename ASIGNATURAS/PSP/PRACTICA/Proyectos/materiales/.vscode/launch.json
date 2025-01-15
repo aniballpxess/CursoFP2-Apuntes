@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Incremento",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.sincronizacion.incremento.Incremento",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "PruebaHilos",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.sincronizacion.PruebaHilos",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
             "name": "MesesEstaciones",
             "request": "launch",
             "mainClass": "edu.dam2.psp.eva2.ejercicios.mesesestaciones.MesesEstaciones",

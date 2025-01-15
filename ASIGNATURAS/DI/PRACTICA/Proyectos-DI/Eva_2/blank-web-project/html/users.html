@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>List of Users</title>
     <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/scripts.js"></script>
   </head>
@@ -14,17 +14,38 @@
 
     <nav>
       <a href="index.html">Home</a>
-      <a href="sign-up.html">Sign-Up</a>
-      <a href="sign-in.html">Sign-In</a>
+      <a href="sign-up.html">Sign Up</a>
+      <a href="sign-in.html">Sign In</a>
       <a href="tasks.html">My Tasks</a>
       <a href="team.html">My Team</a>
-      <a href="sign-in.html">Create Team (TEMP)</a>
-      <a href="users.html">User List (TEMP)</a>
-      <a href="teams.html">Team List (TEMP)</a>
+      <a href="create-team.html">Create Team (temp)</a>
+      <a href="users.html">User List (temp)</a>
+      <a href="teams.html">Team List (temp)</a>
     </nav>
 
     <div class="action-bar">
-      <button id="signup-button">Sign-Up</button>
+      <button id="delete-button">Delete Selected</button>
+    </div>
+
+    <div class="container">
+      <table id="user-table">
+        <thead>
+          <tr>
+            <th>Select</th>
+            <th>Full Name</th>
+            <th>Nickname</th>
+            <th>Country</th>
+            <th>Phone</th>
+            <th>Gender</th>
+            <th>Birth Date</th>
+            <th>Role</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Populated via JavaScript -->
+        </tbody>
+      </table>
     </div>
   </body>
 </html>
