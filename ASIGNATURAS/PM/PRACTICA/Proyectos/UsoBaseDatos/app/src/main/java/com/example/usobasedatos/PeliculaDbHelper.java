@@ -46,7 +46,13 @@ public class PeliculaDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // TODO - Lógica para actualizar la base de datos si se cambia la versión
+        if (DATABASE_VERSION == oldVersion) {
+            db.setVersion(newVersion);
+            // TODO - Lógica para actualizar la base de datos si se cambia la versión
+        }
+        else {
+            Log.e("SQLite Version", "La versión antigua no coincide con la version real de la base de datos. Imposible realizar mejora.");
+        }
     }
 
     public void guardarPelicula(String titulo, String director, int cartel, int musica) {
@@ -78,7 +84,7 @@ public class PeliculaDbHelper extends SQLiteOpenHelper {
 
                     listaPeliculas.add(new Pelicula(id, titulo, director, cartel, musica));
                 } catch (IllegalArgumentException e) {
-                    Log.e("SQLite", "Error al obtener datos de la base de datos: " + e.getMessage());
+                    Log.e("SQLite Access", "Error al obtener datos de la base de datos: " + e.getMessage());
                 }
             } while (cursor.moveToNext());
         }
@@ -91,6 +97,55 @@ public class PeliculaDbHelper extends SQLiteOpenHelper {
     public void eliminarPelicula(int id) {
         SQLiteDatabase db = getWritableDatabase();
         db.delete("tabla_peliculas", "_id = ?", new String[]{String.valueOf(id)});
+        db.close();
+    }
+
+    public void modificarPelicula(int id, int tipo_de_modificacion, String valor) {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        switch (tipo_de_modificacion) {
+            case 1:
+                values.put("titulo", valor);
+                break;
+            case 2:
+                values.put("director", valor);
+                break;
+            case 4:
+                try {
+                    int referenciaCartel = Integer.parseInt(valor);
+                    values.put("cartel", referenciaCartel);
+                } catch (NumberFormatException e) {
+                    Log.e("SQLite update error", "Invalid value for 'cartel': " + valor);
+                    db.close();
+                    return;
+                }
+                break;
+            case 8:
+                try {
+                    int referenciaCancion = Integer.parseInt(valor);
+                    values.put("musica", referenciaCancion);
+                } catch (NumberFormatException e) {
+                    Log.e("SQLite update error", "Invalid value for 'musica': " + valor);
+                    db.close();
+                    return;
+                }
+                break;
+            default:
+                Log.e("SQLite update type", "El tipo de modificación solicitada no está soportada.");
+                db.close();
+                return;
+        }
+
+        if (values.size() > 0) {
+            int rowsUpdated = db.update("tabla_peliculas", values, "_id = ?", new String[]{String.valueOf(id)});
+            if (rowsUpdated > 0) {
+                Log.d("SQLite update", "Registro actualizado exitosamente. ID: " + id);
+            } else {
+                Log.e("SQLite update", "No se encontró ningún registro con ID: " + id);
+            }
+        }
+
         db.close();
     }
 }
