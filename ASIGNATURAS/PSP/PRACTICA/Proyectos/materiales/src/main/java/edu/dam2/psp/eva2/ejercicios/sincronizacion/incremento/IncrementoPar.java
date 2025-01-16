@@ -16,29 +16,14 @@ public class IncrementoPar implements Runnable {
         String threadName = Thread.currentThread().getName();
         while (true)
         {
-            if (contador.getValor() == limite)
+            int valorContador = contador.getValor(threadName);
+            if (valorContador == limite)
             {
                 break;
             }
-            if (contador.getValor() % 2 == 0)
+            if (valorContador % 2 == 0)
             {
-                contador.incrementa();
-                int valorContador = contador.getValor();
-                System.out.println(threadName + " incrementa el contador a " + valorContador);
-                try
-                {
-                    Thread.sleep(1000);
-                }
-                catch (InterruptedException e)
-                {
-                    for (StackTraceElement element : e.getStackTrace())
-                    {
-                        System.err.println(element.toString());
-                    }
-                }
-            }
-            else {
-                System.out.println(threadName + " INTENTA incrementar el contador.");
+                contador.incrementa(threadName);
             }
         }
     }

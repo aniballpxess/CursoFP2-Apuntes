@@ -34,26 +34,30 @@
         <artifactId>kxml2</artifactId>
         <version>2.3.0</version>
       </dependency>
-      <dependency>
-        <groupId>org.mongodb</groupId>
-        <artifactId>bson</artifactId>
-        <version>5.2.1</version>
-      </dependency>
-      <dependency>
-        <groupId>org.mongodb</groupId>
-        <artifactId>mongodb-driver-core</artifactId>
-        <version>5.2.1</version>
-      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync -->
       <dependency>
         <groupId>org.mongodb</groupId>
         <artifactId>mongodb-driver-sync</artifactId>
-        <version>5.2.1</version>
+        <version>5.3.0</version>
       </dependency>
-      <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+      <!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-core -->
       <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>2.0.16</version>
+        <groupId>org.mongodb</groupId>
+        <artifactId>mongodb-driver-core</artifactId>
+        <version>5.3.0</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.mongodb/bson -->
+      <dependency>
+        <groupId>org.mongodb</groupId>
+        <artifactId>bson</artifactId>
+        <version>5.3.0</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.mongodb/bson-record-codec -->
+      <dependency>
+        <groupId>org.mongodb</groupId>
+        <artifactId>bson-record-codec</artifactId>
+        <version>5.3.0</version>
+        <scope>runtime</scope>
       </dependency>
       <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
       <dependency>
@@ -62,10 +66,11 @@
         <version>2.0.16</version>
         <scope>test</scope>
       </dependency>
+      <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
       <dependency>
-        <groupId>org.xerial</groupId>
-        <artifactId>sqlite-jdbc</artifactId>
-        <version>3.47.1.0</version>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>2.0.16</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -125,12 +130,4 @@
       </plugins>
     </pluginManagement>
   </build>
-
-  <reporting>
-    <plugins>
-      <plugin>
-        <artifactId>maven-project-info-reports-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </reporting>
 </project>
