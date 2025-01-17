@@ -82,7 +82,7 @@ public class SQLite_Terminal {
                 case 4 -> mostrarDatosTablaActiva();
                 case 5 -> ejecutarInstruccion();
                 case 6 -> mostrarAlumnosTutor();
-                case 7 -> logIn_Inseguro_WTF();
+                case 7 -> logIn_Inseguro();
                 default -> System.out.println("Opción inválida. Intente de nuevo.");
             }
         }
@@ -130,7 +130,7 @@ public class SQLite_Terminal {
      * <p>Obtiene y muestra los detalles de los campos (columnas) de la tabla
      * activa. Esto incluye el nombre, tipo de datos, si permite nulos, si es
      * clave, entre otros.</p>
-     * <br />
+     *
      * <p>Requiere de que se haya establecido una tabla activa para funcionar.</p>
      */
     private static void mostrarCamposTablaActiva() {
@@ -176,6 +176,12 @@ public class SQLite_Terminal {
         }
     }
 
+    /**
+     * <p>Ejecuta la instrucción introducida por el usuario. (Solo usable
+     * durante el proceso de desarrollo para testear queries).</p>
+     *
+     * <p>Requiere de que se haya establecido una tabla activa para funcionar.</p>
+     */
     private static void ejecutarInstruccion() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Instrucción: ");
@@ -193,7 +199,13 @@ public class SQLite_Terminal {
             e.printStackTrace();
         }
     }
-    
+
+    /**
+     * <p>Ejemplo de una query anidada que muestra datos básicos de los alumnos
+     * basándose en el nombre de su tutor. Este es introducido por el usuario.</p>
+     *
+     * <p>Requiere de que se haya establecido una tabla activa para funcionar.</p>
+     */
     private static void mostrarAlumnosTutor() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Nombre del tutor: ");
@@ -214,7 +226,13 @@ public class SQLite_Terminal {
         }
     }
 
-    private static void logIn_Inseguro_WTF() {
+    /**
+     * <p>Query insegura para probar un ataque por inyección de SQL.</p>
+     * <p>Prueba a poner <code>' OR 1=1 --</code>.</p>
+     * <p>Solo funciona si se pone en el capo de <code>apodo</code> porque es el
+     * primero de la query y, por lo tanto desactiva el <code>AND</code>.</p>
+     */
+    private static void logIn_Inseguro() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Apodo: ");
         String nickUser = sc.nextLine().trim();
@@ -228,7 +246,7 @@ public class SQLite_Terminal {
             System.out.println("No has introducido ninguna contraseña.");
             return;
         }
-        String instruccion = "SELECT * FROM usuarios WHERE apodo = '%s' AND contraseña = '%s';";
+        String instruccion = "SELECT * FROM USUARIOS WHERE apodo = '%s' AND contrasena = '%s'";
         instruccion = instruccion.formatted(nickUser, pswdUser);
 
         try (Statement stmt = conexion.createStatement();
