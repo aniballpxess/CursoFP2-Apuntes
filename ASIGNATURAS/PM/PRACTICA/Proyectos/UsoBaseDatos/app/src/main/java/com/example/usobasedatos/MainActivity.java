@@ -71,11 +71,14 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.menuitemnuevapeli) {
+        if (id == R.id.menu_item_nuevapeli) {
             mostrarFormularioAgregarPelicula();
             return true;
-        } else if (id == R.id.menuitemverpeliculas) {
-            mostrarFormularioverPeliculasAnadidas();
+        } else if (id == R.id.menu_item_verpelis) {
+            mostrarFormularioVerPeliculasAnadidas();
+            return true;
+        } else if (id == R.id.menu_item_modpelis) {
+            mostrarFormularioModificarPeliculas();
             return true;
         } else if (id == android.R.id.home) {
             finish();
@@ -133,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Muestra un formulario con todas las películas agregadas y permite eliminarlas
     // Se llama desde el menú de opciones de la Toolbar opcion icono ojo
-    private void mostrarFormularioverPeliculasAnadidas() {
+    private void mostrarFormularioVerPeliculasAnadidas() {
         // Llama al select y recoge los registros de la bd
         List<Pelicula> listaPeliculas = dbHelper.obtenerListaPeliculas();  // Obtiene todas las películas de la base de datos
 
@@ -150,9 +153,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Crea y muestra el AlertDialog
         new AlertDialog.Builder(this)
-                .setTitle("Eliminar películas")
+                .setTitle("Películas Favoritas")
                 .setView(dialogView)
-                .setPositiveButton("Eliminar", (dialog, which) -> {
+                .setNeutralButton("Eliminar", (dialog, which) -> {
                     SparseBooleanArray checked = listView.getCheckedItemPositions();
                     List<Pelicula> peliculasEliminadas = new ArrayList<>();
 
@@ -179,7 +182,50 @@ public class MainActivity extends AppCompatActivity {
                     // Opcional: Log de las películas restantes
                     Log.d("Pelicula", "Lista actualizada: " + listaPeliculas);
                 })
-                .setNegativeButton("Cancelar", null)  // Acción al cancelar
+                .setNeutralButton("detalles", (dialog, which) -> {
+                    SparseBooleanArray checked = listView.getCheckedItemPositions();
+                    List<Pelicula> peliculasSeleccionadas = new ArrayList<>();
+
+                    // Recopila las películas seleccionadas
+                    for (int i = 0; i < listaPeliculas.size(); i++) {
+                        if (checked.get(i)) {
+                            peliculasSeleccionadas.add(listaPeliculas.get(i));
+                        }
+                    }
+
+                    if (peliculasSeleccionadas.isEmpty()) {
+                        Toast.makeText(this, "No se seleccionaron películas.", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    // Abre un nuevo cuadro de diálogo para agregar descripciones
+                    AlertDialog.Builder detallesDialog = new AlertDialog.Builder(this);
+                    detallesDialog.setTitle("Agregar Descripción");
+
+                    // Infla el formulario para agregar descripciones
+                    View formularioDescripcion = LayoutInflater.from(this).inflate(R.layout.formulario_agregar_descripcion, null);
+                    final EditText etDescripcion = formularioDescripcion.findViewById(R.id.etDescripcion);
+                    detallesDialog.setView(formularioDescripcion);
+
+                    // Configura el botón para guardar la descripción
+                    detallesDialog.setPositiveButton("Guardar", (descDialog, descWhich) -> {
+                        String descripcion = etDescripcion.getText().toString();
+
+                        if (!descripcion.isEmpty()) {
+                            for (Pelicula pelicula : peliculasSeleccionadas) {
+                                dbHelper.guardarDescripcion(pelicula.getId(), descripcion);  // Guarda la descripción en una tabla separada
+                            }
+
+                            Toast.makeText(this, "Descripción guardada para las películas seleccionadas.", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(this, "La descripción está vacía.", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                    detallesDialog.setNegativeButton("Cancelar", null);
+                    detallesDialog.show();
+                })
+                .setNeutralButton("Cancelar", null) // Acción al cancelar
                 .show();
     }
 }

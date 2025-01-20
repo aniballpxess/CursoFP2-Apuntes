@@ -38,7 +38,13 @@ public class PeliculaDbHelper extends SQLiteOpenHelper {
                         "cartel INTEGER, " +
                         "musica INTEGER);"
         );
-
+        db.execSQL(
+                "CREATE TABLE tabla_descripciones (" +
+                        "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        "pelicula_id INTEGER NOT NULL, " +
+                        "descripcion TEXT NOT NULL, " +
+                        "FOREIGN KEY (pelicula_id) REFERENCES tabla_peliculas(_id) ON DELETE CASCADE);"
+        );
         // Muestra la ruta de la base de datos para depuración
         String path = db.getPath();
         Log.d("RutaBaseDeDatos", "Path: " + path);
@@ -100,52 +106,34 @@ public class PeliculaDbHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void modificarPelicula(int id, int tipo_de_modificacion, String valor) {
+    public void modificarPeliculas(String[] ids, ContentValues cambios) {
         SQLiteDatabase db = getWritableDatabase();
+
+        if (cambios.isEmpty()) {
+            Log.d("SQLite update", "No se ha solicitado ningún cambio");
+            return;
+        }
+        int registrosActualizados = db.update("tabla_peliculas", cambios, "_id = ?", ids);
+        int registrosNoActualizados = ids.length - registrosActualizados;
+        if (registrosActualizados > 0) {
+            Log.d("SQLite update",  registrosActualizados + " registros actualizados exitosamente.");
+        }
+        if (registrosNoActualizados > 0) {
+            Log.e("SQLite update", "No se encontraron " + registrosNoActualizados + " registros.");
+        }
+
+        db.close();
+    }
+
+    public void guardarDescripcion(int id_pelicula, String descripcion)
+    {
+        SQLiteDatabase db = getWritableDatabase();
+
         ContentValues values = new ContentValues();
+        values.put("id_pelicula", id_pelicula);
+        values.put("descripcion", descripcion);
 
-        switch (tipo_de_modificacion) {
-            case 1:
-                values.put("titulo", valor);
-                break;
-            case 2:
-                values.put("director", valor);
-                break;
-            case 4:
-                try {
-                    int referenciaCartel = Integer.parseInt(valor);
-                    values.put("cartel", referenciaCartel);
-                } catch (NumberFormatException e) {
-                    Log.e("SQLite update error", "Invalid value for 'cartel': " + valor);
-                    db.close();
-                    return;
-                }
-                break;
-            case 8:
-                try {
-                    int referenciaCancion = Integer.parseInt(valor);
-                    values.put("musica", referenciaCancion);
-                } catch (NumberFormatException e) {
-                    Log.e("SQLite update error", "Invalid value for 'musica': " + valor);
-                    db.close();
-                    return;
-                }
-                break;
-            default:
-                Log.e("SQLite update type", "El tipo de modificación solicitada no está soportada.");
-                db.close();
-                return;
-        }
-
-        if (values.size() > 0) {
-            int rowsUpdated = db.update("tabla_peliculas", values, "_id = ?", new String[]{String.valueOf(id)});
-            if (rowsUpdated > 0) {
-                Log.d("SQLite update", "Registro actualizado exitosamente. ID: " + id);
-            } else {
-                Log.e("SQLite update", "No se encontró ningún registro con ID: " + id);
-            }
-        }
-
+        db.insert("tabla_descripciones", null, values);
         db.close();
     }
 }

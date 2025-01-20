@@ -2,7 +2,6 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/dialog_showRecords"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -21,14 +20,44 @@
 
     </TableLayout>
 
-    <ImageButton
-        android:id="@+id/btn_borrarRegistros"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_delete"
-        android:background="?attr/selectableItemBackground"
-        android:contentDescription="Guardar Registro"
-        android:padding="10dp"
-        app:tint="?attr/colorOnSurface" />
+        android:orientation="horizontal"
+        android:background="?attr/colorSurfaceContainerHighest"
+        android:gravity="end">
+
+        <ImageButton
+            android:id="@+id/btn_borrarRegistros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_delete"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="Borrar Registros"
+            android:padding="10dp"
+            app:tint="?attr/colorOnSurface" />
+
+        <ImageButton
+            android:id="@+id/btn_editarRegistro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_delete"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="Editar Registros"
+            android:padding="10dp"
+            app:tint="?attr/colorOnSurface" />
+
+        <ImageButton
+            android:id="@+id/btn_editarDescripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_delete"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="Editar Descripcion"
+            android:padding="10dp"
+            app:tint="?attr/colorOnSurface" />
+
+    </LinearLayout>
+
 
 </LinearLayout>

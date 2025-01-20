@@ -4,12 +4,13 @@ import androidx.annotation.NonNull;
 
 public class Pelicula {
     private final int id;
-    private final String titulo;
-    private final String director;
+    private String titulo;
+    private String director;
     private final int cartel;
     private final int musica;
 
-    public Pelicula(int id, String titulo, String director, int cartel, int musica) {
+    public Pelicula(int id, String titulo, String director, int cartel, int musica)
+    {
         this.id = id;
         this.titulo = titulo;
         this.director = director;
@@ -17,21 +18,35 @@ public class Pelicula {
         this.musica = musica;
     }
 
-    public int getId() {
+    public int getId()
+    {
         return id;
     }
 
-    public String getTitulo() {
+    public String getTitulo()
+    {
         return titulo;
     }
 
-    public String getDirector() {
+    public String getDirector()
+    {
         return director;
+    }
+
+    public void setTitulo(String titulo)
+    {
+        this.titulo = titulo;
+    }
+
+    public void setDirector(String director)
+    {
+        this.director = director;
     }
 
     @NonNull
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Título: " + titulo + "\n" +
                 "Director: " + director;
     }

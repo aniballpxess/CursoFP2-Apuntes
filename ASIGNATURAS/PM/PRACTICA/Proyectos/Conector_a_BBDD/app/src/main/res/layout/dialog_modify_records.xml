@@ -2,7 +2,6 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/dialog_addRecord"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -23,30 +22,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="end"
-                android:text="ID:"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/et_id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
                 android:text="Nombre:"
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/et_nombre"
+                android:id="@+id/modRecs_et_nombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName" />
@@ -65,7 +45,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/et_numRegistro"
+                android:id="@+id/modRecs_et_numRegistro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number" />
@@ -75,7 +55,7 @@
     </TableLayout>
 
     <ImageButton
-        android:id="@+id/btn_grabarRegistro"
+        android:id="@+id/modRecs_btn_guardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@android:drawable/ic_menu_save"

@@ -158,6 +158,7 @@ public class ManagementActivity extends BaseActivity {
 
         TableLayout tl = dialogView.findViewById(R.id.tl_recordsTable);
         ImageButton btn_DeleteRecords = dialogView.findViewById(R.id.btn_borrarRegistros);
+        ImageButton btn_ModifyRecords = dialogView.findViewById(R.id.btn_editarRegistro);
 
         for (Registro registro : registros_temp)
         {
@@ -174,6 +175,10 @@ public class ManagementActivity extends BaseActivity {
             borrarRegistrosSeleccionados();
             cargarMostrarRegistros();
             dialogo.dismiss();
+        });
+
+        btn_ModifyRecords.setOnClickListener(v -> {
+
         });
     }
 
