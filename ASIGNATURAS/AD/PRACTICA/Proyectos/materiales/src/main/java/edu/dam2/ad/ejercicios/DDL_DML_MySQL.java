@@ -60,18 +60,18 @@ public class DDL_DML_MySQL {
             System.out.print("""
                     ************* MENÚ  PRINCIPAL *************
                     ------------ Operaciones Extra ------------
-                    0. Salir
-                    1. Mostrar Tablas
-                    2. Establecer Tabla Activa
-                    3. Mostrar Campos de Tabla Activa
-                    4. Mostrar Datos de Tabla Activa
+                     0. Salir
+                     1. Mostrar Tablas
+                     2. Establecer Tabla Activa
+                     3. Mostrar Campos de Tabla Activa
+                     4. Mostrar Datos de Tabla Activa
                     ------------- Operaciones DDL -------------
-                    5. Crear Tabla
-                    6. Eliminar Tabla
-                    7. Crear Campo en Tabla Activa
-                    8. Eliminar Campo en Tabla Activa
+                     5. Crear Tabla
+                     6. Eliminar Tabla
+                     7. Crear Campo en Tabla Activa
+                     8. Eliminar Campo en Tabla Activa
                     ------------- Operaciones DML -------------
-                    9. Rellenar Tabla Activa
+                     9. Rellenar Tabla Activa
                     10. Consultar Tabla Activa
                     11. Insertar Registro en Tabla Activa
                     12. Borrar Registro de Tabla Activa

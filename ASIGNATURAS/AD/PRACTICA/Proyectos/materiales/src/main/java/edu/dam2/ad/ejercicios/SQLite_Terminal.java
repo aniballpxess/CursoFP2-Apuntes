@@ -1,6 +1,9 @@
 package edu.dam2.ad.ejercicios;
 
 import java.sql.*;
+import java.text.DateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -57,15 +60,18 @@ public class SQLite_Terminal {
             System.out.printf("""
                     ************* OPERACIONES *************
                     --------------- Básicas ---------------
-                    0. Salir
-                    1. Mostrar Tablas
-                    2. Establecer Tabla Activa
-                    3. Mostrar Campos de Tabla Activa
-                    4. Mostrar Datos de Tabla Activa
-                    5. Ejecutar instrucción SQL
+                     0. Salir
+                     1. Mostrar Tablas
+                     2. Establecer Tabla Activa
+                     3. Mostrar Campos de Tabla Activa
+                     4. Mostrar Datos de Tabla Activa
+                     5. Ejecutar instrucción SQL
                     --------------- Control ---------------
-                    6. Info de Alumnos de Tutor
-                    7. Prueba Inyección SQL
+                     6. Info de Alumnos de Tutor
+                     7. Prueba Inyección SQL
+                     8. Alta de Alumno
+                     9. Alta de Profesor
+                    10. Baja de Alumno
                     ---------------------------------------
                     Tabla activa: %s
                     ***************************************
@@ -83,8 +89,51 @@ public class SQLite_Terminal {
                 case 5 -> ejecutarInstruccion();
                 case 6 -> mostrarAlumnosTutor();
                 case 7 -> logIn_Inseguro();
+                case 8 -> registrarAlumno();
+                case 9 -> registrarProfesor();
+                case 10 -> eliminarAlumno();
                 default -> System.out.println("Opción inválida. Intente de nuevo.");
             }
+        }
+    }
+
+    private static void eliminarAlumno() {
+    }
+
+    private static void registrarProfesor() {
+    }
+
+    private static void registrarAlumno() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("REGISTRO DE ALUMNO");
+        System.out.print("Nombre: ");
+        String nombre = sc.nextLine().trim();
+        System.out.print("Apellidos: ");
+        String apellidos = sc.nextLine().trim();
+        System.out.print("Fecha de Nacimiento: ");
+        String fechaNacimiento = sc.nextLine().trim();
+        System.out.print("Fecha de Ingreso: ");
+        String fechaIngreso = sc.nextLine().trim();
+        try {
+            LocalDate.parse(fechaNacimiento);
+            LocalDate.parse(fechaIngreso);
+        }
+        catch (DateTimeParseException dtpe) {
+            System.err.println("\nEl formato de las fechas introducidas no es válido.");
+            return;
+        }
+        String instruccion = """
+                INSERT INTO ESTUDIANTES (NOMBRE,APELLIDOS,FECHA_NACIMIENTO,FECHA_MATRICULACION)
+                VALUES (?, ?, ?, ?);""";
+        try (PreparedStatement pstmt = conexion.prepareStatement(instruccion)) {
+            pstmt.setString(1, nombre);
+            pstmt.setString(2, apellidos);
+            pstmt.setString(3, fechaNacimiento);
+            pstmt.setString(4, fechaIngreso);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("Error al registrar estudiante en base de datos:\n" + e.getMessage());
+            e.printStackTrace();
         }
     }
 

@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.util.Log;
 
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             mostrarFormularioVerPeliculasAnadidas();
             return true;
         } else if (id == R.id.menu_item_modpelis) {
-            mostrarFormularioModificarPeliculas();
+            //mostrarFormularioModificarPeliculas();
             return true;
         } else if (id == android.R.id.home) {
             finish();
@@ -155,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
         new AlertDialog.Builder(this)
                 .setTitle("Películas Favoritas")
                 .setView(dialogView)
-                .setNeutralButton("Eliminar", (dialog, which) -> {
+                .setPositiveButton("Eliminar", (dialog, which) -> {
                     SparseBooleanArray checked = listView.getCheckedItemPositions();
                     List<Pelicula> peliculasEliminadas = new ArrayList<>();
 
@@ -182,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
                     // Opcional: Log de las películas restantes
                     Log.d("Pelicula", "Lista actualizada: " + listaPeliculas);
                 })
-                .setNeutralButton("detalles", (dialog, which) -> {
+                .setNeutralButton("Detalles", (dialog, which) -> {
                     SparseBooleanArray checked = listView.getCheckedItemPositions();
                     List<Pelicula> peliculasSeleccionadas = new ArrayList<>();
 
@@ -225,7 +226,7 @@ public class MainActivity extends AppCompatActivity {
                     detallesDialog.setNegativeButton("Cancelar", null);
                     detallesDialog.show();
                 })
-                .setNeutralButton("Cancelar", null) // Acción al cancelar
+                .setNegativeButton("Cancelar", null) // Acción al cancelar
                 .show();
     }
 }
