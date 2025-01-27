@@ -17,7 +17,18 @@
     <maven.compiler.target>21</maven.compiler.target>
   </properties>
 
-  <dependencyManagement>
+
+  <repositories>
+    <repository>
+      <id>central</id>
+      <url>https://repo1.maven.org/maven2</url>
+    </repository>
+    <repository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/OWNER/REPOSITORY</url>
+    </repository>
+  </repositories>
+
     <dependencies>
       <dependency>
         <groupId>junit</groupId>
@@ -72,8 +83,19 @@
         <artifactId>slf4j-api</artifactId>
         <version>2.0.16</version>
       </dependency>
+      <!-- https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib -->
+      <dependency>
+        <groupId>org.jetbrains.kotlin</groupId>
+        <artifactId>kotlin-stdlib</artifactId>
+        <version>2.1.0</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/me.sargunvohra.lib/PokeKotlin -->
+      <dependency>
+        <groupId>me.sargunvohra.lib</groupId>
+        <artifactId>pokekotlin</artifactId>
+        <version>2.4.0</version>
+      </dependency>
     </dependencies>
-  </dependencyManagement>
 
   <build>
     <finalName>${project.artifactId}-${project.version}</finalName>
@@ -129,5 +151,27 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.jetbrains.kotlin</groupId>
+        <artifactId>kotlin-maven-plugin</artifactId>
+        <version>2.1.0</version>
+        <executions>
+          <execution>
+            <id>compile</id>
+            <phase>process-sources</phase>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+            <configuration>
+              <sourceDirs>
+                <source>src/main/java</source>
+                <source>target/generated-sources/annotations</source>
+              </sourceDirs>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
   </build>
 </project>
