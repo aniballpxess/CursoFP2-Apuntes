@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Banco",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.sincronizacion.banco.Banco",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
             "name": "Incremento",
             "request": "launch",
             "mainClass": "edu.dam2.psp.eva2.ejercicios.sincronizacion.incremento.Incremento",

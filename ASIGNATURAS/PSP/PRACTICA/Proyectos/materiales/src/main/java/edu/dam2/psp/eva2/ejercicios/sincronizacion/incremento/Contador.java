@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Contador
 {
-    private int c = 0;
+    private int valor = 0;
     private final int limite;
     private final List<String> logs;
 
@@ -36,13 +36,16 @@ public class Contador
 
     synchronized public int getValor(String threadName)
     {
-        logs.add(threadName + " INTENTA incrementar el contador.");
-        return c;
+        if (valor < limite) 
+        {
+            logs.add(threadName + " INTENTA incrementar el contador.");
+        }
+        return valor;
     }
 
     synchronized public void incrementa(String threadName)
     {
-        c = c + 1;
-        logs.add(threadName + " incrementar el contador a " + c + ".");
+        valor = valor + 1;
+        logs.add(threadName + " incrementa el contador a " + valor + ".");
     }
 }
