@@ -24,8 +24,8 @@
       <url>https://repo1.maven.org/maven2</url>
     </repository>
     <repository>
-      <id>github</id>
-      <url>https://maven.pkg.github.com/OWNER/REPOSITORY</url>
+      <id>pokeapi</id>
+      <url>https://github.com/PokeAPI/pokeapi</url>
     </repository>
   </repositories>
 

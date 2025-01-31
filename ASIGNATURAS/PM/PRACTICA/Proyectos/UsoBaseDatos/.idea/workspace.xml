@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+  </component>
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+    <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/formulario_agregar_descripcion.xml">
+        <config>
+          <theme>@style/Theme.UsoBaseDatos</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/menu_anadir_pelis.xml">
+        <config>
+          <theme>@style/Theme.UsoBaseDatos</theme>
+        </config>
+      </layout>
+    </layouts>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d8c8e6a4-2715-422d-9cb4-073b815ffe9b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../AD/PRACTICA/Proyectos/materiales/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../AD/PRACTICA/Proyectos/materiales/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../AD/PRACTICA/Proyectos/materiales/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../AD/PRACTICA/Proyectos/materiales/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/appInsightsSettings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/aniba.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/migrations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/usobasedatos/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/usobasedatos/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/usobasedatos/Pelicula.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/usobasedatos/PeliculaDbHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/account24dp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/borde_rectangular.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/border_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/cartel_jaws.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/carteltiffanyco.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/catabyssinian.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/fondo_orgulloyprejuiciosellos.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/fondoangelitooscuro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/fondoangelitos.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/fondopolaroid5webp.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/howtosteal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/huevospetiazuldetiffany.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_movie_light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_nadd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_verlista_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ico_surfing_white_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/iconbrocha.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/iconhairspray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/iconlipstick.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/iconobufanda.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/iconopan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/iconopluma.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/iconosudaderahoodie.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/iconowhitekitten.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/iconowishlist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/iconpants.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/iconringforever.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/iconserumjpg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/iconwomenjacket.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/kittycoco.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/store24dp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/sudaderarayas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/tiffanyseniorparaguas.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/vinylrecords.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/formulario_agregar_descripcion.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/formulario_agregar_pelicula.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/popup_formulario_baja.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_anadir_pelis.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ico_film_reel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/icorecordplayer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/howdoyoukeepthemusicplaying.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/jaws_theme.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/usobasedatos/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/.idea/appInsightsSettings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/.idea/deploymentTargetSelector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/.idea/migrations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/androidTest/java/com/example/usobasedatos/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/java/com/example/usobasedatos/APIMercadonaActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/java/com/example/usobasedatos/NavigationActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/java/com/example/usobasedatos/SQLitePeliculasActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/java/com/example/usobasedatos/helpers/PeliculaDbHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/java/com/example/usobasedatos/interfaces/CategoriaDeProductoAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/java/com/example/usobasedatos/model/Actor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/java/com/example/usobasedatos/model/Categoria.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/java/com/example/usobasedatos/model/Pelicula.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/account24dp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/borde_rectangular.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/border_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/cartel_jaws.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/carteltiffanyco.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/catabyssinian.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/fondo_orgulloyprejuiciosellos.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/fondoangelitooscuro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/fondoangelitos.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/fondopolaroid5webp.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/howtosteal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/huevospetiazuldetiffany.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/ic_menu_back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/ic_menu_movie_light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/ic_menu_nadd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/ic_menu_verlista_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/ico_film_reel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/ico_surfing_white_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/iconbrocha.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/iconhairspray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/iconlipstick.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/iconobufanda.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/iconopan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/iconopluma.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/iconosudaderahoodie.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/iconowhitekitten.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/iconowishlist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/iconpants.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/iconringforever.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/iconserumjpg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/iconwomenjacket.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/icorecordplayer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/kittycoco.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/store24dp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/sudaderarayas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/tiffanyseniorparaguas.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/drawable/vinylrecords.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/layout/activity_apimercadona.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/layout/activity_navigation.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/layout/activity_peliculas_sqlite.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/layout/formulario_agregar_actor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/layout/formulario_agregar_pelicula.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/layout/popup_formulario_gestionar_pelis.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/menu/menu_anadir_pelis.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/mipmap-anydpi/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/mipmap-xxhdpi/icodbconlupa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/mipmap-xxxhdpi/icodbconlupa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/raw/howdoyoukeepthemusicplaying.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/raw/jaws_theme.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/values-night/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/values/dimens.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/app/src/test/java/com/example/usobasedatos/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/gradle/libs.versions.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsoBaseDatos1/settings.gradle.kts" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\aniba\.android\avd\Medium_Phone.avd)]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="layoutResourceFile_vertical" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2rPDVWOvBA7NU65RVFmSqcqaRPE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.app.executor": "Run",
+    "PROJECT_TRUSTED_KEY": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/CursoFP2/ASIGNATURAS/PM/PRACTICA/Proyectos/UsoAPIMercadona",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "configurable.group.appearance"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="UsoBaseDatos_Old_Old.app" />
+      <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="ALLOW_ASSUME_VERIFIED" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="1" Folder0="C:\Users\aniba\Downloads" CustomDictionaries="1" CustomDictionary0="C:\Users\aniba\Downloads\spanish-utf8.dic" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d8c8e6a4-2715-422d-9cb4-073b815ffe9b" name="Changes" comment="" />
+      <created>1736451840642</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1736451840642</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="play_dynamic_filters_status">
+    <option name="appIdToCheckInfo">
+      <map>
+        <entry key="com.example.usobasedatos">
+          <value>
+            <CheckInfo lastCheckTimestamp="1738346106381" />
+          </value>
+        </entry>
+        <entry key="com.example.usobasedatos.test">
+          <value>
+            <CheckInfo lastCheckTimestamp="1738346106375" />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
