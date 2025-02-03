@@ -40,10 +40,10 @@ public class Cliente implements Runnable
 
     private void esperar(int tiempoMaximo)
     {
+        int tiempoEspera = new Random().nextInt(tiempoMaximo);
         try
         {
-            
-            Thread.sleep(new Random().nextInt(tiempoMaximo));
+            Thread.sleep(tiempoEspera);
         }
         catch (InterruptedException e)
         {

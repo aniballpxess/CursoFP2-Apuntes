@@ -1,0 +1,39 @@
+<!-- create_team_page.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Create Team</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+    <!-- Common Navigation -->
+    <nav>
+      <a href="sign_up.html">Sign Up</a>
+      <a href="create_team.html">Create Team</a>
+      <a href="manage_teams.html">Manage Teams</a>
+      <a href="manage_users.html">Manage Users</a>
+      <a href="home.html">Home</a>
+    </nav>
+
+    <div class="container">
+      <h1>Create Team</h1>
+      <form id="createTeamForm">
+        <label for="teamName">Team Name:</label><br />
+        <input type="text" id="teamName" name="teamName" required /><br />
+
+        <label for="leader">Select Leader:</label><br />
+        <select id="leader" name="leader" required>
+          <!-- Options populated by JS --></select
+        ><br />
+
+        <button type="submit">Create Team</button>
+      </form>
+    </div>
+
+    <script src="../js/data-logic/data_init.js"></script>
+    <script src="../js/data-logic/user.js"></script>
+    <script src="../js/data-logic/team.js"></script>
+    <script src="../js/create_team.js"></script>
+  </body>
+</html>
