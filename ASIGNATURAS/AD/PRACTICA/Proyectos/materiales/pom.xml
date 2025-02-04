@@ -89,12 +89,6 @@
         <artifactId>kotlin-stdlib</artifactId>
         <version>2.1.0</version>
       </dependency>
-      <!-- https://mvnrepository.com/artifact/me.sargunvohra.lib/PokeKotlin -->
-      <dependency>
-        <groupId>me.sargunvohra.lib</groupId>
-        <artifactId>pokekotlin</artifactId>
-        <version>2.4.0</version>
-      </dependency>
     </dependencies>
 
   <build>

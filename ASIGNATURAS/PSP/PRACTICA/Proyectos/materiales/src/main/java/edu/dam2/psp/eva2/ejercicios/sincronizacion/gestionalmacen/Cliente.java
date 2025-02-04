@@ -22,7 +22,7 @@ public class Cliente implements Runnable
         {
             if (almacen.sePuedePasar())
             {
-                this.esperar(100);
+                this.esperar(100); // Para ajustar los resultados de la simulación
                 boolean productoRecogido = almacen.recogerProducto();
                 almacen.salirDelAlmacen();
                 if (productoRecogido)
@@ -33,7 +33,7 @@ public class Cliente implements Runnable
                 System.out.println(ID_CLIENTE + ": no quedaban productos.");
                 return;
             }
-            this.esperar(2000);
+            this.esperar(2000); // Para ajustar los resultados de la simulación
         }
         System.out.println(ID_CLIENTE + ": tuve que esperar mucho tiempo y me fui.");
     }
@@ -48,7 +48,6 @@ public class Cliente implements Runnable
         catch (InterruptedException e)
         {
             e.printStackTrace();
-
         }
     }
 }

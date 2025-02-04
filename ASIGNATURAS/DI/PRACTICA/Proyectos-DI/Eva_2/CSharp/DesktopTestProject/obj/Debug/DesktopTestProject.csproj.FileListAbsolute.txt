@@ -1,0 +1,10 @@
+C:\CursoFP2\ASIGNATURAS\DI\PRACTICA\Proyectos-DI\Eva_2\CSharp\DesktopTestProject\bin\Debug\DesktopTestProject.exe.config
+C:\CursoFP2\ASIGNATURAS\DI\PRACTICA\Proyectos-DI\Eva_2\CSharp\DesktopTestProject\bin\Debug\DesktopTestProject.exe
+C:\CursoFP2\ASIGNATURAS\DI\PRACTICA\Proyectos-DI\Eva_2\CSharp\DesktopTestProject\bin\Debug\DesktopTestProject.pdb
+C:\CursoFP2\ASIGNATURAS\DI\PRACTICA\Proyectos-DI\Eva_2\CSharp\DesktopTestProject\obj\Debug\DesktopTestProject.csproj.AssemblyReference.cache
+C:\CursoFP2\ASIGNATURAS\DI\PRACTICA\Proyectos-DI\Eva_2\CSharp\DesktopTestProject\obj\Debug\DesktopTestProject.Form1.resources
+C:\CursoFP2\ASIGNATURAS\DI\PRACTICA\Proyectos-DI\Eva_2\CSharp\DesktopTestProject\obj\Debug\DesktopTestProject.Properties.Resources.resources
+C:\CursoFP2\ASIGNATURAS\DI\PRACTICA\Proyectos-DI\Eva_2\CSharp\DesktopTestProject\obj\Debug\DesktopTestProject.csproj.GenerateResource.cache
+C:\CursoFP2\ASIGNATURAS\DI\PRACTICA\Proyectos-DI\Eva_2\CSharp\DesktopTestProject\obj\Debug\DesktopTestProject.csproj.CoreCompileInputs.cache
+C:\CursoFP2\ASIGNATURAS\DI\PRACTICA\Proyectos-DI\Eva_2\CSharp\DesktopTestProject\obj\Debug\DesktopTestProject.exe
+C:\CursoFP2\ASIGNATURAS\DI\PRACTICA\Proyectos-DI\Eva_2\CSharp\DesktopTestProject\obj\Debug\DesktopTestProject.pdb
