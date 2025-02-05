@@ -5,12 +5,14 @@ import java.util.Random;
 public class Cliente implements Runnable
 {
     private Almacen almacen;
+    private Entrada entrada;
     private final int INTENTOS_MAXIMOS;
     private final String ID_CLIENTE;
 
     public Cliente(Almacen almacen, int intentosMaximos, String idCLiente)
     {
         this.almacen = almacen;
+        this.entrada = almacen.getEntrada();
         this.INTENTOS_MAXIMOS = intentosMaximos;
         this.ID_CLIENTE = idCLiente;
     }
@@ -20,11 +22,11 @@ public class Cliente implements Runnable
     {
         for (int i = 0; i < INTENTOS_MAXIMOS; i++)
         {
-            if (almacen.sePuedePasar())
+            if (entrada.sePuedePasar())
             {
                 this.esperar(100); // Para ajustar los resultados de la simulación
                 boolean productoRecogido = almacen.recogerProducto();
-                almacen.salirDelAlmacen();
+                entrada.salir();
                 if (productoRecogido)
                 {
                     System.out.println(ID_CLIENTE + ": pude recoger el producto.");

@@ -3,31 +3,19 @@ package edu.dam2.psp.eva2.ejercicios.sincronizacion.gestionalmacen;
 public class Almacen
 {
     private int productos;
-    private boolean puedePasar = true;
+    private Entrada entrada;
 
     public Almacen(int productos)
     {
         this.productos = productos;
+        this.entrada = new Entrada();
     }
 
-    public synchronized boolean sePuedePasar()
+    public Entrada getEntrada()
     {
-        if (puedePasar)
-        {
-            puedePasar = false;
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return entrada;
     }
-
-    public synchronized void salirDelAlmacen()
-    {
-        puedePasar = true;
-    }
-
+    
     public boolean recogerProducto()
     {
         if (productos > 0)

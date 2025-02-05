@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "GestionEvento",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.clases.gestionevento.GestionEvento",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "PruebasTiempo",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.clases.intervalostiempo.PruebasTiempo",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "PedidosPizza",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.clases.pizzas.PedidosPizza",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "CompruebaElectrodomesticos",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.clases.electrodomesticos.CompruebaElectrodomesticos",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
             "name": "PositivosNegativos",
             "request": "launch",
             "mainClass": "edu.dam2.psp.eva2.ejercicios.hilos.positivosnegativos.PositivosNegativos",
