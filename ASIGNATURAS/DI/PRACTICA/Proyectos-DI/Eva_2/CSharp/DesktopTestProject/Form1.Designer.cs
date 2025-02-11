@@ -1,6 +1,6 @@
 ﻿namespace DesktopTestProject
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -41,7 +41,7 @@
             this.btn_clickThis.TabIndex = 0;
             this.btn_clickThis.Text = "Click Me!";
             this.btn_clickThis.UseVisualStyleBackColor = true;
-            this.btn_clickThis.Click += new System.EventHandler(this.btnClickMe_Click);
+            this.btn_clickThis.Click += new System.EventHandler(this.Btn_ClickMe_Click);
             // 
             // tb_userMessage
             // 
@@ -50,7 +50,7 @@
             this.tb_userMessage.Name = "tb_userMessage";
             this.tb_userMessage.Size = new System.Drawing.Size(120, 71);
             this.tb_userMessage.TabIndex = 1;
-            this.tb_userMessage.TextChanged += new System.EventHandler(this.tbUserMessage_TextChanged);
+            this.tb_userMessage.TextChanged += new System.EventHandler(this.TB_UserMessage_TextChanged);
             // 
             // Form1
             // 
