@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "InternetAdress_V0",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.sockets.InternetAdress_V0",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "InternetAddress_V1",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.sockets.InternetAddress_V1",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "InternetAddress",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.sockets.InternetAddress",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
             "name": "GestionEvento",
             "request": "launch",
             "mainClass": "edu.dam2.psp.eva2.ejercicios.clases.gestionevento.GestionEvento",

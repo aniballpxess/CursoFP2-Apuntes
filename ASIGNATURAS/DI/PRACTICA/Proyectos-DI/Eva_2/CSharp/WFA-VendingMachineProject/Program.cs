@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DesktopTestProject
+namespace WFA_VendingMachineProject
 {
     internal static class Program
     {
@@ -18,11 +17,6 @@ namespace DesktopTestProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
-        }
-
-        static void OnProcessExit(object sender, EventArgs e)
-        {
-
         }
     }
 }
