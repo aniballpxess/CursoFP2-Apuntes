@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WinFormApp_Test\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{15B24C36-D081-4119-BA2B-C4C5BD42195C}|WinFormApp_Test.csproj|C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WinFormApp_Test\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{15B24C36-D081-4119-BA2B-C4C5BD42195C}|WinFormApp_Test.csproj|c:\\cursofp2\\asignaturas\\di\\practica\\proyectos-di\\eva_2\\csharp\\winformapp_test\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{15B24C36-D081-4119-BA2B-C4C5BD42195C}|WinFormApp_Test.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -30,16 +30,12 @@
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WinFormApp_Test\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WinFormApp_Test\\Form1.cs*",
-              "RelativeToolTip": "Form1.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WinFormApp_Test\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-04T19:01:37.887Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             },
             {
               "$type": "Document",
@@ -47,9 +43,9 @@
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WinFormApp_Test\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "Form1.Designer.cs",
-              "ToolTip": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WinFormApp_Test\\Form1.Designer.cs*",
-              "RelativeToolTip": "Form1.Designer.cs*",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAxwCsAAAASAAAAAAAAAA==",
+              "ToolTip": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WinFormApp_Test\\Form1.Designer.cs",
+              "RelativeToolTip": "Form1.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-29T17:40:13.628Z",
               "EditorCaption": ""
@@ -60,11 +56,15 @@
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WinFormApp_Test\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WinFormApp_Test\\Form1.cs [Design]*",
-              "RelativeToolTip": "Form1.cs [Design]*",
+              "ToolTip": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WinFormApp_Test\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-29T17:40:00.253Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             }
           ]
         }

@@ -10,7 +10,6 @@ import android.widget.Spinner;
 
 import android.util.Log;
 import java.util.List;
-import java.util.Collections;
 import java.util.Comparator;
 
 import org.json.JSONArray;
@@ -22,41 +21,51 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class DosAPIsMercadonaActivity extends AppCompatActivity {
 
-    private Spinner spinnerPpalProductoCategories, spinnerN2categories;
-    private ListView listViewProducts;
+    private Spinner spin_categories;
+    private Spinner spin_subcategories;
+    private ListView lv_products;
 
-    private ArrayAdapter<String> categoriaPpalAdapter, categoriaNivel2Adapter, productosAdapter;
-    private List<String> categoriasPpalesList, categoriasNivel2List, productosList;
-    private List<JSONArray> categoriasNivel2ListByCategoryId;
+    private ArrayAdapter<String> category_adp;
+    private ArrayAdapter<String> subcategory_adp;
+    private ArrayAdapter<String> product_adp;
+
+    private List<String> view_categories;
+    private List<String> view_subcategories;
+    private List<String> view_products;
+
+    private List<JSONArray> subcategories_byCategory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dos_apis);
+        // Activar el modo de diseño de bordes a bordes
+        EdgeToEdge.enable(this);
 
-        spinnerPpalProductoCategories = findViewById(R.id.spinnerCategories);
-        spinnerN2categories = findViewById(R.id.spinnerSubcategories);
-        listViewProducts = findViewById(R.id.listViewProducts);
+        spin_categories = findViewById(R.id.spinnerCategories);
+        spin_subcategories = findViewById(R.id.spinnerSubcategories);
+        lv_products = findViewById(R.id.listViewProducts);
 
-        categoriasPpalesList = new ArrayList<>();
-        categoriasNivel2List = new ArrayList<>();
-        productosList = new ArrayList<>();
-        categoriasNivel2ListByCategoryId = new ArrayList<>();
+        view_categories = new ArrayList<>();
+        view_subcategories = new ArrayList<>();
+        view_products = new ArrayList<>();
+        subcategories_byCategory = new ArrayList<>();
 
-        categoriaPpalAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, categoriasPpalesList);
-        categoriaPpalAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerPpalProductoCategories.setAdapter(categoriaPpalAdapter);
+        category_adp = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, view_categories);
+        category_adp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin_categories.setAdapter(category_adp);
 
-        categoriaNivel2Adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, categoriasNivel2List);
-        categoriaNivel2Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerN2categories.setAdapter(categoriaNivel2Adapter);
+        subcategory_adp = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, view_subcategories);
+        subcategory_adp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin_subcategories.setAdapter(subcategory_adp);
 
-        productosAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, productosList);
-        listViewProducts.setAdapter(productosAdapter);
+        product_adp = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, view_products);
+        lv_products.setAdapter(product_adp);
 
         new Thread(() -> {
             try {
@@ -72,54 +81,48 @@ public class DosAPIsMercadonaActivity extends AppCompatActivity {
                 while ((line = reader.readLine()) != null) {
                     response.append(line);
                 }
+                JSONObject responseNode = new JSONObject(response.toString());
 
-                JSONObject jsonResponseNodoPpal = new JSONObject(response.toString());
-                JSONArray categoriasPpalesArray = jsonResponseNodoPpal.getJSONArray("results");
+                JSONArray resultsNodeArray = responseNode.getJSONArray("results");
+                List<ProductCategory> tmp_categories = new ArrayList<>();
+                for (int i = 0; i < resultsNodeArray.length(); i++) {
+                    JSONObject jsonCategory = resultsNodeArray.getJSONObject(i);
+                    String categoryName = jsonCategory.getString("name");
+                    int categoryId = jsonCategory.getInt("id");
+                    JSONArray jsonSubcategories = jsonCategory.getJSONArray("categories");
 
-                categoriasPpalesList.clear();
-                categoriasNivel2ListByCategoryId.clear();
+                    tmp_categories.add(new ProductCategory(categoryId, categoryName, jsonSubcategories));
+                }
+                tmp_categories.sort(Comparator.comparingInt(c -> c.categoryId));
 
-                List<CategoriaConSubcategorias> categoriasTempList = new ArrayList<>();
-
-                for (int i = 0; i < categoriasPpalesArray.length(); i++) {
-                    JSONObject categoriaPpal = categoriasPpalesArray.getJSONObject(i);
-                    String categoryName = categoriaPpal.getString("name");
-                    int categoryId = categoriaPpal.getInt("id");
-                    JSONArray subcategoriesArray = categoriaPpal.getJSONArray("categories");
-
-                    categoriasTempList.add(new CategoriaConSubcategorias(categoryId, categoryName, subcategoriesArray));
+                view_categories.clear();
+                subcategories_byCategory.clear();
+                for (ProductCategory categoria : tmp_categories) {
+                    view_categories.add(categoria.categoryId + " - " + categoria.categoryName);
+                    subcategories_byCategory.add(categoria.subcategories);
                 }
 
-                Collections.sort(categoriasTempList, Comparator.comparingInt(c -> c.categoryId));
-
-                for (CategoriaConSubcategorias categoria : categoriasTempList) {
-                    categoriasPpalesList.add(categoria.categoryId + " - " + categoria.categoryName);
-                    categoriasNivel2ListByCategoryId.add(categoria.subcategories);
-                }
-
-                runOnUiThread(() -> categoriaPpalAdapter.notifyDataSetChanged());
-
+                runOnUiThread(() -> category_adp.notifyDataSetChanged());
             } catch (Exception e) {
                 Log.e("API Error", "Error al obtener categorías: " + e.getMessage());
                 runOnUiThread(() -> Toast.makeText(DosAPIsMercadonaActivity.this, "Error al obtener categorías", Toast.LENGTH_SHORT).show());
             }
         }).start();
 
-        spinnerPpalProductoCategories.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spin_categories.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                categoriasNivel2List.clear();
+                view_subcategories.clear();
                 try {
-                    JSONArray subCategories = categoriasNivel2ListByCategoryId.get(position);
-                    // 5.5 Añadir las subcategorías con su ID a la lista del segundo spinner
+                    JSONArray subCategories = subcategories_byCategory.get(position);
                     for (int i = 0; i < subCategories.length(); i++) {
                         JSONObject subCategory = subCategories.getJSONObject(i);
-                        int subCategoryId = subCategory.getInt("id"); // Obtener el ID de la subcategoría
-                        String subCategoryName = subCategory.getString("name"); // Obtener el nombre
-                        categoriasNivel2List.add(subCategoryId + " - " + subCategoryName); // Guardarlo con el ID
+                        int subCategoryId = subCategory.getInt("id");
+                        String subCategoryName = subCategory.getString("name");
+                        view_subcategories.add(subCategoryId + " - " + subCategoryName);
                     }
 
-                    categoriaNivel2Adapter.notifyDataSetChanged();
+                    subcategory_adp.notifyDataSetChanged();
                 } catch (Exception e) {
                     Log.e("API Error", "Error al obtener subcategorías: " + e.getMessage());
                     runOnUiThread(() -> Toast.makeText(DosAPIsMercadonaActivity.this, "Error al obtener subcategorías", Toast.LENGTH_SHORT).show());
@@ -130,24 +133,20 @@ public class DosAPIsMercadonaActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parentView) {}
         });
 
-        spinnerN2categories.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spin_subcategories.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                // Obtener la subcategoría seleccionada y su ID
-                String selectedSubCategory = categoriasNivel2List.get(position);
-                String subCategoryId = selectedSubCategory.split(" - ")[0]; // Extraer solo el ID
+                String selectedSubcategory = view_subcategories.get(position);
+                String subcategoryId = selectedSubcategory.split(" - ")[0];
+                Log.d("DEBUG", "Subcategoría seleccionada: " + selectedSubcategory);
+                Log.d("DEBUG", "ID de subcategoría: " + subcategoryId);
 
-                Log.d("DEBUG", "Subcategoría seleccionada: " + selectedSubCategory);
-                Log.d("DEBUG", "ID de subcategoría: " + subCategoryId);
+                view_products.clear();
+                product_adp.notifyDataSetChanged();
 
-                // Limpiar la lista de productos antes de hacer la petición
-                productosList.clear();
-                productosAdapter.notifyDataSetChanged();
-
-                // Hacer la petición a la API en un hilo secundario
                 new Thread(() -> {
                     try {
-                        URL url = new URL("https://tienda.mercadona.es/api/categories/" + subCategoryId);
+                        URL url = new URL("https://tienda.mercadona.es/api/categories/" + subcategoryId);
                         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                         connection.setRequestMethod("GET");
                         connection.setConnectTimeout(10000);
@@ -160,74 +159,60 @@ public class DosAPIsMercadonaActivity extends AppCompatActivity {
                             response.append(line);
                         }
                         reader.close();
+                        Log.d("DEBUG", "Respuesta API: " + response);
+                        JSONObject responseNode = new JSONObject(response.toString());
 
-                        Log.d("DEBUG", "Respuesta API: " + response.toString());
-
-                        // Parsear la respuesta JSON
-                        JSONObject jsonResponse = new JSONObject(response.toString());
-
-                        JSONArray productsArray = null;
-
-                        // Verificar si hay un array de "results" y si dentro está "products"
-                        if (jsonResponse.has("categories")) {
-                            JSONArray resultsArray = jsonResponse.getJSONArray("categories");
-
-                            for (int i = 0; i < resultsArray.length(); i++) {
-                                JSONObject categoryData = resultsArray.getJSONObject(i);
+                        // Verificar si hay un array de "results" y si dentro hay "products"
+                        JSONArray tmp_products = null;
+                        if (responseNode.has("categories")) {
+                            JSONArray resultsNodeArray = responseNode.getJSONArray("categories");
+                            for (int i = 0; i < resultsNodeArray.length(); i++) {
+                                JSONObject categoryData = resultsNodeArray.getJSONObject(i);
                                 if (categoryData.has("products")) {
-                                    productsArray = categoryData.getJSONArray("products");
-                                    break; // Salimos del bucle al encontrar "products"
+                                    tmp_products = categoryData.getJSONArray("products");
+                                    break;
                                 }
                             }
                         }
-
-                        if (productsArray == null) {
+                        if (tmp_products == null) {
                             Log.d("DEBUG", "No se encontró la clave 'products' en 'results'");
-                        } else {
-                            if (productsArray.length() == 0) {
-                                Log.d("DEBUG", "No hay productos en esta subcategoría");
-                            }
-
-                            // Extraer solo "id" y "slug" de cada producto
-                            for (int i = 0; i < productsArray.length(); i++) {
-                                JSONObject product = productsArray.getJSONObject(i);
-                                int productId = product.getInt("id");
-                                String productSlug = product.getString("slug");
-                                String productInfo = productId + " - " + productSlug;
-                                productosList.add(productInfo);
-                                Log.d("DEBUG", "Producto agregado: " + productInfo);
-                            }
+                            return;
+                        }
+                        if (tmp_products.length() == 0) {
+                            Log.d("DEBUG", "No hay productos en esta subcategoría");
+                            return;
                         }
 
-                        // Notificar cambios en el adaptador en el hilo principal
+                        for (int i = 0; i < tmp_products.length(); i++) {
+                            JSONObject product = tmp_products.getJSONObject(i);
+                            int productId = product.getInt("id");
+                            String productSlug = product.getString("slug");
+                            String productInfo = productId + " - " + productSlug;
+                            view_products.add(productInfo);
+                            Log.d("DEBUG", "Producto agregado: " + productInfo);
+                        }
+
                         runOnUiThread(() -> {
-                            productosAdapter.notifyDataSetChanged();
+                            product_adp.notifyDataSetChanged();
                             Log.d("DEBUG", "Adaptador de productos actualizado");
                         });
-
                     } catch (Exception e) {
                         Log.e("API Error", "Error al obtener productos: " + e.getMessage());
                         runOnUiThread(() -> Toast.makeText(DosAPIsMercadonaActivity.this, "Error al obtener productos", Toast.LENGTH_SHORT).show());
                     }
                 }).start();
             }
-
             @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                // No hacer nada
-            }
+            public void onNothingSelected(AdapterView<?> parentView) {}
         });
-
-
-
     }
 
-    static class CategoriaConSubcategorias {
+    static class ProductCategory {
         int categoryId;
         String categoryName;
         JSONArray subcategories;
 
-        public CategoriaConSubcategorias(int id, String name, JSONArray subcategories) {
+        public ProductCategory(int id, String name, JSONArray subcategories) {
             this.categoryId = id;
             this.categoryName = name;
             this.subcategories = subcategories;
