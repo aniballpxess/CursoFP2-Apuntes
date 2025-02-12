@@ -6,6 +6,62 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Cliente",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.sockets.clienteservidor.Cliente",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "Servidor",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.sockets.clienteservidor.Servidor",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "Url_V1",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejemplos.sockets.url.Url_V1",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "Url_V2",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejemplos.sockets.url.Url_V2",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "InternetAddress_V1",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejemplos.sockets.pruevainetadress.InternetAddress_V1",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "InternetAddress_V2",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejemplos.sockets.pruevainetadress.InternetAddress_V2",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "Servidor",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejemplos.sockets.pruebaclienteservidor.Servidor",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "Cliente",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejemplos.sockets.pruebaclienteservidor.Cliente",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
             "name": "InternetAdress_V0",
             "request": "launch",
             "mainClass": "edu.dam2.psp.eva2.ejercicios.sockets.InternetAdress_V0",
