@@ -46,7 +46,7 @@
                 <androidx.constraintlayout.helper.widget.Flow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:constraint_referenced_ids="btn_actividadFichero,btn_actividadCalculadora,btn_actividadPaleta,btn_actividadJson,btn_actividadPopup,btn_placeholder3,btn_placeholder2,btn_placeholder1,btn_placeholder0"
+                    app:constraint_referenced_ids="btn_actividadFichero,btn_actividadCalculadora,btn_actividadPaleta,btn_actividadJson,btn_actividadPopup,btn_actividadGemini,btn_placeholder4,btn_placeholder3,btn_placeholder2,btn_placeholder1,btn_placeholder0"
                     app:flow_wrapMode="aligned" />
 
                 <Button
@@ -78,6 +78,18 @@
                     android:layout_width="108sp"
                     android:layout_height="wrap_content"
                     android:text="Actividad con pop-up" />
+
+                <Button
+                    android:id="@+id/btn_actividadGemini"
+                    android:layout_width="108sp"
+                    android:layout_height="wrap_content"
+                    android:text="Actividad con Gemini" />
+
+                <Button
+                    android:id="@+id/btn_placeholder4"
+                    android:layout_width="108sp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/placeholder_txt" />
 
                 <Button
                     android:id="@+id/btn_placeholder3"

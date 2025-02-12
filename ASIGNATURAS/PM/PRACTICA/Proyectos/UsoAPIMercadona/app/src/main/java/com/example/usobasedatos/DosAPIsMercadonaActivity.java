@@ -162,7 +162,7 @@ public class DosAPIsMercadonaActivity extends AppCompatActivity {
                         Log.d("DEBUG", "Respuesta API: " + response);
                         JSONObject responseNode = new JSONObject(response.toString());
 
-                        // Verificar si hay un array de "results" y si dentro hay "products"
+                        // Verificación de la respuesta de la llamada a la API
                         JSONArray tmp_products = null;
                         if (responseNode.has("categories")) {
                             JSONArray resultsNodeArray = responseNode.getJSONArray("categories");
