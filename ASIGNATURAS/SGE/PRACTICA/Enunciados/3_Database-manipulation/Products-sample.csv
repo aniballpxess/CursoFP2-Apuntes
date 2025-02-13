@@ -1,0 +1,11 @@
+Supplier IDs,ID,Product Code,Product Name,Standard Cost,List Price,Reorder Level,Target Level,Quantity Per Unit,Discontinued,Minimum Reorder Quantity,Category
+Supplier A,52,G-52,Long Grain Rice,5,7,25,100,16 - 2 kg boxes,FALSE,25,Grains
+Supplier J,5,O-5,Olive Oil,16,21,10,40,36 boxes,FALSE,10,Oil
+Supplier F,89,CFV-89,Peaches,1,2,10,40,15.25 OZ,FALSE,,Canned Fruit & Vegetables
+Supplier G,95,CM-95,Tuna Fish,1,2,30,50,5 oz,FALSE,,Canned Meat
+Supplier B,51,DFN-51,Dried Apples,40,53,10,40,50 - 300 g pkgs.,FALSE,10,Dried Fruit & Nuts
+Supplier A,86,BGM-86,Cake Mix,11,16,10,20,4 boxes,FALSE,5,Baked Goods & Mixes
+Supplier F,91,CFV-91,Cherry Pie Filling,1,2,10,40,15.25 OZ,FALSE,,Canned Fruit & Vegetables
+Supplier E,72,D-72,Mozzarella,26,35,10,40,24 - 200 g pkgs.,FALSE,10,Dairy Products
+Supplier H,66,S-66,Tomato Sauce,13,17,20,80,24 - 8 oz jars,FALSE,20,Sauces
+Supplier A,57,P-57,Ravioli,15,20,20,80,24 - 250 g pkgs.,FALSE,20,Pasta

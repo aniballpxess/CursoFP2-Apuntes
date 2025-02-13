@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA-VendingMachineProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{37EDBDAB-222A-4219-9E43-AA913D4B03FF}|WFA-VendingMachineProject.csproj|c:\\cursofp2\\asignaturas\\di\\practica\\proyectos-di\\eva_2\\csharp\\wfa-vendingmachineproject\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{37EDBDAB-222A-4219-9E43-AA913D4B03FF}|WFA-VendingMachineProject.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{37EDBDAB-222A-4219-9E43-AA913D4B03FF}|WFA-VendingMachineProject.csproj|c:\\cursofp2\\asignaturas\\di\\practica\\proyectos-di\\eva_2\\csharp\\wfa-vendingmachineproject\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37EDBDAB-222A-4219-9E43-AA913D4B03FF}|WFA-VendingMachineProject.csproj|solutionrelative:mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37EDBDAB-222A-4219-9E43-AA913D4B03FF}|WFA-VendingMachineProject.csproj|c:\\cursofp2\\asignaturas\\di\\practica\\proyectos-di\\eva_2\\csharp\\wfa-vendingmachineproject\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{37EDBDAB-222A-4219-9E43-AA913D4B03FF}|WFA-VendingMachineProject.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37EDBDAB-222A-4219-9E43-AA913D4B03FF}|WFA-VendingMachineProject.csproj|c:\\cursofp2\\asignaturas\\di\\practica\\proyectos-di\\eva_2\\csharp\\wfa-vendingmachineproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37EDBDAB-222A-4219-9E43-AA913D4B03FF}|WFA-VendingMachineProject.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,12 +30,38 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA-VendingMachineProject\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA-VendingMachineProject\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T22:17:39.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA-VendingMachineProject\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA-VendingMachineProject\\Form1.cs [Design]",
-              "RelativeToolTip": "Form1.cs [Design]",
+              "Title": "MainForm.Designer.cs",
+              "DocumentMoniker": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA-VendingMachineProject\\MainForm.Designer.cs",
+              "RelativeDocumentMoniker": "MainForm.Designer.cs",
+              "ToolTip": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA-VendingMachineProject\\MainForm.Designer.cs",
+              "RelativeToolTip": "MainForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T22:17:22.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA-VendingMachineProject\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA-VendingMachineProject\\MainForm.cs [Design]",
+              "RelativeToolTip": "MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-12T22:16:40.608Z",
               "EditorCaption": " [Design]"

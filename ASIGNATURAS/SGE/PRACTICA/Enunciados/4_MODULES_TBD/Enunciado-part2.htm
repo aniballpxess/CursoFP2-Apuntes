@@ -1,0 +1,207 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoChpDefault
+	{font-size:11.0pt;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><b>Step 6: Define Views</b></p>
+
+<p class=MsoNormal>Create the views directory and define a form, tree, and menu
+for the model:</p>
+
+<p class=MsoNormal>mkdir views</p>
+
+<p class=MsoNormal>nano views/my_product_entity_view.xml</p>
+
+<p class=MsoNormal>Add:</p>
+
+<p class=MsoNormal>&lt;odoo&gt;</p>
+
+<p class=MsoNormal>    &lt;record id=&quot;view_my_product_entity_tree&quot; model=&quot;ir.ui.view&quot;&gt;</p>
+
+<p class=MsoNormal>        &lt;field name=&quot;name&quot;&gt;my.product.entity.tree&lt;/field&gt;</p>
+
+<p class=MsoNormal>        &lt;field name=&quot;model&quot;&gt;my_product_entity&lt;/field&gt;</p>
+
+<p class=MsoNormal>        &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;</p>
+
+<p class=MsoNormal>            &lt;tree&gt;</p>
+
+<p class=MsoNormal>                &lt;field name=&quot;code&quot;/&gt;</p>
+
+<p class=MsoNormal>                &lt;field name=&quot;name&quot;/&gt;</p>
+
+<p class=MsoNormal>                &lt;field name=&quot;price&quot;/&gt;</p>
+
+<p class=MsoNormal>            &lt;/tree&gt;</p>
+
+<p class=MsoNormal>        &lt;/field&gt;</p>
+
+<p class=MsoNormal>    &lt;/record&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>    &lt;record id=&quot;view_my_product_entity_form&quot; model=&quot;ir.ui.view&quot;&gt;</p>
+
+<p class=MsoNormal>        &lt;field name=&quot;name&quot;&gt;my.product.entity.form&lt;/field&gt;</p>
+
+<p class=MsoNormal>        &lt;field name=&quot;model&quot;&gt;my_product_entity&lt;/field&gt;</p>
+
+<p class=MsoNormal>        &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;</p>
+
+<p class=MsoNormal>            &lt;form&gt;</p>
+
+<p class=MsoNormal>                &lt;sheet&gt;</p>
+
+<p class=MsoNormal>                    &lt;group&gt;</p>
+
+<p class=MsoNormal>                        &lt;field name=&quot;code&quot;/&gt;</p>
+
+<p class=MsoNormal>                        &lt;field name=&quot;name&quot;/&gt;</p>
+
+<p class=MsoNormal>                        &lt;field name=&quot;price&quot;/&gt;</p>
+
+<p class=MsoNormal>                    &lt;/group&gt;</p>
+
+<p class=MsoNormal>                &lt;/sheet&gt;</p>
+
+<p class=MsoNormal>            &lt;/form&gt;</p>
+
+<p class=MsoNormal>        &lt;/field&gt;</p>
+
+<p class=MsoNormal>    &lt;/record&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>    &lt;menuitem id=&quot;my_product_menu&quot; name=&quot;My
+Product Module&quot; sequence=&quot;1&quot;/&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>    &lt;menuitem id=&quot;my_product_entity_menu&quot; name=&quot;Products&quot;</p>
+
+<p class=MsoNormal>              parent=&quot;my_product_menu&quot; action=&quot;action_my_product_entity&quot;/&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>    &lt;record id=&quot;action_my_product_entity&quot; model=&quot;ir.actions.act_window&quot;&gt;</p>
+
+<p class=MsoNormal>        &lt;field name=&quot;name&quot;&gt;My Product Entity&lt;/field&gt;</p>
+
+<p class=MsoNormal>        &lt;field name=&quot;res_model&quot;&gt;my_product_entity&lt;/field&gt;</p>
+
+<p class=MsoNormal>        &lt;field name=&quot;view_mode&quot;&gt;tree,form&lt;/field&gt;</p>
+
+<p class=MsoNormal>    &lt;/record&gt;</p>
+
+<p class=MsoNormal>&lt;/odoo&gt;</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<p class=MsoNormal><b>Step 7: Initialize the Module</b></p>
+
+<p class=MsoNormal>Edit __init__.py:</p>
+
+<p class=MsoNormal>nano __init__.py</p>
+
+<p class=MsoNormal>Modify it to include:</p>
+
+<p class=MsoNormal>from . import models</p>
+
+<p class=MsoNormal>Then, edit models/__init__.py:</p>
+
+<p class=MsoNormal>nano models/__init__.py</p>
+
+<p class=MsoNormal>Add:</p>
+
+<p class=MsoNormal>from . import my_product_entity</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<p class=MsoNormal><b>Step 8: Install the Module in Odoo</b></p>
+
+<p class=MsoNormal>Restart the Odoo server:</p>
+
+<p class=MsoNormal>sudo systemctl restart odoo</p>
+
+<p class=MsoNormal>Enable developer mode by adding ?debug=1 at the end of the
+Odoo URL:</p>
+
+<p class=MsoNormal>http://localhost:8069/web?debug=1</p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Go to <b>Apps</b>.</li>
+ <li class=MsoNormal>Click <b>Update Apps List</b>.</li>
+ <li class=MsoNormal>Search for My Product Module.</li>
+ <li class=MsoNormal>Click <b>Install</b>.</li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<p class=MsoNormal><b>Step 9: Test CRUD Operations</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Navigate to <b>My Product Module &gt; Products</b>.</li>
+ <li class=MsoNormal>Try creating, editing, and deleting a product entity.</li>
+</ul>
+
+</div>
+
+</body>
+
+</html>
