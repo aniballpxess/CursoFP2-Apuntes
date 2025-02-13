@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA-VendingMachineProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8AF02359-DB18-4DEB-A68A-27D33288AD43}|WFA-VendingMachineProject.csproj|c:\\cursofp2\\asignaturas\\di\\practica\\proyectos-di\\eva_2\\csharp\\wfa-vendingmachineproject\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8AF02359-DB18-4DEB-A68A-27D33288AD43}|WFA-VendingMachineProject.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{37EDBDAB-222A-4219-9E43-AA913D4B03FF}|WFA-VendingMachineProject.csproj|c:\\cursofp2\\asignaturas\\di\\practica\\proyectos-di\\eva_2\\csharp\\wfa-vendingmachineproject\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{37EDBDAB-222A-4219-9E43-AA913D4B03FF}|WFA-VendingMachineProject.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +14,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -25,12 +29,8 @@
               "ToolTip": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA-VendingMachineProject\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T17:56:05.271Z",
+              "WhenOpened": "2025-02-12T22:16:40.608Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             }
           ]
         }

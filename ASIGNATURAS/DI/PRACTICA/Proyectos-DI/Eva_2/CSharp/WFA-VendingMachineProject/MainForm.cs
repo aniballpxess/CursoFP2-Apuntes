@@ -9,9 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WFA_VendingMachineProject
-
 {
-    public partial class MainForm : Form
+    public partial class MainForm: Form
     {
         public MainForm()
         {
