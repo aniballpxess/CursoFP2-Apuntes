@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_contrast"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/nav_tasks"
+        android:icon="@drawable/ic_contrast"
+        android:title="@string/tasks" />
+
+    <item
+        android:id="@+id/nav_team"
+        android:icon="@drawable/ic_contrast"
+        android:title="@string/team" />
+
+    <item
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/ic_contrast"
+        android:title="@string/settings" />
+</menu>
