@@ -8,7 +8,8 @@ public class HomeActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        super.setContentView(R.layout.activity_home);
-        setupBottomNavigation(R.id.nav_home);
+        setContentView(R.layout.activity_home);
+        activityTitle = "Home";
+        setToolbarTitle(activityTitle);
     }
 }

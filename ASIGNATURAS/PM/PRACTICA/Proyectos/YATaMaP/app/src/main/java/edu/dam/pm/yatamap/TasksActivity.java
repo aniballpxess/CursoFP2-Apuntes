@@ -8,6 +8,7 @@ public class TasksActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasks);
-        setupBottomNavigation(R.id.nav_tasks);
+        activityTitle = "Tasks";
+        setToolbarTitle(activityTitle);
     }
 }

@@ -7,6 +7,6 @@
         android:id="@+id/action_night_mode"
         android:title="@string/night_mode"
         android:icon="@drawable/ic_contrast"
-        android:orderInCategory="100"
-        app:showAsAction="ifRoom" />
+        android:iconTint="?attr/colorOnPrimary"
+        app:showAsAction="always" />
 </menu>

@@ -1,8 +1,17 @@
 package edu.dam.pm.yatamap.handlers;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import edu.dam.pm.yatamap.classes.Task;
+import edu.dam.pm.yatamap.classes.Team;
+import edu.dam.pm.yatamap.classes.User;
 
 public class DBHandler extends SQLiteOpenHelper {
 
@@ -89,4 +98,103 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_TASK_TYPES);
         onCreate(db);
     }
+
+    public User getUserById(String userId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        User user = null;
+        List<Task> taskList = new ArrayList<>();
+
+        String userQuery = "SELECT * FROM " + TABLE_USERS + " WHERE " + KEY_USER_ID + " = ?";
+        Cursor userCursor = db.rawQuery(userQuery, new String[]{userId});
+
+        if (userCursor != null && userCursor.moveToFirst()) {
+            String id = userCursor.getString(userCursor.getColumnIndexOrThrow(KEY_USER_ID));
+            String name = userCursor.getString(userCursor.getColumnIndexOrThrow(KEY_USER_NAME));
+
+            user = new User(id, name);
+        }
+
+        if (userCursor != null) {
+            userCursor.close();
+        }
+
+        assert user != null;
+        taskList = getTasksByUserId(userId);
+        user.setTasks(taskList);
+
+        return user;
+    }
+
+    public Team getTeamById(String teamId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Team team = null;
+        List<User> membersList = new ArrayList<>();
+
+        // Fetch Team
+        String teamQuery = "SELECT * FROM " + TABLE_TEAMS + " WHERE " + KEY_TEAM_ID + " = ?";
+        Cursor teamCursor = db.rawQuery(teamQuery, new String[]{teamId});
+
+        if (teamCursor != null && teamCursor.moveToFirst()) {
+            String id = teamCursor.getString(teamCursor.getColumnIndexOrThrow(KEY_TEAM_ID));
+            String name = teamCursor.getString(teamCursor.getColumnIndexOrThrow(KEY_TEAM_NAME));
+
+            team = new Team(id, name, membersList);
+        }
+
+        if (teamCursor != null) {
+            teamCursor.close();
+        }
+
+        // Fetch Users Belonging to the Team
+        String userQuery = "SELECT * FROM " + TABLE_USERS + " WHERE " + KEY_USER_TEAM_ID + " = ?";
+        Cursor userCursor = db.rawQuery(userQuery, new String[]{teamId});
+
+        if (userCursor != null && userCursor.moveToFirst()) {
+            do {
+                String userId = userCursor.getString(userCursor.getColumnIndexOrThrow(KEY_USER_ID));
+                String userName = userCursor.getString(userCursor.getColumnIndexOrThrow(KEY_USER_NAME));
+
+                User user = new User(userId, userName);
+                membersList.add(user);
+            } while (userCursor.moveToNext());
+        }
+
+        if (userCursor != null) {
+            userCursor.close();
+        }
+
+        db.close();
+        return team;
+    }
+
+    public List<Task> getTasksByUserId(String userId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        List<Task> taskList = new ArrayList<>();
+
+        String taskQuery = "SELECT * FROM " + TABLE_TASKS + " WHERE " + KEY_TASK_OWNER_ID + " = ?";
+        Cursor cursor = db.rawQuery(taskQuery, new String[]{userId});
+
+        if (cursor != null && cursor.moveToFirst()) {
+            do {
+                String taskId = cursor.getString(cursor.getColumnIndexOrThrow(KEY_TASK_ID));
+                String taskName = cursor.getString(cursor.getColumnIndexOrThrow(KEY_TASK_NAME));
+                String description = cursor.getString(cursor.getColumnIndexOrThrow(KEY_TASK_DESCRIPTION));
+                int priority = cursor.getInt(cursor.getColumnIndexOrThrow(KEY_TASK_PRIORITY));
+                boolean done = cursor.getInt(cursor.getColumnIndexOrThrow(KEY_TASK_DONE)) == 1;
+                long scheduledDateMillis = cursor.getLong(cursor.getColumnIndexOrThrow(KEY_TASK_DATE));
+
+                // Create Task object
+                Task task = new Task(taskId, taskName, description, null, priority, done, new Date(scheduledDateMillis));
+                taskList.add(task);
+            } while (cursor.moveToNext());
+        }
+
+        if (cursor != null) {
+            cursor.close();
+        }
+
+        db.close();
+        return taskList;
+    }
+
 }

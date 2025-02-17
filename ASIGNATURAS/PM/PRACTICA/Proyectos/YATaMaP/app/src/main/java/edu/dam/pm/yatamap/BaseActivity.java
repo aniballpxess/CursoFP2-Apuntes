@@ -2,10 +2,11 @@ package edu.dam.pm.yatamap;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,65 +15,57 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import edu.dam.pm.yatamap.handlers.SPHelper;
 
 public class BaseActivity extends AppCompatActivity {
 
-    private SPHelper spHelper;
+    private FrameLayout contentFrame;
+    protected SPHelper spHelper;
+    protected String activityTitle;
+    protected MaterialToolbar topAppBar;
+    protected BottomNavigationView bottomNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         super.setContentView(R.layout.activity_base);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.base), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+//        EdgeToEdge.enable(this);
 
+        contentFrame = findViewById(R.id.content_frame);
         spHelper = new SPHelper(this);
+        activityTitle = "Home";
+        topAppBar = findViewById(R.id.top_toolbar);
+        bottomNav = findViewById(R.id.bottom_navigation);
 
-        if (!spHelper.isUserSet()) {
-            startActivity(new Intent(this, UserSetupActivity.class));
-            finish();
-            return;
+        int defaultNightMode = AppCompatDelegate.MODE_NIGHT_NO;
+        if (spHelper.isNightModeEnabled()) {
+            defaultNightMode = AppCompatDelegate.MODE_NIGHT_YES;
         }
+        AppCompatDelegate.setDefaultNightMode(defaultNightMode);
 
-        AppCompatDelegate.setDefaultNightMode( spHelper.isNightModeEnabled() ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO );
-
-        loadActivityContent(getActivityLayoutResId());
+        setupTopAppBar(activityTitle);
+        setupBottomNavigation();
     }
 
-    protected void loadActivityContent(int layoutResId) {
-        // Find the FrameLayout and inject the child content
-        View contentFrame = findViewById(R.id.activity_content);
-        getLayoutInflater().inflate(layoutResId, (ViewGroup) contentFrame);
+    @Override
+    public void setContentView(int layoutResID) {
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View contentView = inflater.inflate(layoutResID, null);
+        contentFrame.addView(contentView);
     }
-
-    protected int getActivityLayoutResId() {
-        // Return the layout resource ID for the specific activity
-        return R.layout.activity_home;  // Change dynamically for each activity
-    }
-
-//    @Override
-//    public void setContentView(int layoutResID) {
-//        if (contentFrame != null) {
-//            LayoutInflater inflater = LayoutInflater.from(this);
-//            View contentView = inflater.inflate(layoutResID, null);
-//            contentFrame.addView(contentView);
-//        }
-//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.top_menu, menu);
-
-        MenuItem nightModeItem = menu.findItem(R.id.action_night_mode);
-
         return true;
     }
 
@@ -89,21 +82,34 @@ public class BaseActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    protected void setupBottomNavigation(int selectedItemId) {
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
-        bottomNav.setSelectedItemId(selectedItemId);
+    protected void setupTopAppBar(String title) {
+        topAppBar.setTitle(title);
+        setSupportActionBar(topAppBar);
+    }
 
+    protected void setToolbarTitle(String title) {
+        if (topAppBar != null) {
+            topAppBar.setTitle(title);
+        }
+    }
+
+    protected void setupBottomNavigation() {
         bottomNav.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
+
             if (itemId == R.id.nav_home) {
                 startActivity(new Intent(this, HomeActivity.class));
-            } else if (itemId == R.id.nav_tasks) {
+            }
+            if (itemId == R.id.nav_tasks) {
                 startActivity(new Intent(this, TasksActivity.class));
-            } else if (itemId == R.id.nav_team) {
+            }
+            if (itemId == R.id.nav_team) {
                 startActivity(new Intent(this, TeamActivity.class));
-            } else if (itemId == R.id.nav_settings) {
+            }
+            if (itemId == R.id.nav_settings) {
                 startActivity(new Intent(this, SettingsActivity.class));
             }
+
             finish();
             return true;
         });

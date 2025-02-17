@@ -17,10 +17,10 @@ public class User {
     }
 
     // Constructor for retrieving users from DB
-    public User(String id, String name, List<Task> tasks) {
+    public User(String id, String name) {
         this.id = id;
         this.name = name;
-        this.tasks = tasks;
+        this.tasks = new ArrayList<>();
     }
 
     // Getters and Setters

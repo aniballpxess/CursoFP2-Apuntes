@@ -21,15 +21,24 @@ public class UserSetupActivity extends AppCompatActivity {
     private EditText etTeamName;
     private Button btnSave;
 
+    private SPHelper spHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_setup);
 
+        spHelper = new SPHelper(this);
+        if (spHelper.isUserSet()) {
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+            finish();
+            return;
+        }
+
+        setContentView(R.layout.activity_user_setup);
         etUserName = findViewById(R.id.etUserName);
         etTeamName = findViewById(R.id.etTeamName);
         btnSave = findViewById(R.id.btnSave);
-
         btnSave.setOnClickListener(v -> saveUserAndTeam());
     }
 
@@ -48,10 +57,9 @@ public class UserSetupActivity extends AppCompatActivity {
         DBHandler db = new DBHandler(this);
         // TODO - save them to db
 
-        SPHelper spHelper = new SPHelper(this);
         spHelper.saveUserId(user.getId());
 
-        Intent intent = new Intent(UserSetupActivity.this, HomeActivity.class);
+        Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
         finish();
     }
