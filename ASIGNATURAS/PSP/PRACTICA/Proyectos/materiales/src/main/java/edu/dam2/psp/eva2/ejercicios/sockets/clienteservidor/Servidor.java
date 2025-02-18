@@ -40,7 +40,9 @@ public class Servidor
                 System.out.println("*" + linea + "*");
                 linea = br.readLine();
             }
-
+            System.out.println("Liberando recursos");
+            br.close();
+            isr.close();
             System.out.println("Cerrando el socket de comunicación");
             socket.close();
             System.out.println("Cerrando el socket servidor");

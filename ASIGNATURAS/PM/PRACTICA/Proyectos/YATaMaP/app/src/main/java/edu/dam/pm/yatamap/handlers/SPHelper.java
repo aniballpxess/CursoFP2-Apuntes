@@ -15,7 +15,7 @@ public class SPHelper {
         sharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
     }
 
-    // User check
+
     public boolean isUserSet() {
         return sharedPreferences.contains(KEY_USER_ID);
     }
@@ -30,7 +30,6 @@ public class SPHelper {
         return sharedPreferences.getString(KEY_USER_ID, null);
     }
 
-    // Night Mode
     public boolean isNightModeEnabled() {
         return sharedPreferences.getBoolean(KEY_NIGHT_MODE, false);
     }
@@ -41,5 +40,16 @@ public class SPHelper {
         editor.apply();
 
         AppCompatDelegate.setDefaultNightMode( enabled ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO );
+    }
+
+    public void setDefaultNightMode() {
+        int defaultNightMode = AppCompatDelegate.MODE_NIGHT_NO;
+        if (isNightModeEnabled()) {
+            defaultNightMode = AppCompatDelegate.MODE_NIGHT_YES;
+        }
+        boolean defaultNeedsChange = AppCompatDelegate.getDefaultNightMode() != defaultNightMode;
+        if (defaultNeedsChange) {
+            AppCompatDelegate.setDefaultNightMode(defaultNightMode);
+        }
     }
 }

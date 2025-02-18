@@ -8,7 +8,6 @@ public class TeamActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team);
-        activityTitle = "Team";
-        setToolbarTitle(activityTitle);
+        setToolbarTitle(getString(R.string.team_title));
     }
 }

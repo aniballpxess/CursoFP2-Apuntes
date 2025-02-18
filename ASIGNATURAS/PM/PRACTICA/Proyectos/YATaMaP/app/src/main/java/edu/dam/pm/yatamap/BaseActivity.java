@@ -24,7 +24,6 @@ public class BaseActivity extends AppCompatActivity {
 
     private FrameLayout contentFrame;
     protected SPHelper spHelper;
-    protected String activityTitle;
     protected MaterialToolbar topAppBar;
     protected BottomNavigationView bottomNav;
 
@@ -42,7 +41,6 @@ public class BaseActivity extends AppCompatActivity {
 
         contentFrame = findViewById(R.id.content_frame);
         spHelper = new SPHelper(this);
-        activityTitle = "Home";
         topAppBar = findViewById(R.id.top_toolbar);
         bottomNav = findViewById(R.id.bottom_navigation);
 
@@ -50,10 +48,12 @@ public class BaseActivity extends AppCompatActivity {
         if (spHelper.isNightModeEnabled()) {
             defaultNightMode = AppCompatDelegate.MODE_NIGHT_YES;
         }
-        AppCompatDelegate.setDefaultNightMode(defaultNightMode);
+        boolean defaultNeedsChange = AppCompatDelegate.getDefaultNightMode() != defaultNightMode;
+        if (defaultNeedsChange) {
+            AppCompatDelegate.setDefaultNightMode(defaultNightMode);
+        }
 
-        setupTopAppBar(activityTitle);
-        setupBottomNavigation();
+        setupTopAppBar(getString(R.string.home_title));
     }
 
     @Override
@@ -94,24 +94,25 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     protected void setupBottomNavigation() {
-        bottomNav.setOnItemSelectedListener(item -> {
-            int itemId = item.getItemId();
+        {
+            bottomNav.setOnItemSelectedListener(item -> {
+                int itemId = item.getItemId();
+                if (itemId == R.id.nav_home) {
+                    startActivity(new Intent(this, HomeActivity.class));
+                }
+                if (itemId == R.id.nav_tasks) {
+                    startActivity(new Intent(this, TasksActivity.class));
+                }
+                if (itemId == R.id.nav_team) {
+                    startActivity(new Intent(this, TeamActivity.class));
+                }
+                if (itemId == R.id.nav_settings) {
+                    startActivity(new Intent(this, SettingsActivity.class));
+                }
 
-            if (itemId == R.id.nav_home) {
-                startActivity(new Intent(this, HomeActivity.class));
-            }
-            if (itemId == R.id.nav_tasks) {
-                startActivity(new Intent(this, TasksActivity.class));
-            }
-            if (itemId == R.id.nav_team) {
-                startActivity(new Intent(this, TeamActivity.class));
-            }
-            if (itemId == R.id.nav_settings) {
-                startActivity(new Intent(this, SettingsActivity.class));
-            }
-
-            finish();
-            return true;
-        });
+                finish();
+                return true;
+            });
+        }
     }
 }

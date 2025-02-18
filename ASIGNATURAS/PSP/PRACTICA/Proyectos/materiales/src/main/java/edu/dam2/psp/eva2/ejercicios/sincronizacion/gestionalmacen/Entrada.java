@@ -21,6 +21,6 @@ public class Entrada
 
     public synchronized void salir()
     {
-        abierta = false;
+        abierta = true;
     }
 }

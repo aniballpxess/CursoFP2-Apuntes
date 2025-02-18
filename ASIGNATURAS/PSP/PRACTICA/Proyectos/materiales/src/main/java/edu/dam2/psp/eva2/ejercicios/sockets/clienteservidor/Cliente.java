@@ -58,8 +58,7 @@ public class Cliente
             }
             System.out.println("Liberando recursos.");
             sc.close();
-            is.close();
-            os.close();
+            System.out.println("Cerrando el socket de comunicación");
             clientSocket.close();
             System.out.println("Terminado");
         }

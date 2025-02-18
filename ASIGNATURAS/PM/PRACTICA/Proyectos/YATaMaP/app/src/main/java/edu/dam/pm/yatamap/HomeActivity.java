@@ -9,7 +9,6 @@ public class HomeActivity extends BaseActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        activityTitle = "Home";
-        setToolbarTitle(activityTitle);
+        setToolbarTitle(getString(R.string.home_title));
     }
 }

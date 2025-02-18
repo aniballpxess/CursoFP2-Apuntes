@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "AreaTriangulos",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejercicios.hilos.areatriangulos.AreaTriangulos",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "PruebaDirsRed",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejemplos.sockets.inetadress.PruebaDirsRed",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "InfoRedMiPC",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejemplos.sockets.inetadress.InfoRedMiPC",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
+            "name": "DirsRedMiPC",
+            "request": "launch",
+            "mainClass": "edu.dam2.psp.eva2.ejemplos.sockets.inetadress.DirsRedMiPC",
+            "projectName": "materiales"
+        },
+        {
+            "type": "java",
             "name": "Cliente",
             "request": "launch",
             "mainClass": "edu.dam2.psp.eva2.ejercicios.sockets.clienteservidor.Cliente",

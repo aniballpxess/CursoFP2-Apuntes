@@ -14,12 +14,12 @@ public class PruebaDirsRed
             dir = InetAddress.getLocalHost();
             pruebaMetodos(dir);
             System.out.println("\nSalida para un nombre de equipo");
-            dir = InetAddress.getByName("A4-PROFESOR");
+            dir = InetAddress.getByName("DESKTOP-9IR2FPR");
             pruebaMetodos(dir);
             System.out.println("\nSalida para GOOGLE");
             dir = InetAddress.getByName("www.googe.es");
             pruebaMetodos(dir);
-            System.out.println("\nSalida para madrid org");
+            System.out.println("\nSalida para madrid.org");
             dir = InetAddress.getByName("www.madrid.org");
             pruebaMetodos(dir);
         }
@@ -32,8 +32,8 @@ public class PruebaDirsRed
     private static void pruebaMetodos(InetAddress dir)
     {
         System.out.println("\tMétodo getByName(): " + dir);
-        System.out.println("\tMétodo getHostName():" + dir.getHostName());
+        System.out.println("\tMétodo getHostName(): " + dir.getHostName());
         System.out.println("\tMétodo toString(): " + dir.toString());
-        System.out.println("\tMétodo getCanonicalHostName():" + dir.getCanonicalHostName());
+        System.out.println("\tMétodo getCanonicalHostName(): " + dir.getCanonicalHostName());
     }
 }
