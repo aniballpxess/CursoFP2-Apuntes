@@ -3,15 +3,15 @@
   "WorkspaceRootPath": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA-VendingMachineProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{37EDBDAB-222A-4219-9E43-AA913D4B03FF}|WFA-VendingMachineProject.csproj|C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA-VendingMachineProject\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{37EDBDAB-222A-4219-9E43-AA913D4B03FF}|WFA-VendingMachineProject.csproj|c:\\cursofp2\\asignaturas\\di\\practica\\proyectos-di\\eva_2\\csharp\\wfa-vendingmachineproject\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{37EDBDAB-222A-4219-9E43-AA913D4B03FF}|WFA-VendingMachineProject.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{37EDBDAB-222A-4219-9E43-AA913D4B03FF}|WFA-VendingMachineProject.csproj|c:\\cursofp2\\asignaturas\\di\\practica\\proyectos-di\\eva_2\\csharp\\wfa-vendingmachineproject\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{37EDBDAB-222A-4219-9E43-AA913D4B03FF}|WFA-VendingMachineProject.csproj|C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA-VendingMachineProject\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{37EDBDAB-222A-4219-9E43-AA913D4B03FF}|WFA-VendingMachineProject.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{37EDBDAB-222A-4219-9E43-AA913D4B03FF}|WFA-VendingMachineProject.csproj|c:\\cursofp2\\asignaturas\\di\\practica\\proyectos-di\\eva_2\\csharp\\wfa-vendingmachineproject\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{37EDBDAB-222A-4219-9E43-AA913D4B03FF}|WFA-VendingMachineProject.csproj|C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA-VendingMachineProject\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{37EDBDAB-222A-4219-9E43-AA913D4B03FF}|WFA-VendingMachineProject.csproj|solutionrelative:mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -28,6 +28,10 @@
           "DockedWidth": 200,
           "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -53,10 +57,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-12T22:17:22.865Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             },
             {
               "$type": "Document",

@@ -1,0 +1,90 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\VendingMachine\\Sol_prueba\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B6A42594-55E4-44F8-A371-B681C0320ABB}|prueba\\prueba.csproj|c:\\cursofp2\\asignaturas\\di\\practica\\proyectos-di\\eva_2\\csharp\\vendingmachine\\sol_prueba\\prueba\\vendingmachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6A42594-55E4-44F8-A371-B681C0320ABB}|prueba\\prueba.csproj|solutionrelative:prueba\\vendingmachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6A42594-55E4-44F8-A371-B681C0320ABB}|prueba\\prueba.csproj|C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\VendingMachine\\Sol_prueba\\prueba\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6A42594-55E4-44F8-A371-B681C0320ABB}|prueba\\prueba.csproj|solutionrelative:prueba\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6A42594-55E4-44F8-A371-B681C0320ABB}|prueba\\prueba.csproj|C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\VendingMachine\\Sol_prueba\\prueba\\vendingmachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B6A42594-55E4-44F8-A371-B681C0320ABB}|prueba\\prueba.csproj|solutionrelative:prueba\\vendingmachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6A42594-55E4-44F8-A371-B681C0320ABB}|prueba\\prueba.csproj|C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\VendingMachine\\Sol_prueba\\prueba\\historyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6A42594-55E4-44F8-A371-B681C0320ABB}|prueba\\prueba.csproj|solutionrelative:prueba\\historyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VendingMachine.cs",
+              "DocumentMoniker": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\VendingMachine\\Sol_prueba\\prueba\\VendingMachine.cs",
+              "RelativeDocumentMoniker": "prueba\\VendingMachine.cs",
+              "ToolTip": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\VendingMachine\\Sol_prueba\\prueba\\VendingMachine.cs",
+              "RelativeToolTip": "prueba\\VendingMachine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T22:30:38.338Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HistoryForm.cs",
+              "DocumentMoniker": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\VendingMachine\\Sol_prueba\\prueba\\HistoryForm.cs",
+              "RelativeDocumentMoniker": "prueba\\HistoryForm.cs",
+              "ToolTip": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\VendingMachine\\Sol_prueba\\prueba\\HistoryForm.cs",
+              "RelativeToolTip": "prueba\\HistoryForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T22:52:58.127Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\VendingMachine\\Sol_prueba\\prueba\\Program.cs",
+              "RelativeDocumentMoniker": "prueba\\Program.cs",
+              "ToolTip": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\VendingMachine\\Sol_prueba\\prueba\\Program.cs",
+              "RelativeToolTip": "prueba\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T14:24:14.919Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "VendingMachine.cs [Design]",
+              "DocumentMoniker": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\VendingMachine\\Sol_prueba\\prueba\\VendingMachine.cs",
+              "RelativeDocumentMoniker": "prueba\\VendingMachine.cs",
+              "ToolTip": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\VendingMachine\\Sol_prueba\\prueba\\VendingMachine.cs [Design]",
+              "RelativeToolTip": "prueba\\VendingMachine.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T14:22:23.908Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
