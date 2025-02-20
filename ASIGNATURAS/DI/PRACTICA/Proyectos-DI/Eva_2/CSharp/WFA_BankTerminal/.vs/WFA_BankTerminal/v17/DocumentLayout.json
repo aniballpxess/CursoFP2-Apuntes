@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA_BankTerminal\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D78A5F33-2AAB-4A63-9B3D-2A0E7F8A44B4}|WFA_BankTerminal.csproj|C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA_BankTerminal\\terminalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78A5F33-2AAB-4A63-9B3D-2A0E7F8A44B4}|WFA_BankTerminal.csproj|solutionrelative:terminalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78A5F33-2AAB-4A63-9B3D-2A0E7F8A44B4}|WFA_BankTerminal.csproj|c:\\cursofp2\\asignaturas\\di\\practica\\proyectos-di\\eva_2\\csharp\\wfa_bankterminal\\terminalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D78A5F33-2AAB-4A63-9B3D-2A0E7F8A44B4}|WFA_BankTerminal.csproj|solutionrelative:terminalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D78A5F33-2AAB-4A63-9B3D-2A0E7F8A44B4}|WFA_BankTerminal.csproj|c:\\cursofp2\\asignaturas\\di\\practica\\proyectos-di\\eva_2\\csharp\\wfa_bankterminal\\informeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D78A5F33-2AAB-4A63-9B3D-2A0E7F8A44B4}|WFA_BankTerminal.csproj|solutionrelative:informeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D78A5F33-2AAB-4A63-9B3D-2A0E7F8A44B4}|WFA_BankTerminal.csproj|c:\\cursofp2\\asignaturas\\di\\practica\\proyectos-di\\eva_2\\csharp\\wfa_bankterminal\\terminalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D78A5F33-2AAB-4A63-9B3D-2A0E7F8A44B4}|WFA_BankTerminal.csproj|solutionrelative:terminalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D78A5F33-2AAB-4A63-9B3D-2A0E7F8A44B4}|WFA_BankTerminal.csproj|c:\\cursofp2\\asignaturas\\di\\practica\\proyectos-di\\eva_2\\csharp\\wfa_bankterminal\\informeform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D78A5F33-2AAB-4A63-9B3D-2A0E7F8A44B4}|WFA_BankTerminal.csproj|solutionrelative:informeform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D78A5F33-2AAB-4A63-9B3D-2A0E7F8A44B4}|WFA_BankTerminal.csproj|c:\\cursofp2\\asignaturas\\di\\practica\\proyectos-di\\eva_2\\csharp\\wfa_bankterminal\\informeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D78A5F33-2AAB-4A63-9B3D-2A0E7F8A44B4}|WFA_BankTerminal.csproj|solutionrelative:informeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,39 +34,50 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "InformeForm.cs [Design]",
+              "DocumentMoniker": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA_BankTerminal\\InformeForm.cs",
+              "RelativeDocumentMoniker": "InformeForm.cs",
+              "ToolTip": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA_BankTerminal\\InformeForm.cs [Design]",
+              "RelativeToolTip": "InformeForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T20:12:12.431Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "InformeForm.cs",
               "DocumentMoniker": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA_BankTerminal\\InformeForm.cs",
               "RelativeDocumentMoniker": "InformeForm.cs",
               "ToolTip": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA_BankTerminal\\InformeForm.cs",
               "RelativeToolTip": "InformeForm.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-19T18:15:08.039Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "InformeForm.Designer.cs",
-              "DocumentMoniker": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA_BankTerminal\\InformeForm.Designer.cs",
-              "RelativeDocumentMoniker": "InformeForm.Designer.cs",
-              "ToolTip": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA_BankTerminal\\InformeForm.Designer.cs",
-              "RelativeToolTip": "InformeForm.Designer.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAqwEEAAABKAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "TerminalForm.cs [Design]",
+              "DocumentMoniker": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA_BankTerminal\\TerminalForm.cs",
+              "RelativeDocumentMoniker": "TerminalForm.cs",
+              "ToolTip": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA_BankTerminal\\TerminalForm.cs [Design]",
+              "RelativeToolTip": "TerminalForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T18:02:59.454Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-19T21:10:24.526Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "TerminalForm.cs",
               "DocumentMoniker": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA_BankTerminal\\TerminalForm.cs",
               "RelativeDocumentMoniker": "TerminalForm.cs",
               "ToolTip": "C:\\CursoFP2\\ASIGNATURAS\\DI\\PRACTICA\\Proyectos-DI\\Eva_2\\CSharp\\WFA_BankTerminal\\TerminalForm.cs",
               "RelativeToolTip": "TerminalForm.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACkAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAD0BAAAAAAAAAAAiwCMAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-19T18:13:36.211Z",
               "EditorCaption": ""

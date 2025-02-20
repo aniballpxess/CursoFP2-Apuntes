@@ -8,54 +8,47 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Operacion = WFA_BankTerminal.TerminalForm.Operacion;
+
 namespace WFA_BankTerminal
 {
     public partial class InformeForm : Form
     {
-        private DataGridView Historial;
+        public List<Operacion> lista_operaciones;
+        public DataTable dt_informeOperaciones;
 
-        public InformeForm(List<TerminalForm.Operacion> historial_operaciones)
+        public InformeForm(List<Operacion> historial_operaciones)
         {
             InitializeComponent();
-
             this.Text = "Informe";
 
-            Historial = new DataGridView
+            lista_operaciones = historial_operaciones;
+            dt_informeOperaciones = new DataTable();
+
+            dt_informeOperaciones.Columns.Add("Fecha");
+            dt_informeOperaciones.Columns.Add("Hora");
+            dt_informeOperaciones.Columns.Add("Operacion");
+            dt_informeOperaciones.Columns.Add("Importe (€)");
+            dt_informeOperaciones.Columns.Add("Saldo (€)");
+
+            foreach (Operacion op in lista_operaciones)
             {
-                Dock = DockStyle.Top,
-                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
-                AllowUserToAddRows = false,
-                ReadOnly = true,
-                RowHeadersDefaultCellStyle = new DataGridViewCellStyle
-                {
-                    Font = new Font("Consolas", 12, FontStyle.Bold)
-                },
-                DefaultCellStyle = new DataGridViewCellStyle
-                {
-                    Font = new Font("Consolas", 12)
-                }
-            };
-            Historial.ColumnCount = 5;
-            Historial.Columns[0].Name = "Fecha";
-            Historial.Columns[1].Name = "Hora";
-            Historial.Columns[2].Name = "Operacion";
-            Historial.Columns[3].Name = "Importe";
-            Historial.Columns[4].Name = "Saldo";
+                DataRow fila = dt_informeOperaciones.NewRow();
+                fila["Fecha"] = op.Fecha;
+                fila["Hora"] = op.Hora;
+                fila["Operacion"] = op.Tipo;
+                fila["Importe (€)"] = op.Importe;
+                fila["Saldo (€)"] = op.Saldo;
+                dt_informeOperaciones.Rows.Add(fila);
+            }
 
-            historial_operaciones.ForEach(op =>
-            {
-                Historial.Rows.Add(op.Fecha, op.Hora, op.Tipo, op.Importe, op.Saldo);
-            });
-
-            this.Controls.Add(Historial);
-
+            dgv_operaciones.DataSource = dt_informeOperaciones;
         }
-
-        private void HistorialForm_Load(object sender, EventArgs e) { }
 
         private void btn_inicializar_Click(object sender, EventArgs e)
         {
-
+            lista_operaciones.Clear();
+            dt_informeOperaciones.Clear();
         }
 
         private void btn_cerrar_Click(object sender, EventArgs e)

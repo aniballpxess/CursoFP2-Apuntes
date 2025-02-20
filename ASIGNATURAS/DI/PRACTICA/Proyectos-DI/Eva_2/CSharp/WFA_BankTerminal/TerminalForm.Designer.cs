@@ -227,33 +227,33 @@
             // btn_numpad_7
             // 
             this.btn_numpad_7.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_numpad_7.Location = new System.Drawing.Point(362, 370);
+            this.btn_numpad_7.Location = new System.Drawing.Point(306, 370);
             this.btn_numpad_7.Name = "btn_numpad_7";
             this.btn_numpad_7.Size = new System.Drawing.Size(50, 50);
             this.btn_numpad_7.TabIndex = 15;
-            this.btn_numpad_7.Text = "8";
+            this.btn_numpad_7.Text = "7";
             this.btn_numpad_7.UseVisualStyleBackColor = true;
             this.btn_numpad_7.Click += new System.EventHandler(this.btn_numpad_7_Click);
             // 
             // btn_numpad_8
             // 
             this.btn_numpad_8.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_numpad_8.Location = new System.Drawing.Point(418, 370);
+            this.btn_numpad_8.Location = new System.Drawing.Point(362, 370);
             this.btn_numpad_8.Name = "btn_numpad_8";
             this.btn_numpad_8.Size = new System.Drawing.Size(50, 50);
             this.btn_numpad_8.TabIndex = 16;
-            this.btn_numpad_8.Text = "9";
+            this.btn_numpad_8.Text = "8";
             this.btn_numpad_8.UseVisualStyleBackColor = true;
             this.btn_numpad_8.Click += new System.EventHandler(this.btn_numpad_8_Click);
             // 
             // btn_numpad_9
             // 
             this.btn_numpad_9.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_numpad_9.Location = new System.Drawing.Point(306, 370);
+            this.btn_numpad_9.Location = new System.Drawing.Point(418, 370);
             this.btn_numpad_9.Name = "btn_numpad_9";
             this.btn_numpad_9.Size = new System.Drawing.Size(50, 50);
             this.btn_numpad_9.TabIndex = 17;
-            this.btn_numpad_9.Text = "7";
+            this.btn_numpad_9.Text = "9";
             this.btn_numpad_9.UseVisualStyleBackColor = true;
             this.btn_numpad_9.Click += new System.EventHandler(this.btn_numpad_9_Click);
             // 

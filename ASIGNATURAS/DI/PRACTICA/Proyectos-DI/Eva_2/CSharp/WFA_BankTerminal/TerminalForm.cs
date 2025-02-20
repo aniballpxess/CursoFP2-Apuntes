@@ -33,7 +33,7 @@ namespace WFA_BankTerminal
         }
         private enum Estado { INTRODUCIR_TARJETA, SELECCION_OPERACION, CONSULTAR_SALDO, SACAR_DINERO, RETIRAR_DINERO, EXTRAER_TARJETA };
 
-        private const decimal SALDO_INICIAL_TARJETA = 1000;
+        private const decimal SALDO_INICIAL_TARJETA = 1000.00m;
         private const string CONSULTAR_SALDO_LABEL = " <- Consultar Dinero";
         private const string SACAR_DINERO_LABEL = "Sacar Dinero -> ";
         private const string SALIR_LABEL = "Salir -> ";
@@ -46,7 +46,6 @@ namespace WFA_BankTerminal
         public TerminalForm()
         {
             InitializeComponent();
-
             this.Text = "Terminal";
 
             toolTip.SetToolTip(btn_consultarSaldo, "Consultar Saldo");
@@ -273,6 +272,7 @@ namespace WFA_BankTerminal
         private void btn_numpad_1_Click(object sender, EventArgs e)
         {
             importe = importe * 10 + 1;
+
             estado = Estado.SACAR_DINERO;
             ActualizarEstado();
         }
@@ -280,6 +280,7 @@ namespace WFA_BankTerminal
         private void btn_numpad_2_Click(object sender, EventArgs e)
         {
             importe = importe * 10 + 2;
+
             estado = Estado.SACAR_DINERO;
             ActualizarEstado();
         }
@@ -287,6 +288,7 @@ namespace WFA_BankTerminal
         private void btn_numpad_3_Click(object sender, EventArgs e)
         {
             importe = importe * 10 + 3;
+
             estado = Estado.SACAR_DINERO;
             ActualizarEstado();
         }
@@ -294,6 +296,7 @@ namespace WFA_BankTerminal
         private void btn_numpad_4_Click(object sender, EventArgs e)
         {
             importe = importe * 10 + 4;
+
             estado = Estado.SACAR_DINERO;
             ActualizarEstado();
         }
@@ -301,6 +304,7 @@ namespace WFA_BankTerminal
         private void btn_numpad_5_Click(object sender, EventArgs e)
         {
             importe = importe * 10 + 5;
+
             estado = Estado.SACAR_DINERO;
             ActualizarEstado();
         }
@@ -308,6 +312,7 @@ namespace WFA_BankTerminal
         private void btn_numpad_6_Click(object sender, EventArgs e)
         {
             importe = importe * 10 + 6;
+
             estado = Estado.SACAR_DINERO;
             ActualizarEstado();
         }
@@ -315,6 +320,7 @@ namespace WFA_BankTerminal
         private void btn_numpad_7_Click(object sender, EventArgs e)
         {
             importe = importe * 10 + 7;
+
             estado = Estado.SACAR_DINERO;
             ActualizarEstado();
         }
@@ -322,6 +328,7 @@ namespace WFA_BankTerminal
         private void btn_numpad_8_Click(object sender, EventArgs e)
         {
             importe = importe * 10 + 8;
+
             estado = Estado.SACAR_DINERO;
             ActualizarEstado();
         }
@@ -329,6 +336,7 @@ namespace WFA_BankTerminal
         private void btn_numpad_9_Click(object sender, EventArgs e)
         {
             importe = importe * 10 + 9;
+
             estado = Estado.SACAR_DINERO;
             ActualizarEstado();
         }
@@ -336,6 +344,7 @@ namespace WFA_BankTerminal
         private void btn_numpad_0_Click(object sender, EventArgs e)
         {
             importe = importe * 10;
+
             estado = Estado.SACAR_DINERO;
             ActualizarEstado();
         }
