@@ -6,13 +6,11 @@ public class TaskType {
     private String id;
     private String name;
 
-    // Constructor for new TaskType
     public TaskType(String name) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
     }
 
-    // Constructor for retrieving from DB
     public TaskType(String id, String name) {
         this.id = id;
         this.name = name;

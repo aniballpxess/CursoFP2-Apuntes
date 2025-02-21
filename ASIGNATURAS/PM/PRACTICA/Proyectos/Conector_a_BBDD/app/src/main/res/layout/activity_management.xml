@@ -27,7 +27,7 @@
             android:elevation="4dp"
             app:navigationIcon="@drawable/ic_go_back"
             app:navigationIconTint="?attr/colorOnPrimary"
-            app:titleTextColor="?attr/colorOnPrimary"/>
+            app:titleTextColor="?attr/colorOnPrimary" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

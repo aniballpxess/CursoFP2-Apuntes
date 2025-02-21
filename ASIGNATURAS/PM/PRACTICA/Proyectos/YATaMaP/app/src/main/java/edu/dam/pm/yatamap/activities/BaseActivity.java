@@ -2,6 +2,7 @@ package edu.dam.pm.yatamap.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,6 +30,7 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        Log.d("BASE", "Load Start");
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_base);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.base), (v, insets) -> {
@@ -46,6 +48,8 @@ public class BaseActivity extends AppCompatActivity {
         spHelper.setupDefaultNightMode();
 
         setupTopAppBar(getString(R.string.home_title));
+        setupBottomNavigation();
+        Log.d("BASE", "Load Finish");
     }
 
     @Override

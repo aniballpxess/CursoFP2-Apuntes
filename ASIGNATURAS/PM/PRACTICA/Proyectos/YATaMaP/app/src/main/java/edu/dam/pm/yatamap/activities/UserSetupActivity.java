@@ -14,6 +14,7 @@ import edu.dam.pm.yatamap.handlers.DBHandler;
 import edu.dam.pm.yatamap.handlers.SPHelper;
 
 public class UserSetupActivity extends AppCompatActivity {
+
     private EditText etUserName;
     private EditText etTeamName;
     private Button btnSave;

@@ -9,14 +9,12 @@ public class User {
     private String name;
     private List<Task> tasks;
 
-    // Constructor for new users
     public User(String name) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
         this.tasks = new ArrayList<>();
     }
 
-    // Constructor for retrieving users from DB
     public User(String id, String name) {
         this.id = id;
         this.name = name;

@@ -12,14 +12,14 @@ public class Task {
     private boolean done;
     private Date scheduledDate;
 
-    public Task(String name, String description, TaskType type, int priority, boolean done, Date scheduledDate) {
+    public Task(String name, String description, TaskType type, int priority) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
         this.description = description;
         this.type = type;
         this.priority = priority;
-        this.done = done;
-        this.scheduledDate = scheduledDate;
+        this.done = false;
+        this.scheduledDate = null;
     }
 
     public Task(String id, String name, String description, TaskType type, int priority, boolean done, Date scheduledDate) {

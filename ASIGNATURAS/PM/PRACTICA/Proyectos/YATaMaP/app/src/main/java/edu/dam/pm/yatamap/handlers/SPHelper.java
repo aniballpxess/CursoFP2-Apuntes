@@ -37,7 +37,6 @@ public class SPHelper {
         return sharedPreferences.contains(KEY_NIGHT_MODE);
     }
 
-    //
     private boolean isNightModeEnabled() {
         return sharedPreferences.getBoolean(KEY_NIGHT_MODE, false);
     }
@@ -54,7 +53,8 @@ public class SPHelper {
         return nightMode_current == Configuration.UI_MODE_NIGHT_YES;
     }
 
-    // Should be called whenever an instance of SPHelper is created before using any NightMode related functions
+    // Should be called whenever an instance of SPHelper is created before using
+    // any NightMode related functions
     public void setupDefaultNightMode() {
         if (isNightModeSet()) {
             int nightMode = AppCompatDelegate.MODE_NIGHT_NO;

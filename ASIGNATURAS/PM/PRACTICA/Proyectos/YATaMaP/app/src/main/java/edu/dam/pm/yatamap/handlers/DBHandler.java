@@ -102,7 +102,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public User getUserById(String userId) {
         SQLiteDatabase db = this.getReadableDatabase();
         User user = null;
-        List<Task> taskList = new ArrayList<>();
+        List<Task> taskList;
 
         String userQuery = "SELECT * FROM " + TABLE_USERS + " WHERE " + KEY_USER_ID + " = ?";
         Cursor userCursor = db.rawQuery(userQuery, new String[]{userId});

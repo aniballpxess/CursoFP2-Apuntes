@@ -6,20 +6,20 @@
     <item
         android:id="@+id/nav_home"
         android:icon="@drawable/ic_contrast"
-        android:title="@string/home" />
+        android:title="@string/home_title" />
 
     <item
         android:id="@+id/nav_tasks"
         android:icon="@drawable/ic_contrast"
-        android:title="@string/tasks" />
+        android:title="@string/tasks_title" />
 
     <item
         android:id="@+id/nav_team"
         android:icon="@drawable/ic_contrast"
-        android:title="@string/team" />
+        android:title="@string/team_title" />
 
     <item
         android:id="@+id/nav_settings"
         android:icon="@drawable/ic_contrast"
-        android:title="@string/settings" />
+        android:title="@string/settings_title" />
 </menu>
