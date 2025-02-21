@@ -1,4 +1,4 @@
-package edu.dam.pm.yatamap;
+package edu.dam.pm.yatamap.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,9 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -18,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import edu.dam.pm.yatamap.R;
 import edu.dam.pm.yatamap.handlers.SPHelper;
 
 public class BaseActivity extends AppCompatActivity {
@@ -44,14 +43,7 @@ public class BaseActivity extends AppCompatActivity {
         topAppBar = findViewById(R.id.top_toolbar);
         bottomNav = findViewById(R.id.bottom_navigation);
 
-        int defaultNightMode = AppCompatDelegate.MODE_NIGHT_NO;
-        if (spHelper.isNightModeEnabled()) {
-            defaultNightMode = AppCompatDelegate.MODE_NIGHT_YES;
-        }
-        boolean defaultNeedsChange = AppCompatDelegate.getDefaultNightMode() != defaultNightMode;
-        if (defaultNeedsChange) {
-            AppCompatDelegate.setDefaultNightMode(defaultNightMode);
-        }
+        spHelper.setupDefaultNightMode();
 
         setupTopAppBar(getString(R.string.home_title));
     }
@@ -74,11 +66,9 @@ public class BaseActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_night_mode) {
-            boolean changeMode = !spHelper.isNightModeEnabled();
-            spHelper.setNightMode(changeMode);
+            spHelper.changeNightMode();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 

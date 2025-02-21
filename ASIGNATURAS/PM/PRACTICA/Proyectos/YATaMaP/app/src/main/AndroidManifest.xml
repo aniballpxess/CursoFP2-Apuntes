@@ -13,22 +13,22 @@
         android:theme="@style/Theme.YATaMaP"
         tools:targetApi="31">
         <activity
-            android:name=".UserSetupActivity"
+            android:name=".activities.UserSetupActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".activities.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".TeamActivity"
+            android:name=".activities.TeamActivity"
             android:exported="false" />
         <activity
-            android:name=".TasksActivity"
+            android:name=".activities.TasksActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".activities.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".BaseActivity"
+            android:name=".activities.BaseActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

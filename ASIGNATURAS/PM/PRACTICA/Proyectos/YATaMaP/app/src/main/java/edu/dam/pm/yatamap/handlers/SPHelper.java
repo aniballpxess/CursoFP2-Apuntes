@@ -2,6 +2,8 @@ package edu.dam.pm.yatamap.handlers;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+
 import androidx.appcompat.app.AppCompatDelegate;
 
 public class SPHelper {
@@ -10,14 +12,19 @@ public class SPHelper {
     private static final String KEY_NIGHT_MODE = "night_mode";
 
     private SharedPreferences sharedPreferences;
+    private Context context;
 
     public SPHelper(Context context) {
         sharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        this.context = context;
     }
 
-
-    public boolean isUserSet() {
+    public boolean isUserIdSet() {
         return sharedPreferences.contains(KEY_USER_ID);
+    }
+
+    public String getUserId() {
+        return sharedPreferences.getString(KEY_USER_ID, null);
     }
 
     public void saveUserId(String userId) {
@@ -26,30 +33,49 @@ public class SPHelper {
         editor.apply();
     }
 
-    public String getUserId() {
-        return sharedPreferences.getString(KEY_USER_ID, null);
+    private boolean isNightModeSet() {
+        return sharedPreferences.contains(KEY_NIGHT_MODE);
     }
 
-    public boolean isNightModeEnabled() {
+    //
+    private boolean isNightModeEnabled() {
         return sharedPreferences.getBoolean(KEY_NIGHT_MODE, false);
     }
 
-    public void setNightMode(boolean enabled) {
+    private void saveNightMode(boolean enabled) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean(KEY_NIGHT_MODE, enabled);
         editor.apply();
-
-        AppCompatDelegate.setDefaultNightMode( enabled ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO );
     }
 
-    public void setDefaultNightMode() {
-        int defaultNightMode = AppCompatDelegate.MODE_NIGHT_NO;
+    private boolean isSystemNightModeEnabled() {
+        int uiMode_current = context.getResources().getConfiguration().uiMode;
+        int nightMode_current = uiMode_current & Configuration.UI_MODE_NIGHT_MASK;
+        return nightMode_current == Configuration.UI_MODE_NIGHT_YES;
+    }
+
+    // Should be called whenever an instance of SPHelper is created before using any NightMode related functions
+    public void setupDefaultNightMode() {
+        if (isNightModeSet()) {
+            int nightMode = AppCompatDelegate.MODE_NIGHT_NO;
+            if (isNightModeEnabled()) {
+                nightMode = AppCompatDelegate.MODE_NIGHT_YES;
+            }
+            AppCompatDelegate.setDefaultNightMode(nightMode);
+        }
+        else {
+            saveNightMode(isSystemNightModeEnabled());
+        }
+    }
+
+    public void changeNightMode() {
+        if (!isNightModeSet()) {
+            return;
+        }
+        int newNightMode = AppCompatDelegate.MODE_NIGHT_YES;
         if (isNightModeEnabled()) {
-            defaultNightMode = AppCompatDelegate.MODE_NIGHT_YES;
+            newNightMode = AppCompatDelegate.MODE_NIGHT_NO;
         }
-        boolean defaultNeedsChange = AppCompatDelegate.getDefaultNightMode() != defaultNightMode;
-        if (defaultNeedsChange) {
-            AppCompatDelegate.setDefaultNightMode(defaultNightMode);
-        }
+        AppCompatDelegate.setDefaultNightMode(newNightMode);
     }
 }

@@ -1,6 +1,8 @@
-package edu.dam.pm.yatamap;
+package edu.dam.pm.yatamap.activities;
 
 import android.os.Bundle;
+
+import edu.dam.pm.yatamap.R;
 
 public class HomeActivity extends BaseActivity {
 

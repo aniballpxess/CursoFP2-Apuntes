@@ -1,16 +1,13 @@
-package edu.dam.pm.yatamap;
+package edu.dam.pm.yatamap.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import edu.dam.pm.yatamap.R;
 import edu.dam.pm.yatamap.classes.Team;
 import edu.dam.pm.yatamap.classes.User;
 import edu.dam.pm.yatamap.handlers.DBHandler;
@@ -28,7 +25,7 @@ public class UserSetupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         spHelper = new SPHelper(this);
-        if (spHelper.isUserSet()) {
+        if (spHelper.isUserIdSet()) {
             Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);
             finish();
