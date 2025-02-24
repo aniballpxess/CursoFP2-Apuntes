@@ -5,21 +5,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/ic_contrast"
+        android:icon="@drawable/ic_home"
         android:title="@string/home_title" />
 
     <item
         android:id="@+id/nav_tasks"
-        android:icon="@drawable/ic_contrast"
+        android:icon="@drawable/ic_tasks"
         android:title="@string/tasks_title" />
 
     <item
         android:id="@+id/nav_team"
-        android:icon="@drawable/ic_contrast"
+        android:icon="@drawable/ic_team"
         android:title="@string/team_title" />
 
     <item
         android:id="@+id/nav_settings"
-        android:icon="@drawable/ic_contrast"
+        android:icon="@drawable/ic_settings"
         android:title="@string/settings_title" />
 </menu>
