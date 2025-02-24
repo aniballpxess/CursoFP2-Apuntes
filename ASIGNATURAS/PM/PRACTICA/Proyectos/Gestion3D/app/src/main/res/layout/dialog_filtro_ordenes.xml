@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Estado -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Filtrar por Estado"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingBottom="8dp" />
+
+    <Spinner
+        android:id="@+id/spinnerEstadoFiltro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!-- Cliente -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Filtrar por Cliente"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingTop="16dp" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupClientesFiltro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:singleSelection="true"/>
+
+    <!-- Fecha de Creación -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Filtrar por Fecha de Creación"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingTop="16dp" />
+
+    <Button
+        android:id="@+id/btnFechaInicio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fecha Inicio" />
+
+    <Button
+        android:id="@+id/btnFechaFin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fecha Fin" />
+</LinearLayout>

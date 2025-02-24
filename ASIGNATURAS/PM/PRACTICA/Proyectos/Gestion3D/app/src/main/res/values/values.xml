@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Definición de colores -->
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="background">#FFFFFF</color>
+
+    <!-- Definición de dimensiones (opcional) -->
+    <dimen name="default_margin">16dp</dimen>
+</resources>

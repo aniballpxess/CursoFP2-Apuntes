@@ -1,0 +1,33 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Filtrar productos"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="10dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Filtrar por Categoría"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:paddingTop="8dp"/>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupFiltroCategorias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:singleSelection="true"/>
+
+</LinearLayout>

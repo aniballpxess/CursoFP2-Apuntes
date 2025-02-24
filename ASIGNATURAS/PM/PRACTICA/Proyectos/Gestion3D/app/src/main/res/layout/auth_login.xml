@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Contenedor principal con LinearLayout -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    tools:context=".activities.auth.LoginActivity">
+
+    <!-- Logo de la aplicación -->
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo_gestion3d"
+        android:contentDescription="Logo Gestión 3D"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Título de inicio de sesión -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log in con Gestión 3D"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Campo de correo electrónico -->
+    <EditText
+        android:id="@+id/edtCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="textEmailAddress"/>
+
+    <!-- Contenedor para el campo de contraseña y el botón de visibilidad -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Campo de contraseña -->
+        <EditText
+            android:id="@+id/edtContraseña"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña"
+            android:inputType="textPassword" />
+
+        <!-- Botón para mostrar/ocultar contraseña -->
+        <ImageView
+            android:id="@+id/btnTogglePassword"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_eye"
+            android:contentDescription="Mostrar contraseña"
+            android:padding="8dp"/>
+    </LinearLayout>
+
+    <!-- Botón de inicio de sesión -->
+    <Button
+        android:id="@+id/btnIniciarSesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log in"
+        android:backgroundTint="@color/teal_700"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Texto para redirigir a la pantalla de registro -->
+    <TextView
+        android:id="@+id/btnIrRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿No tienes cuenta? Regístrate aquí"
+        android:textColor="@color/blue"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingTop="10dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:autoLink="none"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="?android:attr/selectableItemBackground"/>
+</LinearLayout>

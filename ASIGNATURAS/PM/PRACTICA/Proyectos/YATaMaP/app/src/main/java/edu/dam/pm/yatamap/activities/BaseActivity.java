@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -33,12 +34,12 @@ public class BaseActivity extends AppCompatActivity {
         Log.d("BASE", "Load Start");
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_base);
+        EdgeToEdge.enable(this);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.base), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-//        EdgeToEdge.enable(this);
 
         contentFrame = findViewById(R.id.content_frame);
         spHelper = new SPHelper(this);
@@ -50,6 +51,13 @@ public class BaseActivity extends AppCompatActivity {
         setupTopAppBar(getString(R.string.home_title));
         setupBottomNavigation();
         Log.d("BASE", "Load Finish");
+    }
+
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
+
     }
 
     @Override

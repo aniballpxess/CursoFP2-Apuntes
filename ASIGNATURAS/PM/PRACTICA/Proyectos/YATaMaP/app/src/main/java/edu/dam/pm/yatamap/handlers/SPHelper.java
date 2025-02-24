@@ -70,12 +70,13 @@ public class SPHelper {
 
     public void changeNightMode() {
         if (!isNightModeSet()) {
-            return;
+            saveNightMode(isSystemNightModeEnabled());
         }
         int newNightMode = AppCompatDelegate.MODE_NIGHT_YES;
         if (isNightModeEnabled()) {
             newNightMode = AppCompatDelegate.MODE_NIGHT_NO;
         }
         AppCompatDelegate.setDefaultNightMode(newNightMode);
+        saveNightMode(!isNightModeEnabled());
     }
 }
