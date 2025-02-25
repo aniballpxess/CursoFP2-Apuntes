@@ -54,13 +54,6 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onDestroy()
-    {
-        super.onDestroy();
-
-    }
-
-    @Override
     public void setContentView(int layoutResID) {
         LayoutInflater inflater = LayoutInflater.from(this);
         View contentView = inflater.inflate(layoutResID, null);
