@@ -1,12 +1,9 @@
 package edu.dam.pm.yatamap.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.FrameLayout;
 
 import androidx.activity.EdgeToEdge;
@@ -15,18 +12,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentContainerView;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import edu.dam.pm.yatamap.R;
-import edu.dam.pm.yatamap.databinding.ActivityBaseBinding;
+import edu.dam.pm.yatamap.databinding.ActivityMainBinding;
 import edu.dam.pm.yatamap.handlers.SPHelper;
 
-public class BaseActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
-    private ActivityBaseBinding binding;
-    private FrameLayout fragmentContainer;
+    private ActivityMainBinding binding;
+    private FragmentContainerView fragmentContainer;
     protected MaterialToolbar topAppBar;
     protected BottomNavigationView bottomNav;
     protected SPHelper spHelper;
@@ -47,7 +45,7 @@ public class BaseActivity extends AppCompatActivity {
             return WindowInsetsCompat.CONSUMED;
         });
 
-        binding = ActivityBaseBinding.inflate(getLayoutInflater());
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         fragmentContainer = binding.fragmentContainer;

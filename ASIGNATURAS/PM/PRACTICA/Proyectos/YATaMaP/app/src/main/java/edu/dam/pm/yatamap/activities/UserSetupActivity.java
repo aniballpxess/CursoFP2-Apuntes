@@ -27,7 +27,7 @@ public class UserSetupActivity extends AppCompatActivity {
 
         spHelper = new SPHelper(this);
         if (spHelper.isUserIdSet()) {
-            Intent intent = new Intent(this, HomeActivity.class);
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             finish();
             return;
@@ -57,7 +57,7 @@ public class UserSetupActivity extends AppCompatActivity {
 
         spHelper.saveUserId(user.getId());
 
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
     }
