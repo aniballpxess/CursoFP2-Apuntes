@@ -12,23 +12,18 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.YATaMaP.AppBar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.YATaMaP.AppBar">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/top_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:titleTextColor="?attr/colorOnPrimary"
+            android:elevation="4dp"
             app:itemIconTint="?attr/colorOnPrimary"
             app:itemTextColor="?attr/colorOnPrimary"
-            android:elevation="4dp" />
+            app:titleTextColor="?attr/colorOnPrimary" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -36,8 +31,8 @@
         android:id="@+id/content_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="?attr/actionBarSize"
         android:layout_marginTop="?attr/actionBarSize"
+        android:layout_marginBottom="?attr/actionBarSize"
         android:paddingStart="16dp"
         android:paddingEnd="16dp" />
 
@@ -45,10 +40,10 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:fitsSystemWindows="true"
+        android:layout_gravity="bottom"
         android:background="?attr/colorPrimary"
         android:theme="@style/ThemeOverlay.YATaMaP.AppBar"
-        android:layout_gravity="bottom"
         app:itemIconTint="?attr/colorOnPrimary"
         app:itemTextColor="?attr/colorOnPrimary"
         app:menu="@menu/bottom_nav_menu" />

@@ -1,15 +1,19 @@
 package edu.dam.pm.yatamap.activities;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewGroup.MarginLayoutParams;
 import android.widget.FrameLayout;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.SystemBarStyle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -17,6 +21,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import org.jetbrains.annotations.NotNull;
 
 import edu.dam.pm.yatamap.R;
 import edu.dam.pm.yatamap.handlers.SPHelper;
@@ -32,13 +38,16 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         Log.d("BASE", "Load Start");
+        EdgeToEdge.enable(this);
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_base);
-        EdgeToEdge.enable(this);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.base), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.base), (v, windowInsets) -> {
+            Insets insets = windowInsets.getInsets(
+                    WindowInsetsCompat.Type.systemBars()
+                            | WindowInsetsCompat.Type.displayCutout()
+            );
+           v.setPadding(insets.left, insets.top, insets.right, insets.bottom);
+            return WindowInsetsCompat.CONSUMED;
         });
 
         contentFrame = findViewById(R.id.content_frame);
@@ -82,9 +91,9 @@ public class BaseActivity extends AppCompatActivity {
         setSupportActionBar(topAppBar);
     }
 
-    protected void setToolbarTitle(String title) {
-        if (topAppBar != null) {
-            topAppBar.setTitle(title);
+    protected void setToolbarTitle( String title) {
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(title);
         }
     }
 
