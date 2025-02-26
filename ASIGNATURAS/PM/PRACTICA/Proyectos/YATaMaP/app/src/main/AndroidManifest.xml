@@ -16,18 +16,6 @@
             android:name=".activities.UserSetupActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.SettingsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.TeamActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.TasksActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.HomeActivity"
-            android:exported="false" />
-        <activity
             android:name=".activities.BaseActivity"
             android:exported="true">
             <intent-filter>
