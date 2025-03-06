@@ -6,4 +6,5 @@
     <string name="tasks_title">Tasks</string>
     <string name="team_title">Team</string>
     <string name="wip_alert">WIP alert</string>
+    <string name="wip_img_desc">Work in Progress</string>
 </resources>
