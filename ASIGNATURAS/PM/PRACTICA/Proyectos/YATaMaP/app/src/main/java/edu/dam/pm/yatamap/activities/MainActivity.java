@@ -1,5 +1,6 @@
 package edu.dam.pm.yatamap.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -20,7 +21,13 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.List;
+
 import edu.dam.pm.yatamap.R;
+import edu.dam.pm.yatamap.classes.Task;
+import edu.dam.pm.yatamap.classes.TaskType;
+import edu.dam.pm.yatamap.classes.Team;
+import edu.dam.pm.yatamap.classes.User;
 import edu.dam.pm.yatamap.databinding.ActivityMainBinding;
 import edu.dam.pm.yatamap.handlers.SPHelper;
 import edu.dam.pm.yatamap.views.main.home.HomeFragment;
@@ -35,6 +42,15 @@ public class MainActivity extends AppCompatActivity {
     protected MaterialToolbar topAppBar;
     protected BottomNavigationView bottomNav;
     protected SPHelper spHelper;
+
+    // Lists to store data
+    private List<Task> tasks;
+    private List<TaskType> taskTypes;
+    private List<User> users;
+
+    // Objects to store current user and team
+    private User currentUser;
+    private Team currentTeam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -61,13 +77,54 @@ public class MainActivity extends AppCompatActivity {
         });
 
         spHelper.setupDefaultNightMode();
-
         setSupportActionBar(topAppBar);
         topAppBar.setTitle(getString(R.string.home_title));
-
         setupBottomNavigation();
 
+        loadDataAndSetupUser();
+
         Log.d("BASE", "Load Finish");
+    }
+
+    private void loadDataAndSetupUser() {
+        // Get user ID from SharedPreferences
+        String userId = spHelper.getUserId();
+
+        if (userId == null) {
+            // User not found, perform user setup
+            UserSetup();
+        } else {
+            // User found, load data
+            currentUser = dbHelper.getUserById(userId);
+            if (currentUser != null) {
+                currentTeam = dbHelper.getTeamById(currentUser.getTeamId());
+                tasks = dbHelper.getAllTasks();
+                taskTypes = dbHelper.getAllTaskTypes();
+                users = dbHelper.getAllUsers();
+            } else {
+                // User not found in DB, perform user setup
+                UserSetup();
+            }
+        }
+    }
+
+    private void UserSetup() {
+        // Create a new user and team (example data)
+        Team newTeam = new Team("New Team");
+        long teamId = dbHelper.addTeam(newTeam);
+        newTeam.setId(teamId);
+        User newUser = new User("New User", teamId);
+        long userId = dbHelper.addUser(newUser);
+        newUser.setId(userId);
+
+        // Store the new user ID in SharedPreferences
+        spHelper.setUserId(userId);
+
+        // Restart MainActivity
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
     }
 
     @Override
