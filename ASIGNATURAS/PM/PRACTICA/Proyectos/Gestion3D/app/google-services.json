@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "660870841044",
+    "project_id": "gestion3d-8fab3",
+    "storage_bucket": "gestion3d-8fab3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660870841044:android:cad61a8bae0828e9a83141",
+        "android_client_info": {
+          "package_name": "com.example.gestion3d"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvysl05CRr7UkeBIjgwjDKNPQkt4S1Pj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

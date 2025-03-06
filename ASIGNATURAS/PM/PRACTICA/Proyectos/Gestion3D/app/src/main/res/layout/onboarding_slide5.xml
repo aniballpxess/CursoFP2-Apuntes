@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <!-- Título de bienvenida -->
+    <TextView
+        android:id="@+id/tvBienvenido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="✨ Bienvenid@ a Gestión 3D"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Imagen representativa de gestión de órdenes -->
+    <ImageView
+        android:id="@+id/imageOrdenes"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_ordenes"
+        android:contentDescription="Gestión de Órdenes de Trabajo"
+        app:layout_constraintTop_toBottomOf="@id/tvBienvenido"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Título para la sección de gestión de órdenes -->
+    <TextView
+        android:id="@+id/tvGestionOrdenes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📜 Gestión de Órdenes de Trabajo"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_blue_dark"
+        app:layout_constraintTop_toBottomOf="@id/imageOrdenes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Descripción de la gestión de órdenes -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🛠️ Administra pedidos de impresión.\n📅 Asigna materiales y tiempo estimado de impresión.\n🔄 Cambia estados: pendiente, en progreso, completado."
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/tvGestionOrdenes"
+        android:layout_marginTop="24dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

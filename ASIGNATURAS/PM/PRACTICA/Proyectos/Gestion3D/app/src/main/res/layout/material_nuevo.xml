@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Nombre -->
+        <EditText
+            android:id="@+id/edtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del material"
+            android:inputType="text" />
+
+        <!-- Tipo de material -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tipo de Material"
+            android:textStyle="bold"
+            android:paddingTop="8dp" />
+
+        <Spinner
+            android:id="@+id/spinnerTipoMaterial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Color -->
+        <EditText
+            android:id="@+id/edtColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Color"
+            android:inputType="text" />
+
+        <!-- Marca -->
+        <EditText
+            android:id="@+id/edtMarca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Marca"
+            android:inputType="text" />
+
+        <!-- Cantidad en stock -->
+        <EditText
+            android:id="@+id/edtCantidadStock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cantidad en stock"
+            android:inputType="number" />
+
+        <!-- Umbral de alerta -->
+        <EditText
+            android:id="@+id/edtUmbralAlerta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Umbral de alerta"
+            android:inputType="number" />
+
+        <!-- Campo específico para FILAMENTO -->
+        <EditText
+            android:id="@+id/edtMaterialBase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Material Base (PLA, ABS, PETG, etc.)"
+            android:visibility="gone"
+            android:inputType="text" />
+
+        <!-- Campo específico para RESINA -->
+        <EditText
+            android:id="@+id/edtTipoResina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tipo de Resina (Standard, ABS-like, Flexible, etc.)"
+            android:visibility="gone"
+            android:inputType="text" />
+
+        <!-- Botón para guardar -->
+        <Button
+            android:id="@+id/btnGuardarMaterial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar Material"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+
+</ScrollView>

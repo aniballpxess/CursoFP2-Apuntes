@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <!-- Título Bienvenida -->
+    <TextView
+        android:id="@+id/tvBienvenido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-10dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="✨ Bienvenid@ a Gestión 3D"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Título Principal -->
+    <TextView
+        android:id="@+id/tvTituloGestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📂 Gestión de Usuarios y Base de Datos"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:padding="5dp"
+        app:layout_constraintTop_toBottomOf="@id/tvBienvenido"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Imagen Representativa -->
+    <ImageView
+        android:id="@+id/imgGestionUsuarios"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/ic_gestion_usuarios"
+        android:contentDescription="Gestión de Usuarios y Base de Datos"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloGestion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <!-- ScrollView para contenido desplazable -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/imgGestionUsuarios"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingBottom="20dp"
+            android:paddingHorizontal="16dp">
+
+            <!-- Sección: Cómo funciona la base de datos -->
+            <TextView
+                android:id="@+id/tvComoFunciona"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📌 Cómo funciona la Base de Datos"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/tvExplicacionBBDD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cada usuario tiene su propia base de datos privada. Al unirse a un grupo, pierde el acceso a su base de datos personal y comienza a usar la base de datos compartida del grupo.\n\n
+
+                ✔ **Privacidad Asegurada:** Ningún usuario sin grupo puede ver la base de datos de otro.\n
+                ✔ **Flexibilidad Total:** Puedes trabajar solo o en equipo.\n
+                ✔ **Seguridad y Control:** En los grupos, los roles determinan el acceso y las acciones permitidas."
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Sección: Usuarios sin grupo -->
+            <TextView
+                android:id="@+id/tvUsuariosSinGrupo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👤 Usuarios Sin Grupo"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_blue_dark"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/tvExplicacionUsuariosSinGrupo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✔ **Independencia Total**: Manejan su propia base de datos.\n
+                ✔ **Acceso Completo**: Pueden agregar, editar y eliminar materiales, productos y clientes.\n
+                ❌ **No ven a otros usuarios sin grupo**: La privacidad es total.\n
+                ✔ **Pueden unirse a un grupo**: A través de un código de invitación privado."
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Sección: Usuarios en Grupo -->
+            <TextView
+                android:id="@+id/tvUsuariosConGrupo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👥 Usuarios en Grupo"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_green_dark"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/tvExplicacionUsuariosConGrupo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✔ **Base de datos compartida** con los miembros del grupo.\n
+                ✔ **Roles de usuario** que limitan o amplían los permisos.\n
+                ✔ **Jerarquía estructurada**: Usuario Normal, Admin y SuperAdmin.\n
+                ✔ **Admins y SuperAdmins** pueden gestionar miembros y permisos."
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Sección: Roles en el Grupo -->
+            <TextView
+                android:id="@+id/tvRolesGrupo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔑 Roles y Permisos en un Grupo"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_orange_dark"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/tvExplicacionRoles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• 👤 **Usuario Normal** → Puede ver datos, pero no modificarlos.\n
+                • 🔧 **Admin** → Puede crear, editar y eliminar datos del grupo.\n
+                • 👑 **SuperAdmin** → Control total sobre los datos y los miembros."
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginBottom="30dp"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

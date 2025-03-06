@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Web</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/scripts.js" defer></script>
+  </head>
+  <body onload="cargarCalcualdora()">
+    <h2>Calculadora Simple</h2>
+    <div>
+      <div class="columna contenedor_principal bg_gris_o">
+        <div id="pantalla" class="bg_gris_c">
+          <div id="operacion" class="en_pantalla txt_gris_o"></div>
+          <div id="numero" class="en_pantalla"></div>
+        </div>
+        <div class="teclado">
+          <button id="btn_E" class="tecla bg_gris_c" onclick="gestionarClick(this)"></button>
+          <button id="btn_L" class="tecla bg_gris_c" onclick="gestionarClick(this)"></button>
+          <button id="btn_B" class="tecla bg_gris_c" onclick="gestionarClick(this)"></button>
+          <button id="btn_D" class="tecla bg_gris_c" onclick="gestionarClick(this)"></button>
+
+          <button id="btn_7" class="tecla bg_gris_c" onclick="gestionarClick(this)"></button>
+          <button id="btn_8" class="tecla bg_gris_c" onclick="gestionarClick(this)"></button>
+          <button id="btn_9" class="tecla bg_gris_c" onclick="gestionarClick(this)"></button>
+          <button id="btn_M" class="tecla bg_gris_c" onclick="gestionarClick(this)"></button>
+
+          <button id="btn_4" class="tecla bg_gris_c" onclick="gestionarClick(this)"></button>
+          <button id="btn_5" class="tecla bg_gris_c" onclick="gestionarClick(this)"></button>
+          <button id="btn_6" class="tecla bg_gris_c" onclick="gestionarClick(this)"></button>
+          <button id="btn_R" class="tecla bg_gris_c" onclick="gestionarClick(this)"></button>
+
+          <button id="btn_1" class="tecla bg_gris_c" onclick="gestionarClick(this)"></button>
+          <button id="btn_2" class="tecla bg_gris_c" onclick="gestionarClick(this)"></button>
+          <button id="btn_3" class="tecla bg_gris_c" onclick="gestionarClick(this)"></button>
+          <button id="btn_S" class="tecla bg_gris_c" onclick="gestionarClick(this)"></button>
+
+          <button id="btn_0" class="tecla bg_gris_c" onclick="gestionarClick(this)"></button>
+          <button id="btn_P" class="tecla bg_gris_c" onclick="gestionarClick(this)"></button>
+          <button id="btn_C" class="tecla bg_gris_c" onclick="gestionarClick(this)"></button>
+        </div>
+      </div>
+      <div class="columna contenedor_principal bg_gris_o">
+        <h3>Historial</h3>
+        <div id="historial"></div>
+      </div>
+    </div>
+  </body>
+</html>

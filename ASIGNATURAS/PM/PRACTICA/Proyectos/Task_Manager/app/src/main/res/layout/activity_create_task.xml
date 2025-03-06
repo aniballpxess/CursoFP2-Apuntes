@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/create"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9E6"
+    tools:context=".CreateTaskActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="start"
+        android:paddingVertical="48dp"
+        android:paddingHorizontal="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="@string/create_task"
+            android:textAlignment="center"
+            android:textColor="@color/create_task"
+            android:textSize="36sp" />
+
+        <EditText
+            android:id="@+id/et_taskName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:hint="@string/hint_taskName"
+            android:padding="9sp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_color"
+            android:textSize="18sp" />
+
+        <RadioGroup
+            android:id="@+id/rg_taskType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rb_priority"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/option_priority"
+                android:padding="9sp"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/rb_longTerm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/option_longTerm"
+                android:padding="9sp"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_createTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/create" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

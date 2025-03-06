@@ -1,0 +1,26 @@
+.C_Display
+{
+	width:240px;
+	background-color:gray;
+	font-size:xxx-large;
+	text-align:right;
+}
+.C_Number_button
+{
+	width:75px;
+}
+.C_Operation_button
+{
+	width:75px;
+	background:lightblue;
+}
+.C_Reset_button
+{
+	width:240px;
+	background:lightblue;
+}
+.C_Button_label
+{
+	font-size:x-large;
+	font-weight:bold;
+}

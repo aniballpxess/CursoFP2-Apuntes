@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">YATaMaP</string>
+    <string name="night_mode">Night Mode</string>
+    <string name="home_title">Home</string>
+    <string name="settings_title">Settings</string>
+    <string name="tasks_title">Tasks</string>
+    <string name="team_title">Team</string>
+    <string name="wip_alert">WIP alert</string>
+</resources>

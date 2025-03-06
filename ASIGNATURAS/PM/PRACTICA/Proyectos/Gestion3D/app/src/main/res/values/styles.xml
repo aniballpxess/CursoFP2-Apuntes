@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 🔹 Estilo para tarjetas (CardView) -->
+    <style name="CardStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:gravity">center</item>
+
+        <!-- Fondo de la tarjeta -->
+        <item name="android:backgroundTint">@color/cardBackground</item>
+        <item name="cardBackgroundColor">@color/cardBackground</item>
+
+        <!-- Bordes y sombra -->
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+
+        <!-- Borde de la tarjeta -->
+        <item name="android:shape">rectangle</item>
+        <item name="android:strokeWidth">@dimen/card_stroke_width</item>
+        <item name="android:strokeColor">@color/cardBorder</item>
+    </style>
+</resources>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/json"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JsonParserActivity">
+
+    <ImageView
+        android:id="@+id/iv_fondoPantalla"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo_pantalla_arcoiris" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingTop="48dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="48dp">
+
+            <TextView
+                android:id="@+id/tv_jsonTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="Parseador JSON"
+                android:textSize="32sp" />
+
+            <Button
+                android:id="@+id/btn_jsonRead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/sharp_btn_shape"
+                android:text="Leer JSON"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btn_jsonShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/sharp_btn_shape"
+                android:text="Mostrar JSON"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_jsonContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="monospace"
+                android:gravity="start"
+                android:maxLines="20"
+                android:overScrollMode="always"
+                android:padding="2dp"
+                android:scrollbars="vertical"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>
