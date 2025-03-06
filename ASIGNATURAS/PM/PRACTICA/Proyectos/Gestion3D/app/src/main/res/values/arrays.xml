@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="tipo_material">
-        <item>Filamento</item>
-        <item>Resina</item>
-    </string-array>
-</resources>

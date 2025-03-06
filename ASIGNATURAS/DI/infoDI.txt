@@ -1,9 +1,0 @@
-PROFESOR: Francisco García Molinero
-CORREO: francisco.garciamolinero@educa.madrid.org
-EXÁMENES: - 
-	Sin recuperación
-	2 horas
-	Hacer una interfáz
-	1ª Eva - html/css/js
-	2ª Eva - C#
-TAREAS: - 
