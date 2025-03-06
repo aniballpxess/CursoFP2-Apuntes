@@ -1,8 +1,8 @@
 /PROGRAMAS
 /ADMINISTRACION
 
-# Created by https://www.toptal.com/developers/gitignore/api/androidstudio,visualstudio,visualstudiocode,intellij+iml,maven,gradle,kotlin,java,csharp,windows,powershell
-# Edit at https://www.toptal.com/developers/gitignore?templates=androidstudio,visualstudio,visualstudiocode,intellij+iml,maven,gradle,kotlin,java,csharp,windows,powershell
+# Created by https://www.toptal.com/developers/gitignore/api/java,maven,csharp,gradle,kotlin,windows,powershell,intellij+iml,visualstudio,androidstudio,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=java,maven,csharp,gradle,kotlin,windows,powershell,intellij+iml,visualstudio,androidstudio,visualstudiocode
 
 ### Csharp ###
 ## Ignore Visual Studio temporary files, build results, and
@@ -436,14 +436,14 @@ FodyWeavers.xsd
 # When using Gradle or Maven with auto-import, you should exclude module files,
 # since they will be recreated, and may cause churn.  Uncomment if using
 # auto-import.
-.idea/artifacts
-.idea/compiler.xml
-.idea/jarRepositories.xml
-.idea/modules.xml
-.idea/*.iml
-.idea/modules
-*.iml
-*.ipr
+# .idea/artifacts
+# .idea/compiler.xml
+# .idea/jarRepositories.xml
+# .idea/modules.xml
+# .idea/*.iml
+# .idea/modules
+# *.iml
+# *.ipr
 
 # CMake
 cmake-build-*/
@@ -903,4 +903,4 @@ obj/
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
-# End of https://www.toptal.com/developers/gitignore/api/androidstudio,visualstudio,visualstudiocode,intellij+iml,maven,gradle,kotlin,java,csharp,windows,powershell
+# End of https://www.toptal.com/developers/gitignore/api/java,maven,csharp,gradle,kotlin,windows,powershell,intellij+iml,visualstudio,androidstudio,visualstudiocode
