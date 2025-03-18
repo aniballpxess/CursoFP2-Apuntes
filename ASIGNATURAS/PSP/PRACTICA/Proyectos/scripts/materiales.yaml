@@ -1,0 +1,36 @@
+Ejercicios PSP: 
+---
+EMPAQUETAR "aleatorios":
+[
+mvn package -P aleatorios1
+mvn package -P aleatorios2
+]
+EMPAQUETAR "divisores":
+[
+mvn package -P divisores
+]
+EMPAQUETAR "doble":
+[
+mvn package -P doble1
+mvn package -P doble2
+]
+EMPAQUETAR "europa":
+[
+mvn package -P europa1
+mvn package -P europa2
+]
+EMPAQUETAR "mayusculas":
+[
+mvn package -P mayusculas1
+mvn package -P mayusculas2
+]
+EMPAQUETAR "media": 
+[
+mvn package -P media1
+mvn package -P media2
+]
+EMPAQUETAR "sumatorio": 
+[
+mvn package -P sumatorio
+]
+---
