@@ -1,0 +1,45 @@
+<!-- manage_teams_page.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Manage Teams</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+    <!-- Common Navigation -->
+    <nav>
+      <a href="sign_up.html">Sign Up</a>
+      <a href="create_team.html">Create Team</a>
+      <a href="manage_teams.html">Manage Teams</a>
+      <a href="manage_users.html">Manage Users</a>
+      <a href="home.html">Home</a>
+    </nav>
+
+    <div class="container">
+      <h1>Manage Teams</h1>
+      <table id="teamsTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Leader</th>
+            <th>Creation Time</th>
+            <th>Member Count</th>
+            <th>Team Members</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows populated by JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <button class="save-button" id="saveTeamsBtn">Save Changes</button>
+
+    <script src="../js/data-logic/data_init.js"></script>
+    <script src="../js/data-logic/user.js"></script>
+    <script src="../js/data-logic/team.js"></script>
+    <script src="../js/manage_teams.js"></script>
+  </body>
+</html>
