@@ -1,0 +1,20 @@
+digraph Adder
+{
+	node[shape=circle];
+	A[label="A. A1Init."];
+	B[label="B. A1Intr."];
+	C[label="C. A2Init."];
+	D[label="D. A2Intr."];
+	E[label="E. RS"];
+	A->B[label="0-9"]; 
+	A->A[label="R"];
+	B->B[label="0-9"];
+	B->C[label="+"];
+	B->A[label="R"];
+	C->D[label="0-9"];
+	C->A[label="R"];
+	D->D[label="0-9"];
+	D->E[label="="];
+	D->A[label="R"];
+	E->A[label="R"];
+}

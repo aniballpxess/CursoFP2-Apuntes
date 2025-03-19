@@ -1,0 +1,385 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:419.55pt 595.3pt;
+	margin:2.85pt 2.85pt 2.85pt 2.85pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link="#0563C1" vlink="#954F72" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='line-height:150%'><b><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>Step 1: Setup Development
+Environment</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>- Odoo modules are stored in a
+custom directory</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>- Ensure you have a custom
+directory to store your module</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='background:black;border-collapse:collapse;border:none'>
+ <tr>
+  <td valign=top style='border:solid windowtext 1.0pt;padding:8.5pt 8.5pt 8.5pt 2.85pt'>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>mkdir -p
+  /opt/odoo/custom_addons</span></p>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>cd
+  /opt/odoo/custom_addons</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>- Ensure that this directory
+is accessible by the Odoo user</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='background:black;border-collapse:collapse;border:none'>
+ <tr>
+  <td valign=top style='border:solid windowtext 1.0pt;padding:8.5pt 8.5pt 8.5pt 2.85pt'>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>sudo chown -R
+  odoo:odoo /opt/odoo/custom_addons</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>- Update the Odoo
+configuration file (/etc/odoo/odoo.conf) to include this path</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='background:black;border-collapse:collapse;border:none'>
+ <tr>
+  <td valign=top style='border:solid windowtext 1.0pt;padding:8.5pt 8.5pt 8.5pt 2.85pt'>
+  <p class=MsoNormal style='line-height:150%'><span lang=ES style='font-size:
+  10.0pt;line-height:150%;font-family:"Arial",sans-serif;color:white'>sudo nano
+  /etc/odoo/odoo.conf</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>- Locate the&nbsp;addons_path&nbsp;line
+and modify it</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='background:black;border-collapse:collapse;border:none'>
+ <tr>
+  <td valign=top style='border:solid windowtext 1.0pt;padding:8.5pt 8.5pt 8.5pt 2.85pt'>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>addons_path =
+  /opt/odoo/custom_addons,/usr/lib/python3/dist-packages/odoo/addons</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>- Save and exit</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>- Restart Odoo</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='background:black;border-collapse:collapse;border:none'>
+ <tr>
+  <td valign=top style='border:solid windowtext 1.0pt;padding:8.5pt 8.5pt 8.5pt 2.85pt'>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>sudo systemctl
+  restart odoo</span></p>
+  </td>
+ </tr>
+</table>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif'>
+
+<hr size=0 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><b><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>Step 2: Create the Module
+Skeleton</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>- Navigate to the custom
+modules directory</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='background:black;border-collapse:collapse;border:none'>
+ <tr>
+  <td valign=top style='border:solid windowtext 1.0pt;padding:8.5pt 8.5pt 8.5pt 2.85pt'>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>cd
+  /opt/odoo/custom_addons</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>- Use the Odoo scaffold
+command to generate a basic module structure</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='background:black;border-collapse:collapse;border:none'>
+ <tr>
+  <td valign=top style='border:solid windowtext 1.0pt;padding:8.5pt 8.5pt 8.5pt 2.85pt'>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>/odoo/odoo-bin
+  scaffold my_product_module /opt/odoo/custom_addons</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>- Navigate into the module</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='background:black;border-collapse:collapse;border:none'>
+ <tr>
+  <td valign=top style='border:solid windowtext 1.0pt;padding:8.5pt 8.5pt 8.5pt 2.85pt'>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>cd
+  my_product_module</span></p>
+  </td>
+ </tr>
+</table>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif'>
+
+<hr size=0 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><b><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>Step 3: Define the Module
+Manifest</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>- Edit the&nbsp;__manifest__.py&nbsp;file</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='background:black;border-collapse:collapse;border:none'>
+ <tr>
+  <td valign=top style='border:solid windowtext 1.0pt;padding:8.5pt 8.5pt 8.5pt 2.85pt'>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>nano
+  __manifest__.py</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>- Modify it as follows</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='background:black;border-collapse:collapse;border:none'>
+ <tr>
+  <td valign=top style='border:solid windowtext 1.0pt;padding:8.5pt 8.5pt 8.5pt 2.85pt'>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>{</span></p>
+  <p class=MsoNormal style='margin-left:36.0pt;line-height:150%'><span
+  style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif;
+  color:white'>'name': 'My Product Module',</span></p>
+  <p class=MsoNormal style='margin-left:36.0pt;line-height:150%'><span
+  style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif;
+  color:white'>'version': '1.0',</span></p>
+  <p class=MsoNormal style='margin-left:36.0pt;line-height:150%'><span
+  style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif;
+  color:white'>'summary': 'Manage product entities with CRUD operations',</span></p>
+  <p class=MsoNormal style='margin-left:36.0pt;line-height:150%'><span
+  style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif;
+  color:white'>'author': 'Your Name',</span></p>
+  <p class=MsoNormal style='margin-left:36.0pt;line-height:150%'><span
+  style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif;
+  color:white'>'category': 'Inventory',</span></p>
+  <p class=MsoNormal style='margin-left:36.0pt;line-height:150%'><span
+  style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif;
+  color:white'>'license': 'LGPL-3',</span></p>
+  <p class=MsoNormal style='margin-left:36.0pt;line-height:150%'><span
+  style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif;
+  color:white'>'depends': ['base'],</span></p>
+  <p class=MsoNormal style='margin-left:36.0pt;line-height:150%'><span
+  style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif;
+  color:white'>'data':</span></p>
+  <p class=MsoNormal style='margin-left:36.0pt;line-height:150%'><span
+  style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif;
+  color:white'>[</span></p>
+  <p class=MsoNormal style='margin-left:72.0pt;line-height:150%'><span
+  style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif;
+  color:white'>'security/ir.model.access.csv',</span></p>
+  <p class=MsoNormal style='margin-left:72.0pt;line-height:150%'><span
+  style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif;
+  color:white'>'views/my_product_entity_view.xml',</span></p>
+  <p class=MsoNormal style='margin-left:36.0pt;line-height:150%'><span
+  style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif;
+  color:white'>],</span></p>
+  <p class=MsoNormal style='margin-left:36.0pt;line-height:150%'><span
+  style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif;
+  color:white'>'installable': True,</span></p>
+  <p class=MsoNormal style='margin-left:36.0pt;line-height:150%'><span
+  style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif;
+  color:white'>'application': True,</span></p>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>}</span></p>
+  </td>
+ </tr>
+</table>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif'>
+
+<hr size=0 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><b><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>Step 4: Define the Data Model</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>- Edit the&nbsp;models&nbsp;directory
+and create a file&nbsp;my_product_entity.py</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='background:black;border-collapse:collapse;border:none'>
+ <tr>
+  <td valign=top style='border:solid windowtext 1.0pt;padding:8.5pt 8.5pt 8.5pt 2.85pt'>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>mkdir models</span></p>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>nano
+  models/my_product_entity.py</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>- Add the following content</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='background:black;border-collapse:collapse;border:none'>
+ <tr>
+  <td valign=top style='border:solid windowtext 1.0pt;padding:8.5pt 8.5pt 8.5pt 2.85pt'>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>from odoo import
+  models, fields</span></p>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>class MyProductEntity(models.Model):</span></p>
+  <p class=MsoNormal style='margin-left:36.0pt;line-height:150%'><span
+  style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif;
+  color:white'>_name = 'my_product_entity'</span></p>
+  <p class=MsoNormal style='margin-left:36.0pt;line-height:150%'><span
+  style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif;
+  color:white'>_description = 'My Product Entity'</span></p>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>code =
+  fields.Char(string='Code', required=True)</span></p>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>name =
+  fields.Char(string='Name', required=True)</span></p>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>price =
+  fields.Float(string='Price', required=True)</span></p>
+  </td>
+ </tr>
+</table>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif'>
+
+<hr size=0 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:150%'><b><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>Step 5: Define Security Rules</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>- Create the&nbsp;security&nbsp;directory
+and define access rights</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='background:black;border-collapse:collapse;border:none'>
+ <tr>
+  <td valign=top style='border:solid windowtext 1.0pt;padding:8.5pt 8.5pt 8.5pt 2.85pt'>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>mkdir security</span></p>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>nano
+  security/ir.model.access.csv</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:"Arial",sans-serif'>- Add the following</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='background:black;border-collapse:collapse;border:none'>
+ <tr>
+  <td valign=top style='border:solid windowtext 1.0pt;padding:8.5pt 8.5pt 8.5pt 2.85pt'>
+  <p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+  line-height:150%;font-family:"Arial",sans-serif;color:white'>id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+  access_my_product_entity,my_product_entity,model_my_product_entity,,1,1,1,1</span></p>
+  </td>
+ </tr>
+</table>
+
+<div class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:"Arial",sans-serif'>
+
+<hr size=0 width="100%" align=center>
+
+</span></div>
+
+</div>
+
+</body>
+
+</html>
