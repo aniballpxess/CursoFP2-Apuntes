@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+tools:ignore="ExtraText">
+
+xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<item
+    android:id="@+id/menuitemnuevapeli"
+    android:icon="@drawable/ic_menu_nadd"
+    android:title="Agregar Película"
+    app:showAsAction="always"/>
+
+<!-- Nuevo ítem de ojo para ver las películas -->
+<item
+    android:id="@+id/menuitemverpeliculas"
+    android:icon="@drawable/ic_menu_verlista_white"
+    android:title="Ver Películas"
+    app:showAsAction="ifRoom" />
+
+</menu>

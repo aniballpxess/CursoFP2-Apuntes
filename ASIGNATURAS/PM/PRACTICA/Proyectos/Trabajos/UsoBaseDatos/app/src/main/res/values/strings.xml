@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_nombre">Accesos a Datos</string>
+    <string name="literalCreado_por">Creado por: </string>
+    <string name="literalNombre">Macarena Ramos</string>
+    <string name="archivo_no_existe">El archivo no existe en esa ruta.</string>
+    <string name="calcular">Calcular</string>
+    <string name="introduzca_un_n_mero">Introduzca un número</string>
+    <string name="introduzca_otro_n_mero">Introduzca otro número</string>
+    <string name="resultado">Resultado</string>
+    <string name="logo_description">Logotipo</string>
+    <string name="error_creando_archivo">Error al intentar crear el archivo.</string>
+    <string name="error_leyendo_archivo">Error leyendo el archivo.</string>
+    <string name="content_description_background">Cartel Pelicula Tiburon</string>
+    <string name="content_description_menu_icon">Menu Iconos</string>
+    <string name="content_description_toolbar_title">Titulo de la ToolBar Peliculas</string>
+    <string name="descripcion_icono_toolbar">icono surfista</string>
+    <!-- Strings used for fragments for navigation -->
+
+</resources>

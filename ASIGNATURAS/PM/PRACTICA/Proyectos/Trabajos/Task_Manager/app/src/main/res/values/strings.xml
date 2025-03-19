@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Task Manager</string>
+    <string name="create_task">Crear Tarea</string>
+    <string name="priority_tasks">Tareas Prioritarias</string>
+    <string name="long_term_tasks">Tareas a Largo Plazo</string>
+    <string name="task_manager">Tareas Personales</string>
+    <string name="none">Nada</string>
+    <string name="hint_taskName">Nombre de la tarea</string>
+    <string name="create">Crear</string>
+    <string name="option_priority">Prioritaria</string>
+    <string name="option_longTerm">A largo plazo</string>
+</resources>
