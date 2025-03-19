@@ -1,0 +1,14 @@
+<resources>
+    <color name="purple_200">#B39DDB</color> <!-- Darker Light Purple -->
+    <color name="purple_500">#6A1B9A</color> <!-- Darker Purple 500 -->
+    <color name="purple_700">#4A0072</color> <!-- Darker Purple 700 -->
+    <color name="teal_200">#9575CD</color> <!-- Darker Light Purple (Teal replacement) -->
+    <color name="teal_700">#673AB7</color> <!-- Darker Dark Light Purple (Teal replacement) -->
+    <color name="black">#000000</color> <!-- Black -->
+    <color name="white">#FFFFFF</color> <!-- White -->
+    <color name="colorPrimary">#6A1B9A</color> <!-- Darker Purple 500 -->
+    <color name="colorPrimaryDark">#4A0072</color> <!-- Darker Purple 700 -->
+    <color name="colorAccent">#AA00FF</color> <!-- Darker Purple A200 -->
+    <color name="background">#0D133D</color> <!-- Darker Deep Purple 900 -->
+    <color name="textColor">#B0B0B0</color> <!-- Darker Light Grey -->
+</resources>

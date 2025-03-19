@@ -1,0 +1,7 @@
+<resources>
+    <color name="colorPrimary">#4A0072</color> <!-- Darker Purple 500 -->
+    <color name="colorPrimaryDark">#38006B</color> <!-- Darker Purple 700 -->
+    <color name="colorAccent">#AA00FF</color> <!-- Darker Purple A200 -->
+    <color name="background">#0D133D</color> <!-- Darker Deep Purple 900 -->
+    <color name="textColor">#B0B0B0</color> <!-- Darker Light Grey -->
+</resources>
