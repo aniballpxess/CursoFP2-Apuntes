@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.FrameLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -29,7 +28,8 @@ import edu.dam.pm.yatamap.classes.TaskType;
 import edu.dam.pm.yatamap.classes.Team;
 import edu.dam.pm.yatamap.classes.User;
 import edu.dam.pm.yatamap.databinding.ActivityMainBinding;
-import edu.dam.pm.yatamap.handlers.SPHelper;
+import edu.dam.pm.yatamap.helpers.DBHelper;
+import edu.dam.pm.yatamap.helpers.SPHelper;
 import edu.dam.pm.yatamap.views.main.home.HomeFragment;
 import edu.dam.pm.yatamap.views.main.settings.SettingsFragment;
 import edu.dam.pm.yatamap.views.main.tasks.TasksFragment;
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     protected MaterialToolbar topAppBar;
     protected BottomNavigationView bottomNav;
     protected SPHelper spHelper;
+    protected DBHelper dbHelper;
 
     // Lists to store data
     private List<Task> tasks;
@@ -86,15 +87,12 @@ public class MainActivity extends AppCompatActivity {
         Log.d("BASE", "Load Finish");
     }
 
+    // TODO - Check this CHATGPT BullShit
     private void loadDataAndSetupUser() {
-        // Get user ID from SharedPreferences
         String userId = spHelper.getUserId();
-
         if (userId == null) {
-            // User not found, perform user setup
             UserSetup();
         } else {
-            // User found, load data
             currentUser = dbHelper.getUserById(userId);
             if (currentUser != null) {
                 currentTeam = dbHelper.getTeamById(currentUser.getTeamId());
@@ -102,25 +100,20 @@ public class MainActivity extends AppCompatActivity {
                 taskTypes = dbHelper.getAllTaskTypes();
                 users = dbHelper.getAllUsers();
             } else {
-                // User not found in DB, perform user setup
                 UserSetup();
             }
         }
     }
 
+    // TODO - Check this CHATGPT BullShit
     private void UserSetup() {
-        // Create a new user and team (example data)
         Team newTeam = new Team("New Team");
         long teamId = dbHelper.addTeam(newTeam);
         newTeam.setId(teamId);
         User newUser = new User("New User", teamId);
         long userId = dbHelper.addUser(newUser);
         newUser.setId(userId);
-
-        // Store the new user ID in SharedPreferences
         spHelper.setUserId(userId);
-
-        // Restart MainActivity
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);

@@ -10,8 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import edu.dam.pm.yatamap.R;
 import edu.dam.pm.yatamap.classes.Team;
 import edu.dam.pm.yatamap.classes.User;
-import edu.dam.pm.yatamap.handlers.DBHandler;
-import edu.dam.pm.yatamap.handlers.SPHelper;
+import edu.dam.pm.yatamap.helpers.DBHelper;
+import edu.dam.pm.yatamap.helpers.SPHelper;
 
 public class UserSetupActivity extends AppCompatActivity {
 
@@ -52,7 +52,7 @@ public class UserSetupActivity extends AppCompatActivity {
         User user = new User(userName);
         Team team = new Team(teamName);
         team.addMember(user);
-        DBHandler db = new DBHandler(this);
+        DBHelper db = new DBHelper(this);
         // TODO - save them to db
 
         spHelper.saveUserId(user.getId());

@@ -1,4 +1,4 @@
-package edu.dam.pm.yatamap.handlers;
+package edu.dam.pm.yatamap.helpers;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -13,7 +13,7 @@ import edu.dam.pm.yatamap.classes.Task;
 import edu.dam.pm.yatamap.classes.Team;
 import edu.dam.pm.yatamap.classes.User;
 
-public class DBHandler extends SQLiteOpenHelper {
+public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "task_manager.db";
     private static final int DATABASE_VERSION = 1;
@@ -47,7 +47,7 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String KEY_TASK_TYPE_ID_PK = "id";
     private static final String KEY_TASK_TYPE_NAME = "name";
 
-    public DBHandler(Context context) {
+    public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

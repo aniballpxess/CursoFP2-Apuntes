@@ -1,4 +1,4 @@
-package edu.dam.pm.yatamap.handlers;
+package edu.dam.pm.yatamap.helpers;
 
 import android.content.Context;
 import android.content.SharedPreferences;
