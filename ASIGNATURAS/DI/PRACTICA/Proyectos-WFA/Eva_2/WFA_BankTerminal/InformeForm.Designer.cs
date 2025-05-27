@@ -36,10 +36,8 @@
             this.btn_inicializar = new System.Windows.Forms.Button();
             this.dgv_operaciones = new System.Windows.Forms.DataGridView();
             this.informeFormBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.informeFormBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_operaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.informeFormBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.informeFormBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_cerrar
@@ -110,10 +108,6 @@
             // 
             this.informeFormBindingSource.DataSource = typeof(WFA_BankTerminal.InformeForm);
             // 
-            // informeFormBindingSource1
-            // 
-            this.informeFormBindingSource1.DataSource = typeof(WFA_BankTerminal.InformeForm);
-            // 
             // InformeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,7 +120,6 @@
             this.Text = "InformeForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_operaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.informeFormBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.informeFormBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -137,6 +130,5 @@
         private System.Windows.Forms.Button btn_inicializar;
         private System.Windows.Forms.DataGridView dgv_operaciones;
         private System.Windows.Forms.BindingSource informeFormBindingSource;
-        private System.Windows.Forms.BindingSource informeFormBindingSource1;
     }
 }

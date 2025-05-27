@@ -1,8 +1,4 @@
 {
-    "theme-by-language.themes": 
-    {
-        "markdown": "Ayu Mirage Bordered",
-        "javascript": "Atom One Dark"
-    },
-    "workbench.colorTheme": "Atom One Dark"
+    "workbench.colorTheme": "Monokai Dimmed",
+    "css.styleSheets": ["${fileBasenameNoExtension}.css"]
 }

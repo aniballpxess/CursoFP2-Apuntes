@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Interfaz de Reloj Digital</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Left Controls -->
+      <button class="control-button button-left top" id="btn-iluminar"></button>
+      <div class="label label-left top">&lt; Iluminar</div>
+
+      <button class="control-button button-left bottom" id="btn-ajustar"></button>
+      <div class="label label-left bottom">&lt; Ajustar</div>
+
+      <!-- Display Area -->
+      <div class="display-container" id="background-display">
+        <div class="display" id="clock-display">
+          <span id="display-hours">15</span><span>:</span><span id="display-minutes">30</span>
+        </div>
+      </div>
+
+      <!-- Right Controls -->
+      <div class="label label-right top">Incrementar &gt;</div>
+      <button class="control-button button-right top" id="btn-incrementar"></button>
+
+      <div class="label label-right bottom">Decrementar &gt;</div>
+      <button class="control-button button-right bottom" id="btn-decrementar"></button>
+    </div>
+  </body>
+</html>

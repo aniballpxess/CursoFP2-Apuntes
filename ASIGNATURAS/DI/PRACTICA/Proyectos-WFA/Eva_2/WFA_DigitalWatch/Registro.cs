@@ -15,7 +15,7 @@ namespace WFA_DigitalWatch
         public Registro(String boton, int horas, int minutos)
         {
             this.fecha = DateTime.Now.ToString("dd/MM/yyyy");
-            this.horaReloj = horas + ":" + minutos;
+            this.horaReloj = $"{horas:D2}:{minutos:D2}";
             this.boton = boton;
         }
     }

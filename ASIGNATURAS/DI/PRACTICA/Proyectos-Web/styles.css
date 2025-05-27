@@ -1,0 +1,99 @@
+/* Page setup */
+body {
+  margin: 0;
+  background-color: #1c1c2e; /* dark bluish-gray */
+  height: 100vh;
+  font-family: monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main container (black box) */
+.main-container {
+  position: relative;
+  width: 700px;
+  height: 350px;
+  background-color: black;
+  border-radius: 20px;
+}
+
+/* Display block */
+.display-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #00ffcc44;
+}
+
+.display {
+  font-size: 64px;
+  color: #00FFCC;
+  text-align: center;
+  letter-spacing: 8px;
+}
+
+.display span {
+  display: inline-block;
+}
+
+/* Optional: Add glow or visual tweak to colon */
+.colon {
+  padding: 0 5px;
+}
+
+/* Labels (text next to buttons) */
+.label {
+  position: absolute;
+  color: white;
+  font-size: 18px;
+  white-space: nowrap;
+  height: 40px;
+  line-height: 40px; /* perfect vertical centering */
+}
+
+/* Button styling */
+.control-button {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  border: 2px solid #888;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.control-button:hover {
+  background-color: #aaa;
+}
+
+/* Left side layout */
+.button-left {
+  left: -40px;
+}
+.label-left {
+  left: 10px;
+}
+
+/* Right side layout */
+.button-right {
+  right: -40px;
+}
+.label-right {
+  right: 10px;
+}
+
+/* Vertical positions */
+.top {
+  top: 30%;
+  transform: translateY(-50%);
+}
+.bottom {
+  top: 70%;
+  transform: translateY(-50%);
+}

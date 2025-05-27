@@ -86,7 +86,7 @@ namespace WFA_DigitalWatch
                 estadoActual = Estado.PARADO;
                 ActualizarEstado();
 
-                registros.Add(new Registro("Ajustar"));
+                registros.Add(new Registro("Ajustar", hora, min));
                 return;
             }
         }
@@ -102,7 +102,7 @@ namespace WFA_DigitalWatch
                 }
                 ActualizarEstado();
 
-                registros.Add(new Registro("Decrementar"));
+                registros.Add(new Registro("Decrementar", hora, min));
                 return;
             }
             if (estadoActual == Estado.AJUSTANDO_MIN)
@@ -114,7 +114,7 @@ namespace WFA_DigitalWatch
                 }
                 ActualizarEstado();
 
-                registros.Add(new Registro("Decrementar"));
+                registros.Add(new Registro("Decrementar", hora, min));
                 return;
             }
         }
@@ -130,7 +130,7 @@ namespace WFA_DigitalWatch
                 }
                 ActualizarEstado();
 
-                registros.Add(new Registro("Incrementar"));
+                registros.Add(new Registro("Incrementar", hora, min));
                 return;
             }
             if (estadoActual == Estado.AJUSTANDO_MIN)
@@ -142,7 +142,7 @@ namespace WFA_DigitalWatch
                 }
                 ActualizarEstado();
 
-                registros.Add(new Registro("Incrementar"));
+                registros.Add(new Registro("Incrementar", hora, min));
                 return;
             }
         }
