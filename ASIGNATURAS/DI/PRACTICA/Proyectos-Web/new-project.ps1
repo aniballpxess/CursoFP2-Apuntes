@@ -33,20 +33,12 @@ $RootDirPath = Join-Path -Path $Path -ChildPath $ProjectName
 $SourceDirPath = Join-Path -Path $RootDirPath -ChildPath $SourceDirName
 $ResourcesDirPath = Join-Path -Path $RootDirPath -ChildPath $ResourcesDirName
 
-# Get the original directory
-$originalDirectory = Get-Location
-Write-Host "Original dir saved"
-
 # Make project structure
-New-Item -Path $RootDirPath -ItemType Directory
-New-Item -Path $ResourcesDirPath -ItemType Directory
-New-Item -Path $SourceDirPath -ItemType Directory
-Write-Host "Basic project structure created"
+New-Item -Path $RootDirPath -ItemType Directory | Out-Null
+New-Item -Path $ResourcesDirPath -ItemType Directory | Out-Null
+New-Item -Path $SourceDirPath -ItemType Directory | Out-Null
+Write-Host "Estructura del proyecto creada en: $RootDirPath"
 
 # Create the first page
 & .\new-page.ps1 -Path $SourceDirPath -NewPageName $FirstPageName
-Write-Host "First page created"
-
-# Return to original directory
-Set-Location $originalDirectory
-Write-Host "Returned to original directory"
+Write-Host "Pagina con nombre $FirstPageName creada"

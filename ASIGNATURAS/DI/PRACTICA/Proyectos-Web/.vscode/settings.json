@@ -1,4 +1,4 @@
 {
-    "workbench.colorTheme": "Monokai Dimmed",
+    "workbench.colorTheme": "Ayu Mirage Bordered",
     "css.styleSheets": ["${fileBasenameNoExtension}.css"]
 }
