@@ -1,4 +1,4 @@
 {
-    "workbench.colorTheme": "Monokai Dimmed",
-    "css.styleSheets": ["${fileBasenameNoExtension}.css"]
+  "workbench.colorTheme": "Monokai Dimmed",
+  "css.styleSheets": ["${fileBasenameNoExtension}.css"]
 }

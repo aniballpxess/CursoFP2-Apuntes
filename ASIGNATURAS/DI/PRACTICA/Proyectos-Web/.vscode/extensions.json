@@ -1,8 +1,3 @@
 {
-    "recommendations": [
-        "ms-vscode.powershell",
-        "jsaulou.theme-by-language",
-        "tal7aouy.icons",
-        "tomoki1207.pdf"
-    ]
+  "recommendations": ["ms-vscode.powershell", "jsaulou.theme-by-language", "ms-vscode-remote.remote-wsl", "pkief.material-icon-theme", "yy0931.gitconfig-lsp", "teabyii.ayu"]
 }
