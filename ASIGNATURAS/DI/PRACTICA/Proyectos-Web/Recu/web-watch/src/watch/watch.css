@@ -1,8 +1,7 @@
 /* Page setup */
 body {
   margin: 0;
-  background-color: #1c1c2e; /* dark bluish-gray */
-  height: 100vh;
+  background-color: midnightblue;
   font-family: monospace;
   display: flex;
   align-items: center;
@@ -14,7 +13,7 @@ body {
   position: relative;
   width: 700px;
   height: 350px;
-  background-color: black;
+  background-color: #404040;
   border-radius: 20px;
 }
 
@@ -24,15 +23,14 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #333;
+  background-color: black;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 0 20px #00ffcc44;
 }
 
 .display {
   font-size: 64px;
-  color: #00FFCC;
+  color: #404040;
   text-align: center;
   letter-spacing: 8px;
 }
