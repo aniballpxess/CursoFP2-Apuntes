@@ -1,4 +1,8 @@
 {
+  // Theme (auto)
   "workbench.colorTheme": "Monokai Dimmed",
-  "css.styleSheets": ["${fileBasenameNoExtension}.css"]
+  // CSS
+  "css.styleSheets": ["**/${fileBasenameNoExtension}.css", "**/${fileBasenameNoExtension}/../../res/styles/*.css"],
+  // Eslint
+  "eslint.workingDirectories": [{ "mode": "auto" }]
 }
