@@ -41,24 +41,12 @@ const defaultConfig = [
       ...js.configs.recommended.rules,
 
       // Prettier integration
-      'prettier/prettier': 'error',
+      'prettier/prettier': 'warn',
 
       // overrides
       'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
       'no-console': 'warn',
       eqeqeq: ['error', 'always'],
-    },
-
-    settings: {
-      'import/resolver': {
-        alias: {
-          map: [
-            ['@watch', './Recu/web-watch/src'],
-            ['@calculator', './Eva_2/web-calculator/src'],
-          ],
-          extensions: ['.js'],
-        },
-      },
     },
   },
 ];
