@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>terminal</title>
+    <link rel="stylesheet" href="terminal.css" />
+    <script src="terminal.js" defer></script>
+  </head>
+  <body>
+    <div class="main container">
+      <div class="upper-section container">
+        <div class="side container">
+          <button class="control-button has-text container" id="btn-CA">CS</button>
+        </div>
+        <div class="terminal has-text container">
+          <div class="has-text in-terminal" id="txt-CA">&lt;- <label for="btn-CS">Consultar saldo</label></div>
+          <div class="has-text in-terminal" id="txt-TM"><label for="btn-SD">Sacar dinero</label> -&gt;</div>
+          <div class="has-text in-terminal" id="txt-E"><label for="btn-S">Salir</label> -&gt;</div>
+          <div class="has-text in-terminal" id="txt-main">Seleccione operación</div>
+          <div class="has-text in-terminal" id="txt-money">1000 €</div>
+        </div>
+        <div class="side container">
+          <button class="control-button has-text container" id="btn-TM">SD</button>
+          <button class="control-button has-text container" id="btn-E">S</button>
+        </div>
+      </div>
+      <div class="mid-section container">
+        <div class="side container">
+          <div class="logo">
+            <img src="../../res/Int_Ext_Tarjeta.png" alt="Intr. Extr. Tarjeta" />
+          </div>
+          <button class="control-button has-text container"  id="btn-IOC">Intr. Extr. Tarjeta</button>
+        </div>
+        <div class="numpad container">
+          <button class="control-button has-text container" id="btn-9">9</button>
+          <button class="control-button has-text container" id="btn-8">8</button>
+          <button class="control-button has-text container" id="btn-7">7</button>
+          <button class="control-button has-text container" id="btn-6">6</button>
+          <button class="control-button has-text container" id="btn-5">5</button>
+          <button class="control-button has-text container" id="btn-4">4</button>
+          <button class="control-button has-text container" id="btn-3">3</button>
+          <button class="control-button has-text container" id="btn-2">2</button>
+          <button class="control-button has-text container" id="btn-1">1</button>
+          <button class="control-button has-text container" id="btn-C">&lt;-</button>
+          <button class="control-button has-text container" id="btn-0">0</button>
+        </div>
+        <div class="side container">
+          <div class="logo">
+            <img src="../../res/Retirar_Dinero.png" alt="Retirar dinero" />
+          </div>
+          <button class="control-button has-text container" id="btn-GM">Retirar dinero</button>
+        </div>
+      </div>
+      <div class="lower-section container">
+          <button class="form control-button has-text container" id="btn-records">Informe</button>
+    </div>
+  </body>
+</html>

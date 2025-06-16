@@ -1,6 +1,6 @@
 {
   // Theme (auto)
-  "workbench.colorTheme": "Ayu Mirage Bordered",
+  "workbench.colorTheme": "Monokai Dimmed",
   // CSS
   "css.styleSheets": ["**/${fileBasenameNoExtension}.css", "**/${fileBasenameNoExtension}/../../res/styles/*.css"],
   // Eslint
